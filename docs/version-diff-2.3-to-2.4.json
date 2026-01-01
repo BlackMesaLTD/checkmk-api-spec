@@ -1,0 +1,77 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "path_changes": {
+    "added": [
+      "/domain-types/acknowledge/actions/delete/invoke",
+      "/domain-types/broker_connection/collections/all",
+      "/domain-types/configuration_entity/actions/edit-single-entity/invoke",
+      "/domain-types/configuration_entity/collections/all",
+      "/domain-types/folder/collections/{entity_type_specifier}",
+      "/domain-types/form_spec/collections/{entity_type}",
+      "/domain-types/ldap_connection/collections/all",
+      "/domain-types/notification_parameter/collections/{entity_type_specifier}",
+      "/domain-types/passwordstore_password/collections/{entity_type_specifier}",
+      "/domain-types/saml_connection/collections/all",
+      "/domain-types/user_config/actions/dismiss-warning/invoke",
+      "/objects/background_job/{job_id}",
+      "/objects/broker_connection/{connection_id}",
+      "/objects/ldap_connection/{ldap_connection_id}",
+      "/objects/notification_parameter/{entity_id}",
+      "/objects/quick_setup/{quick_setup_id}",
+      "/objects/quick_setup/{quick_setup_id}/actions/edit/invoke",
+      "/objects/quick_setup/{quick_setup_id}/actions/run-action/invoke",
+      "/objects/quick_setup/{quick_setup_id}/actions/run-stage-action/invoke",
+      "/objects/quick_setup/{quick_setup_id}/quick_setup_stage/{stage_index}",
+      "/objects/quick_setup_action_result/{job_id}",
+      "/objects/quick_setup_stage_action_result/{job_id}",
+      "/objects/saml_connection/{saml_connection_id}"
+    ],
+    "removed": [
+      "/objects/discovery_run/{job_id}"
+    ]
+  },
+  "schema_changes": [
+    {
+      "schema_name": "HostCreateAttribute",
+      "added_fields": [
+        {
+          "path": "waiting_for_discovery",
+          "new_type": "boolean",
+          "description": "This indicates that the host is waiting for a bulk discovery. It is set to True once the host is in ..."
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "management_snmp_community",
+          "old_type": "unknown",
+          "new_type": "anyOf"
+        },
+        {
+          "path": "management_ipmi_credentials",
+          "old_type": "unknown",
+          "new_type": "anyOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostExtensions",
+      "changed_fields": [
+        {
+          "path": "effective_attributes",
+          "old_type": "unknown",
+          "new_type": "anyOf"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 703,
+    "total_schemas_new": 896,
+    "schemas_added": 1,
+    "schemas_removed": 0,
+    "schemas_with_changes": 2,
+    "total_fields_added": 1,
+    "total_fields_removed": 0
+  }
+}
