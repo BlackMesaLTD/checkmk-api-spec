@@ -306,7 +306,7 @@ func splitVersion(version string) []string {
 func ValidHostTagAgentValues(pkg BaselinePackage) []string {
 	switch pkg {
 {{range .BaselineImports}}	case Baseline{{.Alias | title}}:
-		return {{.Alias}}.ValidHostTagAgentValues()
+		return {{.Alias}}.ValidHostCreateAttributeTagAgentValues()
 {{end}}	}
 	return nil
 }
