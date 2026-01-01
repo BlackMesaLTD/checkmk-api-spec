@@ -1,5 +1,12 @@
 // Package main implements the openapi-diff tool for comparing OpenAPI specs across versions.
 //
+// This tool compares two OpenAPI specs and produces a detailed diff report with
+// 4-level severity classification:
+//   - BREAKING: Field removed, type changed incompatibly, required field added to request
+//   - DEPRECATED: Field marked deprecated
+//   - MINOR: Optional field added, new endpoint added
+//   - DOCS: Description-only changes, no functional impact
+//
 // Usage:
 //
 //	openapi-diff -old specs/2.3.0p41/openapi.yaml -new specs/2.4.0p17/openapi.yaml -output diff.json
@@ -17,6 +24,26 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+// Severity levels for API changes
+type Severity string
+
+const (
+	SeverityBreaking   Severity = "breaking"   // Field removed, type change, required added
+	SeverityDeprecated Severity = "deprecated" // Field marked deprecated
+	SeverityMinor      Severity = "minor"      // Field/endpoint added
+	SeverityDocs       Severity = "docs"       // Description only
+	SeverityNone       Severity = "none"       // No changes
+)
+
+// SeverityOrder defines the priority of severities (higher = more severe)
+var SeverityOrder = map[Severity]int{
+	SeverityNone:       0,
+	SeverityDocs:       1,
+	SeverityMinor:      2,
+	SeverityDeprecated: 3,
+	SeverityBreaking:   4,
+}
+
 // OpenAPISpec represents the OpenAPI specification structure
 type OpenAPISpec struct {
 	OpenAPI    string                 `yaml:"openapi"`
@@ -32,44 +59,63 @@ type Components struct {
 
 // DiffReport contains the differences between two specs
 type DiffReport struct {
-	OldVersion   string          `json:"old_version"`
-	NewVersion   string          `json:"new_version"`
-	PathChanges  *PathChanges    `json:"path_changes"`
+	OldVersion    string          `json:"old_version"`
+	NewVersion    string          `json:"new_version"`
+	MaxSeverity   Severity        `json:"max_severity"`
+	PathChanges   *PathChanges    `json:"path_changes"`
 	SchemaChanges []*SchemaChange `json:"schema_changes"`
-	Summary      *Summary        `json:"summary"`
+	Summary       *Summary        `json:"summary"`
 }
 
 // PathChanges tracks path-level differences
 type PathChanges struct {
-	Added   []string `json:"added,omitempty"`
-	Removed []string `json:"removed,omitempty"`
+	Added   []*PathChange `json:"added,omitempty"`
+	Removed []*PathChange `json:"removed,omitempty"`
+}
+
+// PathChange represents a change to an API path
+type PathChange struct {
+	Path     string   `json:"path"`
+	Methods  []string `json:"methods,omitempty"`
+	Severity Severity `json:"severity"`
 }
 
 // SchemaChange tracks changes to a specific schema
 type SchemaChange struct {
-	SchemaName    string        `json:"schema_name"`
-	AddedFields   []*FieldDiff  `json:"added_fields,omitempty"`
-	RemovedFields []*FieldDiff  `json:"removed_fields,omitempty"`
-	ChangedFields []*FieldDiff  `json:"changed_fields,omitempty"`
+	SchemaName    string       `json:"schema_name"`
+	MaxSeverity   Severity     `json:"max_severity"`
+	AddedFields   []*FieldDiff `json:"added_fields,omitempty"`
+	RemovedFields []*FieldDiff `json:"removed_fields,omitempty"`
+	ChangedFields []*FieldDiff `json:"changed_fields,omitempty"`
 }
 
 // FieldDiff describes a field difference
 type FieldDiff struct {
-	Path        string `json:"path"`
-	OldType     string `json:"old_type,omitempty"`
-	NewType     string `json:"new_type,omitempty"`
-	Description string `json:"description,omitempty"`
+	Path          string   `json:"path"`
+	Severity      Severity `json:"severity"`
+	OldType       string   `json:"old_type,omitempty"`
+	NewType       string   `json:"new_type,omitempty"`
+	Description   string   `json:"description,omitempty"`
+	WasRequired   bool     `json:"was_required,omitempty"`
+	IsRequired    bool     `json:"is_required,omitempty"`
+	WasDeprecated bool     `json:"was_deprecated,omitempty"`
+	IsDeprecated  bool     `json:"is_deprecated,omitempty"`
+	ChangeReason  string   `json:"change_reason,omitempty"`
 }
 
 // Summary provides high-level statistics
 type Summary struct {
-	TotalSchemasOld     int `json:"total_schemas_old"`
-	TotalSchemasNew     int `json:"total_schemas_new"`
-	SchemasAdded        int `json:"schemas_added"`
-	SchemasRemoved      int `json:"schemas_removed"`
-	SchemasWithChanges  int `json:"schemas_with_changes"`
-	TotalFieldsAdded    int `json:"total_fields_added"`
-	TotalFieldsRemoved  int `json:"total_fields_removed"`
+	TotalSchemasOld    int `json:"total_schemas_old"`
+	TotalSchemasNew    int `json:"total_schemas_new"`
+	SchemasAdded       int `json:"schemas_added"`
+	SchemasRemoved     int `json:"schemas_removed"`
+	SchemasWithChanges int `json:"schemas_with_changes"`
+	TotalFieldsAdded   int `json:"total_fields_added"`
+	TotalFieldsRemoved int `json:"total_fields_removed"`
+	BreakingChanges    int `json:"breaking_changes"`
+	DeprecatedChanges  int `json:"deprecated_changes"`
+	MinorChanges       int `json:"minor_changes"`
+	DocsChanges        int `json:"docs_changes"`
 }
 
 func main() {
@@ -129,11 +175,15 @@ func main() {
 	// Print summary
 	if report.Summary != nil {
 		fmt.Printf("\nSummary:\n")
+		fmt.Printf("  Max Severity: %s\n", report.MaxSeverity)
 		fmt.Printf("  Schemas: %d → %d\n", report.Summary.TotalSchemasOld, report.Summary.TotalSchemasNew)
 		fmt.Printf("  Added: %d, Removed: %d, Changed: %d\n",
 			report.Summary.SchemasAdded, report.Summary.SchemasRemoved, report.Summary.SchemasWithChanges)
 		fmt.Printf("  Fields added: %d, removed: %d\n",
 			report.Summary.TotalFieldsAdded, report.Summary.TotalFieldsRemoved)
+		fmt.Printf("  By severity: breaking=%d, deprecated=%d, minor=%d, docs=%d\n",
+			report.Summary.BreakingChanges, report.Summary.DeprecatedChanges,
+			report.Summary.MinorChanges, report.Summary.DocsChanges)
 	}
 }
 
@@ -199,42 +249,86 @@ func generateDiff(oldSpec, newSpec *OpenAPISpec, oldVersion, newVersion string, 
 	report := &DiffReport{
 		OldVersion:  oldVersion,
 		NewVersion:  newVersion,
+		MaxSeverity: SeverityNone,
 		PathChanges: &PathChanges{},
 		Summary:     &Summary{},
 	}
 
 	// Compare paths
-	oldPaths := make(map[string]bool)
-	newPaths := make(map[string]bool)
-
-	for path := range oldSpec.Paths {
-		oldPaths[path] = true
-	}
-	for path := range newSpec.Paths {
-		newPaths[path] = true
-	}
-
-	for path := range newPaths {
-		if !oldPaths[path] {
-			report.PathChanges.Added = append(report.PathChanges.Added, path)
-		}
-	}
-	for path := range oldPaths {
-		if !newPaths[path] {
-			report.PathChanges.Removed = append(report.PathChanges.Removed, path)
-		}
-	}
-	sort.Strings(report.PathChanges.Added)
-	sort.Strings(report.PathChanges.Removed)
+	comparePaths(oldSpec, newSpec, report)
 
 	// Compare schemas
-	if oldSpec.Components == nil || newSpec.Components == nil {
-		return report
+	if oldSpec.Components != nil && newSpec.Components != nil {
+		compareAllSchemas(oldSpec.Components.Schemas, newSpec.Components.Schemas, schemasToCompare, report, verbose)
 	}
 
-	oldSchemas := oldSpec.Components.Schemas
-	newSchemas := newSpec.Components.Schemas
+	// Calculate max severity
+	report.MaxSeverity = calculateMaxSeverity(report)
 
+	return report
+}
+
+func comparePaths(oldSpec, newSpec *OpenAPISpec, report *DiffReport) {
+	oldPaths := make(map[string]interface{})
+	newPaths := make(map[string]interface{})
+
+	for path, methods := range oldSpec.Paths {
+		oldPaths[path] = methods
+	}
+	for path, methods := range newSpec.Paths {
+		newPaths[path] = methods
+	}
+
+	// Find added paths (minor severity)
+	for path, methods := range newPaths {
+		if _, exists := oldPaths[path]; !exists {
+			change := &PathChange{
+				Path:     path,
+				Severity: SeverityMinor,
+				Methods:  extractMethods(methods),
+			}
+			report.PathChanges.Added = append(report.PathChanges.Added, change)
+			report.Summary.MinorChanges++
+		}
+	}
+
+	// Find removed paths (breaking severity)
+	for path, methods := range oldPaths {
+		if _, exists := newPaths[path]; !exists {
+			change := &PathChange{
+				Path:     path,
+				Severity: SeverityBreaking,
+				Methods:  extractMethods(methods),
+			}
+			report.PathChanges.Removed = append(report.PathChanges.Removed, change)
+			report.Summary.BreakingChanges++
+		}
+	}
+
+	// Sort for consistent output
+	sort.Slice(report.PathChanges.Added, func(i, j int) bool {
+		return report.PathChanges.Added[i].Path < report.PathChanges.Added[j].Path
+	})
+	sort.Slice(report.PathChanges.Removed, func(i, j int) bool {
+		return report.PathChanges.Removed[i].Path < report.PathChanges.Removed[j].Path
+	})
+}
+
+func extractMethods(pathItem interface{}) []string {
+	methods := []string{}
+	if m, ok := pathItem.(map[string]interface{}); ok {
+		for key := range m {
+			switch key {
+			case "get", "post", "put", "delete", "patch", "head", "options":
+				methods = append(methods, strings.ToUpper(key))
+			}
+		}
+	}
+	sort.Strings(methods)
+	return methods
+}
+
+func compareAllSchemas(oldSchemas, newSchemas map[string]interface{}, schemasToCompare []string, report *DiffReport, verbose bool) {
 	report.Summary.TotalSchemasOld = len(oldSchemas)
 	report.Summary.TotalSchemasNew = len(newSchemas)
 
@@ -263,27 +357,51 @@ func generateDiff(oldSpec, newSpec *OpenAPISpec, oldVersion, newVersion string, 
 
 		if !oldExists && newExists {
 			report.Summary.SchemasAdded++
+			report.Summary.MinorChanges++
 			continue
 		}
 		if oldExists && !newExists {
 			report.Summary.SchemasRemoved++
+			report.Summary.BreakingChanges++
 			continue
 		}
 
 		// Both exist - compare fields
-		change := compareSchemas(schemaName, oldSchema, newSchema)
+		change := compareSchemas(schemaName, oldSchema, newSchema, verbose)
 		if change != nil {
 			report.SchemaChanges = append(report.SchemaChanges, change)
 			report.Summary.SchemasWithChanges++
 			report.Summary.TotalFieldsAdded += len(change.AddedFields)
 			report.Summary.TotalFieldsRemoved += len(change.RemovedFields)
+
+			// Count by severity
+			for _, f := range change.AddedFields {
+				incrementSeverityCount(f.Severity, report)
+			}
+			for _, f := range change.RemovedFields {
+				incrementSeverityCount(f.Severity, report)
+			}
+			for _, f := range change.ChangedFields {
+				incrementSeverityCount(f.Severity, report)
+			}
 		}
 	}
-
-	return report
 }
 
-func compareSchemas(name string, old, new interface{}) *SchemaChange {
+func incrementSeverityCount(sev Severity, report *DiffReport) {
+	switch sev {
+	case SeverityBreaking:
+		report.Summary.BreakingChanges++
+	case SeverityDeprecated:
+		report.Summary.DeprecatedChanges++
+	case SeverityMinor:
+		report.Summary.MinorChanges++
+	case SeverityDocs:
+		report.Summary.DocsChanges++
+	}
+}
+
+func compareSchemas(name string, old, new interface{}, verbose bool) *SchemaChange {
 	oldMap, oldOk := old.(map[string]interface{})
 	newMap, newOk := new.(map[string]interface{})
 
@@ -292,45 +410,69 @@ func compareSchemas(name string, old, new interface{}) *SchemaChange {
 	}
 
 	change := &SchemaChange{
-		SchemaName: name,
+		SchemaName:  name,
+		MaxSeverity: SeverityNone,
 	}
 
-	// Get properties
+	// Get properties and required fields
 	oldProps := getProperties(oldMap)
 	newProps := getProperties(newMap)
+	oldRequired := getRequiredFields(oldMap)
+	newRequired := getRequiredFields(newMap)
 
 	// Find added fields
 	for propName, propVal := range newProps {
 		if _, exists := oldProps[propName]; !exists {
+			isRequired := newRequired[propName]
+			severity := SeverityMinor // Adding optional field
+			reason := "New optional field"
+
+			if isRequired {
+				severity = SeverityBreaking // Adding required field is breaking
+				reason = "New required field"
+			}
+
 			change.AddedFields = append(change.AddedFields, &FieldDiff{
-				Path:        propName,
-				NewType:     getType(propVal),
-				Description: getDescription(propVal),
+				Path:         propName,
+				Severity:     severity,
+				NewType:      getType(propVal),
+				Description:  getDescription(propVal),
+				IsRequired:   isRequired,
+				IsDeprecated: isDeprecated(propVal),
+				ChangeReason: reason,
 			})
+			change.MaxSeverity = maxSeverity(change.MaxSeverity, severity)
 		}
 	}
 
 	// Find removed fields
 	for propName, propVal := range oldProps {
 		if _, exists := newProps[propName]; !exists {
+			wasRequired := oldRequired[propName]
+			severity := SeverityBreaking // Removing any field is breaking
+			reason := "Field removed"
+
 			change.RemovedFields = append(change.RemovedFields, &FieldDiff{
-				Path:    propName,
-				OldType: getType(propVal),
+				Path:          propName,
+				Severity:      severity,
+				OldType:       getType(propVal),
+				WasRequired:   wasRequired,
+				WasDeprecated: isDeprecated(propVal),
+				ChangeReason:  reason,
 			})
+			change.MaxSeverity = maxSeverity(change.MaxSeverity, severity)
 		}
 	}
 
 	// Find changed fields
 	for propName, newVal := range newProps {
 		if oldVal, exists := oldProps[propName]; exists {
-			oldType := getType(oldVal)
-			newType := getType(newVal)
-			if oldType != newType {
-				change.ChangedFields = append(change.ChangedFields, &FieldDiff{
-					Path:    propName,
-					OldType: oldType,
-					NewType: newType,
-				})
+			fieldChanges := compareField(propName, oldVal, newVal, oldRequired[propName], newRequired[propName])
+			if fieldChanges != nil {
+				change.ChangedFields = append(change.ChangedFields, fieldChanges...)
+				for _, fc := range fieldChanges {
+					change.MaxSeverity = maxSeverity(change.MaxSeverity, fc.Severity)
+				}
 			}
 		}
 	}
@@ -342,6 +484,9 @@ func compareSchemas(name string, old, new interface{}) *SchemaChange {
 	sort.Slice(change.RemovedFields, func(i, j int) bool {
 		return change.RemovedFields[i].Path < change.RemovedFields[j].Path
 	})
+	sort.Slice(change.ChangedFields, func(i, j int) bool {
+		return change.ChangedFields[i].Path < change.ChangedFields[j].Path
+	})
 
 	// Return nil if no changes
 	if len(change.AddedFields) == 0 && len(change.RemovedFields) == 0 && len(change.ChangedFields) == 0 {
@@ -351,6 +496,142 @@ func compareSchemas(name string, old, new interface{}) *SchemaChange {
 	return change
 }
 
+func compareField(path string, oldVal, newVal interface{}, wasRequired, isRequired bool) []*FieldDiff {
+	var changes []*FieldDiff
+
+	oldMap, oldOk := oldVal.(map[string]interface{})
+	newMap, newOk := newVal.(map[string]interface{})
+
+	if !oldOk || !newOk {
+		return nil
+	}
+
+	oldType := getType(oldVal)
+	newType := getType(newVal)
+	oldDeprecated := isDeprecated(oldVal)
+	newDeprecated := isDeprecated(newVal)
+	oldDesc := getDescription(oldVal)
+	newDesc := getDescription(newVal)
+
+	// Type change
+	if oldType != newType {
+		severity := SeverityBreaking
+		reason := fmt.Sprintf("Type changed: %s → %s", oldType, newType)
+		changes = append(changes, &FieldDiff{
+			Path:         path,
+			Severity:     severity,
+			OldType:      oldType,
+			NewType:      newType,
+			ChangeReason: reason,
+		})
+	}
+
+	// Required status change
+	if wasRequired != isRequired {
+		if isRequired && !wasRequired {
+			// Optional → Required is breaking
+			changes = append(changes, &FieldDiff{
+				Path:         path,
+				Severity:     SeverityBreaking,
+				WasRequired:  wasRequired,
+				IsRequired:   isRequired,
+				ChangeReason: "Field changed from optional to required",
+			})
+		} else {
+			// Required → Optional is minor (relaxing constraint)
+			changes = append(changes, &FieldDiff{
+				Path:         path,
+				Severity:     SeverityMinor,
+				WasRequired:  wasRequired,
+				IsRequired:   isRequired,
+				ChangeReason: "Field changed from required to optional",
+			})
+		}
+	}
+
+	// Deprecated status change
+	if !oldDeprecated && newDeprecated {
+		changes = append(changes, &FieldDiff{
+			Path:          path,
+			Severity:      SeverityDeprecated,
+			WasDeprecated: oldDeprecated,
+			IsDeprecated:  newDeprecated,
+			ChangeReason:  "Field marked as deprecated",
+		})
+	}
+
+	// Description-only change
+	if oldDesc != newDesc && len(changes) == 0 {
+		// Only if no other changes detected
+		changes = append(changes, &FieldDiff{
+			Path:         path,
+			Severity:     SeverityDocs,
+			ChangeReason: "Description changed",
+		})
+	}
+
+	// Check for enum changes
+	oldEnum := getEnumValues(oldMap)
+	newEnum := getEnumValues(newMap)
+	if len(oldEnum) > 0 || len(newEnum) > 0 {
+		enumChanges := compareEnums(path, oldEnum, newEnum)
+		changes = append(changes, enumChanges...)
+	}
+
+	return changes
+}
+
+func getEnumValues(prop map[string]interface{}) []string {
+	if enum, ok := prop["enum"].([]interface{}); ok {
+		values := make([]string, 0, len(enum))
+		for _, v := range enum {
+			if s, ok := v.(string); ok {
+				values = append(values, s)
+			}
+		}
+		return values
+	}
+	return nil
+}
+
+func compareEnums(path string, oldEnum, newEnum []string) []*FieldDiff {
+	var changes []*FieldDiff
+
+	oldSet := make(map[string]bool)
+	newSet := make(map[string]bool)
+
+	for _, v := range oldEnum {
+		oldSet[v] = true
+	}
+	for _, v := range newEnum {
+		newSet[v] = true
+	}
+
+	// Check for removed enum values (breaking)
+	for v := range oldSet {
+		if !newSet[v] {
+			changes = append(changes, &FieldDiff{
+				Path:         path,
+				Severity:     SeverityBreaking,
+				ChangeReason: fmt.Sprintf("Enum value removed: %q", v),
+			})
+		}
+	}
+
+	// Check for added enum values (minor)
+	for v := range newSet {
+		if !oldSet[v] {
+			changes = append(changes, &FieldDiff{
+				Path:         path,
+				Severity:     SeverityMinor,
+				ChangeReason: fmt.Sprintf("Enum value added: %q", v),
+			})
+		}
+	}
+
+	return changes
+}
+
 func getProperties(schema map[string]interface{}) map[string]interface{} {
 	if props, ok := schema["properties"].(map[string]interface{}); ok {
 		return props
@@ -358,12 +639,29 @@ func getProperties(schema map[string]interface{}) map[string]interface{} {
 	return make(map[string]interface{})
 }
 
+func getRequiredFields(schema map[string]interface{}) map[string]bool {
+	required := make(map[string]bool)
+	if req, ok := schema["required"].([]interface{}); ok {
+		for _, r := range req {
+			if s, ok := r.(string); ok {
+				required[s] = true
+			}
+		}
+	}
+	return required
+}
+
 func getType(prop interface{}) string {
 	if propMap, ok := prop.(map[string]interface{}); ok {
 		if t, ok := propMap["type"].(string); ok {
 			return t
 		}
-		if _, ok := propMap["$ref"].(string); ok {
+		if ref, ok := propMap["$ref"].(string); ok {
+			// Extract schema name from ref
+			parts := strings.Split(ref, "/")
+			if len(parts) > 0 {
+				return "ref:" + parts[len(parts)-1]
+			}
 			return "ref"
 		}
 		if _, ok := propMap["oneOf"]; ok {
@@ -371,6 +669,9 @@ func getType(prop interface{}) string {
 		}
 		if _, ok := propMap["anyOf"]; ok {
 			return "anyOf"
+		}
+		if _, ok := propMap["allOf"]; ok {
+			return "allOf"
 		}
 	}
 	return "unknown"
@@ -386,4 +687,39 @@ func getDescription(prop interface{}) string {
 		}
 	}
 	return ""
+}
+
+func isDeprecated(prop interface{}) bool {
+	if propMap, ok := prop.(map[string]interface{}); ok {
+		if deprecated, ok := propMap["deprecated"].(bool); ok {
+			return deprecated
+		}
+	}
+	return false
+}
+
+func maxSeverity(a, b Severity) Severity {
+	if SeverityOrder[a] >= SeverityOrder[b] {
+		return a
+	}
+	return b
+}
+
+func calculateMaxSeverity(report *DiffReport) Severity {
+	max := SeverityNone
+
+	// Check path changes
+	for _, p := range report.PathChanges.Added {
+		max = maxSeverity(max, p.Severity)
+	}
+	for _, p := range report.PathChanges.Removed {
+		max = maxSeverity(max, p.Severity)
+	}
+
+	// Check schema changes
+	for _, sc := range report.SchemaChanges {
+		max = maxSeverity(max, sc.MaxSeverity)
+	}
+
+	return max
 }
