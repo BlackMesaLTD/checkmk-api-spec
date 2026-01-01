@@ -15,6 +15,14 @@ var AuxTagFieldNames = []string{
 	"tag_type",
 }
 
+// AuxTagRequiredFieldNames lists required fields for AuxTag.
+// Use for validation before API calls.
+var AuxTagRequiredFieldNames = []string{
+	"operator",
+	"tag_id",
+	"tag_type",
+}
+
 // AuxTagAttrsCreateFieldNames lists all valid field names for AuxTagAttrsCreate.
 // Use for validation or iteration over available fields.
 var AuxTagAttrsCreateFieldNames = []string{
@@ -24,9 +32,24 @@ var AuxTagAttrsCreateFieldNames = []string{
 	"topic",
 }
 
+// AuxTagAttrsCreateRequiredFieldNames lists required fields for AuxTagAttrsCreate.
+// Use for validation before API calls.
+var AuxTagAttrsCreateRequiredFieldNames = []string{
+	"aux_tag_id",
+	"title",
+	"topic",
+}
+
 // AuxTagAttrsResponseFieldNames lists all valid field names for AuxTagAttrsResponse.
 // Use for validation or iteration over available fields.
 var AuxTagAttrsResponseFieldNames = []string{
+	"help",
+	"topic",
+}
+
+// AuxTagAttrsResponseRequiredFieldNames lists required fields for AuxTagAttrsResponse.
+// Use for validation before API calls.
+var AuxTagAttrsResponseRequiredFieldNames = []string{
 	"help",
 	"topic",
 }
@@ -58,6 +81,12 @@ var AuxTagResponseFieldNames = []string{
 	"title",
 }
 
+// AuxTagResponseRequiredFieldNames lists required fields for AuxTagResponse.
+// Use for validation before API calls.
+var AuxTagResponseRequiredFieldNames = []string{
+	"links",
+}
+
 // AuxTagResponseCollectionFieldNames lists all valid field names for AuxTagResponseCollection.
 // Use for validation or iteration over available fields.
 var AuxTagResponseCollectionFieldNames = []string{
@@ -69,9 +98,21 @@ var AuxTagResponseCollectionFieldNames = []string{
 	"value",
 }
 
+// AuxTagResponseCollectionRequiredFieldNames lists required fields for AuxTagResponseCollection.
+// Use for validation before API calls.
+var AuxTagResponseCollectionRequiredFieldNames = []string{
+	"links",
+}
+
 // BulkCreateHostFieldNames lists all valid field names for BulkCreateHost.
 // Use for validation or iteration over available fields.
 var BulkCreateHostFieldNames = []string{
+	"entries",
+}
+
+// BulkCreateHostRequiredFieldNames lists required fields for BulkCreateHost.
+// Use for validation before API calls.
+var BulkCreateHostRequiredFieldNames = []string{
 	"entries",
 }
 
@@ -81,15 +122,33 @@ var BulkDeleteHostFieldNames = []string{
 	"entries",
 }
 
+// BulkDeleteHostRequiredFieldNames lists required fields for BulkDeleteHost.
+// Use for validation before API calls.
+var BulkDeleteHostRequiredFieldNames = []string{
+	"entries",
+}
+
 // BulkUpdateFolderFieldNames lists all valid field names for BulkUpdateFolder.
 // Use for validation or iteration over available fields.
 var BulkUpdateFolderFieldNames = []string{
 	"entries",
 }
 
+// BulkUpdateFolderRequiredFieldNames lists required fields for BulkUpdateFolder.
+// Use for validation before API calls.
+var BulkUpdateFolderRequiredFieldNames = []string{
+	"entries",
+}
+
 // BulkUpdateHostFieldNames lists all valid field names for BulkUpdateHost.
 // Use for validation or iteration over available fields.
 var BulkUpdateHostFieldNames = []string{
+	"entries",
+}
+
+// BulkUpdateHostRequiredFieldNames lists required fields for BulkUpdateHost.
+// Use for validation before API calls.
+var BulkUpdateHostRequiredFieldNames = []string{
 	"entries",
 }
 
@@ -104,6 +163,12 @@ var ContactGroupFieldNames = []string{
 	"title",
 }
 
+// ContactGroupRequiredFieldNames lists required fields for ContactGroup.
+// Use for validation before API calls.
+var ContactGroupRequiredFieldNames = []string{
+	"links",
+}
+
 // ContactGroupCollectionFieldNames lists all valid field names for ContactGroupCollection.
 // Use for validation or iteration over available fields.
 var ContactGroupCollectionFieldNames = []string{
@@ -113,6 +178,12 @@ var ContactGroupCollectionFieldNames = []string{
 	"links",
 	"title",
 	"value",
+}
+
+// ContactGroupCollectionRequiredFieldNames lists required fields for ContactGroupCollection.
+// Use for validation before API calls.
+var ContactGroupCollectionRequiredFieldNames = []string{
+	"links",
 }
 
 // ContactGroupExtensionsFieldNames lists all valid field names for ContactGroupExtensions.
@@ -130,9 +201,42 @@ var CreateClusterHostFieldNames = []string{
 	"nodes",
 }
 
+// CreateClusterHostRequiredFieldNames lists required fields for CreateClusterHost.
+// Use for validation before API calls.
+var CreateClusterHostRequiredFieldNames = []string{
+	"folder",
+	"host_name",
+	"nodes",
+}
+
+// CreateClusterHostCompareKeyFields lists fields used for comparison/hashing in CreateClusterHost.
+// Excludes read-only and metadata fields.
+var CreateClusterHostCompareKeyFields = []string{
+	"attributes",
+	"folder",
+	"host_name",
+	"nodes",
+}
+
 // CreateFolderFieldNames lists all valid field names for CreateFolder.
 // Use for validation or iteration over available fields.
 var CreateFolderFieldNames = []string{
+	"attributes",
+	"name",
+	"parent",
+	"title",
+}
+
+// CreateFolderRequiredFieldNames lists required fields for CreateFolder.
+// Use for validation before API calls.
+var CreateFolderRequiredFieldNames = []string{
+	"parent",
+	"title",
+}
+
+// CreateFolderCompareKeyFields lists fields used for comparison/hashing in CreateFolder.
+// Excludes read-only and metadata fields.
+var CreateFolderCompareKeyFields = []string{
 	"attributes",
 	"name",
 	"parent",
@@ -147,9 +251,50 @@ var CreateHostFieldNames = []string{
 	"host_name",
 }
 
+// CreateHostRequiredFieldNames lists required fields for CreateHost.
+// Use for validation before API calls.
+var CreateHostRequiredFieldNames = []string{
+	"folder",
+	"host_name",
+}
+
+// CreateHostCompareKeyFields lists fields used for comparison/hashing in CreateHost.
+// Excludes read-only and metadata fields.
+var CreateHostCompareKeyFields = []string{
+	"attributes",
+	"folder",
+	"host_name",
+}
+
 // CreateUserFieldNames lists all valid field names for CreateUser.
 // Use for validation or iteration over available fields.
 var CreateUserFieldNames = []string{
+	"auth_option",
+	"authorized_sites",
+	"contact_options",
+	"contactgroups",
+	"disable_login",
+	"disable_notifications",
+	"fullname",
+	"idle_timeout",
+	"interface_options",
+	"language",
+	"pager_address",
+	"roles",
+	"temperature_unit",
+	"username",
+}
+
+// CreateUserRequiredFieldNames lists required fields for CreateUser.
+// Use for validation before API calls.
+var CreateUserRequiredFieldNames = []string{
+	"fullname",
+	"username",
+}
+
+// CreateUserCompareKeyFields lists fields used for comparison/hashing in CreateUser.
+// Excludes read-only and metadata fields.
+var CreateUserCompareKeyFields = []string{
 	"auth_option",
 	"authorized_sites",
 	"contact_options",
@@ -177,6 +322,12 @@ var FolderFieldNames = []string{
 	"title",
 }
 
+// FolderRequiredFieldNames lists required fields for Folder.
+// Use for validation before API calls.
+var FolderRequiredFieldNames = []string{
+	"links",
+}
+
 // FolderCollectionFieldNames lists all valid field names for FolderCollection.
 // Use for validation or iteration over available fields.
 var FolderCollectionFieldNames = []string{
@@ -188,9 +339,36 @@ var FolderCollectionFieldNames = []string{
 	"value",
 }
 
+// FolderCollectionRequiredFieldNames lists required fields for FolderCollection.
+// Use for validation before API calls.
+var FolderCollectionRequiredFieldNames = []string{
+	"links",
+}
+
 // FolderCreateAttributeFieldNames lists all valid field names for FolderCreateAttribute.
 // Use for validation or iteration over available fields.
 var FolderCreateAttributeFieldNames = []string{
+	"bake_agent_package",
+	"contactgroups",
+	"labels",
+	"management_ipmi_credentials",
+	"management_protocol",
+	"management_snmp_community",
+	"network_scan",
+	"parents",
+	"site",
+	"snmp_community",
+	"tag_address_family",
+	"tag_agent",
+	"tag_criticality",
+	"tag_networking",
+	"tag_piggyback",
+	"tag_snmp_ds",
+}
+
+// FolderCreateAttributeCompareKeyFields lists fields used for comparison/hashing in FolderCreateAttribute.
+// Excludes read-only and metadata fields.
+var FolderCreateAttributeCompareKeyFields = []string{
 	"bake_agent_package",
 	"contactgroups",
 	"labels",
@@ -244,6 +422,27 @@ var FolderUpdateAttributeFieldNames = []string{
 	"tag_snmp_ds",
 }
 
+// FolderUpdateAttributeCompareKeyFields lists fields used for comparison/hashing in FolderUpdateAttribute.
+// Excludes read-only and metadata fields.
+var FolderUpdateAttributeCompareKeyFields = []string{
+	"bake_agent_package",
+	"contactgroups",
+	"labels",
+	"management_ipmi_credentials",
+	"management_protocol",
+	"management_snmp_community",
+	"network_scan",
+	"parents",
+	"site",
+	"snmp_community",
+	"tag_address_family",
+	"tag_agent",
+	"tag_criticality",
+	"tag_networking",
+	"tag_piggyback",
+	"tag_snmp_ds",
+}
+
 // FolderViewAttributeFieldNames lists all valid field names for FolderViewAttribute.
 // Use for validation or iteration over available fields.
 var FolderViewAttributeFieldNames = []string{
@@ -267,9 +466,36 @@ var FolderViewAttributeFieldNames = []string{
 	"tag_snmp_ds",
 }
 
+// FolderViewAttributeCompareKeyFields lists fields used for comparison/hashing in FolderViewAttribute.
+// Excludes read-only and metadata fields.
+var FolderViewAttributeCompareKeyFields = []string{
+	"bake_agent_package",
+	"contactgroups",
+	"labels",
+	"management_ipmi_credentials",
+	"management_protocol",
+	"management_snmp_community",
+	"network_scan",
+	"parents",
+	"site",
+	"snmp_community",
+	"tag_address_family",
+	"tag_agent",
+	"tag_criticality",
+	"tag_networking",
+	"tag_piggyback",
+	"tag_snmp_ds",
+}
+
 // HostFieldNames lists all valid field names for Host.
 // Use for validation or iteration over available fields.
 var HostFieldNames = []string{
+	"type",
+}
+
+// HostRequiredFieldNames lists required fields for Host.
+// Use for validation before API calls.
+var HostRequiredFieldNames = []string{
 	"type",
 }
 
@@ -284,6 +510,13 @@ var HostConfigFieldNames = []string{
 	"title",
 }
 
+// HostConfigRequiredFieldNames lists required fields for HostConfig.
+// Use for validation before API calls.
+var HostConfigRequiredFieldNames = []string{
+	"domainType",
+	"links",
+}
+
 // HostConfigCollectionFieldNames lists all valid field names for HostConfigCollection.
 // Use for validation or iteration over available fields.
 var HostConfigCollectionFieldNames = []string{
@@ -293,6 +526,12 @@ var HostConfigCollectionFieldNames = []string{
 	"links",
 	"title",
 	"value",
+}
+
+// HostConfigCollectionRequiredFieldNames lists required fields for HostConfigCollection.
+// Use for validation before API calls.
+var HostConfigCollectionRequiredFieldNames = []string{
+	"links",
 }
 
 // HostCreateAttributeFieldNames lists all valid field names for HostCreateAttribute.
@@ -326,6 +565,33 @@ var HostCreateAttributeFieldNames = []string{
 	"waiting_for_discovery",
 }
 
+// HostCreateAttributeCompareKeyFields lists fields used for comparison/hashing in HostCreateAttribute.
+// Excludes read-only and metadata fields.
+var HostCreateAttributeCompareKeyFields = []string{
+	"additional_ipv4addresses",
+	"additional_ipv6addresses",
+	"alias",
+	"bake_agent_package",
+	"contactgroups",
+	"ipaddress",
+	"ipv6address",
+	"labels",
+	"management_address",
+	"management_ipmi_credentials",
+	"management_protocol",
+	"management_snmp_community",
+	"network_scan",
+	"parents",
+	"site",
+	"snmp_community",
+	"tag_address_family",
+	"tag_agent",
+	"tag_criticality",
+	"tag_networking",
+	"tag_piggyback",
+	"tag_snmp_ds",
+}
+
 // HostExtensionsFieldNames lists all valid field names for HostExtensions.
 // Use for validation or iteration over available fields.
 var HostExtensionsFieldNames = []string{
@@ -342,6 +608,12 @@ var HostExtensionsFieldNames = []string{
 var HostTagFieldNames = []string{
 	"aux_tags",
 	"id",
+	"title",
+}
+
+// HostTagRequiredFieldNames lists required fields for HostTag.
+// Use for validation before API calls.
+var HostTagRequiredFieldNames = []string{
 	"title",
 }
 
@@ -374,6 +646,33 @@ var HostUpdateAttributeFieldNames = []string{
 	"tag_piggyback",
 	"tag_snmp_ds",
 	"waiting_for_discovery",
+}
+
+// HostUpdateAttributeCompareKeyFields lists fields used for comparison/hashing in HostUpdateAttribute.
+// Excludes read-only and metadata fields.
+var HostUpdateAttributeCompareKeyFields = []string{
+	"additional_ipv4addresses",
+	"additional_ipv6addresses",
+	"alias",
+	"bake_agent_package",
+	"contactgroups",
+	"ipaddress",
+	"ipv6address",
+	"labels",
+	"management_address",
+	"management_ipmi_credentials",
+	"management_protocol",
+	"management_snmp_community",
+	"network_scan",
+	"parents",
+	"site",
+	"snmp_community",
+	"tag_address_family",
+	"tag_agent",
+	"tag_criticality",
+	"tag_networking",
+	"tag_piggyback",
+	"tag_snmp_ds",
 }
 
 // HostViewAttributeFieldNames lists all valid field names for HostViewAttribute.
@@ -409,15 +708,55 @@ var HostViewAttributeFieldNames = []string{
 	"waiting_for_discovery",
 }
 
+// HostViewAttributeCompareKeyFields lists fields used for comparison/hashing in HostViewAttribute.
+// Excludes read-only and metadata fields.
+var HostViewAttributeCompareKeyFields = []string{
+	"additional_ipv4addresses",
+	"additional_ipv6addresses",
+	"alias",
+	"bake_agent_package",
+	"contactgroups",
+	"ipaddress",
+	"ipv6address",
+	"labels",
+	"management_address",
+	"management_ipmi_credentials",
+	"management_protocol",
+	"management_snmp_community",
+	"network_scan",
+	"parents",
+	"site",
+	"snmp_community",
+	"tag_address_family",
+	"tag_agent",
+	"tag_criticality",
+	"tag_networking",
+	"tag_piggyback",
+	"tag_snmp_ds",
+}
+
 // MoveFolderFieldNames lists all valid field names for MoveFolder.
 // Use for validation or iteration over available fields.
 var MoveFolderFieldNames = []string{
 	"destination",
 }
 
+// MoveFolderRequiredFieldNames lists required fields for MoveFolder.
+// Use for validation before API calls.
+var MoveFolderRequiredFieldNames = []string{
+	"destination",
+}
+
 // UpdateContactGroupFieldNames lists all valid field names for UpdateContactGroup.
 // Use for validation or iteration over available fields.
 var UpdateContactGroupFieldNames = []string{
+	"attributes",
+	"name",
+}
+
+// UpdateContactGroupRequiredFieldNames lists required fields for UpdateContactGroup.
+// Use for validation before API calls.
+var UpdateContactGroupRequiredFieldNames = []string{
 	"attributes",
 	"name",
 }

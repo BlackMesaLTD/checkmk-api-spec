@@ -523,3 +523,1376 @@ func FolderCreateAttributeFieldNames(pkg BaselinePackage) []string {
 	}
 	return nil
 }
+
+// GetFieldDescription returns the description for a field in a schema for the given baseline.
+func GetFieldDescription(pkg BaselinePackage, schemaName, fieldName string) string {
+	switch pkg {
+	case BaselineV2_2_0p1:
+		return v2_2_0p1.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_2_0p3:
+		return v2_2_0p3.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_2_0p4:
+		return v2_2_0p4.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_2_0p5:
+		return v2_2_0p5.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_2_0p8:
+		return v2_2_0p8.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_2_0p9:
+		return v2_2_0p9.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_2_0p11:
+		return v2_2_0p11.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_2_0p12:
+		return v2_2_0p12.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_2_0p14:
+		return v2_2_0p14.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_2_0p18:
+		return v2_2_0p18.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_2_0p21:
+		return v2_2_0p21.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_2_0p22:
+		return v2_2_0p22.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_2_0p23:
+		return v2_2_0p23.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_2_0p26:
+		return v2_2_0p26.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_2_0p32:
+		return v2_2_0p32.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_2_0p33:
+		return v2_2_0p33.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_2_0p43:
+		return v2_2_0p43.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_2_0p44:
+		return v2_2_0p44.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_3_0p1:
+		return v2_3_0p1.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_3_0p3:
+		return v2_3_0p3.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_3_0p5:
+		return v2_3_0p5.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_3_0p7:
+		return v2_3_0p7.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_3_0p11:
+		return v2_3_0p11.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_3_0p14:
+		return v2_3_0p14.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_3_0p22:
+		return v2_3_0p22.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_3_0p23:
+		return v2_3_0p23.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_3_0p26:
+		return v2_3_0p26.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_3_0p27:
+		return v2_3_0p27.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_3_0p31:
+		return v2_3_0p31.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_3_0p33:
+		return v2_3_0p33.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_3_0p36:
+		return v2_3_0p36.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_3_0p37:
+		return v2_3_0p37.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_3_0p39:
+		return v2_3_0p39.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_3_0p40:
+		return v2_3_0p40.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_3_0p41:
+		return v2_3_0p41.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_4_0p1:
+		return v2_4_0p1.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_4_0p6:
+		return v2_4_0p6.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_4_0p11:
+		return v2_4_0p11.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_4_0p14:
+		return v2_4_0p14.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_4_0p16:
+		return v2_4_0p16.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_4_0p17:
+		return v2_4_0p17.GetFieldDescription(schemaName, fieldName)
+	case BaselineV2_4_0p18:
+		return v2_4_0p18.GetFieldDescription(schemaName, fieldName)
+	}
+	return ""
+}
+
+// GetFieldType returns the OpenAPI type for a field in a schema for the given baseline.
+func GetFieldType(pkg BaselinePackage, schemaName, fieldName string) string {
+	switch pkg {
+	case BaselineV2_2_0p1:
+		return v2_2_0p1.GetFieldType(schemaName, fieldName)
+	case BaselineV2_2_0p3:
+		return v2_2_0p3.GetFieldType(schemaName, fieldName)
+	case BaselineV2_2_0p4:
+		return v2_2_0p4.GetFieldType(schemaName, fieldName)
+	case BaselineV2_2_0p5:
+		return v2_2_0p5.GetFieldType(schemaName, fieldName)
+	case BaselineV2_2_0p8:
+		return v2_2_0p8.GetFieldType(schemaName, fieldName)
+	case BaselineV2_2_0p9:
+		return v2_2_0p9.GetFieldType(schemaName, fieldName)
+	case BaselineV2_2_0p11:
+		return v2_2_0p11.GetFieldType(schemaName, fieldName)
+	case BaselineV2_2_0p12:
+		return v2_2_0p12.GetFieldType(schemaName, fieldName)
+	case BaselineV2_2_0p14:
+		return v2_2_0p14.GetFieldType(schemaName, fieldName)
+	case BaselineV2_2_0p18:
+		return v2_2_0p18.GetFieldType(schemaName, fieldName)
+	case BaselineV2_2_0p21:
+		return v2_2_0p21.GetFieldType(schemaName, fieldName)
+	case BaselineV2_2_0p22:
+		return v2_2_0p22.GetFieldType(schemaName, fieldName)
+	case BaselineV2_2_0p23:
+		return v2_2_0p23.GetFieldType(schemaName, fieldName)
+	case BaselineV2_2_0p26:
+		return v2_2_0p26.GetFieldType(schemaName, fieldName)
+	case BaselineV2_2_0p32:
+		return v2_2_0p32.GetFieldType(schemaName, fieldName)
+	case BaselineV2_2_0p33:
+		return v2_2_0p33.GetFieldType(schemaName, fieldName)
+	case BaselineV2_2_0p43:
+		return v2_2_0p43.GetFieldType(schemaName, fieldName)
+	case BaselineV2_2_0p44:
+		return v2_2_0p44.GetFieldType(schemaName, fieldName)
+	case BaselineV2_3_0p1:
+		return v2_3_0p1.GetFieldType(schemaName, fieldName)
+	case BaselineV2_3_0p3:
+		return v2_3_0p3.GetFieldType(schemaName, fieldName)
+	case BaselineV2_3_0p5:
+		return v2_3_0p5.GetFieldType(schemaName, fieldName)
+	case BaselineV2_3_0p7:
+		return v2_3_0p7.GetFieldType(schemaName, fieldName)
+	case BaselineV2_3_0p11:
+		return v2_3_0p11.GetFieldType(schemaName, fieldName)
+	case BaselineV2_3_0p14:
+		return v2_3_0p14.GetFieldType(schemaName, fieldName)
+	case BaselineV2_3_0p22:
+		return v2_3_0p22.GetFieldType(schemaName, fieldName)
+	case BaselineV2_3_0p23:
+		return v2_3_0p23.GetFieldType(schemaName, fieldName)
+	case BaselineV2_3_0p26:
+		return v2_3_0p26.GetFieldType(schemaName, fieldName)
+	case BaselineV2_3_0p27:
+		return v2_3_0p27.GetFieldType(schemaName, fieldName)
+	case BaselineV2_3_0p31:
+		return v2_3_0p31.GetFieldType(schemaName, fieldName)
+	case BaselineV2_3_0p33:
+		return v2_3_0p33.GetFieldType(schemaName, fieldName)
+	case BaselineV2_3_0p36:
+		return v2_3_0p36.GetFieldType(schemaName, fieldName)
+	case BaselineV2_3_0p37:
+		return v2_3_0p37.GetFieldType(schemaName, fieldName)
+	case BaselineV2_3_0p39:
+		return v2_3_0p39.GetFieldType(schemaName, fieldName)
+	case BaselineV2_3_0p40:
+		return v2_3_0p40.GetFieldType(schemaName, fieldName)
+	case BaselineV2_3_0p41:
+		return v2_3_0p41.GetFieldType(schemaName, fieldName)
+	case BaselineV2_4_0p1:
+		return v2_4_0p1.GetFieldType(schemaName, fieldName)
+	case BaselineV2_4_0p6:
+		return v2_4_0p6.GetFieldType(schemaName, fieldName)
+	case BaselineV2_4_0p11:
+		return v2_4_0p11.GetFieldType(schemaName, fieldName)
+	case BaselineV2_4_0p14:
+		return v2_4_0p14.GetFieldType(schemaName, fieldName)
+	case BaselineV2_4_0p16:
+		return v2_4_0p16.GetFieldType(schemaName, fieldName)
+	case BaselineV2_4_0p17:
+		return v2_4_0p17.GetFieldType(schemaName, fieldName)
+	case BaselineV2_4_0p18:
+		return v2_4_0p18.GetFieldType(schemaName, fieldName)
+	}
+	return ""
+}
+
+// IsReadOnlyField checks if a field is read-only for a given schema and baseline.
+func IsReadOnlyField(pkg BaselinePackage, schemaName, fieldName string) bool {
+	switch pkg {
+	case BaselineV2_2_0p1:
+		return v2_2_0p1.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_2_0p3:
+		return v2_2_0p3.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_2_0p4:
+		return v2_2_0p4.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_2_0p5:
+		return v2_2_0p5.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_2_0p8:
+		return v2_2_0p8.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_2_0p9:
+		return v2_2_0p9.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_2_0p11:
+		return v2_2_0p11.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_2_0p12:
+		return v2_2_0p12.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_2_0p14:
+		return v2_2_0p14.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_2_0p18:
+		return v2_2_0p18.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_2_0p21:
+		return v2_2_0p21.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_2_0p22:
+		return v2_2_0p22.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_2_0p23:
+		return v2_2_0p23.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_2_0p26:
+		return v2_2_0p26.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_2_0p32:
+		return v2_2_0p32.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_2_0p33:
+		return v2_2_0p33.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_2_0p43:
+		return v2_2_0p43.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_2_0p44:
+		return v2_2_0p44.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_3_0p1:
+		return v2_3_0p1.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_3_0p3:
+		return v2_3_0p3.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_3_0p5:
+		return v2_3_0p5.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_3_0p7:
+		return v2_3_0p7.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_3_0p11:
+		return v2_3_0p11.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_3_0p14:
+		return v2_3_0p14.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_3_0p22:
+		return v2_3_0p22.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_3_0p23:
+		return v2_3_0p23.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_3_0p26:
+		return v2_3_0p26.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_3_0p27:
+		return v2_3_0p27.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_3_0p31:
+		return v2_3_0p31.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_3_0p33:
+		return v2_3_0p33.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_3_0p36:
+		return v2_3_0p36.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_3_0p37:
+		return v2_3_0p37.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_3_0p39:
+		return v2_3_0p39.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_3_0p40:
+		return v2_3_0p40.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_3_0p41:
+		return v2_3_0p41.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_4_0p1:
+		return v2_4_0p1.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_4_0p6:
+		return v2_4_0p6.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_4_0p11:
+		return v2_4_0p11.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_4_0p14:
+		return v2_4_0p14.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_4_0p16:
+		return v2_4_0p16.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_4_0p17:
+		return v2_4_0p17.IsReadOnlyField(schemaName, fieldName)
+	case BaselineV2_4_0p18:
+		return v2_4_0p18.IsReadOnlyField(schemaName, fieldName)
+	}
+	return false
+}
+
+// IsRequiredField checks if a field is required for a given schema and baseline.
+func IsRequiredField(pkg BaselinePackage, schemaName, fieldName string) bool {
+	switch pkg {
+	case BaselineV2_2_0p1:
+		return v2_2_0p1.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_2_0p3:
+		return v2_2_0p3.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_2_0p4:
+		return v2_2_0p4.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_2_0p5:
+		return v2_2_0p5.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_2_0p8:
+		return v2_2_0p8.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_2_0p9:
+		return v2_2_0p9.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_2_0p11:
+		return v2_2_0p11.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_2_0p12:
+		return v2_2_0p12.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_2_0p14:
+		return v2_2_0p14.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_2_0p18:
+		return v2_2_0p18.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_2_0p21:
+		return v2_2_0p21.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_2_0p22:
+		return v2_2_0p22.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_2_0p23:
+		return v2_2_0p23.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_2_0p26:
+		return v2_2_0p26.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_2_0p32:
+		return v2_2_0p32.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_2_0p33:
+		return v2_2_0p33.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_2_0p43:
+		return v2_2_0p43.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_2_0p44:
+		return v2_2_0p44.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_3_0p1:
+		return v2_3_0p1.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_3_0p3:
+		return v2_3_0p3.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_3_0p5:
+		return v2_3_0p5.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_3_0p7:
+		return v2_3_0p7.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_3_0p11:
+		return v2_3_0p11.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_3_0p14:
+		return v2_3_0p14.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_3_0p22:
+		return v2_3_0p22.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_3_0p23:
+		return v2_3_0p23.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_3_0p26:
+		return v2_3_0p26.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_3_0p27:
+		return v2_3_0p27.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_3_0p31:
+		return v2_3_0p31.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_3_0p33:
+		return v2_3_0p33.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_3_0p36:
+		return v2_3_0p36.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_3_0p37:
+		return v2_3_0p37.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_3_0p39:
+		return v2_3_0p39.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_3_0p40:
+		return v2_3_0p40.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_3_0p41:
+		return v2_3_0p41.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_4_0p1:
+		return v2_4_0p1.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_4_0p6:
+		return v2_4_0p6.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_4_0p11:
+		return v2_4_0p11.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_4_0p14:
+		return v2_4_0p14.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_4_0p16:
+		return v2_4_0p16.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_4_0p17:
+		return v2_4_0p17.IsRequiredField(schemaName, fieldName)
+	case BaselineV2_4_0p18:
+		return v2_4_0p18.IsRequiredField(schemaName, fieldName)
+	}
+	return false
+}
+
+// HostCreateAttributeCompareKeyFields returns compare key fields for HostCreateAttribute.
+func HostCreateAttributeCompareKeyFields(pkg BaselinePackage) []string {
+	switch pkg {
+	case BaselineV2_2_0p1:
+		return v2_2_0p1.HostCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p3:
+		return v2_2_0p3.HostCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p4:
+		return v2_2_0p4.HostCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p5:
+		return v2_2_0p5.HostCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p8:
+		return v2_2_0p8.HostCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p9:
+		return v2_2_0p9.HostCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p11:
+		return v2_2_0p11.HostCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p12:
+		return v2_2_0p12.HostCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p14:
+		return v2_2_0p14.HostCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p18:
+		return v2_2_0p18.HostCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p21:
+		return v2_2_0p21.HostCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p22:
+		return v2_2_0p22.HostCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p23:
+		return v2_2_0p23.HostCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p26:
+		return v2_2_0p26.HostCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p32:
+		return v2_2_0p32.HostCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p33:
+		return v2_2_0p33.HostCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p43:
+		return v2_2_0p43.HostCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p44:
+		return v2_2_0p44.HostCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p1:
+		return v2_3_0p1.HostCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p3:
+		return v2_3_0p3.HostCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p5:
+		return v2_3_0p5.HostCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p7:
+		return v2_3_0p7.HostCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p11:
+		return v2_3_0p11.HostCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p14:
+		return v2_3_0p14.HostCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p22:
+		return v2_3_0p22.HostCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p23:
+		return v2_3_0p23.HostCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p26:
+		return v2_3_0p26.HostCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p27:
+		return v2_3_0p27.HostCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p31:
+		return v2_3_0p31.HostCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p33:
+		return v2_3_0p33.HostCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p36:
+		return v2_3_0p36.HostCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p37:
+		return v2_3_0p37.HostCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p39:
+		return v2_3_0p39.HostCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p40:
+		return v2_3_0p40.HostCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p41:
+		return v2_3_0p41.HostCreateAttributeCompareKeyFields
+	case BaselineV2_4_0p1:
+		return v2_4_0p1.HostCreateAttributeCompareKeyFields
+	case BaselineV2_4_0p6:
+		return v2_4_0p6.HostCreateAttributeCompareKeyFields
+	case BaselineV2_4_0p11:
+		return v2_4_0p11.HostCreateAttributeCompareKeyFields
+	case BaselineV2_4_0p14:
+		return v2_4_0p14.HostCreateAttributeCompareKeyFields
+	case BaselineV2_4_0p16:
+		return v2_4_0p16.HostCreateAttributeCompareKeyFields
+	case BaselineV2_4_0p17:
+		return v2_4_0p17.HostCreateAttributeCompareKeyFields
+	case BaselineV2_4_0p18:
+		return v2_4_0p18.HostCreateAttributeCompareKeyFields
+	}
+	return nil
+}
+
+// FolderCreateAttributeCompareKeyFields returns compare key fields for FolderCreateAttribute.
+func FolderCreateAttributeCompareKeyFields(pkg BaselinePackage) []string {
+	switch pkg {
+	case BaselineV2_2_0p1:
+		return v2_2_0p1.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p3:
+		return v2_2_0p3.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p4:
+		return v2_2_0p4.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p5:
+		return v2_2_0p5.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p8:
+		return v2_2_0p8.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p9:
+		return v2_2_0p9.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p11:
+		return v2_2_0p11.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p12:
+		return v2_2_0p12.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p14:
+		return v2_2_0p14.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p18:
+		return v2_2_0p18.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p21:
+		return v2_2_0p21.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p22:
+		return v2_2_0p22.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p23:
+		return v2_2_0p23.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p26:
+		return v2_2_0p26.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p32:
+		return v2_2_0p32.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p33:
+		return v2_2_0p33.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p43:
+		return v2_2_0p43.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_2_0p44:
+		return v2_2_0p44.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p1:
+		return v2_3_0p1.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p3:
+		return v2_3_0p3.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p5:
+		return v2_3_0p5.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p7:
+		return v2_3_0p7.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p11:
+		return v2_3_0p11.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p14:
+		return v2_3_0p14.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p22:
+		return v2_3_0p22.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p23:
+		return v2_3_0p23.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p26:
+		return v2_3_0p26.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p27:
+		return v2_3_0p27.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p31:
+		return v2_3_0p31.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p33:
+		return v2_3_0p33.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p36:
+		return v2_3_0p36.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p37:
+		return v2_3_0p37.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p39:
+		return v2_3_0p39.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p40:
+		return v2_3_0p40.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_3_0p41:
+		return v2_3_0p41.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_4_0p1:
+		return v2_4_0p1.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_4_0p6:
+		return v2_4_0p6.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_4_0p11:
+		return v2_4_0p11.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_4_0p14:
+		return v2_4_0p14.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_4_0p16:
+		return v2_4_0p16.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_4_0p17:
+		return v2_4_0p17.FolderCreateAttributeCompareKeyFields
+	case BaselineV2_4_0p18:
+		return v2_4_0p18.FolderCreateAttributeCompareKeyFields
+	}
+	return nil
+}
+
+// Request Builders
+
+// BuildCreateHostFromMap creates a typed CreateHost request from a map.
+func BuildCreateHostFromMap(pkg BaselinePackage, data map[string]interface{}) (interface{}, error) {
+	switch pkg {
+	case BaselineV2_2_0p1:
+		return v2_2_0p1.BuildCreateHostFromMap(data)
+	case BaselineV2_2_0p3:
+		return v2_2_0p3.BuildCreateHostFromMap(data)
+	case BaselineV2_2_0p4:
+		return v2_2_0p4.BuildCreateHostFromMap(data)
+	case BaselineV2_2_0p5:
+		return v2_2_0p5.BuildCreateHostFromMap(data)
+	case BaselineV2_2_0p8:
+		return v2_2_0p8.BuildCreateHostFromMap(data)
+	case BaselineV2_2_0p9:
+		return v2_2_0p9.BuildCreateHostFromMap(data)
+	case BaselineV2_2_0p11:
+		return v2_2_0p11.BuildCreateHostFromMap(data)
+	case BaselineV2_2_0p12:
+		return v2_2_0p12.BuildCreateHostFromMap(data)
+	case BaselineV2_2_0p14:
+		return v2_2_0p14.BuildCreateHostFromMap(data)
+	case BaselineV2_2_0p18:
+		return v2_2_0p18.BuildCreateHostFromMap(data)
+	case BaselineV2_2_0p21:
+		return v2_2_0p21.BuildCreateHostFromMap(data)
+	case BaselineV2_2_0p22:
+		return v2_2_0p22.BuildCreateHostFromMap(data)
+	case BaselineV2_2_0p23:
+		return v2_2_0p23.BuildCreateHostFromMap(data)
+	case BaselineV2_2_0p26:
+		return v2_2_0p26.BuildCreateHostFromMap(data)
+	case BaselineV2_2_0p32:
+		return v2_2_0p32.BuildCreateHostFromMap(data)
+	case BaselineV2_2_0p33:
+		return v2_2_0p33.BuildCreateHostFromMap(data)
+	case BaselineV2_2_0p43:
+		return v2_2_0p43.BuildCreateHostFromMap(data)
+	case BaselineV2_2_0p44:
+		return v2_2_0p44.BuildCreateHostFromMap(data)
+	case BaselineV2_3_0p1:
+		return v2_3_0p1.BuildCreateHostFromMap(data)
+	case BaselineV2_3_0p3:
+		return v2_3_0p3.BuildCreateHostFromMap(data)
+	case BaselineV2_3_0p5:
+		return v2_3_0p5.BuildCreateHostFromMap(data)
+	case BaselineV2_3_0p7:
+		return v2_3_0p7.BuildCreateHostFromMap(data)
+	case BaselineV2_3_0p11:
+		return v2_3_0p11.BuildCreateHostFromMap(data)
+	case BaselineV2_3_0p14:
+		return v2_3_0p14.BuildCreateHostFromMap(data)
+	case BaselineV2_3_0p22:
+		return v2_3_0p22.BuildCreateHostFromMap(data)
+	case BaselineV2_3_0p23:
+		return v2_3_0p23.BuildCreateHostFromMap(data)
+	case BaselineV2_3_0p26:
+		return v2_3_0p26.BuildCreateHostFromMap(data)
+	case BaselineV2_3_0p27:
+		return v2_3_0p27.BuildCreateHostFromMap(data)
+	case BaselineV2_3_0p31:
+		return v2_3_0p31.BuildCreateHostFromMap(data)
+	case BaselineV2_3_0p33:
+		return v2_3_0p33.BuildCreateHostFromMap(data)
+	case BaselineV2_3_0p36:
+		return v2_3_0p36.BuildCreateHostFromMap(data)
+	case BaselineV2_3_0p37:
+		return v2_3_0p37.BuildCreateHostFromMap(data)
+	case BaselineV2_3_0p39:
+		return v2_3_0p39.BuildCreateHostFromMap(data)
+	case BaselineV2_3_0p40:
+		return v2_3_0p40.BuildCreateHostFromMap(data)
+	case BaselineV2_3_0p41:
+		return v2_3_0p41.BuildCreateHostFromMap(data)
+	case BaselineV2_4_0p1:
+		return v2_4_0p1.BuildCreateHostFromMap(data)
+	case BaselineV2_4_0p6:
+		return v2_4_0p6.BuildCreateHostFromMap(data)
+	case BaselineV2_4_0p11:
+		return v2_4_0p11.BuildCreateHostFromMap(data)
+	case BaselineV2_4_0p14:
+		return v2_4_0p14.BuildCreateHostFromMap(data)
+	case BaselineV2_4_0p16:
+		return v2_4_0p16.BuildCreateHostFromMap(data)
+	case BaselineV2_4_0p17:
+		return v2_4_0p17.BuildCreateHostFromMap(data)
+	case BaselineV2_4_0p18:
+		return v2_4_0p18.BuildCreateHostFromMap(data)
+	}
+	return nil, nil
+}
+
+// BuildCreateFolderFromMap creates a typed CreateFolder request from a map.
+func BuildCreateFolderFromMap(pkg BaselinePackage, data map[string]interface{}) (interface{}, error) {
+	switch pkg {
+	case BaselineV2_2_0p1:
+		return v2_2_0p1.BuildCreateFolderFromMap(data)
+	case BaselineV2_2_0p3:
+		return v2_2_0p3.BuildCreateFolderFromMap(data)
+	case BaselineV2_2_0p4:
+		return v2_2_0p4.BuildCreateFolderFromMap(data)
+	case BaselineV2_2_0p5:
+		return v2_2_0p5.BuildCreateFolderFromMap(data)
+	case BaselineV2_2_0p8:
+		return v2_2_0p8.BuildCreateFolderFromMap(data)
+	case BaselineV2_2_0p9:
+		return v2_2_0p9.BuildCreateFolderFromMap(data)
+	case BaselineV2_2_0p11:
+		return v2_2_0p11.BuildCreateFolderFromMap(data)
+	case BaselineV2_2_0p12:
+		return v2_2_0p12.BuildCreateFolderFromMap(data)
+	case BaselineV2_2_0p14:
+		return v2_2_0p14.BuildCreateFolderFromMap(data)
+	case BaselineV2_2_0p18:
+		return v2_2_0p18.BuildCreateFolderFromMap(data)
+	case BaselineV2_2_0p21:
+		return v2_2_0p21.BuildCreateFolderFromMap(data)
+	case BaselineV2_2_0p22:
+		return v2_2_0p22.BuildCreateFolderFromMap(data)
+	case BaselineV2_2_0p23:
+		return v2_2_0p23.BuildCreateFolderFromMap(data)
+	case BaselineV2_2_0p26:
+		return v2_2_0p26.BuildCreateFolderFromMap(data)
+	case BaselineV2_2_0p32:
+		return v2_2_0p32.BuildCreateFolderFromMap(data)
+	case BaselineV2_2_0p33:
+		return v2_2_0p33.BuildCreateFolderFromMap(data)
+	case BaselineV2_2_0p43:
+		return v2_2_0p43.BuildCreateFolderFromMap(data)
+	case BaselineV2_2_0p44:
+		return v2_2_0p44.BuildCreateFolderFromMap(data)
+	case BaselineV2_3_0p1:
+		return v2_3_0p1.BuildCreateFolderFromMap(data)
+	case BaselineV2_3_0p3:
+		return v2_3_0p3.BuildCreateFolderFromMap(data)
+	case BaselineV2_3_0p5:
+		return v2_3_0p5.BuildCreateFolderFromMap(data)
+	case BaselineV2_3_0p7:
+		return v2_3_0p7.BuildCreateFolderFromMap(data)
+	case BaselineV2_3_0p11:
+		return v2_3_0p11.BuildCreateFolderFromMap(data)
+	case BaselineV2_3_0p14:
+		return v2_3_0p14.BuildCreateFolderFromMap(data)
+	case BaselineV2_3_0p22:
+		return v2_3_0p22.BuildCreateFolderFromMap(data)
+	case BaselineV2_3_0p23:
+		return v2_3_0p23.BuildCreateFolderFromMap(data)
+	case BaselineV2_3_0p26:
+		return v2_3_0p26.BuildCreateFolderFromMap(data)
+	case BaselineV2_3_0p27:
+		return v2_3_0p27.BuildCreateFolderFromMap(data)
+	case BaselineV2_3_0p31:
+		return v2_3_0p31.BuildCreateFolderFromMap(data)
+	case BaselineV2_3_0p33:
+		return v2_3_0p33.BuildCreateFolderFromMap(data)
+	case BaselineV2_3_0p36:
+		return v2_3_0p36.BuildCreateFolderFromMap(data)
+	case BaselineV2_3_0p37:
+		return v2_3_0p37.BuildCreateFolderFromMap(data)
+	case BaselineV2_3_0p39:
+		return v2_3_0p39.BuildCreateFolderFromMap(data)
+	case BaselineV2_3_0p40:
+		return v2_3_0p40.BuildCreateFolderFromMap(data)
+	case BaselineV2_3_0p41:
+		return v2_3_0p41.BuildCreateFolderFromMap(data)
+	case BaselineV2_4_0p1:
+		return v2_4_0p1.BuildCreateFolderFromMap(data)
+	case BaselineV2_4_0p6:
+		return v2_4_0p6.BuildCreateFolderFromMap(data)
+	case BaselineV2_4_0p11:
+		return v2_4_0p11.BuildCreateFolderFromMap(data)
+	case BaselineV2_4_0p14:
+		return v2_4_0p14.BuildCreateFolderFromMap(data)
+	case BaselineV2_4_0p16:
+		return v2_4_0p16.BuildCreateFolderFromMap(data)
+	case BaselineV2_4_0p17:
+		return v2_4_0p17.BuildCreateFolderFromMap(data)
+	case BaselineV2_4_0p18:
+		return v2_4_0p18.BuildCreateFolderFromMap(data)
+	}
+	return nil, nil
+}
+
+// Response Parsers
+
+// ParseHostConfigFromMap parses a map into a typed HostConfig response.
+func ParseHostConfigFromMap(pkg BaselinePackage, data map[string]interface{}) (interface{}, error) {
+	switch pkg {
+	case BaselineV2_2_0p1:
+		return v2_2_0p1.ParseHostConfigFromMap(data)
+	case BaselineV2_2_0p3:
+		return v2_2_0p3.ParseHostConfigFromMap(data)
+	case BaselineV2_2_0p4:
+		return v2_2_0p4.ParseHostConfigFromMap(data)
+	case BaselineV2_2_0p5:
+		return v2_2_0p5.ParseHostConfigFromMap(data)
+	case BaselineV2_2_0p8:
+		return v2_2_0p8.ParseHostConfigFromMap(data)
+	case BaselineV2_2_0p9:
+		return v2_2_0p9.ParseHostConfigFromMap(data)
+	case BaselineV2_2_0p11:
+		return v2_2_0p11.ParseHostConfigFromMap(data)
+	case BaselineV2_2_0p12:
+		return v2_2_0p12.ParseHostConfigFromMap(data)
+	case BaselineV2_2_0p14:
+		return v2_2_0p14.ParseHostConfigFromMap(data)
+	case BaselineV2_2_0p18:
+		return v2_2_0p18.ParseHostConfigFromMap(data)
+	case BaselineV2_2_0p21:
+		return v2_2_0p21.ParseHostConfigFromMap(data)
+	case BaselineV2_2_0p22:
+		return v2_2_0p22.ParseHostConfigFromMap(data)
+	case BaselineV2_2_0p23:
+		return v2_2_0p23.ParseHostConfigFromMap(data)
+	case BaselineV2_2_0p26:
+		return v2_2_0p26.ParseHostConfigFromMap(data)
+	case BaselineV2_2_0p32:
+		return v2_2_0p32.ParseHostConfigFromMap(data)
+	case BaselineV2_2_0p33:
+		return v2_2_0p33.ParseHostConfigFromMap(data)
+	case BaselineV2_2_0p43:
+		return v2_2_0p43.ParseHostConfigFromMap(data)
+	case BaselineV2_2_0p44:
+		return v2_2_0p44.ParseHostConfigFromMap(data)
+	case BaselineV2_3_0p1:
+		return v2_3_0p1.ParseHostConfigFromMap(data)
+	case BaselineV2_3_0p3:
+		return v2_3_0p3.ParseHostConfigFromMap(data)
+	case BaselineV2_3_0p5:
+		return v2_3_0p5.ParseHostConfigFromMap(data)
+	case BaselineV2_3_0p7:
+		return v2_3_0p7.ParseHostConfigFromMap(data)
+	case BaselineV2_3_0p11:
+		return v2_3_0p11.ParseHostConfigFromMap(data)
+	case BaselineV2_3_0p14:
+		return v2_3_0p14.ParseHostConfigFromMap(data)
+	case BaselineV2_3_0p22:
+		return v2_3_0p22.ParseHostConfigFromMap(data)
+	case BaselineV2_3_0p23:
+		return v2_3_0p23.ParseHostConfigFromMap(data)
+	case BaselineV2_3_0p26:
+		return v2_3_0p26.ParseHostConfigFromMap(data)
+	case BaselineV2_3_0p27:
+		return v2_3_0p27.ParseHostConfigFromMap(data)
+	case BaselineV2_3_0p31:
+		return v2_3_0p31.ParseHostConfigFromMap(data)
+	case BaselineV2_3_0p33:
+		return v2_3_0p33.ParseHostConfigFromMap(data)
+	case BaselineV2_3_0p36:
+		return v2_3_0p36.ParseHostConfigFromMap(data)
+	case BaselineV2_3_0p37:
+		return v2_3_0p37.ParseHostConfigFromMap(data)
+	case BaselineV2_3_0p39:
+		return v2_3_0p39.ParseHostConfigFromMap(data)
+	case BaselineV2_3_0p40:
+		return v2_3_0p40.ParseHostConfigFromMap(data)
+	case BaselineV2_3_0p41:
+		return v2_3_0p41.ParseHostConfigFromMap(data)
+	case BaselineV2_4_0p1:
+		return v2_4_0p1.ParseHostConfigFromMap(data)
+	case BaselineV2_4_0p6:
+		return v2_4_0p6.ParseHostConfigFromMap(data)
+	case BaselineV2_4_0p11:
+		return v2_4_0p11.ParseHostConfigFromMap(data)
+	case BaselineV2_4_0p14:
+		return v2_4_0p14.ParseHostConfigFromMap(data)
+	case BaselineV2_4_0p16:
+		return v2_4_0p16.ParseHostConfigFromMap(data)
+	case BaselineV2_4_0p17:
+		return v2_4_0p17.ParseHostConfigFromMap(data)
+	case BaselineV2_4_0p18:
+		return v2_4_0p18.ParseHostConfigFromMap(data)
+	}
+	return nil, nil
+}
+
+// ParseFolderFromMap parses a map into a typed Folder response.
+func ParseFolderFromMap(pkg BaselinePackage, data map[string]interface{}) (interface{}, error) {
+	switch pkg {
+	case BaselineV2_2_0p1:
+		return v2_2_0p1.ParseFolderFromMap(data)
+	case BaselineV2_2_0p3:
+		return v2_2_0p3.ParseFolderFromMap(data)
+	case BaselineV2_2_0p4:
+		return v2_2_0p4.ParseFolderFromMap(data)
+	case BaselineV2_2_0p5:
+		return v2_2_0p5.ParseFolderFromMap(data)
+	case BaselineV2_2_0p8:
+		return v2_2_0p8.ParseFolderFromMap(data)
+	case BaselineV2_2_0p9:
+		return v2_2_0p9.ParseFolderFromMap(data)
+	case BaselineV2_2_0p11:
+		return v2_2_0p11.ParseFolderFromMap(data)
+	case BaselineV2_2_0p12:
+		return v2_2_0p12.ParseFolderFromMap(data)
+	case BaselineV2_2_0p14:
+		return v2_2_0p14.ParseFolderFromMap(data)
+	case BaselineV2_2_0p18:
+		return v2_2_0p18.ParseFolderFromMap(data)
+	case BaselineV2_2_0p21:
+		return v2_2_0p21.ParseFolderFromMap(data)
+	case BaselineV2_2_0p22:
+		return v2_2_0p22.ParseFolderFromMap(data)
+	case BaselineV2_2_0p23:
+		return v2_2_0p23.ParseFolderFromMap(data)
+	case BaselineV2_2_0p26:
+		return v2_2_0p26.ParseFolderFromMap(data)
+	case BaselineV2_2_0p32:
+		return v2_2_0p32.ParseFolderFromMap(data)
+	case BaselineV2_2_0p33:
+		return v2_2_0p33.ParseFolderFromMap(data)
+	case BaselineV2_2_0p43:
+		return v2_2_0p43.ParseFolderFromMap(data)
+	case BaselineV2_2_0p44:
+		return v2_2_0p44.ParseFolderFromMap(data)
+	case BaselineV2_3_0p1:
+		return v2_3_0p1.ParseFolderFromMap(data)
+	case BaselineV2_3_0p3:
+		return v2_3_0p3.ParseFolderFromMap(data)
+	case BaselineV2_3_0p5:
+		return v2_3_0p5.ParseFolderFromMap(data)
+	case BaselineV2_3_0p7:
+		return v2_3_0p7.ParseFolderFromMap(data)
+	case BaselineV2_3_0p11:
+		return v2_3_0p11.ParseFolderFromMap(data)
+	case BaselineV2_3_0p14:
+		return v2_3_0p14.ParseFolderFromMap(data)
+	case BaselineV2_3_0p22:
+		return v2_3_0p22.ParseFolderFromMap(data)
+	case BaselineV2_3_0p23:
+		return v2_3_0p23.ParseFolderFromMap(data)
+	case BaselineV2_3_0p26:
+		return v2_3_0p26.ParseFolderFromMap(data)
+	case BaselineV2_3_0p27:
+		return v2_3_0p27.ParseFolderFromMap(data)
+	case BaselineV2_3_0p31:
+		return v2_3_0p31.ParseFolderFromMap(data)
+	case BaselineV2_3_0p33:
+		return v2_3_0p33.ParseFolderFromMap(data)
+	case BaselineV2_3_0p36:
+		return v2_3_0p36.ParseFolderFromMap(data)
+	case BaselineV2_3_0p37:
+		return v2_3_0p37.ParseFolderFromMap(data)
+	case BaselineV2_3_0p39:
+		return v2_3_0p39.ParseFolderFromMap(data)
+	case BaselineV2_3_0p40:
+		return v2_3_0p40.ParseFolderFromMap(data)
+	case BaselineV2_3_0p41:
+		return v2_3_0p41.ParseFolderFromMap(data)
+	case BaselineV2_4_0p1:
+		return v2_4_0p1.ParseFolderFromMap(data)
+	case BaselineV2_4_0p6:
+		return v2_4_0p6.ParseFolderFromMap(data)
+	case BaselineV2_4_0p11:
+		return v2_4_0p11.ParseFolderFromMap(data)
+	case BaselineV2_4_0p14:
+		return v2_4_0p14.ParseFolderFromMap(data)
+	case BaselineV2_4_0p16:
+		return v2_4_0p16.ParseFolderFromMap(data)
+	case BaselineV2_4_0p17:
+		return v2_4_0p17.ParseFolderFromMap(data)
+	case BaselineV2_4_0p18:
+		return v2_4_0p18.ParseFolderFromMap(data)
+	}
+	return nil, nil
+}
+
+// Import State Mapping
+
+// ExtractHostConfigField extracts a Terraform field value from a HostConfig API response.
+func ExtractHostConfigField(pkg BaselinePackage, response map[string]interface{}, tfField string) interface{} {
+	switch pkg {
+	case BaselineV2_2_0p1:
+		return v2_2_0p1.ExtractHostConfigField(response, tfField)
+	case BaselineV2_2_0p3:
+		return v2_2_0p3.ExtractHostConfigField(response, tfField)
+	case BaselineV2_2_0p4:
+		return v2_2_0p4.ExtractHostConfigField(response, tfField)
+	case BaselineV2_2_0p5:
+		return v2_2_0p5.ExtractHostConfigField(response, tfField)
+	case BaselineV2_2_0p8:
+		return v2_2_0p8.ExtractHostConfigField(response, tfField)
+	case BaselineV2_2_0p9:
+		return v2_2_0p9.ExtractHostConfigField(response, tfField)
+	case BaselineV2_2_0p11:
+		return v2_2_0p11.ExtractHostConfigField(response, tfField)
+	case BaselineV2_2_0p12:
+		return v2_2_0p12.ExtractHostConfigField(response, tfField)
+	case BaselineV2_2_0p14:
+		return v2_2_0p14.ExtractHostConfigField(response, tfField)
+	case BaselineV2_2_0p18:
+		return v2_2_0p18.ExtractHostConfigField(response, tfField)
+	case BaselineV2_2_0p21:
+		return v2_2_0p21.ExtractHostConfigField(response, tfField)
+	case BaselineV2_2_0p22:
+		return v2_2_0p22.ExtractHostConfigField(response, tfField)
+	case BaselineV2_2_0p23:
+		return v2_2_0p23.ExtractHostConfigField(response, tfField)
+	case BaselineV2_2_0p26:
+		return v2_2_0p26.ExtractHostConfigField(response, tfField)
+	case BaselineV2_2_0p32:
+		return v2_2_0p32.ExtractHostConfigField(response, tfField)
+	case BaselineV2_2_0p33:
+		return v2_2_0p33.ExtractHostConfigField(response, tfField)
+	case BaselineV2_2_0p43:
+		return v2_2_0p43.ExtractHostConfigField(response, tfField)
+	case BaselineV2_2_0p44:
+		return v2_2_0p44.ExtractHostConfigField(response, tfField)
+	case BaselineV2_3_0p1:
+		return v2_3_0p1.ExtractHostConfigField(response, tfField)
+	case BaselineV2_3_0p3:
+		return v2_3_0p3.ExtractHostConfigField(response, tfField)
+	case BaselineV2_3_0p5:
+		return v2_3_0p5.ExtractHostConfigField(response, tfField)
+	case BaselineV2_3_0p7:
+		return v2_3_0p7.ExtractHostConfigField(response, tfField)
+	case BaselineV2_3_0p11:
+		return v2_3_0p11.ExtractHostConfigField(response, tfField)
+	case BaselineV2_3_0p14:
+		return v2_3_0p14.ExtractHostConfigField(response, tfField)
+	case BaselineV2_3_0p22:
+		return v2_3_0p22.ExtractHostConfigField(response, tfField)
+	case BaselineV2_3_0p23:
+		return v2_3_0p23.ExtractHostConfigField(response, tfField)
+	case BaselineV2_3_0p26:
+		return v2_3_0p26.ExtractHostConfigField(response, tfField)
+	case BaselineV2_3_0p27:
+		return v2_3_0p27.ExtractHostConfigField(response, tfField)
+	case BaselineV2_3_0p31:
+		return v2_3_0p31.ExtractHostConfigField(response, tfField)
+	case BaselineV2_3_0p33:
+		return v2_3_0p33.ExtractHostConfigField(response, tfField)
+	case BaselineV2_3_0p36:
+		return v2_3_0p36.ExtractHostConfigField(response, tfField)
+	case BaselineV2_3_0p37:
+		return v2_3_0p37.ExtractHostConfigField(response, tfField)
+	case BaselineV2_3_0p39:
+		return v2_3_0p39.ExtractHostConfigField(response, tfField)
+	case BaselineV2_3_0p40:
+		return v2_3_0p40.ExtractHostConfigField(response, tfField)
+	case BaselineV2_3_0p41:
+		return v2_3_0p41.ExtractHostConfigField(response, tfField)
+	case BaselineV2_4_0p1:
+		return v2_4_0p1.ExtractHostConfigField(response, tfField)
+	case BaselineV2_4_0p6:
+		return v2_4_0p6.ExtractHostConfigField(response, tfField)
+	case BaselineV2_4_0p11:
+		return v2_4_0p11.ExtractHostConfigField(response, tfField)
+	case BaselineV2_4_0p14:
+		return v2_4_0p14.ExtractHostConfigField(response, tfField)
+	case BaselineV2_4_0p16:
+		return v2_4_0p16.ExtractHostConfigField(response, tfField)
+	case BaselineV2_4_0p17:
+		return v2_4_0p17.ExtractHostConfigField(response, tfField)
+	case BaselineV2_4_0p18:
+		return v2_4_0p18.ExtractHostConfigField(response, tfField)
+	}
+	return nil
+}
+
+// ExtractFolderField extracts a Terraform field value from a Folder API response.
+func ExtractFolderField(pkg BaselinePackage, response map[string]interface{}, tfField string) interface{} {
+	switch pkg {
+	case BaselineV2_2_0p1:
+		return v2_2_0p1.ExtractFolderField(response, tfField)
+	case BaselineV2_2_0p3:
+		return v2_2_0p3.ExtractFolderField(response, tfField)
+	case BaselineV2_2_0p4:
+		return v2_2_0p4.ExtractFolderField(response, tfField)
+	case BaselineV2_2_0p5:
+		return v2_2_0p5.ExtractFolderField(response, tfField)
+	case BaselineV2_2_0p8:
+		return v2_2_0p8.ExtractFolderField(response, tfField)
+	case BaselineV2_2_0p9:
+		return v2_2_0p9.ExtractFolderField(response, tfField)
+	case BaselineV2_2_0p11:
+		return v2_2_0p11.ExtractFolderField(response, tfField)
+	case BaselineV2_2_0p12:
+		return v2_2_0p12.ExtractFolderField(response, tfField)
+	case BaselineV2_2_0p14:
+		return v2_2_0p14.ExtractFolderField(response, tfField)
+	case BaselineV2_2_0p18:
+		return v2_2_0p18.ExtractFolderField(response, tfField)
+	case BaselineV2_2_0p21:
+		return v2_2_0p21.ExtractFolderField(response, tfField)
+	case BaselineV2_2_0p22:
+		return v2_2_0p22.ExtractFolderField(response, tfField)
+	case BaselineV2_2_0p23:
+		return v2_2_0p23.ExtractFolderField(response, tfField)
+	case BaselineV2_2_0p26:
+		return v2_2_0p26.ExtractFolderField(response, tfField)
+	case BaselineV2_2_0p32:
+		return v2_2_0p32.ExtractFolderField(response, tfField)
+	case BaselineV2_2_0p33:
+		return v2_2_0p33.ExtractFolderField(response, tfField)
+	case BaselineV2_2_0p43:
+		return v2_2_0p43.ExtractFolderField(response, tfField)
+	case BaselineV2_2_0p44:
+		return v2_2_0p44.ExtractFolderField(response, tfField)
+	case BaselineV2_3_0p1:
+		return v2_3_0p1.ExtractFolderField(response, tfField)
+	case BaselineV2_3_0p3:
+		return v2_3_0p3.ExtractFolderField(response, tfField)
+	case BaselineV2_3_0p5:
+		return v2_3_0p5.ExtractFolderField(response, tfField)
+	case BaselineV2_3_0p7:
+		return v2_3_0p7.ExtractFolderField(response, tfField)
+	case BaselineV2_3_0p11:
+		return v2_3_0p11.ExtractFolderField(response, tfField)
+	case BaselineV2_3_0p14:
+		return v2_3_0p14.ExtractFolderField(response, tfField)
+	case BaselineV2_3_0p22:
+		return v2_3_0p22.ExtractFolderField(response, tfField)
+	case BaselineV2_3_0p23:
+		return v2_3_0p23.ExtractFolderField(response, tfField)
+	case BaselineV2_3_0p26:
+		return v2_3_0p26.ExtractFolderField(response, tfField)
+	case BaselineV2_3_0p27:
+		return v2_3_0p27.ExtractFolderField(response, tfField)
+	case BaselineV2_3_0p31:
+		return v2_3_0p31.ExtractFolderField(response, tfField)
+	case BaselineV2_3_0p33:
+		return v2_3_0p33.ExtractFolderField(response, tfField)
+	case BaselineV2_3_0p36:
+		return v2_3_0p36.ExtractFolderField(response, tfField)
+	case BaselineV2_3_0p37:
+		return v2_3_0p37.ExtractFolderField(response, tfField)
+	case BaselineV2_3_0p39:
+		return v2_3_0p39.ExtractFolderField(response, tfField)
+	case BaselineV2_3_0p40:
+		return v2_3_0p40.ExtractFolderField(response, tfField)
+	case BaselineV2_3_0p41:
+		return v2_3_0p41.ExtractFolderField(response, tfField)
+	case BaselineV2_4_0p1:
+		return v2_4_0p1.ExtractFolderField(response, tfField)
+	case BaselineV2_4_0p6:
+		return v2_4_0p6.ExtractFolderField(response, tfField)
+	case BaselineV2_4_0p11:
+		return v2_4_0p11.ExtractFolderField(response, tfField)
+	case BaselineV2_4_0p14:
+		return v2_4_0p14.ExtractFolderField(response, tfField)
+	case BaselineV2_4_0p16:
+		return v2_4_0p16.ExtractFolderField(response, tfField)
+	case BaselineV2_4_0p17:
+		return v2_4_0p17.ExtractFolderField(response, tfField)
+	case BaselineV2_4_0p18:
+		return v2_4_0p18.ExtractFolderField(response, tfField)
+	}
+	return nil
+}
+
+// HostConfigFieldMappings returns the field mappings for HostConfig.
+func HostConfigFieldMappings(pkg BaselinePackage) map[string][]string {
+	switch pkg {
+	case BaselineV2_2_0p1:
+		return v2_2_0p1.HostConfigFieldMappings
+	case BaselineV2_2_0p3:
+		return v2_2_0p3.HostConfigFieldMappings
+	case BaselineV2_2_0p4:
+		return v2_2_0p4.HostConfigFieldMappings
+	case BaselineV2_2_0p5:
+		return v2_2_0p5.HostConfigFieldMappings
+	case BaselineV2_2_0p8:
+		return v2_2_0p8.HostConfigFieldMappings
+	case BaselineV2_2_0p9:
+		return v2_2_0p9.HostConfigFieldMappings
+	case BaselineV2_2_0p11:
+		return v2_2_0p11.HostConfigFieldMappings
+	case BaselineV2_2_0p12:
+		return v2_2_0p12.HostConfigFieldMappings
+	case BaselineV2_2_0p14:
+		return v2_2_0p14.HostConfigFieldMappings
+	case BaselineV2_2_0p18:
+		return v2_2_0p18.HostConfigFieldMappings
+	case BaselineV2_2_0p21:
+		return v2_2_0p21.HostConfigFieldMappings
+	case BaselineV2_2_0p22:
+		return v2_2_0p22.HostConfigFieldMappings
+	case BaselineV2_2_0p23:
+		return v2_2_0p23.HostConfigFieldMappings
+	case BaselineV2_2_0p26:
+		return v2_2_0p26.HostConfigFieldMappings
+	case BaselineV2_2_0p32:
+		return v2_2_0p32.HostConfigFieldMappings
+	case BaselineV2_2_0p33:
+		return v2_2_0p33.HostConfigFieldMappings
+	case BaselineV2_2_0p43:
+		return v2_2_0p43.HostConfigFieldMappings
+	case BaselineV2_2_0p44:
+		return v2_2_0p44.HostConfigFieldMappings
+	case BaselineV2_3_0p1:
+		return v2_3_0p1.HostConfigFieldMappings
+	case BaselineV2_3_0p3:
+		return v2_3_0p3.HostConfigFieldMappings
+	case BaselineV2_3_0p5:
+		return v2_3_0p5.HostConfigFieldMappings
+	case BaselineV2_3_0p7:
+		return v2_3_0p7.HostConfigFieldMappings
+	case BaselineV2_3_0p11:
+		return v2_3_0p11.HostConfigFieldMappings
+	case BaselineV2_3_0p14:
+		return v2_3_0p14.HostConfigFieldMappings
+	case BaselineV2_3_0p22:
+		return v2_3_0p22.HostConfigFieldMappings
+	case BaselineV2_3_0p23:
+		return v2_3_0p23.HostConfigFieldMappings
+	case BaselineV2_3_0p26:
+		return v2_3_0p26.HostConfigFieldMappings
+	case BaselineV2_3_0p27:
+		return v2_3_0p27.HostConfigFieldMappings
+	case BaselineV2_3_0p31:
+		return v2_3_0p31.HostConfigFieldMappings
+	case BaselineV2_3_0p33:
+		return v2_3_0p33.HostConfigFieldMappings
+	case BaselineV2_3_0p36:
+		return v2_3_0p36.HostConfigFieldMappings
+	case BaselineV2_3_0p37:
+		return v2_3_0p37.HostConfigFieldMappings
+	case BaselineV2_3_0p39:
+		return v2_3_0p39.HostConfigFieldMappings
+	case BaselineV2_3_0p40:
+		return v2_3_0p40.HostConfigFieldMappings
+	case BaselineV2_3_0p41:
+		return v2_3_0p41.HostConfigFieldMappings
+	case BaselineV2_4_0p1:
+		return v2_4_0p1.HostConfigFieldMappings
+	case BaselineV2_4_0p6:
+		return v2_4_0p6.HostConfigFieldMappings
+	case BaselineV2_4_0p11:
+		return v2_4_0p11.HostConfigFieldMappings
+	case BaselineV2_4_0p14:
+		return v2_4_0p14.HostConfigFieldMappings
+	case BaselineV2_4_0p16:
+		return v2_4_0p16.HostConfigFieldMappings
+	case BaselineV2_4_0p17:
+		return v2_4_0p17.HostConfigFieldMappings
+	case BaselineV2_4_0p18:
+		return v2_4_0p18.HostConfigFieldMappings
+	}
+	return nil
+}
+
+// FolderFieldMappings returns the field mappings for Folder.
+func FolderFieldMappings(pkg BaselinePackage) map[string][]string {
+	switch pkg {
+	case BaselineV2_2_0p1:
+		return v2_2_0p1.FolderFieldMappings
+	case BaselineV2_2_0p3:
+		return v2_2_0p3.FolderFieldMappings
+	case BaselineV2_2_0p4:
+		return v2_2_0p4.FolderFieldMappings
+	case BaselineV2_2_0p5:
+		return v2_2_0p5.FolderFieldMappings
+	case BaselineV2_2_0p8:
+		return v2_2_0p8.FolderFieldMappings
+	case BaselineV2_2_0p9:
+		return v2_2_0p9.FolderFieldMappings
+	case BaselineV2_2_0p11:
+		return v2_2_0p11.FolderFieldMappings
+	case BaselineV2_2_0p12:
+		return v2_2_0p12.FolderFieldMappings
+	case BaselineV2_2_0p14:
+		return v2_2_0p14.FolderFieldMappings
+	case BaselineV2_2_0p18:
+		return v2_2_0p18.FolderFieldMappings
+	case BaselineV2_2_0p21:
+		return v2_2_0p21.FolderFieldMappings
+	case BaselineV2_2_0p22:
+		return v2_2_0p22.FolderFieldMappings
+	case BaselineV2_2_0p23:
+		return v2_2_0p23.FolderFieldMappings
+	case BaselineV2_2_0p26:
+		return v2_2_0p26.FolderFieldMappings
+	case BaselineV2_2_0p32:
+		return v2_2_0p32.FolderFieldMappings
+	case BaselineV2_2_0p33:
+		return v2_2_0p33.FolderFieldMappings
+	case BaselineV2_2_0p43:
+		return v2_2_0p43.FolderFieldMappings
+	case BaselineV2_2_0p44:
+		return v2_2_0p44.FolderFieldMappings
+	case BaselineV2_3_0p1:
+		return v2_3_0p1.FolderFieldMappings
+	case BaselineV2_3_0p3:
+		return v2_3_0p3.FolderFieldMappings
+	case BaselineV2_3_0p5:
+		return v2_3_0p5.FolderFieldMappings
+	case BaselineV2_3_0p7:
+		return v2_3_0p7.FolderFieldMappings
+	case BaselineV2_3_0p11:
+		return v2_3_0p11.FolderFieldMappings
+	case BaselineV2_3_0p14:
+		return v2_3_0p14.FolderFieldMappings
+	case BaselineV2_3_0p22:
+		return v2_3_0p22.FolderFieldMappings
+	case BaselineV2_3_0p23:
+		return v2_3_0p23.FolderFieldMappings
+	case BaselineV2_3_0p26:
+		return v2_3_0p26.FolderFieldMappings
+	case BaselineV2_3_0p27:
+		return v2_3_0p27.FolderFieldMappings
+	case BaselineV2_3_0p31:
+		return v2_3_0p31.FolderFieldMappings
+	case BaselineV2_3_0p33:
+		return v2_3_0p33.FolderFieldMappings
+	case BaselineV2_3_0p36:
+		return v2_3_0p36.FolderFieldMappings
+	case BaselineV2_3_0p37:
+		return v2_3_0p37.FolderFieldMappings
+	case BaselineV2_3_0p39:
+		return v2_3_0p39.FolderFieldMappings
+	case BaselineV2_3_0p40:
+		return v2_3_0p40.FolderFieldMappings
+	case BaselineV2_3_0p41:
+		return v2_3_0p41.FolderFieldMappings
+	case BaselineV2_4_0p1:
+		return v2_4_0p1.FolderFieldMappings
+	case BaselineV2_4_0p6:
+		return v2_4_0p6.FolderFieldMappings
+	case BaselineV2_4_0p11:
+		return v2_4_0p11.FolderFieldMappings
+	case BaselineV2_4_0p14:
+		return v2_4_0p14.FolderFieldMappings
+	case BaselineV2_4_0p16:
+		return v2_4_0p16.FolderFieldMappings
+	case BaselineV2_4_0p17:
+		return v2_4_0p17.FolderFieldMappings
+	case BaselineV2_4_0p18:
+		return v2_4_0p18.FolderFieldMappings
+	}
+	return nil
+}
+
+// Deprecation Warnings
+
+// IsDeprecatedField checks if a field is deprecated for a given schema and baseline.
+func IsDeprecatedField(pkg BaselinePackage, schemaName, fieldName string) bool {
+	switch pkg {
+	case BaselineV2_2_0p1:
+		return v2_2_0p1.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_2_0p3:
+		return v2_2_0p3.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_2_0p4:
+		return v2_2_0p4.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_2_0p5:
+		return v2_2_0p5.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_2_0p8:
+		return v2_2_0p8.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_2_0p9:
+		return v2_2_0p9.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_2_0p11:
+		return v2_2_0p11.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_2_0p12:
+		return v2_2_0p12.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_2_0p14:
+		return v2_2_0p14.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_2_0p18:
+		return v2_2_0p18.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_2_0p21:
+		return v2_2_0p21.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_2_0p22:
+		return v2_2_0p22.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_2_0p23:
+		return v2_2_0p23.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_2_0p26:
+		return v2_2_0p26.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_2_0p32:
+		return v2_2_0p32.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_2_0p33:
+		return v2_2_0p33.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_2_0p43:
+		return v2_2_0p43.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_2_0p44:
+		return v2_2_0p44.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_3_0p1:
+		return v2_3_0p1.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_3_0p3:
+		return v2_3_0p3.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_3_0p5:
+		return v2_3_0p5.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_3_0p7:
+		return v2_3_0p7.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_3_0p11:
+		return v2_3_0p11.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_3_0p14:
+		return v2_3_0p14.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_3_0p22:
+		return v2_3_0p22.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_3_0p23:
+		return v2_3_0p23.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_3_0p26:
+		return v2_3_0p26.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_3_0p27:
+		return v2_3_0p27.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_3_0p31:
+		return v2_3_0p31.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_3_0p33:
+		return v2_3_0p33.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_3_0p36:
+		return v2_3_0p36.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_3_0p37:
+		return v2_3_0p37.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_3_0p39:
+		return v2_3_0p39.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_3_0p40:
+		return v2_3_0p40.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_3_0p41:
+		return v2_3_0p41.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_4_0p1:
+		return v2_4_0p1.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_4_0p6:
+		return v2_4_0p6.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_4_0p11:
+		return v2_4_0p11.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_4_0p14:
+		return v2_4_0p14.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_4_0p16:
+		return v2_4_0p16.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_4_0p17:
+		return v2_4_0p17.IsDeprecatedField(schemaName, fieldName)
+	case BaselineV2_4_0p18:
+		return v2_4_0p18.IsDeprecatedField(schemaName, fieldName)
+	}
+	return false
+}

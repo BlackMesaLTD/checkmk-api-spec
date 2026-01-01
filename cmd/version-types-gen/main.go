@@ -328,4 +328,147 @@ func FolderCreateAttributeFieldNames(pkg BaselinePackage) []string {
 {{end}}	}
 	return nil
 }
+
+// GetFieldDescription returns the description for a field in a schema for the given baseline.
+func GetFieldDescription(pkg BaselinePackage, schemaName, fieldName string) string {
+	switch pkg {
+{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
+		return {{.Alias}}.GetFieldDescription(schemaName, fieldName)
+{{end}}	}
+	return ""
+}
+
+// GetFieldType returns the OpenAPI type for a field in a schema for the given baseline.
+func GetFieldType(pkg BaselinePackage, schemaName, fieldName string) string {
+	switch pkg {
+{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
+		return {{.Alias}}.GetFieldType(schemaName, fieldName)
+{{end}}	}
+	return ""
+}
+
+// IsReadOnlyField checks if a field is read-only for a given schema and baseline.
+func IsReadOnlyField(pkg BaselinePackage, schemaName, fieldName string) bool {
+	switch pkg {
+{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
+		return {{.Alias}}.IsReadOnlyField(schemaName, fieldName)
+{{end}}	}
+	return false
+}
+
+// IsRequiredField checks if a field is required for a given schema and baseline.
+func IsRequiredField(pkg BaselinePackage, schemaName, fieldName string) bool {
+	switch pkg {
+{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
+		return {{.Alias}}.IsRequiredField(schemaName, fieldName)
+{{end}}	}
+	return false
+}
+
+// HostCreateAttributeCompareKeyFields returns compare key fields for HostCreateAttribute.
+func HostCreateAttributeCompareKeyFields(pkg BaselinePackage) []string {
+	switch pkg {
+{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
+		return {{.Alias}}.HostCreateAttributeCompareKeyFields
+{{end}}	}
+	return nil
+}
+
+// FolderCreateAttributeCompareKeyFields returns compare key fields for FolderCreateAttribute.
+func FolderCreateAttributeCompareKeyFields(pkg BaselinePackage) []string {
+	switch pkg {
+{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
+		return {{.Alias}}.FolderCreateAttributeCompareKeyFields
+{{end}}	}
+	return nil
+}
+
+// Request Builders
+
+// BuildCreateHostFromMap creates a typed CreateHost request from a map.
+func BuildCreateHostFromMap(pkg BaselinePackage, data map[string]interface{}) (interface{}, error) {
+	switch pkg {
+{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
+		return {{.Alias}}.BuildCreateHostFromMap(data)
+{{end}}	}
+	return nil, nil
+}
+
+// BuildCreateFolderFromMap creates a typed CreateFolder request from a map.
+func BuildCreateFolderFromMap(pkg BaselinePackage, data map[string]interface{}) (interface{}, error) {
+	switch pkg {
+{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
+		return {{.Alias}}.BuildCreateFolderFromMap(data)
+{{end}}	}
+	return nil, nil
+}
+
+// Response Parsers
+
+// ParseHostConfigFromMap parses a map into a typed HostConfig response.
+func ParseHostConfigFromMap(pkg BaselinePackage, data map[string]interface{}) (interface{}, error) {
+	switch pkg {
+{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
+		return {{.Alias}}.ParseHostConfigFromMap(data)
+{{end}}	}
+	return nil, nil
+}
+
+// ParseFolderFromMap parses a map into a typed Folder response.
+func ParseFolderFromMap(pkg BaselinePackage, data map[string]interface{}) (interface{}, error) {
+	switch pkg {
+{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
+		return {{.Alias}}.ParseFolderFromMap(data)
+{{end}}	}
+	return nil, nil
+}
+
+// Import State Mapping
+
+// ExtractHostConfigField extracts a Terraform field value from a HostConfig API response.
+func ExtractHostConfigField(pkg BaselinePackage, response map[string]interface{}, tfField string) interface{} {
+	switch pkg {
+{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
+		return {{.Alias}}.ExtractHostConfigField(response, tfField)
+{{end}}	}
+	return nil
+}
+
+// ExtractFolderField extracts a Terraform field value from a Folder API response.
+func ExtractFolderField(pkg BaselinePackage, response map[string]interface{}, tfField string) interface{} {
+	switch pkg {
+{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
+		return {{.Alias}}.ExtractFolderField(response, tfField)
+{{end}}	}
+	return nil
+}
+
+// HostConfigFieldMappings returns the field mappings for HostConfig.
+func HostConfigFieldMappings(pkg BaselinePackage) map[string][]string {
+	switch pkg {
+{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
+		return {{.Alias}}.HostConfigFieldMappings
+{{end}}	}
+	return nil
+}
+
+// FolderFieldMappings returns the field mappings for Folder.
+func FolderFieldMappings(pkg BaselinePackage) map[string][]string {
+	switch pkg {
+{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
+		return {{.Alias}}.FolderFieldMappings
+{{end}}	}
+	return nil
+}
+
+// Deprecation Warnings
+
+// IsDeprecatedField checks if a field is deprecated for a given schema and baseline.
+func IsDeprecatedField(pkg BaselinePackage, schemaName, fieldName string) bool {
+	switch pkg {
+{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
+		return {{.Alias}}.IsDeprecatedField(schemaName, fieldName)
+{{end}}	}
+	return false
+}
 `))
