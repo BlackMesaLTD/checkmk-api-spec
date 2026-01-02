@@ -1,0 +1,267 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {},
+  "schema_changes": [
+    {
+      "schema_name": "ChangeEventState",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "site_id",
+          "severity": "breaking",
+          "new_type": "string",
+          "description": "An existing site id",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ]
+    },
+    {
+      "schema_name": "ChangeStateWithParams",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "site_id",
+          "severity": "minor",
+          "new_type": "string",
+          "description": "An existing site id",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "ChangeStateWithQuery",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "site_id",
+          "severity": "minor",
+          "new_type": "string",
+          "description": "An existing site id",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "CommentAttributes",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "site_id",
+          "severity": "breaking",
+          "new_type": "string",
+          "description": "The site id of the downtime.",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ]
+    },
+    {
+      "schema_name": "DeleteCommentById",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "site_id",
+          "severity": "breaking",
+          "new_type": "string",
+          "description": "The ID of an existing site",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ]
+    },
+    {
+      "schema_name": "DeleteCommentsByParams",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "site_id",
+          "severity": "breaking",
+          "new_type": "string",
+          "description": "The ID of an existing site",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ]
+    },
+    {
+      "schema_name": "DeleteCommentsByQuery",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "site_id",
+          "severity": "breaking",
+          "new_type": "string",
+          "description": "The ID of an existing site",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ]
+    },
+    {
+      "schema_name": "ECEventAttributes",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "site_id",
+          "severity": "breaking",
+          "new_type": "string",
+          "description": "The site id of the EC event.",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ]
+    },
+    {
+      "schema_name": "FilterById",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "site_id",
+          "severity": "breaking",
+          "new_type": "string",
+          "description": "An existing site id",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ]
+    },
+    {
+      "schema_name": "FilterByParams",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "site_id",
+          "severity": "breaking",
+          "new_type": "string",
+          "description": "An existing site id",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ]
+    },
+    {
+      "schema_name": "FilterByQuery",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "site_id",
+          "severity": "breaking",
+          "new_type": "string",
+          "description": "An existing site id",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateAndAcknowledgeFilter",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "site_id",
+          "severity": "minor",
+          "new_type": "string",
+          "description": "An existing site id",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateAndAcknowledgeWithParams",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "site_id",
+          "severity": "minor",
+          "new_type": "string",
+          "description": "An existing site id",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateAndAcknowledgeWithQuery",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "site_id",
+          "severity": "minor",
+          "new_type": "string",
+          "description": "An existing site id",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateHost",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "remove_attributes",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateHostEntry",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "remove_attributes",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateTimePeriod",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "exclude",
+          "severity": "minor",
+          "new_type": "array",
+          "description": "A list of time period aliases whose periods are excluded.",
+          "change_reason": "New optional field"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 440,
+    "total_schemas_new": 440,
+    "schemas_added": 1,
+    "schemas_removed": 1,
+    "schemas_with_changes": 17,
+    "total_fields_added": 15,
+    "total_fields_removed": 0,
+    "breaking_changes": 10,
+    "deprecated_changes": 0,
+    "minor_changes": 7,
+    "docs_changes": 2
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

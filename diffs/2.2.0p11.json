@@ -1,0 +1,76 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {},
+  "schema_changes": [
+    {
+      "schema_name": "ConditionsAttributes",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "match_folder",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithStr",
+          "new_type": "ref:CheckboxWithFolderStr",
+          "change_reason": "Type changed: ref:CheckboxWithStr → ref:CheckboxWithFolderStr"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateHost",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "remove_attributes",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateHostEntry",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "remove_attributes",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 440,
+    "total_schemas_new": 441,
+    "schemas_added": 1,
+    "schemas_removed": 0,
+    "schemas_with_changes": 3,
+    "total_fields_added": 0,
+    "total_fields_removed": 0,
+    "breaking_changes": 1,
+    "deprecated_changes": 0,
+    "minor_changes": 1,
+    "docs_changes": 2
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

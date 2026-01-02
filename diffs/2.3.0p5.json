@@ -1,0 +1,160 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {},
+  "schema_changes": [
+    {
+      "schema_name": "BulkDiscovery",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "ignore_errors",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CheckboxWithListOfCheckTypes",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "value",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "HttpProxy",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "url",
+          "severity": "breaking",
+          "old_type": "string",
+          "change_reason": "Field removed"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "option",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"global\""
+        }
+      ]
+    },
+    {
+      "schema_name": "JiraPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "host_custom_id",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "issue_type_id",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "jira_url",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "monitoring_url",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "priority_id",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "project_id",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "resolution_id",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "service_custom_id",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "site_custom_id",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "ManagementTypeCaseStates",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "start_predefined",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"resolved\""
+        }
+      ]
+    },
+    {
+      "schema_name": "SpectrumPluginBase",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "destination_ip",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "snmp_community",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 630,
+    "total_schemas_new": 633,
+    "schemas_added": 3,
+    "schemas_removed": 0,
+    "schemas_with_changes": 6,
+    "total_fields_added": 0,
+    "total_fields_removed": 1,
+    "breaking_changes": 1,
+    "deprecated_changes": 0,
+    "minor_changes": 5,
+    "docs_changes": 13
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "deprecated",
+  "path_changes": {},
+  "schema_changes": [
+    {
+      "schema_name": "InputPassword",
+      "max_severity": "deprecated",
+      "added_fields": [
+        {
+          "path": "editable_by",
+          "severity": "minor",
+          "new_type": "string",
+          "description": "Each password is owned by a group of users which are able to edit, delete and use existing passwords...",
+          "change_reason": "New optional field"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "owner",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "owner",
+          "severity": "deprecated",
+          "is_deprecated": true,
+          "change_reason": "Field marked as deprecated"
+        }
+      ]
+    },
+    {
+      "schema_name": "PasswordExtension",
+      "max_severity": "deprecated",
+      "added_fields": [
+        {
+          "path": "editable_by",
+          "severity": "minor",
+          "new_type": "string",
+          "description": "The owner of the password who is able to edit, delete and use existing passwords.",
+          "change_reason": "New optional field"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "owned_by",
+          "severity": "deprecated",
+          "is_deprecated": true,
+          "change_reason": "Field marked as deprecated"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdatePassword",
+      "max_severity": "deprecated",
+      "added_fields": [
+        {
+          "path": "editable_by",
+          "severity": "minor",
+          "new_type": "string",
+          "description": "Each password is owned by a group of users which are able to edit, delete and use existing passwords...",
+          "change_reason": "New optional field"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "owner",
+          "severity": "deprecated",
+          "is_deprecated": true,
+          "change_reason": "Field marked as deprecated"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 641,
+    "total_schemas_new": 641,
+    "schemas_added": 0,
+    "schemas_removed": 0,
+    "schemas_with_changes": 3,
+    "total_fields_added": 3,
+    "total_fields_removed": 0,
+    "breaking_changes": 0,
+    "deprecated_changes": 3,
+    "minor_changes": 4,
+    "docs_changes": 0
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

@@ -1,0 +1,408 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {
+    "removed": [
+      {
+        "path": "/domain-types/agent/actions/automatic-deployment/invoke",
+        "methods": [
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/actions/bake/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/actions/bake_and_sign/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/actions/baking_status/invoke",
+        "methods": [
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/actions/download_by_hash/invoke",
+        "methods": [
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/actions/download_by_host/invoke",
+        "methods": [
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/actions/sign/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/collections/all",
+        "methods": [
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/dcd/actions/fetch_phase_one/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Dynamic Configuration Daemon (DCD)"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/dcd/collections/all",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Dynamic Configuration Daemon (DCD)"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/license_response/actions/upload/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "License usage"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/license_usage/actions/download/invoke",
+        "methods": [
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "License usage"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/licensing/actions/configure/invoke",
+        "methods": [
+          "PUT"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "License usage"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/licensing/actions/verify/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "License usage"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/metric/actions/filter/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Metric (internal)"
+        ],
+        "category": "internal"
+      },
+      {
+        "path": "/domain-types/metric/actions/get_custom_graph/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Metrics"
+        ],
+        "category": "monitoring"
+      },
+      {
+        "path": "/domain-types/saml_connection/collections/all",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "SAML connections"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/sla/actions/compute/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Service Level Agreements"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/agent/{agent_hash}",
+        "methods": [
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/dcd/{dcd_id}",
+        "methods": [
+          "DELETE",
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Dynamic Configuration Daemon (DCD)"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/saml_connection/{saml_connection_id}",
+        "methods": [
+          "DELETE",
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "SAML connections"
+        ],
+        "category": "setup"
+      }
+    ]
+  },
+  "schema_changes": [
+    {
+      "schema_name": "ClusterCreateAttribute",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "ContactSelection",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "explicit_email_addresses",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        }
+      ]
+    },
+    {
+      "schema_name": "FolderCreateAttribute",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "FolderUpdateAttribute",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "FolderViewAttribute",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostCreateAttribute",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostExtensionsEffectiveAttributes",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostUpdateAttribute",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostViewAttribute",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "TimeRange1",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "end",
+          "severity": "breaking",
+          "new_type": "string",
+          "description": "The end time of the period's time range",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "start",
+          "severity": "breaking",
+          "new_type": "string",
+          "description": "The start time of the period's time range",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 896,
+    "total_schemas_new": 821,
+    "schemas_added": 0,
+    "schemas_removed": 75,
+    "schemas_with_changes": 10,
+    "total_fields_added": 2,
+    "total_fields_removed": 8,
+    "breaking_changes": 106,
+    "deprecated_changes": 0,
+    "minor_changes": 1,
+    "docs_changes": 0
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 19,
+      "breaking": 19,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 1,
+      "breaking": 1,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 1,
+      "breaking": 1,
+      "minor": 0
+    }
+  }
+}

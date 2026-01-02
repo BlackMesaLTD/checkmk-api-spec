@@ -1,0 +1,69 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {},
+  "schema_changes": [
+    {
+      "schema_name": "HostDowntimeAttributes",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "mode",
+          "severity": "breaking",
+          "new_type": "allOf",
+          "description": "The mode of the downtime, either fixed or flexible.",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ]
+    },
+    {
+      "schema_name": "ServiceDowntimeAttributes",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "mode",
+          "severity": "breaking",
+          "new_type": "allOf",
+          "description": "The mode of the downtime, either fixed or flexible.",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 628,
+    "total_schemas_new": 631,
+    "schemas_added": 3,
+    "schemas_removed": 0,
+    "schemas_with_changes": 2,
+    "total_fields_added": 2,
+    "total_fields_removed": 0,
+    "breaking_changes": 2,
+    "deprecated_changes": 0,
+    "minor_changes": 3,
+    "docs_changes": 0
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

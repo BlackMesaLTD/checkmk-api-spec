@@ -1,0 +1,342 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {
+    "added": [
+      {
+        "path": "/domain-types/notification_rule/collections/all",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Notification Rules"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/notification_rule/{rule_id}",
+        "methods": [
+          "GET",
+          "PUT"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Notification Rules"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/notification_rule/{rule_id}/actions/delete/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Notification Rules"
+        ],
+        "category": "setup"
+      }
+    ]
+  },
+  "schema_changes": [
+    {
+      "schema_name": "RuleConditions",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "event_console_alerts",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_check_types",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_contact_groups",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_exclude_hosts",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_exclude_service_groups",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_exclude_service_groups_regex",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_exclude_services",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_folder",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_host_event_type",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_host_groups",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_host_labels",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_host_tags",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_hosts",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_notification_comment",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_only_during_time_period",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_plugin_output",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_service_event_type",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_service_groups",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_service_groups_regex",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_service_labels",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_service_levels",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_services",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "match_sites",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "restrict_to_notification_numbers",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "throttle_periodic_notifications",
+          "severity": "breaking",
+          "new_type": "ref:CheckboxOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ],
+      "removed_fields": [
+        {
+          "path": "host_labels",
+          "severity": "breaking",
+          "old_type": "array",
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "host_name",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "host_tags",
+          "severity": "breaking",
+          "old_type": "array",
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "service_description",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "service_labels",
+          "severity": "breaking",
+          "old_type": "array",
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "RuleProperties",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "allow_users_to_deactivate",
+          "severity": "breaking",
+          "new_type": "allOf",
+          "description": "If you set this option then users are allowed to deactivate notifications that are created by this r...",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "do_not_apply_this_rule",
+          "severity": "breaking",
+          "new_type": "allOf",
+          "description": "Disabled rules are kept in the configuration but are not applied.",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ],
+      "removed_fields": [
+        {
+          "path": "disabled",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "change_reason": "Field removed"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "comment",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        },
+        {
+          "path": "description",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        },
+        {
+          "path": "documentation_url",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 330,
+    "total_schemas_new": 437,
+    "schemas_added": 107,
+    "schemas_removed": 0,
+    "schemas_with_changes": 2,
+    "total_fields_added": 27,
+    "total_fields_removed": 6,
+    "breaking_changes": 36,
+    "deprecated_changes": 0,
+    "minor_changes": 110,
+    "docs_changes": 0
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 3,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 3
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

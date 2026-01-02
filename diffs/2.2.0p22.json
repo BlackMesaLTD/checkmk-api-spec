@@ -1,0 +1,694 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {
+    "added": [
+      {
+        "path": "/objects/autocomplete/{autocomplete_id}",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Autocomplete (internal)"
+        ],
+        "category": "internal"
+      }
+    ]
+  },
+  "schema_changes": [
+    {
+      "schema_name": "BulkOutsideTimePeriodValue",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        }
+      ]
+    },
+    {
+      "schema_name": "CheckboxMatchHostTags1",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        }
+      ]
+    },
+    {
+      "schema_name": "ConditionsAttributes",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "match_check_types",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr",
+          "new_type": "ref:CheckboxWithListOfStr1",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr → ref:CheckboxWithListOfStr1"
+        },
+        {
+          "path": "match_contact_groups",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr",
+          "new_type": "ref:CheckboxWithListOfStr1",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr → ref:CheckboxWithListOfStr1"
+        },
+        {
+          "path": "match_exclude_hosts",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr",
+          "new_type": "ref:CheckboxWithListOfStr1",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr → ref:CheckboxWithListOfStr1"
+        },
+        {
+          "path": "match_exclude_service_groups",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr",
+          "new_type": "ref:CheckboxWithListOfStr1",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr → ref:CheckboxWithListOfStr1"
+        },
+        {
+          "path": "match_exclude_service_groups_regex",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfServiceGroupsRegex",
+          "new_type": "ref:CheckboxWithListOfServiceGroupsRegex1",
+          "change_reason": "Type changed: ref:CheckboxWithListOfServiceGroupsRegex → ref:CheckboxWithListOfServiceGroupsRegex1"
+        },
+        {
+          "path": "match_exclude_services",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr",
+          "new_type": "ref:CheckboxWithListOfStr1",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr → ref:CheckboxWithListOfStr1"
+        },
+        {
+          "path": "match_folder",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithFolderStr",
+          "new_type": "ref:CheckboxWithFolderStr1",
+          "change_reason": "Type changed: ref:CheckboxWithFolderStr → ref:CheckboxWithFolderStr1"
+        },
+        {
+          "path": "match_host_event_type",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxHostEventType",
+          "new_type": "ref:CheckboxHostEventType1",
+          "change_reason": "Type changed: ref:CheckboxHostEventType → ref:CheckboxHostEventType1"
+        },
+        {
+          "path": "match_host_groups",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr",
+          "new_type": "ref:CheckboxWithListOfStr1",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr → ref:CheckboxWithListOfStr1"
+        },
+        {
+          "path": "match_host_labels",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfLabels",
+          "new_type": "ref:CheckboxWithListOfLabels1",
+          "change_reason": "Type changed: ref:CheckboxWithListOfLabels → ref:CheckboxWithListOfLabels1"
+        },
+        {
+          "path": "match_hosts",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr",
+          "new_type": "ref:CheckboxWithListOfStr1",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr → ref:CheckboxWithListOfStr1"
+        },
+        {
+          "path": "match_notification_comment",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithStrValue",
+          "new_type": "ref:CheckboxWithStrValue1",
+          "change_reason": "Type changed: ref:CheckboxWithStrValue → ref:CheckboxWithStrValue1"
+        },
+        {
+          "path": "match_only_during_time_period",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithStrValue",
+          "new_type": "ref:CheckboxWithStrValue1",
+          "change_reason": "Type changed: ref:CheckboxWithStrValue → ref:CheckboxWithStrValue1"
+        },
+        {
+          "path": "match_plugin_output",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithStrValue",
+          "new_type": "ref:CheckboxWithStrValue1",
+          "change_reason": "Type changed: ref:CheckboxWithStrValue → ref:CheckboxWithStrValue1"
+        },
+        {
+          "path": "match_service_event_type",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxServiceEventType",
+          "new_type": "ref:CheckboxServiceEventType1",
+          "change_reason": "Type changed: ref:CheckboxServiceEventType → ref:CheckboxServiceEventType1"
+        },
+        {
+          "path": "match_service_groups",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr",
+          "new_type": "ref:CheckboxWithListOfStr1",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr → ref:CheckboxWithListOfStr1"
+        },
+        {
+          "path": "match_service_groups_regex",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfServiceGroupsRegex",
+          "new_type": "ref:CheckboxWithListOfServiceGroupsRegex1",
+          "change_reason": "Type changed: ref:CheckboxWithListOfServiceGroupsRegex → ref:CheckboxWithListOfServiceGroupsRegex1"
+        },
+        {
+          "path": "match_service_labels",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfLabels",
+          "new_type": "ref:CheckboxWithListOfLabels1",
+          "change_reason": "Type changed: ref:CheckboxWithListOfLabels → ref:CheckboxWithListOfLabels1"
+        },
+        {
+          "path": "match_service_levels",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithFromToServiceLevels",
+          "new_type": "ref:CheckboxWithFromToServiceLevels1",
+          "change_reason": "Type changed: ref:CheckboxWithFromToServiceLevels → ref:CheckboxWithFromToServiceLevels1"
+        },
+        {
+          "path": "match_services",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr",
+          "new_type": "ref:CheckboxWithListOfStr1",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr → ref:CheckboxWithListOfStr1"
+        },
+        {
+          "path": "match_sites",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr",
+          "new_type": "ref:CheckboxWithListOfStr1",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr → ref:CheckboxWithListOfStr1"
+        },
+        {
+          "path": "restrict_to_notification_numbers",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxRestrictNotificationNumbers",
+          "new_type": "ref:CheckboxRestrictNotificationNumbers1",
+          "change_reason": "Type changed: ref:CheckboxRestrictNotificationNumbers → ref:CheckboxRestrictNotificationNumbers1"
+        },
+        {
+          "path": "throttle_periodic_notifications",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxThrottlePeriodicNotifcations",
+          "new_type": "ref:CheckboxThrottlePeriodicNotifcations1",
+          "change_reason": "Type changed: ref:CheckboxThrottlePeriodicNotifcations → ref:CheckboxThrottlePeriodicNotifcations1"
+        }
+      ]
+    },
+    {
+      "schema_name": "ContactSelectionAttributes",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "all_contacts_of_the_notified_object",
+          "severity": "breaking",
+          "old_type": "ref:Checkbox",
+          "new_type": "ref:Checkbox1",
+          "change_reason": "Type changed: ref:Checkbox → ref:Checkbox1"
+        },
+        {
+          "path": "all_users",
+          "severity": "breaking",
+          "old_type": "ref:Checkbox",
+          "new_type": "ref:Checkbox1",
+          "change_reason": "Type changed: ref:Checkbox → ref:Checkbox1"
+        },
+        {
+          "path": "all_users_with_an_email_address",
+          "severity": "breaking",
+          "old_type": "ref:Checkbox",
+          "new_type": "ref:Checkbox1",
+          "change_reason": "Type changed: ref:Checkbox → ref:Checkbox1"
+        },
+        {
+          "path": "explicit_email_addresses",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr",
+          "new_type": "ref:CheckboxWithListOfStr1",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr → ref:CheckboxWithListOfStr1"
+        },
+        {
+          "path": "members_of_contact_groups",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr",
+          "new_type": "ref:CheckboxWithListOfStr1",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr → ref:CheckboxWithListOfStr1"
+        },
+        {
+          "path": "restrict_by_contact_groups",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr",
+          "new_type": "ref:CheckboxWithListOfStr1",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr → ref:CheckboxWithListOfStr1"
+        },
+        {
+          "path": "restrict_by_custom_macros",
+          "severity": "breaking",
+          "old_type": "ref:MatchCustomMacros",
+          "new_type": "ref:MatchCustomMacros1",
+          "change_reason": "Type changed: ref:MatchCustomMacros → ref:MatchCustomMacros1"
+        },
+        {
+          "path": "the_following_users",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr",
+          "new_type": "ref:CheckboxWithListOfStr1",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr → ref:CheckboxWithListOfStr1"
+        }
+      ]
+    },
+    {
+      "schema_name": "CustomPluginWithParams",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "option",
+          "severity": "breaking",
+          "old_type": "string",
+          "new_type": "unknown",
+          "change_reason": "Type changed: string → unknown"
+        },
+        {
+          "path": "option",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        },
+        {
+          "path": "option",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"create_notification_with_the_following_parameters\""
+        },
+        {
+          "path": "option",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"create_notification_with_custom_parameters\""
+        },
+        {
+          "path": "option",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"cancel_previous_notifications\""
+        }
+      ]
+    },
+    {
+      "schema_name": "EventConsoleAlertAttrsResponse",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "match_event_comment",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithStrValue",
+          "new_type": "ref:CheckboxWithStrValue1",
+          "change_reason": "Type changed: ref:CheckboxWithStrValue → ref:CheckboxWithStrValue1"
+        },
+        {
+          "path": "match_rule_ids",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr",
+          "new_type": "ref:CheckboxWithListOfStr1",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr → ref:CheckboxWithListOfStr1"
+        },
+        {
+          "path": "match_syslog_facility",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithStrValue",
+          "new_type": "ref:CheckboxWithStrValue1",
+          "change_reason": "Type changed: ref:CheckboxWithStrValue → ref:CheckboxWithStrValue1"
+        },
+        {
+          "path": "match_syslog_priority",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithSysLogPriority",
+          "new_type": "ref:CheckboxWithSysLogPriority1",
+          "change_reason": "Type changed: ref:CheckboxWithSysLogPriority → ref:CheckboxWithSysLogPriority1"
+        }
+      ]
+    },
+    {
+      "schema_name": "EventConsoleAlertsResponse",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "match_type",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "state",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostTag",
+      "max_severity": "deprecated",
+      "added_fields": [
+        {
+          "path": "id",
+          "severity": "minor",
+          "new_type": "string",
+          "description": "An unique id for the tag",
+          "change_reason": "New optional field"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "ident",
+          "severity": "deprecated",
+          "is_deprecated": true,
+          "change_reason": "Field marked as deprecated"
+        }
+      ]
+    },
+    {
+      "schema_name": "InputHostTagGroup",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "id",
+          "severity": "breaking",
+          "new_type": "string",
+          "description": "An id for the host tag group",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "ident",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "ident",
+          "severity": "deprecated",
+          "is_deprecated": true,
+          "change_reason": "Field marked as deprecated"
+        }
+      ]
+    },
+    {
+      "schema_name": "MatchEventConsoleAlertsResponse",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        }
+      ]
+    },
+    {
+      "schema_name": "NotificationBulking",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "bulk_outside_timeperiod",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "max_bulk_size",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "notification_bulks_based_on",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "notification_bulks_based_on_custom_macros",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "state",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "subject_for_bulk_notifications",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithStrValue",
+          "new_type": "ref:CheckboxWithStrValue1",
+          "change_reason": "Type changed: ref:CheckboxWithStrValue → ref:CheckboxWithStrValue1"
+        },
+        {
+          "path": "time_horizon",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "time_period",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        }
+      ]
+    },
+    {
+      "schema_name": "NotificationBulkingCheckbox",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "value",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        }
+      ]
+    },
+    {
+      "schema_name": "NotificationBulkingCommonAttributes",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "max_bulk_size",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "notification_bulks_based_on",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "notification_bulks_based_on_custom_macros",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "state",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "subject_for_bulk_notifications",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithStrValue",
+          "new_type": "ref:CheckboxWithStrValue1",
+          "change_reason": "Type changed: ref:CheckboxWithStrValue → ref:CheckboxWithStrValue1"
+        },
+        {
+          "path": "time_horizon",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        }
+      ]
+    },
+    {
+      "schema_name": "NotificationPlugin",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "notify_plugin",
+          "severity": "breaking",
+          "old_type": "ref:PluginBase1",
+          "new_type": "ref:PluginBase",
+          "change_reason": "Type changed: ref:PluginBase1 → ref:PluginBase"
+        }
+      ]
+    },
+    {
+      "schema_name": "PluginBase",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "option",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "plugin_params",
+          "severity": "breaking",
+          "old_type": "ref:PluginName",
+          "new_type": "object",
+          "change_reason": "Type changed: ref:PluginName → object"
+        },
+        {
+          "path": "plugin_params",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        }
+      ]
+    },
+    {
+      "schema_name": "PluginWithParams",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "option",
+          "severity": "breaking",
+          "old_type": "string",
+          "new_type": "unknown",
+          "change_reason": "Type changed: string → unknown"
+        },
+        {
+          "path": "option",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        },
+        {
+          "path": "option",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"cancel_previous_notifications\""
+        },
+        {
+          "path": "option",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"create_notification_with_the_following_parameters\""
+        },
+        {
+          "path": "option",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"create_notification_with_custom_parameters\""
+        }
+      ]
+    },
+    {
+      "schema_name": "RulePropertiesAttributes",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "allow_users_to_deactivate",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "comment",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "description",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "do_not_apply_this_rule",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "documentation_url",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        }
+      ]
+    },
+    {
+      "schema_name": "WhenToBulk",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "params",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "when_to_bulk",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 550,
+    "total_schemas_new": 576,
+    "schemas_added": 28,
+    "schemas_removed": 2,
+    "schemas_with_changes": 18,
+    "total_fields_added": 2,
+    "total_fields_removed": 0,
+    "breaking_changes": 52,
+    "deprecated_changes": 2,
+    "minor_changes": 56,
+    "docs_changes": 3
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 1,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 1
+    }
+  }
+}

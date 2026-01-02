@@ -1,0 +1,137 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {},
+  "schema_changes": [
+    {
+      "schema_name": "ConfigurationConnectionAttributes",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "direct_login_to_web_gui_allowed",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "was_required": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "disable_remote_configuration",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "was_required": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "enable_replication",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "was_required": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "ignore_tls_errors",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "was_required": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "replicate_event_console",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "was_required": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "replicate_extensions",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "was_required": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "url_of_remote_site",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "user_sync",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "was_required": true,
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "ConfigurationConnectionAttributesOutput",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "user_sync",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateFolder",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "update_attributes",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateFolderEntry",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "update_attributes",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 641,
+    "total_schemas_new": 643,
+    "schemas_added": 2,
+    "schemas_removed": 0,
+    "schemas_with_changes": 4,
+    "total_fields_added": 0,
+    "total_fields_removed": 8,
+    "breaking_changes": 8,
+    "deprecated_changes": 0,
+    "minor_changes": 3,
+    "docs_changes": 2
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

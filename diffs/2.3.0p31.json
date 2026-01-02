@@ -1,0 +1,132 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "minor",
+  "path_changes": {
+    "added": [
+      {
+        "path": "/domain-types/service/collections/all",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Service status"
+        ],
+        "category": "monitoring"
+      },
+      {
+        "path": "/objects/host/{host_name}/collections/services",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Service status"
+        ],
+        "category": "monitoring"
+      }
+    ]
+  },
+  "schema_changes": [
+    {
+      "schema_name": "CreateHostDowntime",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "downtime_type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CreateHostGroupDowntime",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "downtime_type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CreateHostQueryDowntime",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "downtime_type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CreateServiceDowntime",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "downtime_type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CreateServiceGroupDowntime",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "downtime_type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CreateServiceQueryDowntime",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "downtime_type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 625,
+    "total_schemas_new": 627,
+    "schemas_added": 2,
+    "schemas_removed": 0,
+    "schemas_with_changes": 6,
+    "total_fields_added": 0,
+    "total_fields_removed": 0,
+    "breaking_changes": 0,
+    "deprecated_changes": 0,
+    "minor_changes": 4,
+    "docs_changes": 6
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 2,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 2
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

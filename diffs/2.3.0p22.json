@@ -1,0 +1,55 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {},
+  "schema_changes": [
+    {
+      "schema_name": "OpsGeniePluginCreate",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "disable_ssl_cert_verification",
+          "severity": "breaking",
+          "new_type": "allOf",
+          "description": "Ignore unverified HTTPS request warnings. Use with caution.",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 641,
+    "total_schemas_new": 641,
+    "schemas_added": 0,
+    "schemas_removed": 0,
+    "schemas_with_changes": 1,
+    "total_fields_added": 1,
+    "total_fields_removed": 0,
+    "breaking_changes": 1,
+    "deprecated_changes": 0,
+    "minor_changes": 0,
+    "docs_changes": 0
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

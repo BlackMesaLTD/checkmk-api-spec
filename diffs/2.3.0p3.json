@@ -1,0 +1,271 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "minor",
+  "path_changes": {},
+  "schema_changes": [
+    {
+      "schema_name": "BulkDiscovery",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "mode",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"only_service_labels\""
+        }
+      ]
+    },
+    {
+      "schema_name": "ClusterCreateAttribute",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "management_address",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CreateClusterHost",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "host_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CreateHost",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "host_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CreateHostDowntime",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "host_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "DirectMapping",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "hostname",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "DiscoverServices",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "mode",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"only_service_labels\""
+        }
+      ]
+    },
+    {
+      "schema_name": "DiscoverServicesDeprecated",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "mode",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"only_service_labels\""
+        }
+      ]
+    },
+    {
+      "schema_name": "GetGraph",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "host_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "GetMetric",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "host_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostCreateAttribute",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "management_address",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostExtensionsEffectiveAttributes",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "management_address",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostUpdateAttribute",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "management_address",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostViewAttribute",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "management_address",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "NotificationBulking",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "max_bulk_size",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "NotificationBulkingAlways",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "max_bulk_size",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "NotificationBulkingCommonAttributes",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "max_bulk_size",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "NotificationBulkingTimePeriod",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "max_bulk_size",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "TranslateNames",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "convert_case",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "drop_domain",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "regexp_rewrites",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateHostEntry",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "host_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 630,
+    "total_schemas_new": 630,
+    "schemas_added": 0,
+    "schemas_removed": 0,
+    "schemas_with_changes": 20,
+    "total_fields_added": 0,
+    "total_fields_removed": 0,
+    "breaking_changes": 0,
+    "deprecated_changes": 0,
+    "minor_changes": 3,
+    "docs_changes": 19
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

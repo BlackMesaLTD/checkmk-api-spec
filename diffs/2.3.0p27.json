@@ -1,0 +1,120 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {
+    "removed": [
+      {
+        "path": "/agent_controller_certificates_settings",
+        "methods": [
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Certificates"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/csr",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Certificates"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/autocomplete/{autocomplete_id}",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Autocomplete (internal)"
+        ],
+        "category": "internal"
+      },
+      {
+        "path": "/objects/host_config_internal/{host_name}",
+        "methods": [
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Hosts (internal)"
+        ],
+        "category": "internal"
+      },
+      {
+        "path": "/objects/host_config_internal/{host_name}/actions/link_uuid/invoke",
+        "methods": [
+          "PUT"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Hosts (internal)"
+        ],
+        "category": "internal"
+      },
+      {
+        "path": "/objects/host_config_internal/{host_name}/actions/register/invoke",
+        "methods": [
+          "PUT"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Hosts (internal)"
+        ],
+        "category": "internal"
+      },
+      {
+        "path": "/root_cert",
+        "methods": [
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Certificates"
+        ],
+        "category": "setup"
+      }
+    ]
+  },
+  "schema_changes": null,
+  "summary": {
+    "total_schemas_old": 643,
+    "total_schemas_new": 625,
+    "schemas_added": 0,
+    "schemas_removed": 18,
+    "schemas_with_changes": 0,
+    "total_fields_added": 0,
+    "total_fields_removed": 0,
+    "breaking_changes": 25,
+    "deprecated_changes": 0,
+    "minor_changes": 0,
+    "docs_changes": 0
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 3,
+      "breaking": 3,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 4,
+      "breaking": 4,
+      "minor": 0
+    }
+  }
+}

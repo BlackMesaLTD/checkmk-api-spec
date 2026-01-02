@@ -1,0 +1,2001 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {
+    "added": [
+      {
+        "path": "/domain-types/audit_log/actions/archive/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Audit logs"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/audit_log/collections/all",
+        "methods": [
+          "DELETE",
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Audit logs"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/host_config/actions/wait-for-completion/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Hosts"
+        ],
+        "category": "setup"
+      }
+    ]
+  },
+  "schema_changes": [
+    {
+      "schema_name": "AsciiMailPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIAggregationComputationOptions",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "disabled",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "escalate_downtimes_as_warn",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "freeze_aggregations",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "use_hard_states",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIAggregationEndpoint",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "aggregation_visualization",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "computation_options",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "groups",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "node",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIAggregationFunctionBest",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "count",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "restrict_state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIAggregationFunctionCountOK",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "levels_ok",
+          "severity": "breaking",
+          "old_type": "ref:BIAggregationFunctionCountSettings",
+          "new_type": "allOf",
+          "change_reason": "Type changed: ref:BIAggregationFunctionCountSettings → allOf"
+        },
+        {
+          "path": "levels_warn",
+          "severity": "breaking",
+          "old_type": "ref:BIAggregationFunctionCountSettings",
+          "new_type": "allOf",
+          "change_reason": "Type changed: ref:BIAggregationFunctionCountSettings → allOf"
+        },
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIAggregationFunctionCountSettings",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "value",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIAggregationFunctionWorst",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "count",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "restrict_state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIAggregationGroups",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "names",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "paths",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIAggregationVisualization",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "ignore_rule_styles",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "layout_id",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "line_style",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIAllHostsChoice",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BICallARuleAction",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "params",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "rule_id",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIEmptySearch",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIFixedArgumentsSearch",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "arguments",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIFixedArgumentsSearchToken",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "key",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "values",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIHostAliasRegexChoice",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "pattern",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIHostNameRegexChoice",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "pattern",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIHostSearch",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "conditions",
+          "severity": "breaking",
+          "old_type": "ref:HostConditions",
+          "new_type": "allOf",
+          "change_reason": "Type changed: ref:HostConditions → allOf"
+        },
+        {
+          "path": "refer_to",
+          "severity": "breaking",
+          "old_type": "ref:ReferTo",
+          "new_type": "allOf",
+          "change_reason": "Type changed: ref:ReferTo → allOf"
+        },
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BINodeGenerator",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "action",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "search",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BINodeVisBlockStyle",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "style_config",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BINodeVisForceStyle",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "style_config",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BINodeVisHierarchyStyle",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "style_config",
+          "severity": "breaking",
+          "old_type": "ref:BINodeVisHierarchyStyleConfig",
+          "new_type": "allOf",
+          "change_reason": "Type changed: ref:BINodeVisHierarchyStyleConfig → allOf"
+        },
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BINodeVisHierarchyStyleConfig",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "layer_height",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "node_size",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "rotation",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BINodeVisNoneStyle",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "style_config",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BINodeVisRadialStyle",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "style_config",
+          "severity": "breaking",
+          "old_type": "ref:BINodeVisRadialStyleConfig",
+          "new_type": "allOf",
+          "change_reason": "Type changed: ref:BINodeVisRadialStyleConfig → allOf"
+        },
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BINodeVisRadialStyleConfig",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "degree",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "radius",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "rotation",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIParams",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "arguments",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIRuleComputationOptions",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "disabled",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIRuleEndpoint",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "aggregation_function",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "computation_options",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "node_visualization",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "params",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "properties",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIRuleProperties",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "comment",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "docu_url",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "icon",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "state_messages",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "title",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIServiceSearch",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "conditions",
+          "severity": "breaking",
+          "old_type": "ref:ServiceConditions",
+          "new_type": "allOf",
+          "change_reason": "Type changed: ref:ServiceConditions → allOf"
+        },
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIStateOfHostAction",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "host_regex",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIStateOfRemainingServicesAction",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "host_regex",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIStateOfServiceAction",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "host_regex",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "service_regex",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BulkDiscovery",
+      "max_severity": "deprecated",
+      "added_fields": [
+        {
+          "path": "options",
+          "severity": "minor",
+          "new_type": "allOf",
+          "description": "The discovery options for the bulk discovery. The options if specified take precedence over the mode...",
+          "change_reason": "New optional field"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "mode",
+          "severity": "deprecated",
+          "is_deprecated": true,
+          "change_reason": "Field marked as deprecated"
+        }
+      ]
+    },
+    {
+      "schema_name": "BulkHostActionWithFailedHosts",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "detail",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "status",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "title",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        }
+      ]
+    },
+    {
+      "schema_name": "Child",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "ChildWith",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "type",
+          "severity": "breaking",
+          "new_type": "unknown",
+          "description": "Create nodes for all the children of matched hosts that also match other conditions.",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "conditions",
+          "severity": "breaking",
+          "old_type": "ref:HostConditions",
+          "new_type": "allOf",
+          "change_reason": "Type changed: ref:HostConditions → allOf"
+        },
+        {
+          "path": "host_choice",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CiscoWebexPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "ConditionsAttributes",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "match_check_types",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr1",
+          "new_type": "ref:CheckboxWithListOfStrOutput",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr1 → ref:CheckboxWithListOfStrOutput"
+        },
+        {
+          "path": "match_contact_groups",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr1",
+          "new_type": "ref:CheckboxWithListOfStrOutput",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr1 → ref:CheckboxWithListOfStrOutput"
+        },
+        {
+          "path": "match_exclude_hosts",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr1",
+          "new_type": "ref:CheckboxWithListOfStrOutput",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr1 → ref:CheckboxWithListOfStrOutput"
+        },
+        {
+          "path": "match_exclude_service_groups",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr1",
+          "new_type": "ref:CheckboxWithListOfStrOutput",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr1 → ref:CheckboxWithListOfStrOutput"
+        },
+        {
+          "path": "match_exclude_service_groups_regex",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfServiceGroupsRegex1",
+          "new_type": "ref:CheckboxWithListOfServiceGroupsRegexOutput",
+          "change_reason": "Type changed: ref:CheckboxWithListOfServiceGroupsRegex1 → ref:CheckboxWithListOfServiceGroupsRegexOutput"
+        },
+        {
+          "path": "match_exclude_services",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr1",
+          "new_type": "ref:CheckboxWithListOfStrOutput",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr1 → ref:CheckboxWithListOfStrOutput"
+        },
+        {
+          "path": "match_folder",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithFolderStr1",
+          "new_type": "ref:CheckboxWithFolderStrOutput",
+          "change_reason": "Type changed: ref:CheckboxWithFolderStr1 → ref:CheckboxWithFolderStrOutput"
+        },
+        {
+          "path": "match_host_event_type",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxHostEventType1",
+          "new_type": "ref:CheckboxHostEventTypeOutput",
+          "change_reason": "Type changed: ref:CheckboxHostEventType1 → ref:CheckboxHostEventTypeOutput"
+        },
+        {
+          "path": "match_host_groups",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr1",
+          "new_type": "ref:CheckboxWithListOfStrOutput",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr1 → ref:CheckboxWithListOfStrOutput"
+        },
+        {
+          "path": "match_host_labels",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfLabels1",
+          "new_type": "ref:CheckboxWithListOfLabelsOutput",
+          "change_reason": "Type changed: ref:CheckboxWithListOfLabels1 → ref:CheckboxWithListOfLabelsOutput"
+        },
+        {
+          "path": "match_host_tags",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxMatchHostTags1",
+          "new_type": "ref:CheckboxMatchHostTagsOutput",
+          "change_reason": "Type changed: ref:CheckboxMatchHostTags1 → ref:CheckboxMatchHostTagsOutput"
+        },
+        {
+          "path": "match_hosts",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr1",
+          "new_type": "ref:CheckboxWithListOfStrOutput",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr1 → ref:CheckboxWithListOfStrOutput"
+        },
+        {
+          "path": "match_notification_comment",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithStrValue1",
+          "new_type": "ref:CheckboxWithStrValueOutput",
+          "change_reason": "Type changed: ref:CheckboxWithStrValue1 → ref:CheckboxWithStrValueOutput"
+        },
+        {
+          "path": "match_only_during_time_period",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithStrValue1",
+          "new_type": "ref:CheckboxWithStrValueOutput",
+          "change_reason": "Type changed: ref:CheckboxWithStrValue1 → ref:CheckboxWithStrValueOutput"
+        },
+        {
+          "path": "match_plugin_output",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithStrValue1",
+          "new_type": "ref:CheckboxWithStrValueOutput",
+          "change_reason": "Type changed: ref:CheckboxWithStrValue1 → ref:CheckboxWithStrValueOutput"
+        },
+        {
+          "path": "match_service_event_type",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxServiceEventType1",
+          "new_type": "ref:CheckboxServiceEventTypeOutput",
+          "change_reason": "Type changed: ref:CheckboxServiceEventType1 → ref:CheckboxServiceEventTypeOutput"
+        },
+        {
+          "path": "match_service_groups",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr1",
+          "new_type": "ref:CheckboxWithListOfStrOutput",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr1 → ref:CheckboxWithListOfStrOutput"
+        },
+        {
+          "path": "match_service_groups_regex",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfServiceGroupsRegex1",
+          "new_type": "ref:CheckboxWithListOfServiceGroupsRegexOutput",
+          "change_reason": "Type changed: ref:CheckboxWithListOfServiceGroupsRegex1 → ref:CheckboxWithListOfServiceGroupsRegexOutput"
+        },
+        {
+          "path": "match_service_labels",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfLabels1",
+          "new_type": "ref:CheckboxWithListOfLabelsOutput",
+          "change_reason": "Type changed: ref:CheckboxWithListOfLabels1 → ref:CheckboxWithListOfLabelsOutput"
+        },
+        {
+          "path": "match_service_levels",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithFromToServiceLevels1",
+          "new_type": "ref:CheckboxWithFromToServiceLevelsOutput",
+          "change_reason": "Type changed: ref:CheckboxWithFromToServiceLevels1 → ref:CheckboxWithFromToServiceLevelsOutput"
+        },
+        {
+          "path": "match_services",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr1",
+          "new_type": "ref:CheckboxWithListOfStrOutput",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr1 → ref:CheckboxWithListOfStrOutput"
+        },
+        {
+          "path": "match_sites",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr1",
+          "new_type": "ref:CheckboxWithListOfStrOutput",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr1 → ref:CheckboxWithListOfStrOutput"
+        },
+        {
+          "path": "restrict_to_notification_numbers",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxRestrictNotificationNumbers1",
+          "new_type": "ref:CheckboxRestrictNotificationNumbersOutput",
+          "change_reason": "Type changed: ref:CheckboxRestrictNotificationNumbers1 → ref:CheckboxRestrictNotificationNumbersOutput"
+        },
+        {
+          "path": "throttle_periodic_notifications",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxThrottlePeriodicNotifcations1",
+          "new_type": "ref:CheckboxThrottlePeriodicNotifcationsOuput",
+          "change_reason": "Type changed: ref:CheckboxThrottlePeriodicNotifcations1 → ref:CheckboxThrottlePeriodicNotifcationsOuput"
+        }
+      ]
+    },
+    {
+      "schema_name": "ConfigurationConnectionAttributes",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "direct_login_to_web_gui_allowed",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "ContactGroup",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "extensions",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "object",
+          "change_reason": "Type changed: allOf → object"
+        }
+      ]
+    },
+    {
+      "schema_name": "ContactSelectionAttributes",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "all_contacts_of_the_notified_object",
+          "severity": "breaking",
+          "old_type": "ref:Checkbox1",
+          "new_type": "ref:CheckboxOutput",
+          "change_reason": "Type changed: ref:Checkbox1 → ref:CheckboxOutput"
+        },
+        {
+          "path": "all_users",
+          "severity": "breaking",
+          "old_type": "ref:Checkbox1",
+          "new_type": "ref:CheckboxOutput",
+          "change_reason": "Type changed: ref:Checkbox1 → ref:CheckboxOutput"
+        },
+        {
+          "path": "all_users_with_an_email_address",
+          "severity": "breaking",
+          "old_type": "ref:Checkbox1",
+          "new_type": "ref:CheckboxOutput",
+          "change_reason": "Type changed: ref:Checkbox1 → ref:CheckboxOutput"
+        },
+        {
+          "path": "explicit_email_addresses",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr1",
+          "new_type": "ref:CheckboxWithListOfStrOutput",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr1 → ref:CheckboxWithListOfStrOutput"
+        },
+        {
+          "path": "members_of_contact_groups",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr1",
+          "new_type": "ref:CheckboxWithListOfStrOutput",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr1 → ref:CheckboxWithListOfStrOutput"
+        },
+        {
+          "path": "restrict_by_contact_groups",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr1",
+          "new_type": "ref:CheckboxWithListOfStrOutput",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr1 → ref:CheckboxWithListOfStrOutput"
+        },
+        {
+          "path": "restrict_by_custom_macros",
+          "severity": "breaking",
+          "old_type": "ref:MatchCustomMacros1",
+          "new_type": "ref:MatchCustomMacrosOutput",
+          "change_reason": "Type changed: ref:MatchCustomMacros1 → ref:MatchCustomMacrosOutput"
+        },
+        {
+          "path": "the_following_users",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr1",
+          "new_type": "ref:CheckboxWithListOfStrOutput",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr1 → ref:CheckboxWithListOfStrOutput"
+        }
+      ]
+    },
+    {
+      "schema_name": "CustomPlugin",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "DeleteCommentsByParams",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "site_id",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "DeleteCommentsByQuery",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "site_id",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "EditUserRole",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "new_basedon",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "EventConsoleAlertAttrsResponse",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "match_event_comment",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithStrValue1",
+          "new_type": "ref:CheckboxWithStrValueOutput",
+          "change_reason": "Type changed: ref:CheckboxWithStrValue1 → ref:CheckboxWithStrValueOutput"
+        },
+        {
+          "path": "match_rule_ids",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithListOfStr1",
+          "new_type": "ref:CheckboxWithListOfStrOutput",
+          "change_reason": "Type changed: ref:CheckboxWithListOfStr1 → ref:CheckboxWithListOfStrOutput"
+        },
+        {
+          "path": "match_syslog_facility",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithStrValue1",
+          "new_type": "ref:CheckboxWithStrValueOutput",
+          "change_reason": "Type changed: ref:CheckboxWithStrValue1 → ref:CheckboxWithStrValueOutput"
+        },
+        {
+          "path": "match_syslog_priority",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithSysLogPriority1",
+          "new_type": "ref:CheckboxWithSysLogPriorityOutput",
+          "change_reason": "Type changed: ref:CheckboxWithSysLogPriority1 → ref:CheckboxWithSysLogPriorityOutput"
+        }
+      ]
+    },
+    {
+      "schema_name": "FilterByParams",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "site_id",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "FilterByQuery",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "site_id",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "GraphCollection",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "time_range",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "HTMLMailPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "Host",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostConditions",
+      "max_severity": "deprecated",
+      "added_fields": [
+        {
+          "path": "host_label_groups",
+          "severity": "minor",
+          "new_type": "array",
+          "description": "Host label conditions. Although all items in this list have a default operator value, the operator v...",
+          "change_reason": "New optional field"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "host_choice",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "host_folder",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "host_labels",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "host_labels",
+          "severity": "deprecated",
+          "is_deprecated": true,
+          "change_reason": "Field marked as deprecated"
+        },
+        {
+          "path": "host_tags",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostGroup",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "extensions",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "object",
+          "change_reason": "Type changed: allOf → object"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostOrServiceCondition",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "match_on",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        },
+        {
+          "path": "operator",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    },
+    {
+      "schema_name": "IlertPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "InputPassword",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "comment",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "ident",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "shared",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "title",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "InputRuleObject",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "value_raw",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    },
+    {
+      "schema_name": "JiraPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "LabelCondition",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "label",
+          "severity": "breaking",
+          "new_type": "string",
+          "description": "Label name and value.",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ],
+      "removed_fields": [
+        {
+          "path": "key",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "value",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "operator",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        },
+        {
+          "path": "operator",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"is\""
+        },
+        {
+          "path": "operator",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"is_not\""
+        },
+        {
+          "path": "operator",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"and\""
+        },
+        {
+          "path": "operator",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"or\""
+        },
+        {
+          "path": "operator",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"not\""
+        }
+      ]
+    },
+    {
+      "schema_name": "MSTeamsPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "MkEventDPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "NotificationBulking",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "subject_for_bulk_notifications",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithStrValue1",
+          "new_type": "ref:CheckboxWithStrValueOutput",
+          "change_reason": "Type changed: ref:CheckboxWithStrValue1 → ref:CheckboxWithStrValueOutput"
+        }
+      ]
+    },
+    {
+      "schema_name": "NotificationBulkingCommonAttributes",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "subject_for_bulk_notifications",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithStrValue1",
+          "new_type": "ref:CheckboxWithStrValueOutput",
+          "change_reason": "Type changed: ref:CheckboxWithStrValue1 → ref:CheckboxWithStrValueOutput"
+        }
+      ]
+    },
+    {
+      "schema_name": "OpsGeniePluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "PagerDutyPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "Parent",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "type",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "PasswordExtension",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "ident",
+          "severity": "minor",
+          "new_type": "string",
+          "description": "The unique identifier for the password",
+          "change_reason": "New optional field"
+        },
+        {
+          "path": "title",
+          "severity": "minor",
+          "new_type": "string",
+          "description": "The name of your password for easy recognition.",
+          "change_reason": "New optional field"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "comment",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "documentation_url",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "shared",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "PluginBase",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_params",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "PluginNameBuiltInOrCustom",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "plugin_name",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"cisco_webex_teams\""
+        },
+        {
+          "path": "plugin_name",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"mkeventd\""
+        },
+        {
+          "path": "plugin_name",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"pushover\""
+        },
+        {
+          "path": "plugin_name",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"slack\""
+        },
+        {
+          "path": "plugin_name",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"jira_issues\""
+        },
+        {
+          "path": "plugin_name",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"msteams\""
+        },
+        {
+          "path": "plugin_name",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"signl4\""
+        },
+        {
+          "path": "plugin_name",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"sms\""
+        },
+        {
+          "path": "plugin_name",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"asciimail\""
+        },
+        {
+          "path": "plugin_name",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"mail\""
+        },
+        {
+          "path": "plugin_name",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"opsgenie_issues\""
+        },
+        {
+          "path": "plugin_name",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"servicenow\""
+        },
+        {
+          "path": "plugin_name",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"victorops\""
+        },
+        {
+          "path": "plugin_name",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"ilert\""
+        },
+        {
+          "path": "plugin_name",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"pagerduty\""
+        },
+        {
+          "path": "plugin_name",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"sms_api\""
+        },
+        {
+          "path": "plugin_name",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"spectrum\""
+        }
+      ]
+    },
+    {
+      "schema_name": "PushOverPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "SMSAPIPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "SMSPluginBase",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "ServiceConditions",
+      "max_severity": "deprecated",
+      "added_fields": [
+        {
+          "path": "host_label_groups",
+          "severity": "minor",
+          "new_type": "array",
+          "description": "Host label conditions. Although all items in this list have a default operator value, the operator v...",
+          "change_reason": "New optional field"
+        },
+        {
+          "path": "service_label_groups",
+          "severity": "minor",
+          "new_type": "array",
+          "description": "Service label conditions. Although all items in this list have a default operator value, the operato...",
+          "change_reason": "New optional field"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "host_choice",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "host_folder",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "host_labels",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "host_labels",
+          "severity": "deprecated",
+          "is_deprecated": true,
+          "change_reason": "Field marked as deprecated"
+        },
+        {
+          "path": "host_tags",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "service_labels",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "service_labels",
+          "severity": "deprecated",
+          "is_deprecated": true,
+          "change_reason": "Field marked as deprecated"
+        },
+        {
+          "path": "service_regex",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "ServiceGroup",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "extensions",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "object",
+          "change_reason": "Type changed: allOf → object"
+        }
+      ]
+    },
+    {
+      "schema_name": "ServiceNowPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "Signl4PluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "SiteConfigAttributes",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "configuration_connection",
+          "severity": "breaking",
+          "old_type": "ref:ConfigurationConnectionAttributes1",
+          "new_type": "ref:ConfigurationConnectionAttributesOutput",
+          "change_reason": "Type changed: ref:ConfigurationConnectionAttributes1 → ref:ConfigurationConnectionAttributesOutput"
+        },
+        {
+          "path": "status_connection",
+          "severity": "breaking",
+          "old_type": "ref:StatusConnectionAttributes1",
+          "new_type": "ref:StatusConnectionAttributesOutput",
+          "change_reason": "Type changed: ref:StatusConnectionAttributes1 → ref:StatusConnectionAttributesOutput"
+        }
+      ]
+    },
+    {
+      "schema_name": "SlackPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "SpectrumPluginBase",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "TagConditionConditionSchemaBase",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "key",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        },
+        {
+          "path": "operator",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        },
+        {
+          "path": "value",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    },
+    {
+      "schema_name": "TagConditionScalarSchemaBase",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "key",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        },
+        {
+          "path": "operator",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        },
+        {
+          "path": "value",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateContactGroup",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "attributes",
+          "severity": "breaking",
+          "old_type": "ref:UpdateGroup",
+          "new_type": "ref:UpdateContactGroupAttributes",
+          "change_reason": "Type changed: ref:UpdateGroup → ref:UpdateContactGroupAttributes"
+        },
+        {
+          "path": "attributes",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateDiscoveryPhase",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "target_phase",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"ignored_custom\""
+        },
+        {
+          "path": "target_phase",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"ignored_active\""
+        },
+        {
+          "path": "target_phase",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"changed\""
+        },
+        {
+          "path": "target_phase",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"custom_ignored\""
+        },
+        {
+          "path": "target_phase",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"active_ignored\""
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateFolder",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "update_attributes",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateFolderEntry",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "update_attributes",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateHostGroup",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "attributes",
+          "severity": "breaking",
+          "old_type": "ref:UpdateGroup1",
+          "new_type": "ref:UpdateHostGroupAttributes",
+          "change_reason": "Type changed: ref:UpdateGroup1 → ref:UpdateHostGroupAttributes"
+        },
+        {
+          "path": "attributes",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdatePassword",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "comment",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "shared",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "title",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateRuleObject",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "value_raw",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateServiceGroup",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "attributes",
+          "severity": "breaking",
+          "old_type": "ref:UpdateGroup2",
+          "new_type": "ref:UpdateServiceGroupAttributes",
+          "change_reason": "Type changed: ref:UpdateGroup2 → ref:UpdateServiceGroupAttributes"
+        },
+        {
+          "path": "attributes",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    },
+    {
+      "schema_name": "UserRoleAttributes",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "basedon",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "builtin",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "VictoropsPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 588,
+    "total_schemas_new": 630,
+    "schemas_added": 85,
+    "schemas_removed": 43,
+    "schemas_with_changes": 92,
+    "total_fields_added": 8,
+    "total_fields_removed": 6,
+    "breaking_changes": 140,
+    "deprecated_changes": 4,
+    "minor_changes": 106,
+    "docs_changes": 120
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 3,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 3
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

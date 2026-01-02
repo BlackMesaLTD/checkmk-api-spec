@@ -1,0 +1,106 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {},
+  "schema_changes": [
+    {
+      "schema_name": "ContactGroup",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "extensions",
+          "severity": "breaking",
+          "old_type": "object",
+          "new_type": "allOf",
+          "change_reason": "Type changed: object → allOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostGroup",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "extensions",
+          "severity": "breaking",
+          "old_type": "object",
+          "new_type": "allOf",
+          "change_reason": "Type changed: object → allOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "ServiceGroup",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "extensions",
+          "severity": "breaking",
+          "old_type": "object",
+          "new_type": "allOf",
+          "change_reason": "Type changed: object → allOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateDiscoveryPhase",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "target_phase",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"custom_ignored\""
+        },
+        {
+          "path": "target_phase",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"active_ignored\""
+        },
+        {
+          "path": "target_phase",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"ignored_active\""
+        },
+        {
+          "path": "target_phase",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"ignored_custom\""
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 585,
+    "total_schemas_new": 588,
+    "schemas_added": 3,
+    "schemas_removed": 0,
+    "schemas_with_changes": 4,
+    "total_fields_added": 0,
+    "total_fields_removed": 0,
+    "breaking_changes": 5,
+    "deprecated_changes": 0,
+    "minor_changes": 5,
+    "docs_changes": 0
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

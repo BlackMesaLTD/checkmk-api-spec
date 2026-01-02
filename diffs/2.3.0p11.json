@@ -1,0 +1,128 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {
+    "removed": [
+      {
+        "path": "/domain-types/service/collections/services",
+        "methods": [
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Service discovery"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/host/{host_name}/actions/discover_services/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Service discovery"
+        ],
+        "category": "setup"
+      }
+    ]
+  },
+  "schema_changes": [
+    {
+      "schema_name": "AsciiMailPluginCreate",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "sort_order_for_bulk_notifications",
+          "severity": "breaking",
+          "new_type": "ref:SortOrderOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ],
+      "removed_fields": [
+        {
+          "path": "sort_order_for_bulk_notificaions",
+          "severity": "breaking",
+          "old_type": "ref:SortOrderOneOf",
+          "was_required": true,
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "HTMLMailPluginCreate",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "sort_order_for_bulk_notifications",
+          "severity": "breaking",
+          "new_type": "ref:SortOrderOneOf",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ],
+      "removed_fields": [
+        {
+          "path": "sort_order_for_bulk_notificaions",
+          "severity": "breaking",
+          "old_type": "ref:SortOrderOneOf",
+          "was_required": true,
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "PasswordExtension",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "ident",
+          "severity": "breaking",
+          "old_type": "string",
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "title",
+          "severity": "breaking",
+          "old_type": "string",
+          "change_reason": "Field removed"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 641,
+    "total_schemas_new": 638,
+    "schemas_added": 0,
+    "schemas_removed": 3,
+    "schemas_with_changes": 3,
+    "total_fields_added": 2,
+    "total_fields_removed": 4,
+    "breaking_changes": 11,
+    "deprecated_changes": 0,
+    "minor_changes": 0,
+    "docs_changes": 0
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 2,
+      "breaking": 2,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {},
+  "schema_changes": [
+    {
+      "schema_name": "DowntimeAttributes",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "author",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "comment",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "end_time",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "host_name",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "is_service",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "recurring",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "site_id",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "start_time",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 576,
+    "total_schemas_new": 578,
+    "schemas_added": 2,
+    "schemas_removed": 0,
+    "schemas_with_changes": 1,
+    "total_fields_added": 0,
+    "total_fields_removed": 8,
+    "breaking_changes": 8,
+    "deprecated_changes": 0,
+    "minor_changes": 2,
+    "docs_changes": 0
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

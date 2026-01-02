@@ -1,0 +1,54 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "minor",
+  "path_changes": {
+    "added": [
+      {
+        "path": "/domain-types/parent_scan/actions/start/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Parent scan"
+        ],
+        "category": "monitoring"
+      }
+    ]
+  },
+  "schema_changes": null,
+  "summary": {
+    "total_schemas_old": 633,
+    "total_schemas_new": 641,
+    "schemas_added": 8,
+    "schemas_removed": 0,
+    "schemas_with_changes": 0,
+    "total_fields_added": 0,
+    "total_fields_removed": 0,
+    "breaking_changes": 0,
+    "deprecated_changes": 0,
+    "minor_changes": 9,
+    "docs_changes": 0
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 1,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 1
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

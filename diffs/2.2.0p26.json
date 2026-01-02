@@ -1,0 +1,77 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {
+    "added": [
+      {
+        "path": "/domain-types/downtime/actions/modify/invoke",
+        "methods": [
+          "PUT"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Downtimes"
+        ],
+        "category": "monitoring"
+      }
+    ]
+  },
+  "schema_changes": [
+    {
+      "schema_name": "BulkDiscovery",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "mode",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "PluginNameBuiltInOrCustom",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"README\""
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 578,
+    "total_schemas_new": 585,
+    "schemas_added": 7,
+    "schemas_removed": 0,
+    "schemas_with_changes": 2,
+    "total_fields_added": 0,
+    "total_fields_removed": 0,
+    "breaking_changes": 1,
+    "deprecated_changes": 0,
+    "minor_changes": 8,
+    "docs_changes": 1
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 1,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 1
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

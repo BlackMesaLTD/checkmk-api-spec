@@ -1,0 +1,1902 @@
+{
+  "generated": "2026-01-02T21:08:09Z",
+  "total_versions": 42,
+  "changelog": [
+    {
+      "version": "2.4.0p6",
+      "previous": "2.4.0p1",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 811,
+          "total_schemas_new": 818,
+          "schemas_added": 7,
+          "schemas_removed": 0,
+          "schemas_with_changes": 6,
+          "total_fields_added": 6,
+          "total_fields_removed": 0,
+          "breaking_changes": 12,
+          "deprecated_changes": 0,
+          "minor_changes": 14,
+          "docs_changes": 32
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 1,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 1
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 1,
+          "removed": 0
+        },
+        "schema_changes": 6
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.4.0p18",
+      "previous": "2.4.0p17",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 896,
+          "total_schemas_new": 821,
+          "schemas_added": 0,
+          "schemas_removed": 75,
+          "schemas_with_changes": 10,
+          "total_fields_added": 2,
+          "total_fields_removed": 8,
+          "breaking_changes": 106,
+          "deprecated_changes": 0,
+          "minor_changes": 1,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 19,
+            "breaking": 19,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 1,
+            "breaking": 1,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 1,
+            "breaking": 1,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 21
+        },
+        "schema_changes": 10
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.4.0p17",
+      "previous": "2.4.0p16",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 821,
+          "total_schemas_new": 896,
+          "schemas_added": 75,
+          "schemas_removed": 0,
+          "schemas_with_changes": 9,
+          "total_fields_added": 8,
+          "total_fields_removed": 2,
+          "breaking_changes": 2,
+          "deprecated_changes": 0,
+          "minor_changes": 104,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 19,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 19
+          },
+          "monitoring": {
+            "paths_added": 1,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 1
+          },
+          "internal": {
+            "paths_added": 1,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 1
+          }
+        },
+        "path_changes": {
+          "added": 21,
+          "removed": 0
+        },
+        "schema_changes": 9
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.4.0p16",
+      "previous": "2.4.0p14",
+      "diff": {
+        "max_severity": "minor",
+        "summary": {
+          "total_schemas_old": 821,
+          "total_schemas_new": 821,
+          "schemas_added": 0,
+          "schemas_removed": 0,
+          "schemas_with_changes": 3,
+          "total_fields_added": 1,
+          "total_fields_removed": 0,
+          "breaking_changes": 0,
+          "deprecated_changes": 0,
+          "minor_changes": 4,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 1,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 1
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 1,
+          "removed": 0
+        },
+        "schema_changes": 3
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.4.0p14",
+      "previous": "2.4.0p11",
+      "diff": {
+        "max_severity": "minor",
+        "summary": {
+          "total_schemas_old": 821,
+          "total_schemas_new": 821,
+          "schemas_added": 0,
+          "schemas_removed": 0,
+          "schemas_with_changes": 2,
+          "total_fields_added": 2,
+          "total_fields_removed": 0,
+          "breaking_changes": 0,
+          "deprecated_changes": 0,
+          "minor_changes": 2,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 2
+      },
+      "provider_relevant": false
+    },
+    {
+      "version": "2.4.0p11",
+      "previous": "2.4.0p6",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 818,
+          "total_schemas_new": 821,
+          "schemas_added": 3,
+          "schemas_removed": 0,
+          "schemas_with_changes": 5,
+          "total_fields_added": 2,
+          "total_fields_removed": 3,
+          "breaking_changes": 5,
+          "deprecated_changes": 0,
+          "minor_changes": 3,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 5
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.4.0p1",
+      "previous": "2.3.0p41",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 703,
+          "total_schemas_new": 811,
+          "schemas_added": 174,
+          "schemas_removed": 66,
+          "schemas_with_changes": 63,
+          "total_fields_added": 27,
+          "total_fields_removed": 25,
+          "breaking_changes": 153,
+          "deprecated_changes": 0,
+          "minor_changes": 231,
+          "docs_changes": 23
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 18,
+            "paths_removed": 18,
+            "breaking": 18,
+            "minor": 18
+          },
+          "monitoring": {
+            "paths_added": 1,
+            "paths_removed": 1,
+            "breaking": 1,
+            "minor": 1
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 1,
+            "breaking": 1,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 19,
+          "removed": 20
+        },
+        "schema_changes": 63
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.3.0p7",
+      "previous": "2.3.0p5",
+      "diff": {
+        "max_severity": "minor",
+        "summary": {
+          "total_schemas_old": 633,
+          "total_schemas_new": 641,
+          "schemas_added": 8,
+          "schemas_removed": 0,
+          "schemas_with_changes": 0,
+          "total_fields_added": 0,
+          "total_fields_removed": 0,
+          "breaking_changes": 0,
+          "deprecated_changes": 0,
+          "minor_changes": 9,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 1,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 1
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 1,
+          "removed": 0
+        },
+        "schema_changes": 0
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.3.0p5",
+      "previous": "2.3.0p3",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 630,
+          "total_schemas_new": 633,
+          "schemas_added": 3,
+          "schemas_removed": 0,
+          "schemas_with_changes": 6,
+          "total_fields_added": 0,
+          "total_fields_removed": 1,
+          "breaking_changes": 1,
+          "deprecated_changes": 0,
+          "minor_changes": 5,
+          "docs_changes": 13
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 6
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.3.0p41",
+      "previous": "2.3.0p40",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 631,
+          "total_schemas_new": 703,
+          "schemas_added": 72,
+          "schemas_removed": 0,
+          "schemas_with_changes": 9,
+          "total_fields_added": 8,
+          "total_fields_removed": 2,
+          "breaking_changes": 2,
+          "deprecated_changes": 0,
+          "minor_changes": 106,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 20,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 20
+          },
+          "monitoring": {
+            "paths_added": 1,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 1
+          },
+          "internal": {
+            "paths_added": 5,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 5
+          }
+        },
+        "path_changes": {
+          "added": 26,
+          "removed": 0
+        },
+        "schema_changes": 9
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.3.0p40",
+      "previous": "2.3.0p39",
+      "diff": {
+        "max_severity": "minor",
+        "summary": {
+          "total_schemas_old": 631,
+          "total_schemas_new": 631,
+          "schemas_added": 0,
+          "schemas_removed": 0,
+          "schemas_with_changes": 1,
+          "total_fields_added": 1,
+          "total_fields_removed": 0,
+          "breaking_changes": 0,
+          "deprecated_changes": 0,
+          "minor_changes": 1,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 1
+      },
+      "provider_relevant": false
+    },
+    {
+      "version": "2.3.0p39",
+      "previous": "2.3.0p37",
+      "diff": {
+        "max_severity": "minor",
+        "summary": {
+          "total_schemas_old": 631,
+          "total_schemas_new": 631,
+          "schemas_added": 0,
+          "schemas_removed": 0,
+          "schemas_with_changes": 2,
+          "total_fields_added": 2,
+          "total_fields_removed": 0,
+          "breaking_changes": 0,
+          "deprecated_changes": 0,
+          "minor_changes": 2,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 2
+      },
+      "provider_relevant": false
+    },
+    {
+      "version": "2.3.0p37",
+      "previous": "2.3.0p36",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 631,
+          "total_schemas_new": 631,
+          "schemas_added": 0,
+          "schemas_removed": 0,
+          "schemas_with_changes": 3,
+          "total_fields_added": 0,
+          "total_fields_removed": 3,
+          "breaking_changes": 3,
+          "deprecated_changes": 0,
+          "minor_changes": 0,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 3
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.3.0p36",
+      "previous": "2.3.0p33",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 628,
+          "total_schemas_new": 631,
+          "schemas_added": 3,
+          "schemas_removed": 0,
+          "schemas_with_changes": 2,
+          "total_fields_added": 2,
+          "total_fields_removed": 0,
+          "breaking_changes": 2,
+          "deprecated_changes": 0,
+          "minor_changes": 3,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 2
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.3.0p33",
+      "previous": "2.3.0p31",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 627,
+          "total_schemas_new": 628,
+          "schemas_added": 1,
+          "schemas_removed": 0,
+          "schemas_with_changes": 3,
+          "total_fields_added": 3,
+          "total_fields_removed": 5,
+          "breaking_changes": 14,
+          "deprecated_changes": 0,
+          "minor_changes": 7,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 3
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.3.0p31",
+      "previous": "2.3.0p27",
+      "diff": {
+        "max_severity": "minor",
+        "summary": {
+          "total_schemas_old": 625,
+          "total_schemas_new": 627,
+          "schemas_added": 2,
+          "schemas_removed": 0,
+          "schemas_with_changes": 6,
+          "total_fields_added": 0,
+          "total_fields_removed": 0,
+          "breaking_changes": 0,
+          "deprecated_changes": 0,
+          "minor_changes": 4,
+          "docs_changes": 6
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 2,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 2
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 2,
+          "removed": 0
+        },
+        "schema_changes": 6
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.3.0p3",
+      "previous": "2.3.0p1",
+      "diff": {
+        "max_severity": "minor",
+        "summary": {
+          "total_schemas_old": 630,
+          "total_schemas_new": 630,
+          "schemas_added": 0,
+          "schemas_removed": 0,
+          "schemas_with_changes": 20,
+          "total_fields_added": 0,
+          "total_fields_removed": 0,
+          "breaking_changes": 0,
+          "deprecated_changes": 0,
+          "minor_changes": 3,
+          "docs_changes": 19
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 20
+      },
+      "provider_relevant": false
+    },
+    {
+      "version": "2.3.0p27",
+      "previous": "2.3.0p26",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 643,
+          "total_schemas_new": 625,
+          "schemas_added": 0,
+          "schemas_removed": 18,
+          "schemas_with_changes": 0,
+          "total_fields_added": 0,
+          "total_fields_removed": 0,
+          "breaking_changes": 25,
+          "deprecated_changes": 0,
+          "minor_changes": 0,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 3,
+            "breaking": 3,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 4,
+            "breaking": 4,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 7
+        },
+        "schema_changes": 0
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.3.0p26",
+      "previous": "2.3.0p23",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 641,
+          "total_schemas_new": 643,
+          "schemas_added": 2,
+          "schemas_removed": 0,
+          "schemas_with_changes": 4,
+          "total_fields_added": 0,
+          "total_fields_removed": 8,
+          "breaking_changes": 8,
+          "deprecated_changes": 0,
+          "minor_changes": 3,
+          "docs_changes": 2
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 4
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.3.0p23",
+      "previous": "2.3.0p22",
+      "diff": {
+        "max_severity": "deprecated",
+        "summary": {
+          "total_schemas_old": 641,
+          "total_schemas_new": 641,
+          "schemas_added": 0,
+          "schemas_removed": 0,
+          "schemas_with_changes": 3,
+          "total_fields_added": 3,
+          "total_fields_removed": 0,
+          "breaking_changes": 0,
+          "deprecated_changes": 3,
+          "minor_changes": 4,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 3
+      },
+      "provider_relevant": false
+    },
+    {
+      "version": "2.3.0p22",
+      "previous": "2.3.0p14",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 641,
+          "total_schemas_new": 641,
+          "schemas_added": 0,
+          "schemas_removed": 0,
+          "schemas_with_changes": 1,
+          "total_fields_added": 1,
+          "total_fields_removed": 0,
+          "breaking_changes": 1,
+          "deprecated_changes": 0,
+          "minor_changes": 0,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 1
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.3.0p14",
+      "previous": "2.3.0p11",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 638,
+          "total_schemas_new": 641,
+          "schemas_added": 3,
+          "schemas_removed": 0,
+          "schemas_with_changes": 6,
+          "total_fields_added": 0,
+          "total_fields_removed": 0,
+          "breaking_changes": 5,
+          "deprecated_changes": 0,
+          "minor_changes": 5,
+          "docs_changes": 2
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 6
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.3.0p11",
+      "previous": "2.3.0p7",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 641,
+          "total_schemas_new": 638,
+          "schemas_added": 0,
+          "schemas_removed": 3,
+          "schemas_with_changes": 3,
+          "total_fields_added": 2,
+          "total_fields_removed": 4,
+          "breaking_changes": 11,
+          "deprecated_changes": 0,
+          "minor_changes": 0,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 2,
+            "breaking": 2,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 2
+        },
+        "schema_changes": 3
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.3.0p1",
+      "previous": "2.2.0p44",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 588,
+          "total_schemas_new": 630,
+          "schemas_added": 85,
+          "schemas_removed": 43,
+          "schemas_with_changes": 92,
+          "total_fields_added": 8,
+          "total_fields_removed": 6,
+          "breaking_changes": 140,
+          "deprecated_changes": 4,
+          "minor_changes": 106,
+          "docs_changes": 120
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 3,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 3
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 3,
+          "removed": 0
+        },
+        "schema_changes": 92
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.2.0p9",
+      "previous": "2.2.0p8",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 440,
+          "total_schemas_new": 440,
+          "schemas_added": 1,
+          "schemas_removed": 1,
+          "schemas_with_changes": 17,
+          "total_fields_added": 15,
+          "total_fields_removed": 0,
+          "breaking_changes": 10,
+          "deprecated_changes": 0,
+          "minor_changes": 7,
+          "docs_changes": 2
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 17
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.2.0p8",
+      "previous": "2.2.0p5",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 437,
+          "total_schemas_new": 440,
+          "schemas_added": 3,
+          "schemas_removed": 0,
+          "schemas_with_changes": 5,
+          "total_fields_added": 3,
+          "total_fields_removed": 0,
+          "breaking_changes": 3,
+          "deprecated_changes": 0,
+          "minor_changes": 3,
+          "docs_changes": 4
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 5
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.2.0p5",
+      "previous": "2.2.0p4",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 330,
+          "total_schemas_new": 437,
+          "schemas_added": 107,
+          "schemas_removed": 0,
+          "schemas_with_changes": 2,
+          "total_fields_added": 27,
+          "total_fields_removed": 6,
+          "breaking_changes": 36,
+          "deprecated_changes": 0,
+          "minor_changes": 110,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 3,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 3
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 3,
+          "removed": 0
+        },
+        "schema_changes": 2
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.2.0p44",
+      "previous": "2.2.0p43",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 626,
+          "total_schemas_new": 588,
+          "schemas_added": 0,
+          "schemas_removed": 38,
+          "schemas_with_changes": 10,
+          "total_fields_added": 4,
+          "total_fields_removed": 11,
+          "breaking_changes": 69,
+          "deprecated_changes": 0,
+          "minor_changes": 0,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 14,
+            "breaking": 14,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 1,
+            "breaking": 1,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 1,
+            "breaking": 1,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 16
+        },
+        "schema_changes": 10
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.2.0p43",
+      "previous": "2.2.0p33",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 588,
+          "total_schemas_new": 626,
+          "schemas_added": 38,
+          "schemas_removed": 0,
+          "schemas_with_changes": 12,
+          "total_fields_added": 11,
+          "total_fields_removed": 4,
+          "breaking_changes": 7,
+          "deprecated_changes": 0,
+          "minor_changes": 62,
+          "docs_changes": 2
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 14,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 14
+          },
+          "monitoring": {
+            "paths_added": 1,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 1
+          },
+          "internal": {
+            "paths_added": 1,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 1
+          }
+        },
+        "path_changes": {
+          "added": 16,
+          "removed": 0
+        },
+        "schema_changes": 12
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.2.0p4",
+      "previous": "2.2.0p3",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 331,
+          "total_schemas_new": 330,
+          "schemas_added": 2,
+          "schemas_removed": 3,
+          "schemas_with_changes": 14,
+          "total_fields_added": 0,
+          "total_fields_removed": 0,
+          "breaking_changes": 14,
+          "deprecated_changes": 0,
+          "minor_changes": 5,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 14
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.2.0p33",
+      "previous": "2.2.0p32",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 585,
+          "total_schemas_new": 588,
+          "schemas_added": 3,
+          "schemas_removed": 0,
+          "schemas_with_changes": 4,
+          "total_fields_added": 0,
+          "total_fields_removed": 0,
+          "breaking_changes": 5,
+          "deprecated_changes": 0,
+          "minor_changes": 5,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 4
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.2.0p32",
+      "previous": "2.2.0p26",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 585,
+          "total_schemas_new": 585,
+          "schemas_added": 0,
+          "schemas_removed": 0,
+          "schemas_with_changes": 1,
+          "total_fields_added": 0,
+          "total_fields_removed": 2,
+          "breaking_changes": 2,
+          "deprecated_changes": 0,
+          "minor_changes": 0,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 1
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.2.0p3",
+      "previous": "2.2.0p1",
+      "diff": {
+        "max_severity": "minor",
+        "summary": {
+          "total_schemas_old": 329,
+          "total_schemas_new": 331,
+          "schemas_added": 2,
+          "schemas_removed": 0,
+          "schemas_with_changes": 0,
+          "total_fields_added": 0,
+          "total_fields_removed": 0,
+          "breaking_changes": 0,
+          "deprecated_changes": 0,
+          "minor_changes": 3,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 1,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 1
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 1,
+          "removed": 0
+        },
+        "schema_changes": 0
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.2.0p26",
+      "previous": "2.2.0p23",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 578,
+          "total_schemas_new": 585,
+          "schemas_added": 7,
+          "schemas_removed": 0,
+          "schemas_with_changes": 2,
+          "total_fields_added": 0,
+          "total_fields_removed": 0,
+          "breaking_changes": 1,
+          "deprecated_changes": 0,
+          "minor_changes": 8,
+          "docs_changes": 1
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 1,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 1
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 1,
+          "removed": 0
+        },
+        "schema_changes": 2
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.2.0p23",
+      "previous": "2.2.0p22",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 576,
+          "total_schemas_new": 578,
+          "schemas_added": 2,
+          "schemas_removed": 0,
+          "schemas_with_changes": 1,
+          "total_fields_added": 0,
+          "total_fields_removed": 8,
+          "breaking_changes": 8,
+          "deprecated_changes": 0,
+          "minor_changes": 2,
+          "docs_changes": 0
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 1
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.2.0p22",
+      "previous": "2.2.0p21",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 550,
+          "total_schemas_new": 576,
+          "schemas_added": 28,
+          "schemas_removed": 2,
+          "schemas_with_changes": 18,
+          "total_fields_added": 2,
+          "total_fields_removed": 0,
+          "breaking_changes": 52,
+          "deprecated_changes": 2,
+          "minor_changes": 56,
+          "docs_changes": 3
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 1,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 1
+          }
+        },
+        "path_changes": {
+          "added": 1,
+          "removed": 0
+        },
+        "schema_changes": 18
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.2.0p21",
+      "previous": "2.2.0p18",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 444,
+          "total_schemas_new": 550,
+          "schemas_added": 109,
+          "schemas_removed": 3,
+          "schemas_with_changes": 42,
+          "total_fields_added": 0,
+          "total_fields_removed": 0,
+          "breaking_changes": 99,
+          "deprecated_changes": 0,
+          "minor_changes": 110,
+          "docs_changes": 21
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 42
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.2.0p18",
+      "previous": "2.2.0p14",
+      "diff": {
+        "max_severity": "minor",
+        "summary": {
+          "total_schemas_old": 444,
+          "total_schemas_new": 444,
+          "schemas_added": 0,
+          "schemas_removed": 0,
+          "schemas_with_changes": 2,
+          "total_fields_added": 1,
+          "total_fields_removed": 0,
+          "breaking_changes": 0,
+          "deprecated_changes": 0,
+          "minor_changes": 1,
+          "docs_changes": 1
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 2
+      },
+      "provider_relevant": false
+    },
+    {
+      "version": "2.2.0p14",
+      "previous": "2.2.0p12",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 442,
+          "total_schemas_new": 444,
+          "schemas_added": 2,
+          "schemas_removed": 0,
+          "schemas_with_changes": 23,
+          "total_fields_added": 0,
+          "total_fields_removed": 2,
+          "breaking_changes": 2,
+          "deprecated_changes": 0,
+          "minor_changes": 5,
+          "docs_changes": 18
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 23
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.2.0p12",
+      "previous": "2.2.0p11",
+      "diff": {
+        "max_severity": "docs",
+        "summary": {
+          "total_schemas_old": 441,
+          "total_schemas_new": 442,
+          "schemas_added": 1,
+          "schemas_removed": 0,
+          "schemas_with_changes": 3,
+          "total_fields_added": 0,
+          "total_fields_removed": 0,
+          "breaking_changes": 0,
+          "deprecated_changes": 0,
+          "minor_changes": 1,
+          "docs_changes": 3
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 3
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.2.0p11",
+      "previous": "2.2.0p9",
+      "diff": {
+        "max_severity": "breaking",
+        "summary": {
+          "total_schemas_old": 440,
+          "total_schemas_new": 441,
+          "schemas_added": 1,
+          "schemas_removed": 0,
+          "schemas_with_changes": 3,
+          "total_fields_added": 0,
+          "total_fields_removed": 0,
+          "breaking_changes": 1,
+          "deprecated_changes": 0,
+          "minor_changes": 1,
+          "docs_changes": 2
+        },
+        "category_summary": {
+          "setup": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "monitoring": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          },
+          "internal": {
+            "paths_added": 0,
+            "paths_removed": 0,
+            "breaking": 0,
+            "minor": 0
+          }
+        },
+        "path_changes": {
+          "added": 0,
+          "removed": 0
+        },
+        "schema_changes": 3
+      },
+      "provider_relevant": true
+    },
+    {
+      "version": "2.2.0p1",
+      "previous": null,
+      "diff": {
+        "max_severity": "initial",
+        "summary": {
+          "note": "Initial baseline version"
+        }
+      }
+    }
+  ]
+}

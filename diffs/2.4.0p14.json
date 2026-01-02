@@ -1,0 +1,67 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "minor",
+  "path_changes": {},
+  "schema_changes": [
+    {
+      "schema_name": "ConfigurationConnectionAttributesOutput",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "is_trusted",
+          "severity": "minor",
+          "new_type": "boolean",
+          "description": "When this option is enabled the central site might get compromised by a rogue remote site. If you di...",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "ConfigurationConnectionWithReplicationAttributes",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "is_trusted",
+          "severity": "minor",
+          "new_type": "boolean",
+          "description": "When this option is enabled the central site might get compromised by a rogue remote site. If you di...",
+          "change_reason": "New optional field"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 821,
+    "total_schemas_new": 821,
+    "schemas_added": 0,
+    "schemas_removed": 0,
+    "schemas_with_changes": 2,
+    "total_fields_added": 2,
+    "total_fields_removed": 0,
+    "breaking_changes": 0,
+    "deprecated_changes": 0,
+    "minor_changes": 2,
+    "docs_changes": 0
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

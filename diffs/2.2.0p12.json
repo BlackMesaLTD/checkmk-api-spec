@@ -1,0 +1,74 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "docs",
+  "path_changes": {},
+  "schema_changes": [
+    {
+      "schema_name": "CreateTimePeriod",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "exclude",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "TimePeriodAttrsResponse",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "exclude",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateTimePeriod",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "exclude",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 441,
+    "total_schemas_new": 442,
+    "schemas_added": 1,
+    "schemas_removed": 0,
+    "schemas_with_changes": 3,
+    "total_fields_added": 0,
+    "total_fields_removed": 0,
+    "breaking_changes": 0,
+    "deprecated_changes": 0,
+    "minor_changes": 1,
+    "docs_changes": 3
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

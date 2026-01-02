@@ -1,0 +1,59 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {},
+  "schema_changes": [
+    {
+      "schema_name": "PasswordExtension",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "ident",
+          "severity": "breaking",
+          "old_type": "string",
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "title",
+          "severity": "breaking",
+          "old_type": "string",
+          "change_reason": "Field removed"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 585,
+    "total_schemas_new": 585,
+    "schemas_added": 0,
+    "schemas_removed": 0,
+    "schemas_with_changes": 1,
+    "total_fields_added": 0,
+    "total_fields_removed": 2,
+    "breaking_changes": 2,
+    "deprecated_changes": 0,
+    "minor_changes": 0,
+    "docs_changes": 0
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

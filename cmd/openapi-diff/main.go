@@ -35,6 +35,32 @@ const (
 	SeverityNone       Severity = "none"       // No changes
 )
 
+// Category classifies API endpoints by their purpose
+type Category string
+
+const (
+	CategorySetup      Category = "setup"      // Configuration endpoints (Terraform provider)
+	CategoryMonitoring Category = "monitoring" // Operational/live actions
+	CategoryInternal   Category = "internal"   // Internal-only endpoints
+)
+
+// Tag sets for category classification
+var monitoringTags = map[string]bool{
+	"Acknowledge problems": true,
+	"Comments":             true,
+	"Downtimes":            true,
+	"Service status":       true,
+	"Metrics":              true,
+	"Parent scan":          true,
+	"Background Jobs":      true,
+}
+
+var internalTags = map[string]bool{
+	"Autocomplete (internal)": true,
+	"Hosts (internal)":        true,
+	"Miscellaneous":           true,
+}
+
 // SeverityOrder defines the priority of severities (higher = more severe)
 var SeverityOrder = map[Severity]int{
 	SeverityNone:       0,
@@ -59,12 +85,28 @@ type Components struct {
 
 // DiffReport contains the differences between two specs
 type DiffReport struct {
-	OldVersion    string          `json:"old_version"`
-	NewVersion    string          `json:"new_version"`
-	MaxSeverity   Severity        `json:"max_severity"`
-	PathChanges   *PathChanges    `json:"path_changes"`
-	SchemaChanges []*SchemaChange `json:"schema_changes"`
-	Summary       *Summary        `json:"summary"`
+	OldVersion      string           `json:"old_version"`
+	NewVersion      string           `json:"new_version"`
+	MaxSeverity     Severity         `json:"max_severity"`
+	PathChanges     *PathChanges     `json:"path_changes"`
+	SchemaChanges   []*SchemaChange  `json:"schema_changes"`
+	Summary         *Summary         `json:"summary"`
+	CategorySummary *CategorySummary `json:"category_summary,omitempty"`
+}
+
+// CategorySummary provides breakdown by API category
+type CategorySummary struct {
+	Setup      *CategoryStats `json:"setup"`
+	Monitoring *CategoryStats `json:"monitoring"`
+	Internal   *CategoryStats `json:"internal"`
+}
+
+// CategoryStats tracks changes within a category
+type CategoryStats struct {
+	PathsAdded   int `json:"paths_added"`
+	PathsRemoved int `json:"paths_removed"`
+	Breaking     int `json:"breaking"`
+	Minor        int `json:"minor"`
 }
 
 // PathChanges tracks path-level differences
@@ -78,6 +120,8 @@ type PathChange struct {
 	Path     string   `json:"path"`
 	Methods  []string `json:"methods,omitempty"`
 	Severity Severity `json:"severity"`
+	Tags     []string `json:"tags,omitempty"`
+	Category Category `json:"category,omitempty"`
 }
 
 // SchemaChange tracks changes to a specific schema
@@ -279,29 +323,54 @@ func comparePaths(oldSpec, newSpec *OpenAPISpec, report *DiffReport) {
 		newPaths[path] = methods
 	}
 
+	// Initialize category summary
+	report.CategorySummary = &CategorySummary{
+		Setup:      &CategoryStats{},
+		Monitoring: &CategoryStats{},
+		Internal:   &CategoryStats{},
+	}
+
 	// Find added paths (minor severity)
 	for path, methods := range newPaths {
 		if _, exists := oldPaths[path]; !exists {
+			tags := extractTags(methods)
+			category := classifyCategory(tags)
 			change := &PathChange{
 				Path:     path,
 				Severity: SeverityMinor,
 				Methods:  extractMethods(methods),
+				Tags:     tags,
+				Category: category,
 			}
 			report.PathChanges.Added = append(report.PathChanges.Added, change)
 			report.Summary.MinorChanges++
+
+			// Update category stats
+			stats := getCategoryStats(report.CategorySummary, category)
+			stats.PathsAdded++
+			stats.Minor++
 		}
 	}
 
 	// Find removed paths (breaking severity)
 	for path, methods := range oldPaths {
 		if _, exists := newPaths[path]; !exists {
+			tags := extractTags(methods)
+			category := classifyCategory(tags)
 			change := &PathChange{
 				Path:     path,
 				Severity: SeverityBreaking,
 				Methods:  extractMethods(methods),
+				Tags:     tags,
+				Category: category,
 			}
 			report.PathChanges.Removed = append(report.PathChanges.Removed, change)
 			report.Summary.BreakingChanges++
+
+			// Update category stats
+			stats := getCategoryStats(report.CategorySummary, category)
+			stats.PathsRemoved++
+			stats.Breaking++
 		}
 	}
 
@@ -312,6 +381,59 @@ func comparePaths(oldSpec, newSpec *OpenAPISpec, report *DiffReport) {
 	sort.Slice(report.PathChanges.Removed, func(i, j int) bool {
 		return report.PathChanges.Removed[i].Path < report.PathChanges.Removed[j].Path
 	})
+}
+
+// extractTags gets tags from a path item's methods
+func extractTags(pathItem interface{}) []string {
+	tagSet := make(map[string]bool)
+	if m, ok := pathItem.(map[string]interface{}); ok {
+		for key, val := range m {
+			switch key {
+			case "get", "post", "put", "delete", "patch", "head", "options":
+				if method, ok := val.(map[string]interface{}); ok {
+					if tags, ok := method["tags"].([]interface{}); ok {
+						for _, t := range tags {
+							if tag, ok := t.(string); ok {
+								tagSet[tag] = true
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	tags := make([]string, 0, len(tagSet))
+	for t := range tagSet {
+		tags = append(tags, t)
+	}
+	sort.Strings(tags)
+	return tags
+}
+
+// classifyCategory determines the category based on tags
+func classifyCategory(tags []string) Category {
+	for _, tag := range tags {
+		if monitoringTags[tag] {
+			return CategoryMonitoring
+		}
+		if internalTags[tag] || strings.Contains(tag, "(internal)") {
+			return CategoryInternal
+		}
+	}
+	return CategorySetup
+}
+
+// getCategoryStats returns the stats struct for a given category
+func getCategoryStats(cs *CategorySummary, cat Category) *CategoryStats {
+	switch cat {
+	case CategoryMonitoring:
+		return cs.Monitoring
+	case CategoryInternal:
+		return cs.Internal
+	default:
+		return cs.Setup
+	}
 }
 
 func extractMethods(pathItem interface{}) []string {

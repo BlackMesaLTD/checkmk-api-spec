@@ -1,0 +1,77 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {},
+  "schema_changes": [
+    {
+      "schema_name": "SiteConfigAttributes",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "secret",
+          "severity": "breaking",
+          "old_type": "string",
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "SiteConfigAttributesCreate",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "secret",
+          "severity": "breaking",
+          "old_type": "string",
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "SiteConfigAttributesUpdate",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "secret",
+          "severity": "breaking",
+          "old_type": "string",
+          "change_reason": "Field removed"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 631,
+    "total_schemas_new": 631,
+    "schemas_added": 0,
+    "schemas_removed": 0,
+    "schemas_with_changes": 3,
+    "total_fields_added": 0,
+    "total_fields_removed": 3,
+    "breaking_changes": 3,
+    "deprecated_changes": 0,
+    "minor_changes": 0,
+    "docs_changes": 0
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

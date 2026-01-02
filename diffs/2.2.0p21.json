@@ -1,0 +1,1060 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {},
+  "schema_changes": [
+    {
+      "schema_name": "AsciiMailPluginCreate",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "body_head_for_both_host_and_service_notifications",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:StrValueOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:StrValueOneOf"
+        },
+        {
+          "path": "body_tail_for_host_notifications",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:StrValueOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:StrValueOneOf"
+        },
+        {
+          "path": "body_tail_for_service_notifications",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:StrValueOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:StrValueOneOf"
+        },
+        {
+          "path": "from_details",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:FromDetailsOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:FromDetailsOneOf"
+        },
+        {
+          "path": "reply_to",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:ReplyToOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:ReplyToOneOf"
+        },
+        {
+          "path": "sort_order_for_bulk_notificaions",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:SortOrderOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:SortOrderOneOf"
+        },
+        {
+          "path": "subject_for_host_notifications",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:SubjectHostOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:SubjectHostOneOf"
+        },
+        {
+          "path": "subject_for_service_notifications",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:SubjectServiceOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:SubjectServiceOneOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "BulkOutsideTimePeriodValue",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CaseParams",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "host_description",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:StrValueOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:StrValueOneOf"
+        },
+        {
+          "path": "host_short_description",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:StrValueOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:StrValueOneOf"
+        },
+        {
+          "path": "priority",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:PriorityOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:PriorityOneOf"
+        },
+        {
+          "path": "service_description",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:StrValueOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:StrValueOneOf"
+        },
+        {
+          "path": "service_short_description",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:StrValueOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:StrValueOneOf"
+        },
+        {
+          "path": "state_recovery",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:StateRecoveryOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:StateRecoveryOneOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "Checkbox",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CheckboxHostEventType",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CheckboxMatchHostTags",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "value",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "array",
+          "change_reason": "Type changed: allOf → array"
+        }
+      ]
+    },
+    {
+      "schema_name": "CheckboxRestrictNotificationNumbers",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CheckboxServiceEventType",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CheckboxThrottlePeriodicNotifcations",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CheckboxWithFolderStr",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CheckboxWithFromToServiceLevels",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CheckboxWithListOfLabels",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CheckboxWithListOfServiceGroupsRegex",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CheckboxWithListOfStr",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CheckboxWithStrValue",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CheckboxWithSysLogPriority",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CiscoWebexPluginCreate",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "url_prefix_for_links_to_checkmk",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:UrlPrefixOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:UrlPrefixOneOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "ConditionsAttributes",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "match_host_tags",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxMatchHostTags",
+          "new_type": "ref:CheckboxMatchHostTags1",
+          "change_reason": "Type changed: ref:CheckboxMatchHostTags → ref:CheckboxMatchHostTags1"
+        },
+        {
+          "path": "match_notification_comment",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithStr",
+          "new_type": "ref:CheckboxWithStrValue",
+          "change_reason": "Type changed: ref:CheckboxWithStr → ref:CheckboxWithStrValue"
+        },
+        {
+          "path": "match_only_during_time_period",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithStr",
+          "new_type": "ref:CheckboxWithStrValue",
+          "change_reason": "Type changed: ref:CheckboxWithStr → ref:CheckboxWithStrValue"
+        },
+        {
+          "path": "match_plugin_output",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithStr",
+          "new_type": "ref:CheckboxWithStrValue",
+          "change_reason": "Type changed: ref:CheckboxWithStr → ref:CheckboxWithStrValue"
+        }
+      ]
+    },
+    {
+      "schema_name": "ContactSelection",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "explicit_email_addresses",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:ExplicitEmailAddressesCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:ExplicitEmailAddressesCheckbox"
+        },
+        {
+          "path": "members_of_contact_groups",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:ListOfContactGroupsCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:ListOfContactGroupsCheckbox"
+        },
+        {
+          "path": "restrict_by_contact_groups",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:ListOfContactGroupsCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:ListOfContactGroupsCheckbox"
+        },
+        {
+          "path": "restrict_by_custom_macros",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:CustomMacrosCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:CustomMacrosCheckbox"
+        },
+        {
+          "path": "the_following_users",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:TheFollowingUsers",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:TheFollowingUsers"
+        }
+      ]
+    },
+    {
+      "schema_name": "EventConsoleAlertAttrsResponse",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "match_event_comment",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithStr",
+          "new_type": "ref:CheckboxWithStrValue",
+          "change_reason": "Type changed: ref:CheckboxWithStr → ref:CheckboxWithStrValue"
+        },
+        {
+          "path": "match_syslog_facility",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxWithStr",
+          "new_type": "ref:CheckboxWithStrValue",
+          "change_reason": "Type changed: ref:CheckboxWithStr → ref:CheckboxWithStrValue"
+        }
+      ]
+    },
+    {
+      "schema_name": "EventConsoleAlertsResponse",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "FromEmailAndNameCheckbox",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "FromToServiceLevels",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "from_level",
+          "severity": "breaking",
+          "old_type": "string",
+          "new_type": "integer",
+          "change_reason": "Type changed: string → integer"
+        },
+        {
+          "path": "from_level",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"no_service_level\""
+        },
+        {
+          "path": "from_level",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"silver\""
+        },
+        {
+          "path": "from_level",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"gold\""
+        },
+        {
+          "path": "from_level",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"platinum\""
+        },
+        {
+          "path": "to_level",
+          "severity": "breaking",
+          "old_type": "string",
+          "new_type": "integer",
+          "change_reason": "Type changed: string → integer"
+        },
+        {
+          "path": "to_level",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"no_service_level\""
+        },
+        {
+          "path": "to_level",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"silver\""
+        },
+        {
+          "path": "to_level",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"gold\""
+        },
+        {
+          "path": "to_level",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"platinum\""
+        }
+      ]
+    },
+    {
+      "schema_name": "HTMLMailPluginCreate",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "bulk_notifications_with_graphs",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:BulkNotificationsOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:BulkNotificationsOneOf"
+        },
+        {
+          "path": "enable_sync_smtp",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:EnableSyncOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:EnableSyncOneOf"
+        },
+        {
+          "path": "from_details",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:FromDetailsOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:FromDetailsOneOf"
+        },
+        {
+          "path": "graphs_per_notification",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:GraphsPerNotificationOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:GraphsPerNotificationOneOf"
+        },
+        {
+          "path": "info_to_be_displayed_in_the_email_body",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:EmailInfoOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:EmailInfoOneOf"
+        },
+        {
+          "path": "insert_html_section_between_body_and_table",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:InsertHtmlOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:InsertHtmlOneOf"
+        },
+        {
+          "path": "reply_to",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:ReplyToOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:ReplyToOneOf"
+        },
+        {
+          "path": "sort_order_for_bulk_notificaions",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:SortOrderOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:SortOrderOneOf"
+        },
+        {
+          "path": "subject_for_host_notifications",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:SubjectHostOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:SubjectHostOneOf"
+        },
+        {
+          "path": "subject_for_service_notifications",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:SubjectServiceOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:SubjectServiceOneOf"
+        },
+        {
+          "path": "url_prefix_for_links_to_checkmk",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:UrlPrefixOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:UrlPrefixOneOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "IlertPluginCreate",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "url_prefix_for_links_to_checkmk",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:UrlPrefixOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:UrlPrefixOneOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "IncidentParams",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "host_description",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:StrValueOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:StrValueOneOf"
+        },
+        {
+          "path": "host_short_description",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:StrValueOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:StrValueOneOf"
+        },
+        {
+          "path": "impact",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:StrValueOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:StrValueOneOf"
+        },
+        {
+          "path": "service_description",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:StrValueOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:StrValueOneOf"
+        },
+        {
+          "path": "service_short_description",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:StrValueOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:StrValueOneOf"
+        },
+        {
+          "path": "state_acknowledgement",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:TypeStateOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:TypeStateOneOf"
+        },
+        {
+          "path": "state_downtime",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:TypeStateOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:TypeStateOneOf"
+        },
+        {
+          "path": "state_recovery",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:TypeStateOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:TypeStateOneOf"
+        },
+        {
+          "path": "urgency",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:TypeUrgencyOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:TypeUrgencyOneOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "MSTeamsPluginCreate",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "url_prefix_for_links_to_checkmk",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:UrlPrefixOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:UrlPrefixOneOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "MatchCustomMacros",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "MatchEventConsoleAlertsResponse",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "MkEventDPluginCreate",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "ip_address_of_remote_event_console",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:IPAddressOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:IPAddressOneOf"
+        },
+        {
+          "path": "syslog_facility_to_use",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:SysLogFacilityOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:SysLogFacilityOneOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "NotificationBulking",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "NotificationBulkingCheckbox",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "NotificationBulkingCommonAttributes",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "OpsGeniePluginCreate",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "priority",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:OpsGeniePriorityOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:OpsGeniePriorityOneOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "PagerDutyPluginCreate",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "url_prefix_for_links_to_checkmk",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:UrlPrefixOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:UrlPrefixOneOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "PushOverPluginCreate",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "priority",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:PushOverOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:PushOverOneOf"
+        },
+        {
+          "path": "sound",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:SoundsOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:SoundsOneOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "RuleConditions",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "event_console_alerts",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:EventConsoleAlertCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:EventConsoleAlertCheckbox"
+        },
+        {
+          "path": "match_check_types",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:MatchCheckTypesCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:MatchCheckTypesCheckbox"
+        },
+        {
+          "path": "match_contact_groups",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:MatchContactGroupsCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:MatchContactGroupsCheckbox"
+        },
+        {
+          "path": "match_exclude_hosts",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:MatchHostsCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:MatchHostsCheckbox"
+        },
+        {
+          "path": "match_exclude_service_groups",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:MatchServiceGroupsCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:MatchServiceGroupsCheckbox"
+        },
+        {
+          "path": "match_exclude_service_groups_regex",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:MatchServiceGroupRegexCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:MatchServiceGroupRegexCheckbox"
+        },
+        {
+          "path": "match_exclude_services",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:MatchServicesCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:MatchServicesCheckbox"
+        },
+        {
+          "path": "match_folder",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:MatchFolderCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:MatchFolderCheckbox"
+        },
+        {
+          "path": "match_host_event_type",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:MatchHostEventTypeCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:MatchHostEventTypeCheckbox"
+        },
+        {
+          "path": "match_host_groups",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:MatchHostGroupsCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:MatchHostGroupsCheckbox"
+        },
+        {
+          "path": "match_host_labels",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:MatchLabelsCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:MatchLabelsCheckbox"
+        },
+        {
+          "path": "match_host_tags",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:MatchHostTagsCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:MatchHostTagsCheckbox"
+        },
+        {
+          "path": "match_hosts",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:MatchHostsCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:MatchHostsCheckbox"
+        },
+        {
+          "path": "match_notification_comment",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:StringCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:StringCheckbox"
+        },
+        {
+          "path": "match_only_during_time_period",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:MatchTimePeriodCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:MatchTimePeriodCheckbox"
+        },
+        {
+          "path": "match_plugin_output",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:StringCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:StringCheckbox"
+        },
+        {
+          "path": "match_service_event_type",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:MatchServiceEventTypeCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:MatchServiceEventTypeCheckbox"
+        },
+        {
+          "path": "match_service_groups",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:MatchServiceGroupsCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:MatchServiceGroupsCheckbox"
+        },
+        {
+          "path": "match_service_groups_regex",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:MatchServiceGroupRegexCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:MatchServiceGroupRegexCheckbox"
+        },
+        {
+          "path": "match_service_labels",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:MatchLabelsCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:MatchLabelsCheckbox"
+        },
+        {
+          "path": "match_service_levels",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:MatchServiceLevelsCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:MatchServiceLevelsCheckbox"
+        },
+        {
+          "path": "match_services",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:MatchServicesCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:MatchServicesCheckbox"
+        },
+        {
+          "path": "match_sites",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:MatchSitesCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:MatchSitesCheckbox"
+        },
+        {
+          "path": "restrict_to_notification_numbers",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:RestrictNotificationNumCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:RestrictNotificationNumCheckbox"
+        },
+        {
+          "path": "throttle_periodic_notifications",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:ThorttlePeriodicNotificationsCheckbox",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:ThorttlePeriodicNotificationsCheckbox"
+        }
+      ]
+    },
+    {
+      "schema_name": "RuleNotificationMethod",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "notification_bulking",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:NotificationBulk",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:NotificationBulk"
+        },
+        {
+          "path": "notification_bulking",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        }
+      ]
+    },
+    {
+      "schema_name": "ServiceNowPluginCreate",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "optional_timeout",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:StrValueOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:StrValueOneOf"
+        },
+        {
+          "path": "use_site_id_prefix",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:SiteIDPrefixOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:SiteIDPrefixOneOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "Signl4PluginCreate",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "url_prefix_for_links_to_checkmk",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:UrlPrefixOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:UrlPrefixOneOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "SlackPluginCreate",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "url_prefix_for_links_to_checkmk",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:UrlPrefixOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:UrlPrefixOneOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "VictoropsPluginCreate",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "url_prefix_for_links_to_checkmk",
+          "severity": "breaking",
+          "old_type": "ref:CheckboxOneOf",
+          "new_type": "ref:UrlPrefixOneOf",
+          "change_reason": "Type changed: ref:CheckboxOneOf → ref:UrlPrefixOneOf"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 444,
+    "total_schemas_new": 550,
+    "schemas_added": 109,
+    "schemas_removed": 3,
+    "schemas_with_changes": 42,
+    "total_fields_added": 0,
+    "total_fields_removed": 0,
+    "breaking_changes": 99,
+    "deprecated_changes": 0,
+    "minor_changes": 110,
+    "docs_changes": 21
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

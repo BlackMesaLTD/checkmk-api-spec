@@ -1,0 +1,90 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "minor",
+  "path_changes": {
+    "added": [
+      {
+        "path": "/domain-types/passwordstore_password/collections/{entity_type_specifier}",
+        "methods": [
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Configuration entities / Passwordstore Password"
+        ],
+        "category": "setup"
+      }
+    ]
+  },
+  "schema_changes": [
+    {
+      "schema_name": "CreateConfigurationEntity",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "entity_type",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"passwordstore_password\""
+        }
+      ]
+    },
+    {
+      "schema_name": "SiteConfigAttributes",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "logged_in",
+          "severity": "minor",
+          "new_type": "boolean",
+          "description": "If a remote site is currently logged in, this will be True, if not it will be False. For the main si...",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateConfigurationEntity",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "entity_type",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"passwordstore_password\""
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 821,
+    "total_schemas_new": 821,
+    "schemas_added": 0,
+    "schemas_removed": 0,
+    "schemas_with_changes": 3,
+    "total_fields_added": 1,
+    "total_fields_removed": 0,
+    "breaking_changes": 0,
+    "deprecated_changes": 0,
+    "minor_changes": 4,
+    "docs_changes": 0
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 1,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 1
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

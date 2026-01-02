@@ -1,0 +1,298 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {},
+  "schema_changes": [
+    {
+      "schema_name": "AsciiMailPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CiscoWebexPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "DeleteDowntimeByName",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "site_id",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "DeleteDowntimeByQuery",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "site_id",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "HTMLMailPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "IlertPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "JiraPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "MSTeamsPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "MkEventDPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "OpsGeniePluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "PagerDutyPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "PluginBase",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "option",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"create_notification_with_custom_parameters\""
+        }
+      ]
+    },
+    {
+      "schema_name": "PluginBase1",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "option",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"create_notification_with_custom_parameters\""
+        }
+      ]
+    },
+    {
+      "schema_name": "PluginName",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "PluginWithParams",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "option",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"create_notification_with_custom_parameters\""
+        }
+      ]
+    },
+    {
+      "schema_name": "PushOverPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "SMSAPIPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "SMSPluginBase",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "ServiceNowPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "Signl4PluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "SlackPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "SpectrumPluginBase",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "VictoropsPluginCreate",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "plugin_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 442,
+    "total_schemas_new": 444,
+    "schemas_added": 2,
+    "schemas_removed": 0,
+    "schemas_with_changes": 23,
+    "total_fields_added": 0,
+    "total_fields_removed": 2,
+    "breaking_changes": 2,
+    "deprecated_changes": 0,
+    "minor_changes": 5,
+    "docs_changes": 18
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

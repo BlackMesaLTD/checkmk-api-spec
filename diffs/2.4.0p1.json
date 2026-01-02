@@ -1,0 +1,1699 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {
+    "added": [
+      {
+        "path": "/domain-types/broker_connection/collections/all",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Broker Connection"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/configuration_entity/actions/edit-single-entity/invoke",
+        "methods": [
+          "PUT"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Configuration entities"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/configuration_entity/collections/all",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Configuration entities"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/folder/collections/{entity_type_specifier}",
+        "methods": [
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Configuration entities / Folder"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/form_spec/collections/{entity_type}",
+        "methods": [
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Configuration entities"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/ldap_connection/collections/all",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "LDAP Connections"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/notification_parameter/collections/{entity_type_specifier}",
+        "methods": [
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Configuration entities / Notification Parameter"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/user_config/actions/dismiss-warning/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Users"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/background_job/{job_id}",
+        "methods": [
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Background Jobs"
+        ],
+        "category": "monitoring"
+      },
+      {
+        "path": "/objects/broker_connection/{connection_id}",
+        "methods": [
+          "DELETE",
+          "GET",
+          "PUT"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Broker Connection"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/ldap_connection/{ldap_connection_id}",
+        "methods": [
+          "DELETE",
+          "GET",
+          "PUT"
+        ],
+        "severity": "minor",
+        "tags": [
+          "LDAP Connections"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/notification_parameter/{entity_id}",
+        "methods": [
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Configuration entities / Notification Parameter"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/quick_setup/{quick_setup_id}",
+        "methods": [
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Quick setup"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/quick_setup/{quick_setup_id}/actions/edit/invoke",
+        "methods": [
+          "PUT"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Quick setup"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/quick_setup/{quick_setup_id}/actions/run-action/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Quick setup"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/quick_setup/{quick_setup_id}/actions/run-stage-action/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Quick setup"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/quick_setup/{quick_setup_id}/quick_setup_stage/{stage_index}",
+        "methods": [
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Quick setup"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/quick_setup_action_result/{job_id}",
+        "methods": [
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Quick setup"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/quick_setup_stage_action_result/{job_id}",
+        "methods": [
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Quick setup"
+        ],
+        "category": "setup"
+      }
+    ],
+    "removed": [
+      {
+        "path": "/domain-types/agent/actions/automatic-deployment/invoke",
+        "methods": [
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/actions/bake/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/actions/bake_and_sign/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/actions/baking_status/invoke",
+        "methods": [
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/actions/download_by_hash/invoke",
+        "methods": [
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/actions/download_by_host/invoke",
+        "methods": [
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/actions/sign/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/collections/all",
+        "methods": [
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/dcd/actions/fetch_phase_one/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Dynamic Configuration Daemon (DCD)"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/dcd/collections/all",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Dynamic Configuration Daemon (DCD)"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/license_response/actions/upload/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "License usage"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/license_usage/actions/download/invoke",
+        "methods": [
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "License usage"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/licensing/actions/configure/invoke",
+        "methods": [
+          "PUT"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "License usage"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/licensing/actions/verify/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "License usage"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/metric/actions/filter/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Metric (internal)"
+        ],
+        "category": "internal"
+      },
+      {
+        "path": "/domain-types/metric/actions/get_custom_graph/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Metrics"
+        ],
+        "category": "monitoring"
+      },
+      {
+        "path": "/domain-types/sla/actions/compute/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Service Level Agreements"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/agent/{agent_hash}",
+        "methods": [
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/dcd/{dcd_id}",
+        "methods": [
+          "DELETE",
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Dynamic Configuration Daemon (DCD)"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/discovery_run/{job_id}",
+        "methods": [
+          "GET"
+        ],
+        "severity": "breaking",
+        "tags": [
+          "Service discovery"
+        ],
+        "category": "setup"
+      }
+    ]
+  },
+  "schema_changes": [
+    {
+      "schema_name": "AcknowledgeSpecificServiceProblem",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "service_description",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "ActivationExtensionFields",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "force_foreign_changes",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "time_started",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "AuthOptionOutput",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "store_automation_secret",
+          "severity": "minor",
+          "new_type": "boolean",
+          "description": "If set to True, the secret is stored",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "AuthSecret",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "store_automation_secret",
+          "severity": "minor",
+          "new_type": "boolean",
+          "description": "If set to True, the secret will be stored unhashed in order to reuse it in rules.",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "AuthUpdateSecret",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "store_automation_secret",
+          "severity": "minor",
+          "new_type": "boolean",
+          "description": "If set to True, the secret will be stored unhashed in order to reuse it in rules.",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "Authentication",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "method",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "password",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "user",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "AuthenticationValue",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "value",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    },
+    {
+      "schema_name": "BIStateOfServiceAction",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "service_regex",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "BackgroundJobStatus",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "log_info",
+          "severity": "minor",
+          "new_type": "allOf",
+          "description": "The logs of the background job",
+          "change_reason": "New optional field"
+        }
+      ],
+      "removed_fields": [
+        {
+          "path": "active",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "was_required": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "logs",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "was_required": true,
+          "change_reason": "Field removed"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "state",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "state",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"exception\""
+        },
+        {
+          "path": "state",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"initialized\""
+        },
+        {
+          "path": "state",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"running\""
+        },
+        {
+          "path": "state",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"finished\""
+        },
+        {
+          "path": "state",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"stopped\""
+        }
+      ]
+    },
+    {
+      "schema_name": "BulkDiscovery",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "mode",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_deprecated": true,
+          "change_reason": "Field removed"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "options",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    },
+    {
+      "schema_name": "BulkDiscoveryOptions",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "update_service_parameters",
+          "severity": "minor",
+          "new_type": "boolean",
+          "description": "The option whether to update discovered service parameters or not.",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "CheckBoxUseSiteIDPrefix",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "value",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"use_site_id_prefix\""
+        },
+        {
+          "path": "value",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"use_site_id\""
+        }
+      ]
+    },
+    {
+      "schema_name": "CheckboxMatchHostTags",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "value",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CheckboxMatchHostTagsOutput",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "value",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "ClusterCreateAttribute",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "waiting_for_discovery",
+          "severity": "minor",
+          "new_type": "boolean",
+          "description": "This indicates that the host is waiting for a bulk discovery. It is set to True once the host is in ...",
+          "change_reason": "New optional field"
+        }
+      ],
+      "removed_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "change_reason": "Field removed"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "management_ipmi_credentials",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "anyOf",
+          "change_reason": "Type changed: allOf → anyOf"
+        },
+        {
+          "path": "management_snmp_community",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "anyOf",
+          "change_reason": "Type changed: allOf → anyOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "CommentAttributes",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "service_description",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "ConcreteUserInterfaceAttributes",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "contextual_help_icon",
+          "severity": "minor",
+          "new_type": "string",
+          "description": "Whether or not to show the contextual icon in the UI for this user.",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "ConfigurationConnectionAttributesOutput",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "message_broker_port",
+          "severity": "minor",
+          "new_type": "integer",
+          "description": "The port used for the message broker to exchange messages.",
+          "change_reason": "New optional field"
+        }
+      ],
+      "removed_fields": [
+        {
+          "path": "is_trusted",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "ConfigurationConnectionWithReplicationAttributes",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "message_broker_port",
+          "severity": "breaking",
+          "new_type": "integer",
+          "description": "The port used by the message broker to exchange messages.",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ],
+      "removed_fields": [
+        {
+          "path": "is_trusted",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "ContactGroupExtensions",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "inventory_paths",
+          "severity": "minor",
+          "new_type": "allOf",
+          "description": "Permitted HW/SW Inventory paths.",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "CreateClusterHost",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "host_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CreateHost",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "host_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CreateServiceComment",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "service_description",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "CreateServiceDowntime",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "service_descriptions",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "DeleteDowntimeById",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "delete_type",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"servicegroup\""
+        },
+        {
+          "path": "delete_type",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"hostgroup\""
+        }
+      ]
+    },
+    {
+      "schema_name": "DeleteDowntimeByName",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "delete_type",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"hostgroup\""
+        },
+        {
+          "path": "delete_type",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"servicegroup\""
+        }
+      ]
+    },
+    {
+      "schema_name": "DeleteDowntimeByQuery",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "delete_type",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"hostgroup\""
+        },
+        {
+          "path": "delete_type",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"servicegroup\""
+        }
+      ]
+    },
+    {
+      "schema_name": "EnableSynchronousDeliveryViaSMTP",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "auth",
+          "severity": "breaking",
+          "old_type": "ref:AuthenticationValue",
+          "new_type": "ref:AuthOneOf",
+          "change_reason": "Type changed: ref:AuthenticationValue → ref:AuthOneOf"
+        },
+        {
+          "path": "encryption",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        },
+        {
+          "path": "encryption",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"ssl_tls\""
+        },
+        {
+          "path": "encryption",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"starttls\""
+        }
+      ]
+    },
+    {
+      "schema_name": "FolderCreateAttribute",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "change_reason": "Field removed"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "management_ipmi_credentials",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "anyOf",
+          "change_reason": "Type changed: allOf → anyOf"
+        },
+        {
+          "path": "management_snmp_community",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "anyOf",
+          "change_reason": "Type changed: allOf → anyOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "FolderUpdateAttribute",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "change_reason": "Field removed"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "management_ipmi_credentials",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "anyOf",
+          "change_reason": "Type changed: allOf → anyOf"
+        },
+        {
+          "path": "management_snmp_community",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "anyOf",
+          "change_reason": "Type changed: allOf → anyOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "FolderViewAttribute",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "change_reason": "Field removed"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "management_ipmi_credentials",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "anyOf",
+          "change_reason": "Type changed: allOf → anyOf"
+        },
+        {
+          "path": "management_snmp_community",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "anyOf",
+          "change_reason": "Type changed: allOf → anyOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostConditions",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "host_labels",
+          "severity": "breaking",
+          "old_type": "object",
+          "was_deprecated": true,
+          "change_reason": "Field removed"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "host_label_groups",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostCreateAttribute",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "waiting_for_discovery",
+          "severity": "minor",
+          "new_type": "boolean",
+          "description": "This indicates that the host is waiting for a bulk discovery. It is set to True once the host is in ...",
+          "change_reason": "New optional field"
+        }
+      ],
+      "removed_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "change_reason": "Field removed"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "management_ipmi_credentials",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "anyOf",
+          "change_reason": "Type changed: allOf → anyOf"
+        },
+        {
+          "path": "management_snmp_community",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "anyOf",
+          "change_reason": "Type changed: allOf → anyOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostDowntimeAttributes",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "mode",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "was_required": true,
+          "change_reason": "Field removed"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "recurring",
+          "severity": "breaking",
+          "old_type": "string",
+          "new_type": "boolean",
+          "change_reason": "Type changed: string → boolean"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostExtensions",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "effective_attributes",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "anyOf",
+          "change_reason": "Type changed: allOf → anyOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostExtensionsEffectiveAttributes",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "waiting_for_discovery",
+          "severity": "minor",
+          "new_type": "boolean",
+          "description": "This indicates that the host is waiting for a bulk discovery. It is set to True once the host is in ...",
+          "change_reason": "New optional field"
+        }
+      ],
+      "removed_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "change_reason": "Field removed"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "management_ipmi_credentials",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "anyOf",
+          "change_reason": "Type changed: allOf → anyOf"
+        },
+        {
+          "path": "management_snmp_community",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "anyOf",
+          "change_reason": "Type changed: allOf → anyOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostTag",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "ident",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_deprecated": true,
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostUpdateAttribute",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "waiting_for_discovery",
+          "severity": "minor",
+          "new_type": "boolean",
+          "description": "This indicates that the host is waiting for a bulk discovery. It is set to True once the host is in ...",
+          "change_reason": "New optional field"
+        }
+      ],
+      "removed_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "change_reason": "Field removed"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "management_ipmi_credentials",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "anyOf",
+          "change_reason": "Type changed: allOf → anyOf"
+        },
+        {
+          "path": "management_snmp_community",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "anyOf",
+          "change_reason": "Type changed: allOf → anyOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostViewAttribute",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "waiting_for_discovery",
+          "severity": "minor",
+          "new_type": "boolean",
+          "description": "This indicates that the host is waiting for a bulk discovery. It is set to True once the host is in ...",
+          "change_reason": "New optional field"
+        }
+      ],
+      "removed_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "change_reason": "Field removed"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "management_ipmi_credentials",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "anyOf",
+          "change_reason": "Type changed: allOf → anyOf"
+        },
+        {
+          "path": "management_snmp_community",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "anyOf",
+          "change_reason": "Type changed: allOf → anyOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "InputContactGroup",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "inventory_paths",
+          "severity": "minor",
+          "new_type": "allOf",
+          "description": "Permitted HW/SW Inventory paths.",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "InputHostTagGroup",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "ident",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_deprecated": true,
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "JiraPluginCreate",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "auth",
+          "severity": "breaking",
+          "new_type": "allOf",
+          "description": "The authentication credentials for the Jira connection",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "graphs_per_notification",
+          "severity": "minor",
+          "new_type": "allOf",
+          "description": "Here you can set a limit for the number of graphs that are displayed in a notification. If not set, ...",
+          "change_reason": "New optional field"
+        }
+      ],
+      "removed_fields": [
+        {
+          "path": "password",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "username",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "monitoring_url",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "ModifyDowntimeById",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "modify_type",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"hostgroup\""
+        },
+        {
+          "path": "modify_type",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"servicegroup\""
+        }
+      ]
+    },
+    {
+      "schema_name": "ModifyDowntimeByName",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "modify_type",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"hostgroup\""
+        },
+        {
+          "path": "modify_type",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"servicegroup\""
+        }
+      ]
+    },
+    {
+      "schema_name": "ModifyDowntimeByQuery",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "modify_type",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"hostgroup\""
+        },
+        {
+          "path": "modify_type",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"servicegroup\""
+        }
+      ]
+    },
+    {
+      "schema_name": "MoveToFolder",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "position",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "MoveToSpecificRule",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "position",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "OpsGeniePluginCreate",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "extra_properties",
+          "severity": "minor",
+          "new_type": "allOf",
+          "description": "A list of extra properties that will be included in the notification",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "PushOverPluginCreate",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "url_prefix_for_links_to_checkmk",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "new_type": "ref:UrlPrefixOneOf",
+          "change_reason": "Type changed: allOf → ref:UrlPrefixOneOf"
+        }
+      ]
+    },
+    {
+      "schema_name": "PushOverPriority",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "value",
+          "severity": "breaking",
+          "old_type": "string",
+          "new_type": "allOf",
+          "change_reason": "Type changed: string → allOf"
+        },
+        {
+          "path": "value",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"normal\""
+        },
+        {
+          "path": "value",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"high\""
+        },
+        {
+          "path": "value",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"lowest\""
+        },
+        {
+          "path": "value",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"low\""
+        }
+      ]
+    },
+    {
+      "schema_name": "ServiceConditions",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "host_labels",
+          "severity": "breaking",
+          "old_type": "object",
+          "was_deprecated": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "service_labels",
+          "severity": "breaking",
+          "old_type": "object",
+          "was_deprecated": true,
+          "change_reason": "Field removed"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "host_label_groups",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        },
+        {
+          "path": "service_label_groups",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        },
+        {
+          "path": "service_regex",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "ServiceDowntimeAttributes",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "mode",
+          "severity": "breaking",
+          "old_type": "allOf",
+          "was_required": true,
+          "change_reason": "Field removed"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "recurring",
+          "severity": "breaking",
+          "old_type": "string",
+          "new_type": "boolean",
+          "change_reason": "Type changed: string → boolean"
+        },
+        {
+          "path": "service_description",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "ServiceNowPluginCreate",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "auth",
+          "severity": "breaking",
+          "new_type": "allOf",
+          "description": "The authentication credentials for the ServiceNow connection",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ],
+      "removed_fields": [
+        {
+          "path": "user_password",
+          "severity": "breaking",
+          "old_type": "ref:ServiceNowPasswordSelector",
+          "was_required": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "username",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "SiteConfigAttributes",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "secret",
+          "severity": "minor",
+          "new_type": "string",
+          "description": "The shared secret used by the central site to authenticate with the remote site for configuring Chec...",
+          "change_reason": "New optional field"
+        }
+      ],
+      "removed_fields": [
+        {
+          "path": "logged_in",
+          "severity": "breaking",
+          "old_type": "boolean",
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "SiteConfigAttributesCreate",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "secret",
+          "severity": "minor",
+          "new_type": "string",
+          "description": "The shared secret used by the central site to authenticate with the remote site for configuring Chec...",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "SiteConfigAttributesUpdate",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "secret",
+          "severity": "minor",
+          "new_type": "string",
+          "description": "The shared secret used by the central site to authenticate with the remote site for configuring Chec...",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "SlackWebhookURL",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "url",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "TimeRange1",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "end",
+          "severity": "breaking",
+          "new_type": "string",
+          "description": "The end time of the period's time range",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "start",
+          "severity": "breaking",
+          "new_type": "string",
+          "description": "The start time of the period's time range",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateContactGroupAttributes",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "inventory_paths",
+          "severity": "minor",
+          "new_type": "allOf",
+          "description": "Permitted HW/SW Inventory paths.",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateHostEntry",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "host_name",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "UserInterfaceAttributes",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "contextual_help_icon",
+          "severity": "minor",
+          "new_type": "string",
+          "description": "Whether or not to show the contextual icon in the UI for this user.",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "UserInterfaceUpdateAttributes",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "contextual_help_icon",
+          "severity": "minor",
+          "new_type": "string",
+          "description": "Whether or not to show the contextual icon in the UI for this user.",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "UserRoleAttributes",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "basedon",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"no_permissions\""
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 703,
+    "total_schemas_new": 811,
+    "schemas_added": 174,
+    "schemas_removed": 66,
+    "schemas_with_changes": 63,
+    "total_fields_added": 27,
+    "total_fields_removed": 25,
+    "breaking_changes": 153,
+    "deprecated_changes": 0,
+    "minor_changes": 231,
+    "docs_changes": 23
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 18,
+      "paths_removed": 18,
+      "breaking": 18,
+      "minor": 18
+    },
+    "monitoring": {
+      "paths_added": 1,
+      "paths_removed": 1,
+      "breaking": 1,
+      "minor": 1
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 1,
+      "breaking": 1,
+      "minor": 0
+    }
+  }
+}

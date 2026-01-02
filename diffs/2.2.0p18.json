@@ -1,0 +1,65 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "minor",
+  "path_changes": {},
+  "schema_changes": [
+    {
+      "schema_name": "ActivateChanges",
+      "max_severity": "docs",
+      "changed_fields": [
+        {
+          "path": "redirect",
+          "severity": "docs",
+          "change_reason": "Description changed"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostTagExtensions",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "help",
+          "severity": "minor",
+          "new_type": "string",
+          "description": "A help description for the tag group",
+          "change_reason": "New optional field"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 444,
+    "total_schemas_new": 444,
+    "schemas_added": 0,
+    "schemas_removed": 0,
+    "schemas_with_changes": 2,
+    "total_fields_added": 1,
+    "total_fields_removed": 0,
+    "breaking_changes": 0,
+    "deprecated_changes": 0,
+    "minor_changes": 1,
+    "docs_changes": 1
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

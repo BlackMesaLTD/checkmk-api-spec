@@ -1,0 +1,186 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {},
+  "schema_changes": [
+    {
+      "schema_name": "Conditions",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "host_labels",
+          "severity": "breaking",
+          "old_type": "array",
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "service_labels",
+          "severity": "breaking",
+          "old_type": "array",
+          "change_reason": "Field removed"
+        }
+      ]
+    },
+    {
+      "schema_name": "LabelCondition1",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "label",
+          "severity": "breaking",
+          "new_type": "string",
+          "description": "A label of format \"{key}:{value}\"",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ],
+      "removed_fields": [
+        {
+          "path": "key",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "value",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "operator",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        },
+        {
+          "path": "operator",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"is\""
+        },
+        {
+          "path": "operator",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"is_not\""
+        },
+        {
+          "path": "operator",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"and\""
+        },
+        {
+          "path": "operator",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"or\""
+        },
+        {
+          "path": "operator",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"not\""
+        }
+      ]
+    },
+    {
+      "schema_name": "LabelCondition2",
+      "max_severity": "breaking",
+      "added_fields": [
+        {
+          "path": "key",
+          "severity": "breaking",
+          "new_type": "string",
+          "description": "The key of the label. e.g. 'os' in 'os:windows'",
+          "is_required": true,
+          "change_reason": "New required field"
+        },
+        {
+          "path": "value",
+          "severity": "breaking",
+          "new_type": "string",
+          "description": "The value of the label. e.g. 'windows' in 'os:windows'",
+          "is_required": true,
+          "change_reason": "New required field"
+        }
+      ],
+      "removed_fields": [
+        {
+          "path": "label",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        }
+      ],
+      "changed_fields": [
+        {
+          "path": "operator",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        },
+        {
+          "path": "operator",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"not\""
+        },
+        {
+          "path": "operator",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"and\""
+        },
+        {
+          "path": "operator",
+          "severity": "breaking",
+          "change_reason": "Enum value removed: \"or\""
+        },
+        {
+          "path": "operator",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"is\""
+        },
+        {
+          "path": "operator",
+          "severity": "minor",
+          "change_reason": "Enum value added: \"is_not\""
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 627,
+    "total_schemas_new": 628,
+    "schemas_added": 1,
+    "schemas_removed": 0,
+    "schemas_with_changes": 3,
+    "total_fields_added": 3,
+    "total_fields_removed": 5,
+    "breaking_changes": 14,
+    "deprecated_changes": 0,
+    "minor_changes": 7,
+    "docs_changes": 0
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

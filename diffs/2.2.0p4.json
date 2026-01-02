@@ -1,0 +1,211 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {},
+  "schema_changes": [
+    {
+      "schema_name": "BulkCreateHost",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "entries",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    },
+    {
+      "schema_name": "BulkInputContactGroup",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "entries",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    },
+    {
+      "schema_name": "BulkInputHostGroup",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "entries",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    },
+    {
+      "schema_name": "BulkInputServiceGroup",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "entries",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    },
+    {
+      "schema_name": "BulkUpdateContactGroup",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "entries",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    },
+    {
+      "schema_name": "BulkUpdateFolder",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "entries",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    },
+    {
+      "schema_name": "BulkUpdateHost",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "entries",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    },
+    {
+      "schema_name": "BulkUpdateHostGroup",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "entries",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    },
+    {
+      "schema_name": "BulkUpdateServiceGroup",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "entries",
+          "severity": "breaking",
+          "is_required": true,
+          "change_reason": "Field changed from optional to required"
+        }
+      ]
+    },
+    {
+      "schema_name": "ContactGroup",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "domainType",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostGroup",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "domainType",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        }
+      ]
+    },
+    {
+      "schema_name": "ServiceGroup",
+      "max_severity": "minor",
+      "changed_fields": [
+        {
+          "path": "domainType",
+          "severity": "minor",
+          "was_required": true,
+          "change_reason": "Field changed from required to optional"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateHostGroup",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "attributes",
+          "severity": "breaking",
+          "old_type": "ref:UpdateGroup",
+          "new_type": "ref:UpdateGroup1",
+          "change_reason": "Type changed: ref:UpdateGroup → ref:UpdateGroup1"
+        }
+      ]
+    },
+    {
+      "schema_name": "UpdateServiceGroup",
+      "max_severity": "breaking",
+      "changed_fields": [
+        {
+          "path": "attributes",
+          "severity": "breaking",
+          "old_type": "ref:UpdateGroup",
+          "new_type": "ref:UpdateGroup2",
+          "change_reason": "Type changed: ref:UpdateGroup → ref:UpdateGroup2"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 331,
+    "total_schemas_new": 330,
+    "schemas_added": 2,
+    "schemas_removed": 3,
+    "schemas_with_changes": 14,
+    "total_fields_added": 0,
+    "total_fields_removed": 0,
+    "breaking_changes": 14,
+    "deprecated_changes": 0,
+    "minor_changes": 5,
+    "docs_changes": 0
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "monitoring": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    },
+    "internal": {
+      "paths_added": 0,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 0
+    }
+  }
+}

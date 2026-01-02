@@ -1,0 +1,455 @@
+{
+  "old_version": "1.0",
+  "new_version": "1.0",
+  "max_severity": "breaking",
+  "path_changes": {
+    "added": [
+      {
+        "path": "/agent_controller_certificates_settings",
+        "methods": [
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Certificates"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/csr",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Certificates"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/actions/automatic-deployment/invoke",
+        "methods": [
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/actions/bake/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/actions/bake_and_sign/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/actions/baking_status/invoke",
+        "methods": [
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/actions/download_by_hash/invoke",
+        "methods": [
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/actions/download_by_host/invoke",
+        "methods": [
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/actions/sign/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/agent/collections/all",
+        "methods": [
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/dcd/actions/fetch_phase_one/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Dynamic Configuration Daemon (DCD)"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/dcd/collections/all",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Dynamic Configuration Daemon (DCD)"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/license_response/actions/upload/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "License usage"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/license_usage/actions/download/invoke",
+        "methods": [
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "License usage"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/licensing/actions/configure/invoke",
+        "methods": [
+          "PUT"
+        ],
+        "severity": "minor",
+        "tags": [
+          "License usage"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/licensing/actions/verify/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "License usage"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/domain-types/metric/actions/filter/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Metric (internal)"
+        ],
+        "category": "internal"
+      },
+      {
+        "path": "/domain-types/metric/actions/get_custom_graph/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Metrics"
+        ],
+        "category": "monitoring"
+      },
+      {
+        "path": "/domain-types/sla/actions/compute/invoke",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Service Level Agreements"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/agent/{agent_hash}",
+        "methods": [
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Agents"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/autocomplete/{autocomplete_id}",
+        "methods": [
+          "POST"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Autocomplete (internal)"
+        ],
+        "category": "internal"
+      },
+      {
+        "path": "/objects/dcd/{dcd_id}",
+        "methods": [
+          "DELETE",
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Dynamic Configuration Daemon (DCD)"
+        ],
+        "category": "setup"
+      },
+      {
+        "path": "/objects/host_config_internal/{host_name}",
+        "methods": [
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Hosts (internal)"
+        ],
+        "category": "internal"
+      },
+      {
+        "path": "/objects/host_config_internal/{host_name}/actions/link_uuid/invoke",
+        "methods": [
+          "PUT"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Hosts (internal)"
+        ],
+        "category": "internal"
+      },
+      {
+        "path": "/objects/host_config_internal/{host_name}/actions/register/invoke",
+        "methods": [
+          "PUT"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Hosts (internal)"
+        ],
+        "category": "internal"
+      },
+      {
+        "path": "/root_cert",
+        "methods": [
+          "GET"
+        ],
+        "severity": "minor",
+        "tags": [
+          "Certificates"
+        ],
+        "category": "setup"
+      }
+    ]
+  },
+  "schema_changes": [
+    {
+      "schema_name": "ClusterCreateAttribute",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "minor",
+          "new_type": "boolean",
+          "description": "Bake agent packages for this folder even if it is empty.",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "FolderCreateAttribute",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "minor",
+          "new_type": "boolean",
+          "description": "Bake agent packages for this folder even if it is empty.",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "FolderUpdateAttribute",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "minor",
+          "new_type": "boolean",
+          "description": "Bake agent packages for this folder even if it is empty.",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "FolderViewAttribute",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "minor",
+          "new_type": "boolean",
+          "description": "Bake agent packages for this folder even if it is empty.",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostCreateAttribute",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "minor",
+          "new_type": "boolean",
+          "description": "Bake agent packages for this folder even if it is empty.",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostExtensionsEffectiveAttributes",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "minor",
+          "new_type": "boolean",
+          "description": "Bake agent packages for this folder even if it is empty.",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostUpdateAttribute",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "minor",
+          "new_type": "boolean",
+          "description": "Bake agent packages for this folder even if it is empty.",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "HostViewAttribute",
+      "max_severity": "minor",
+      "added_fields": [
+        {
+          "path": "bake_agent_package",
+          "severity": "minor",
+          "new_type": "boolean",
+          "description": "Bake agent packages for this folder even if it is empty.",
+          "change_reason": "New optional field"
+        }
+      ]
+    },
+    {
+      "schema_name": "TimeRange1",
+      "max_severity": "breaking",
+      "removed_fields": [
+        {
+          "path": "end",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        },
+        {
+          "path": "start",
+          "severity": "breaking",
+          "old_type": "string",
+          "was_required": true,
+          "change_reason": "Field removed"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_schemas_old": 631,
+    "total_schemas_new": 703,
+    "schemas_added": 72,
+    "schemas_removed": 0,
+    "schemas_with_changes": 9,
+    "total_fields_added": 8,
+    "total_fields_removed": 2,
+    "breaking_changes": 2,
+    "deprecated_changes": 0,
+    "minor_changes": 106,
+    "docs_changes": 0
+  },
+  "category_summary": {
+    "setup": {
+      "paths_added": 20,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 20
+    },
+    "monitoring": {
+      "paths_added": 1,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 1
+    },
+    "internal": {
+      "paths_added": 5,
+      "paths_removed": 0,
+      "breaking": 0,
+      "minor": 5
+    }
+  }
+}
