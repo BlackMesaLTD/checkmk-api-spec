@@ -8,8 +8,10 @@ This repository:
 - Tracks **all CheckMK patch versions** (2.2.x, 2.3.x, 2.4.x) in a manifest
 - Stores **only baseline specs** where the API actually changed
 - Generates **Go types for baselines only** (~42 packages instead of ~100)
+- Generates **all schemas** from each OpenAPI spec (700-900 schemas per version)
 - Maps any version to its baseline at runtime
 - Provides **union descriptions** with version annotations for documentation
+- Supports **build tags** for per-version binary compilation
 
 ## How It Works
 
@@ -74,11 +76,43 @@ import (
 func main() {
     // Look up baseline for any CheckMK version
     baseline := types.LookupBaseline("2.4.0p15")
-    fmt.Println("Baseline:", baseline) // "v2_4_p14"
+    fmt.Println("Baseline:", baseline) // "v2_4_0_p14"
 
     // Get valid values for any version
     validAgents := types.ValidHostTagAgentValues(baseline)
     fmt.Println("Valid agents:", validAgents)
+}
+```
+
+### Generic Schema Introspection
+
+```go
+package main
+
+import (
+    "fmt"
+    types "github.com/BlackMesaLTD/checkmk-api-spec/generated/go"
+)
+
+func main() {
+    baseline := types.LookupBaseline("2.4.0p17")
+
+    // List all available schemas (700-900 per version)
+    schemas := types.GetAllSchemaNames(baseline)
+    fmt.Println("Total schemas:", len(schemas))
+
+    // Get fields for ANY schema dynamically
+    userFields := types.GetSchemaFieldNames(baseline, "UserAttributes")
+    fmt.Println("User fields:", userFields)
+
+    // Get valid enum values for any schema/field
+    roles := types.GetValidEnumValues(baseline, "UserAttributes", "user_role")
+    fmt.Println("Valid roles:", roles)
+
+    // Check if a field has enum constraints
+    if types.HasEnumConstraint(baseline, "HostCreateAttribute", "tag_agent") {
+        fmt.Println("tag_agent has enum values")
+    }
 }
 ```
 
@@ -103,6 +137,35 @@ func main() {
 }
 ```
 
+## Build Tags for Per-Version Binaries
+
+Each baseline package includes build tags for selective compilation:
+
+```go
+//go:build checkmk_all || checkmk_v2_4_0
+
+package p17
+```
+
+This allows building version-specific binaries:
+
+```bash
+# Build with all versions
+go build -tags "checkmk_all" ./...
+
+# Build for CheckMK 2.4.x only (smaller binary)
+go build -tags "checkmk_v2_4_0" ./...
+
+# Build for 2.3.x and 2.4.x
+go build -tags "checkmk_v2_3_0,checkmk_v2_4_0" ./...
+```
+
+Available build tags:
+- `checkmk_all` - All versions (convenience tag)
+- `checkmk_v2_X_0` - Per minor version (e.g., `checkmk_v2_2_0`, `checkmk_v2_3_0`, `checkmk_v2_4_0`)
+
+New minor versions (e.g., 2.5.x) are automatically supported - the build tag `checkmk_v2_5_0` will be generated when those versions appear on Docker Hub.
+
 ## Package Structure
 
 Packages are organized hierarchically by minor version:
@@ -110,18 +173,18 @@ Packages are organized hierarchically by minor version:
 ```
 generated/go/
 ├── v2_2_0/
-│   ├── p1/           # 2.2.0p1 baseline
+│   ├── p1/           # 2.2.0p1 baseline (329 schemas)
 │   ├── p3/           # 2.2.0p3 baseline
 │   └── ...           # 18 baselines total
 ├── v2_3_0/
-│   ├── p1/           # 2.3.0p1 baseline
+│   ├── p1/           # 2.3.0p1 baseline (630 schemas)
 │   └── ...           # 17 baselines total
 ├── v2_4_0/
-│   ├── p1/           # 2.4.0p1 baseline
-│   ├── p17/          # 2.4.0p17 baseline
+│   ├── p1/           # 2.4.0p1 baseline (811 schemas)
+│   ├── p17/          # 2.4.0p17 baseline (896 schemas)
 │   └── ...           # 7 baselines total
 ├── union/
-│   └── descriptions.gen.go  # Merged descriptions across all versions
+│   └── descriptions.gen.go  # Merged descriptions (754 schemas, 2614 fields)
 └── version_types.go  # Runtime version-to-baseline mapping
 ```
 
@@ -142,14 +205,14 @@ See `manifest.json` for the complete mapping. Current baseline counts:
       "baseline": "2.4.0p17",
       "package": "p17",
       "path": "v2_4_0/p17",
-      "import_alias": "v2_4_p17",
+      "import_alias": "v2_4_0_p17",
       "is_baseline": true
     },
     "2.4.0p15": {
       "baseline": "2.4.0p14",
       "package": "p14",
       "path": "v2_4_0/p14",
-      "import_alias": "v2_4_p14",
+      "import_alias": "v2_4_0_p14",
       "is_baseline": false
     }
   }
@@ -162,12 +225,37 @@ Each baseline package contains:
 
 | File | Purpose |
 |------|---------|
-| `types.gen.go` | Go struct types for API schemas |
+| `types.gen.go` | Go struct types for all API schemas (700-900 types) |
 | `enums.gen.go` | Enum types and validator functions |
-| `fields.gen.go` | Field name lists and compare keys |
-| `metadata.gen.go` | Field descriptions and types |
+| `fields.gen.go` | Field name lists, compare keys, and introspection maps |
+| `metadata.gen.go` | Field descriptions, types, and read-only detection |
 | `requests.gen.go` | Request builder functions |
 | `mappings.gen.go` | API response to Terraform field mappings |
+
+## Generic Introspection API
+
+Each package provides generic access to any schema:
+
+```go
+// List all schemas
+AllSchemaNames []string
+
+// Get field info for any schema
+GetSchemaFieldNames(schema string) []string
+GetSchemaRequiredFieldNames(schema string) []string
+GetValidEnumValues(schema, field string) []string
+
+// Check schema/field existence
+HasSchema(schema string) bool
+HasEnumConstraint(schema, field string) bool
+
+// Get metadata
+GetFieldDescription(schema, field string) string
+GetFieldType(schema, field string) string
+IsReadOnlyField(schema, field string) bool
+IsRequiredField(schema, field string) bool
+IsDeprecatedField(schema, field string) bool
+```
 
 ## Tools
 
@@ -236,15 +324,16 @@ To fetch a spec from your own CheckMK instance:
   -pass YOUR_PASSWORD
 ```
 
-## Resources Covered
+## Schema Coverage
 
-Generated types include:
-- **Host** - Host configuration and attributes
-- **Folder** - Folder structure and properties
-- **AuxTag** - Auxiliary tags
-- **TagGroup** - Tag groups
-- **User** - User accounts
-- **ContactGroup** - Contact groups
+Generated types include **all schemas** from each OpenAPI spec, including:
+- Host, Folder, User, ContactGroup (core resources)
+- AuxTag, TagGroup, TimePeriod (configuration)
+- Rule, Ruleset, NotificationRule (rules engine)
+- Activation, Agent, Certificate (operations)
+- BI aggregations, downtime, acknowledgments
+- All API request/response schemas
+- Error response types
 
 ## Severity Levels
 

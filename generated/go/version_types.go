@@ -9,48 +9,48 @@ package types
 import "strings"
 
 import (
-	v2_2_p1 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p1"
-	v2_2_p11 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p11"
-	v2_2_p12 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p12"
-	v2_2_p14 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p14"
-	v2_2_p18 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p18"
-	v2_2_p21 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p21"
-	v2_2_p22 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p22"
-	v2_2_p23 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p23"
-	v2_2_p26 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p26"
-	v2_2_p3 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p3"
-	v2_2_p32 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p32"
-	v2_2_p33 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p33"
-	v2_2_p4 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p4"
-	v2_2_p43 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p43"
-	v2_2_p44 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p44"
-	v2_2_p5 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p5"
-	v2_2_p8 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p8"
-	v2_2_p9 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p9"
-	v2_3_p1 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p1"
-	v2_3_p11 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p11"
-	v2_3_p14 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p14"
-	v2_3_p22 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p22"
-	v2_3_p23 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p23"
-	v2_3_p26 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p26"
-	v2_3_p27 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p27"
-	v2_3_p3 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p3"
-	v2_3_p31 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p31"
-	v2_3_p33 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p33"
-	v2_3_p36 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p36"
-	v2_3_p37 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p37"
-	v2_3_p39 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p39"
-	v2_3_p40 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p40"
-	v2_3_p41 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p41"
-	v2_3_p5 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p5"
-	v2_3_p7 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p7"
-	v2_4_p1 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p1"
-	v2_4_p11 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p11"
-	v2_4_p14 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p14"
-	v2_4_p16 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p16"
-	v2_4_p17 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p17"
-	v2_4_p18 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p18"
-	v2_4_p6 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p6"
+	v2_2_0_p1 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p1"
+	v2_2_0_p11 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p11"
+	v2_2_0_p12 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p12"
+	v2_2_0_p14 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p14"
+	v2_2_0_p18 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p18"
+	v2_2_0_p21 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p21"
+	v2_2_0_p22 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p22"
+	v2_2_0_p23 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p23"
+	v2_2_0_p26 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p26"
+	v2_2_0_p3 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p3"
+	v2_2_0_p32 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p32"
+	v2_2_0_p33 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p33"
+	v2_2_0_p4 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p4"
+	v2_2_0_p43 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p43"
+	v2_2_0_p44 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p44"
+	v2_2_0_p5 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p5"
+	v2_2_0_p8 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p8"
+	v2_2_0_p9 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_2_0/p9"
+	v2_3_0_p1 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p1"
+	v2_3_0_p11 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p11"
+	v2_3_0_p14 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p14"
+	v2_3_0_p22 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p22"
+	v2_3_0_p23 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p23"
+	v2_3_0_p26 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p26"
+	v2_3_0_p27 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p27"
+	v2_3_0_p3 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p3"
+	v2_3_0_p31 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p31"
+	v2_3_0_p33 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p33"
+	v2_3_0_p36 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p36"
+	v2_3_0_p37 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p37"
+	v2_3_0_p39 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p39"
+	v2_3_0_p40 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p40"
+	v2_3_0_p41 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p41"
+	v2_3_0_p5 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p5"
+	v2_3_0_p7 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p7"
+	v2_4_0_p1 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p1"
+	v2_4_0_p11 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p11"
+	v2_4_0_p14 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p14"
+	v2_4_0_p16 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p16"
+	v2_4_0_p17 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p17"
+	v2_4_0_p18 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p18"
+	v2_4_0_p6 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p6"
 )
 
 // BaselinePackage represents a baseline type package identifier.
@@ -58,1841 +58,1243 @@ type BaselinePackage string
 
 // Known baseline packages.
 const (
-	BaselineV2_2_p1  BaselinePackage = "v2_2_p1"
-	BaselineV2_2_p3  BaselinePackage = "v2_2_p3"
-	BaselineV2_2_p4  BaselinePackage = "v2_2_p4"
-	BaselineV2_2_p5  BaselinePackage = "v2_2_p5"
-	BaselineV2_2_p8  BaselinePackage = "v2_2_p8"
-	BaselineV2_2_p9  BaselinePackage = "v2_2_p9"
-	BaselineV2_2_p11 BaselinePackage = "v2_2_p11"
-	BaselineV2_2_p12 BaselinePackage = "v2_2_p12"
-	BaselineV2_2_p14 BaselinePackage = "v2_2_p14"
-	BaselineV2_2_p18 BaselinePackage = "v2_2_p18"
-	BaselineV2_2_p21 BaselinePackage = "v2_2_p21"
-	BaselineV2_2_p22 BaselinePackage = "v2_2_p22"
-	BaselineV2_2_p23 BaselinePackage = "v2_2_p23"
-	BaselineV2_2_p26 BaselinePackage = "v2_2_p26"
-	BaselineV2_2_p32 BaselinePackage = "v2_2_p32"
-	BaselineV2_2_p33 BaselinePackage = "v2_2_p33"
-	BaselineV2_2_p43 BaselinePackage = "v2_2_p43"
-	BaselineV2_2_p44 BaselinePackage = "v2_2_p44"
-	BaselineV2_3_p1  BaselinePackage = "v2_3_p1"
-	BaselineV2_3_p3  BaselinePackage = "v2_3_p3"
-	BaselineV2_3_p5  BaselinePackage = "v2_3_p5"
-	BaselineV2_3_p7  BaselinePackage = "v2_3_p7"
-	BaselineV2_3_p11 BaselinePackage = "v2_3_p11"
-	BaselineV2_3_p14 BaselinePackage = "v2_3_p14"
-	BaselineV2_3_p22 BaselinePackage = "v2_3_p22"
-	BaselineV2_3_p23 BaselinePackage = "v2_3_p23"
-	BaselineV2_3_p26 BaselinePackage = "v2_3_p26"
-	BaselineV2_3_p27 BaselinePackage = "v2_3_p27"
-	BaselineV2_3_p31 BaselinePackage = "v2_3_p31"
-	BaselineV2_3_p33 BaselinePackage = "v2_3_p33"
-	BaselineV2_3_p36 BaselinePackage = "v2_3_p36"
-	BaselineV2_3_p37 BaselinePackage = "v2_3_p37"
-	BaselineV2_3_p39 BaselinePackage = "v2_3_p39"
-	BaselineV2_3_p40 BaselinePackage = "v2_3_p40"
-	BaselineV2_3_p41 BaselinePackage = "v2_3_p41"
-	BaselineV2_4_p1  BaselinePackage = "v2_4_p1"
-	BaselineV2_4_p6  BaselinePackage = "v2_4_p6"
-	BaselineV2_4_p11 BaselinePackage = "v2_4_p11"
-	BaselineV2_4_p14 BaselinePackage = "v2_4_p14"
-	BaselineV2_4_p16 BaselinePackage = "v2_4_p16"
-	BaselineV2_4_p17 BaselinePackage = "v2_4_p17"
-	BaselineV2_4_p18 BaselinePackage = "v2_4_p18"
+	BaselineV2_2_0_p1  BaselinePackage = "v2_2_0_p1"
+	BaselineV2_2_0_p3  BaselinePackage = "v2_2_0_p3"
+	BaselineV2_2_0_p4  BaselinePackage = "v2_2_0_p4"
+	BaselineV2_2_0_p5  BaselinePackage = "v2_2_0_p5"
+	BaselineV2_2_0_p8  BaselinePackage = "v2_2_0_p8"
+	BaselineV2_2_0_p9  BaselinePackage = "v2_2_0_p9"
+	BaselineV2_2_0_p11 BaselinePackage = "v2_2_0_p11"
+	BaselineV2_2_0_p12 BaselinePackage = "v2_2_0_p12"
+	BaselineV2_2_0_p14 BaselinePackage = "v2_2_0_p14"
+	BaselineV2_2_0_p18 BaselinePackage = "v2_2_0_p18"
+	BaselineV2_2_0_p21 BaselinePackage = "v2_2_0_p21"
+	BaselineV2_2_0_p22 BaselinePackage = "v2_2_0_p22"
+	BaselineV2_2_0_p23 BaselinePackage = "v2_2_0_p23"
+	BaselineV2_2_0_p26 BaselinePackage = "v2_2_0_p26"
+	BaselineV2_2_0_p32 BaselinePackage = "v2_2_0_p32"
+	BaselineV2_2_0_p33 BaselinePackage = "v2_2_0_p33"
+	BaselineV2_2_0_p43 BaselinePackage = "v2_2_0_p43"
+	BaselineV2_2_0_p44 BaselinePackage = "v2_2_0_p44"
+	BaselineV2_3_0_p1  BaselinePackage = "v2_3_0_p1"
+	BaselineV2_3_0_p3  BaselinePackage = "v2_3_0_p3"
+	BaselineV2_3_0_p5  BaselinePackage = "v2_3_0_p5"
+	BaselineV2_3_0_p7  BaselinePackage = "v2_3_0_p7"
+	BaselineV2_3_0_p11 BaselinePackage = "v2_3_0_p11"
+	BaselineV2_3_0_p14 BaselinePackage = "v2_3_0_p14"
+	BaselineV2_3_0_p22 BaselinePackage = "v2_3_0_p22"
+	BaselineV2_3_0_p23 BaselinePackage = "v2_3_0_p23"
+	BaselineV2_3_0_p26 BaselinePackage = "v2_3_0_p26"
+	BaselineV2_3_0_p27 BaselinePackage = "v2_3_0_p27"
+	BaselineV2_3_0_p31 BaselinePackage = "v2_3_0_p31"
+	BaselineV2_3_0_p33 BaselinePackage = "v2_3_0_p33"
+	BaselineV2_3_0_p36 BaselinePackage = "v2_3_0_p36"
+	BaselineV2_3_0_p37 BaselinePackage = "v2_3_0_p37"
+	BaselineV2_3_0_p39 BaselinePackage = "v2_3_0_p39"
+	BaselineV2_3_0_p40 BaselinePackage = "v2_3_0_p40"
+	BaselineV2_3_0_p41 BaselinePackage = "v2_3_0_p41"
+	BaselineV2_4_0_p1  BaselinePackage = "v2_4_0_p1"
+	BaselineV2_4_0_p6  BaselinePackage = "v2_4_0_p6"
+	BaselineV2_4_0_p11 BaselinePackage = "v2_4_0_p11"
+	BaselineV2_4_0_p14 BaselinePackage = "v2_4_0_p14"
+	BaselineV2_4_0_p16 BaselinePackage = "v2_4_0_p16"
+	BaselineV2_4_0_p17 BaselinePackage = "v2_4_0_p17"
+	BaselineV2_4_0_p18 BaselinePackage = "v2_4_0_p18"
 )
+
+// BaselineFuncs contains all function references for a baseline package.
+// This registry pattern avoids repetitive switch statements.
+type BaselineFuncs struct {
+	// Schema introspection
+	AllSchemaNames              []string
+	GetSchemaFieldNames         func(string) []string
+	GetSchemaRequiredFieldNames func(string) []string
+	HasSchema                   func(string) bool
+
+	// Field metadata
+	GetFieldDescription func(string, string) string
+	GetFieldType        func(string, string) string
+	IsReadOnlyField     func(string, string) bool
+	IsRequiredField     func(string, string) bool
+	IsDeprecatedField   func(string, string) bool
+
+	// Enum validation
+	GetValidEnumValues func(string, string) []string
+	HasEnumConstraint  func(string, string) bool
+
+	// Host-specific (for backwards compatibility)
+	HostCreateAttributeFieldNames          []string
+	HostCreateAttributeCompareKeyFields    []string
+	ValidHostCreateAttributeTagAgentValues func() []string
+	HostConfigFieldMappings                map[string][]string
+	ExtractHostConfigField                 func(map[string]interface{}, string) interface{}
+	BuildCreateHostFromMap                 func(map[string]interface{}) (*interface{}, error)
+	ParseHostConfigFromMap                 func(map[string]interface{}) (*interface{}, error)
+
+	// Folder-specific (for backwards compatibility)
+	FolderCreateAttributeFieldNames       []string
+	FolderCreateAttributeCompareKeyFields []string
+	FolderFieldMappings                   map[string][]string
+	ExtractFolderField                    func(map[string]interface{}, string) interface{}
+	BuildCreateFolderFromMap              func(map[string]interface{}) (*interface{}, error)
+	ParseFolderFromMap                    func(map[string]interface{}) (*interface{}, error)
+}
+
+// registry maps baseline packages to their function implementations.
+var registry = map[BaselinePackage]*BaselineFuncs{
+	BaselineV2_2_0_p1: {
+		AllSchemaNames:                         v2_2_0_p1.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_2_0_p1.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_2_0_p1.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_2_0_p1.HasSchema,
+		GetFieldDescription:                    v2_2_0_p1.GetFieldDescription,
+		GetFieldType:                           v2_2_0_p1.GetFieldType,
+		IsReadOnlyField:                        v2_2_0_p1.IsReadOnlyField,
+		IsRequiredField:                        v2_2_0_p1.IsRequiredField,
+		IsDeprecatedField:                      v2_2_0_p1.IsDeprecatedField,
+		GetValidEnumValues:                     v2_2_0_p1.GetValidEnumValues,
+		HasEnumConstraint:                      v2_2_0_p1.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_2_0_p1.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_2_0_p1.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_2_0_p1.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_2_0_p1.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_2_0_p1.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_2_0_p1.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_2_0_p1.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_2_0_p1.FolderFieldMappings,
+		ExtractFolderField:                     v2_2_0_p1.ExtractFolderField,
+	},
+	BaselineV2_2_0_p3: {
+		AllSchemaNames:                         v2_2_0_p3.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_2_0_p3.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_2_0_p3.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_2_0_p3.HasSchema,
+		GetFieldDescription:                    v2_2_0_p3.GetFieldDescription,
+		GetFieldType:                           v2_2_0_p3.GetFieldType,
+		IsReadOnlyField:                        v2_2_0_p3.IsReadOnlyField,
+		IsRequiredField:                        v2_2_0_p3.IsRequiredField,
+		IsDeprecatedField:                      v2_2_0_p3.IsDeprecatedField,
+		GetValidEnumValues:                     v2_2_0_p3.GetValidEnumValues,
+		HasEnumConstraint:                      v2_2_0_p3.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_2_0_p3.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_2_0_p3.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_2_0_p3.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_2_0_p3.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_2_0_p3.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_2_0_p3.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_2_0_p3.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_2_0_p3.FolderFieldMappings,
+		ExtractFolderField:                     v2_2_0_p3.ExtractFolderField,
+	},
+	BaselineV2_2_0_p4: {
+		AllSchemaNames:                         v2_2_0_p4.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_2_0_p4.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_2_0_p4.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_2_0_p4.HasSchema,
+		GetFieldDescription:                    v2_2_0_p4.GetFieldDescription,
+		GetFieldType:                           v2_2_0_p4.GetFieldType,
+		IsReadOnlyField:                        v2_2_0_p4.IsReadOnlyField,
+		IsRequiredField:                        v2_2_0_p4.IsRequiredField,
+		IsDeprecatedField:                      v2_2_0_p4.IsDeprecatedField,
+		GetValidEnumValues:                     v2_2_0_p4.GetValidEnumValues,
+		HasEnumConstraint:                      v2_2_0_p4.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_2_0_p4.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_2_0_p4.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_2_0_p4.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_2_0_p4.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_2_0_p4.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_2_0_p4.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_2_0_p4.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_2_0_p4.FolderFieldMappings,
+		ExtractFolderField:                     v2_2_0_p4.ExtractFolderField,
+	},
+	BaselineV2_2_0_p5: {
+		AllSchemaNames:                         v2_2_0_p5.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_2_0_p5.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_2_0_p5.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_2_0_p5.HasSchema,
+		GetFieldDescription:                    v2_2_0_p5.GetFieldDescription,
+		GetFieldType:                           v2_2_0_p5.GetFieldType,
+		IsReadOnlyField:                        v2_2_0_p5.IsReadOnlyField,
+		IsRequiredField:                        v2_2_0_p5.IsRequiredField,
+		IsDeprecatedField:                      v2_2_0_p5.IsDeprecatedField,
+		GetValidEnumValues:                     v2_2_0_p5.GetValidEnumValues,
+		HasEnumConstraint:                      v2_2_0_p5.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_2_0_p5.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_2_0_p5.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_2_0_p5.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_2_0_p5.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_2_0_p5.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_2_0_p5.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_2_0_p5.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_2_0_p5.FolderFieldMappings,
+		ExtractFolderField:                     v2_2_0_p5.ExtractFolderField,
+	},
+	BaselineV2_2_0_p8: {
+		AllSchemaNames:                         v2_2_0_p8.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_2_0_p8.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_2_0_p8.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_2_0_p8.HasSchema,
+		GetFieldDescription:                    v2_2_0_p8.GetFieldDescription,
+		GetFieldType:                           v2_2_0_p8.GetFieldType,
+		IsReadOnlyField:                        v2_2_0_p8.IsReadOnlyField,
+		IsRequiredField:                        v2_2_0_p8.IsRequiredField,
+		IsDeprecatedField:                      v2_2_0_p8.IsDeprecatedField,
+		GetValidEnumValues:                     v2_2_0_p8.GetValidEnumValues,
+		HasEnumConstraint:                      v2_2_0_p8.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_2_0_p8.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_2_0_p8.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_2_0_p8.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_2_0_p8.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_2_0_p8.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_2_0_p8.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_2_0_p8.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_2_0_p8.FolderFieldMappings,
+		ExtractFolderField:                     v2_2_0_p8.ExtractFolderField,
+	},
+	BaselineV2_2_0_p9: {
+		AllSchemaNames:                         v2_2_0_p9.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_2_0_p9.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_2_0_p9.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_2_0_p9.HasSchema,
+		GetFieldDescription:                    v2_2_0_p9.GetFieldDescription,
+		GetFieldType:                           v2_2_0_p9.GetFieldType,
+		IsReadOnlyField:                        v2_2_0_p9.IsReadOnlyField,
+		IsRequiredField:                        v2_2_0_p9.IsRequiredField,
+		IsDeprecatedField:                      v2_2_0_p9.IsDeprecatedField,
+		GetValidEnumValues:                     v2_2_0_p9.GetValidEnumValues,
+		HasEnumConstraint:                      v2_2_0_p9.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_2_0_p9.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_2_0_p9.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_2_0_p9.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_2_0_p9.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_2_0_p9.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_2_0_p9.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_2_0_p9.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_2_0_p9.FolderFieldMappings,
+		ExtractFolderField:                     v2_2_0_p9.ExtractFolderField,
+	},
+	BaselineV2_2_0_p11: {
+		AllSchemaNames:                         v2_2_0_p11.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_2_0_p11.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_2_0_p11.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_2_0_p11.HasSchema,
+		GetFieldDescription:                    v2_2_0_p11.GetFieldDescription,
+		GetFieldType:                           v2_2_0_p11.GetFieldType,
+		IsReadOnlyField:                        v2_2_0_p11.IsReadOnlyField,
+		IsRequiredField:                        v2_2_0_p11.IsRequiredField,
+		IsDeprecatedField:                      v2_2_0_p11.IsDeprecatedField,
+		GetValidEnumValues:                     v2_2_0_p11.GetValidEnumValues,
+		HasEnumConstraint:                      v2_2_0_p11.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_2_0_p11.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_2_0_p11.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_2_0_p11.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_2_0_p11.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_2_0_p11.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_2_0_p11.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_2_0_p11.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_2_0_p11.FolderFieldMappings,
+		ExtractFolderField:                     v2_2_0_p11.ExtractFolderField,
+	},
+	BaselineV2_2_0_p12: {
+		AllSchemaNames:                         v2_2_0_p12.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_2_0_p12.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_2_0_p12.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_2_0_p12.HasSchema,
+		GetFieldDescription:                    v2_2_0_p12.GetFieldDescription,
+		GetFieldType:                           v2_2_0_p12.GetFieldType,
+		IsReadOnlyField:                        v2_2_0_p12.IsReadOnlyField,
+		IsRequiredField:                        v2_2_0_p12.IsRequiredField,
+		IsDeprecatedField:                      v2_2_0_p12.IsDeprecatedField,
+		GetValidEnumValues:                     v2_2_0_p12.GetValidEnumValues,
+		HasEnumConstraint:                      v2_2_0_p12.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_2_0_p12.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_2_0_p12.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_2_0_p12.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_2_0_p12.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_2_0_p12.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_2_0_p12.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_2_0_p12.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_2_0_p12.FolderFieldMappings,
+		ExtractFolderField:                     v2_2_0_p12.ExtractFolderField,
+	},
+	BaselineV2_2_0_p14: {
+		AllSchemaNames:                         v2_2_0_p14.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_2_0_p14.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_2_0_p14.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_2_0_p14.HasSchema,
+		GetFieldDescription:                    v2_2_0_p14.GetFieldDescription,
+		GetFieldType:                           v2_2_0_p14.GetFieldType,
+		IsReadOnlyField:                        v2_2_0_p14.IsReadOnlyField,
+		IsRequiredField:                        v2_2_0_p14.IsRequiredField,
+		IsDeprecatedField:                      v2_2_0_p14.IsDeprecatedField,
+		GetValidEnumValues:                     v2_2_0_p14.GetValidEnumValues,
+		HasEnumConstraint:                      v2_2_0_p14.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_2_0_p14.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_2_0_p14.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_2_0_p14.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_2_0_p14.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_2_0_p14.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_2_0_p14.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_2_0_p14.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_2_0_p14.FolderFieldMappings,
+		ExtractFolderField:                     v2_2_0_p14.ExtractFolderField,
+	},
+	BaselineV2_2_0_p18: {
+		AllSchemaNames:                         v2_2_0_p18.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_2_0_p18.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_2_0_p18.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_2_0_p18.HasSchema,
+		GetFieldDescription:                    v2_2_0_p18.GetFieldDescription,
+		GetFieldType:                           v2_2_0_p18.GetFieldType,
+		IsReadOnlyField:                        v2_2_0_p18.IsReadOnlyField,
+		IsRequiredField:                        v2_2_0_p18.IsRequiredField,
+		IsDeprecatedField:                      v2_2_0_p18.IsDeprecatedField,
+		GetValidEnumValues:                     v2_2_0_p18.GetValidEnumValues,
+		HasEnumConstraint:                      v2_2_0_p18.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_2_0_p18.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_2_0_p18.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_2_0_p18.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_2_0_p18.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_2_0_p18.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_2_0_p18.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_2_0_p18.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_2_0_p18.FolderFieldMappings,
+		ExtractFolderField:                     v2_2_0_p18.ExtractFolderField,
+	},
+	BaselineV2_2_0_p21: {
+		AllSchemaNames:                         v2_2_0_p21.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_2_0_p21.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_2_0_p21.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_2_0_p21.HasSchema,
+		GetFieldDescription:                    v2_2_0_p21.GetFieldDescription,
+		GetFieldType:                           v2_2_0_p21.GetFieldType,
+		IsReadOnlyField:                        v2_2_0_p21.IsReadOnlyField,
+		IsRequiredField:                        v2_2_0_p21.IsRequiredField,
+		IsDeprecatedField:                      v2_2_0_p21.IsDeprecatedField,
+		GetValidEnumValues:                     v2_2_0_p21.GetValidEnumValues,
+		HasEnumConstraint:                      v2_2_0_p21.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_2_0_p21.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_2_0_p21.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_2_0_p21.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_2_0_p21.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_2_0_p21.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_2_0_p21.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_2_0_p21.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_2_0_p21.FolderFieldMappings,
+		ExtractFolderField:                     v2_2_0_p21.ExtractFolderField,
+	},
+	BaselineV2_2_0_p22: {
+		AllSchemaNames:                         v2_2_0_p22.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_2_0_p22.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_2_0_p22.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_2_0_p22.HasSchema,
+		GetFieldDescription:                    v2_2_0_p22.GetFieldDescription,
+		GetFieldType:                           v2_2_0_p22.GetFieldType,
+		IsReadOnlyField:                        v2_2_0_p22.IsReadOnlyField,
+		IsRequiredField:                        v2_2_0_p22.IsRequiredField,
+		IsDeprecatedField:                      v2_2_0_p22.IsDeprecatedField,
+		GetValidEnumValues:                     v2_2_0_p22.GetValidEnumValues,
+		HasEnumConstraint:                      v2_2_0_p22.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_2_0_p22.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_2_0_p22.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_2_0_p22.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_2_0_p22.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_2_0_p22.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_2_0_p22.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_2_0_p22.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_2_0_p22.FolderFieldMappings,
+		ExtractFolderField:                     v2_2_0_p22.ExtractFolderField,
+	},
+	BaselineV2_2_0_p23: {
+		AllSchemaNames:                         v2_2_0_p23.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_2_0_p23.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_2_0_p23.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_2_0_p23.HasSchema,
+		GetFieldDescription:                    v2_2_0_p23.GetFieldDescription,
+		GetFieldType:                           v2_2_0_p23.GetFieldType,
+		IsReadOnlyField:                        v2_2_0_p23.IsReadOnlyField,
+		IsRequiredField:                        v2_2_0_p23.IsRequiredField,
+		IsDeprecatedField:                      v2_2_0_p23.IsDeprecatedField,
+		GetValidEnumValues:                     v2_2_0_p23.GetValidEnumValues,
+		HasEnumConstraint:                      v2_2_0_p23.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_2_0_p23.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_2_0_p23.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_2_0_p23.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_2_0_p23.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_2_0_p23.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_2_0_p23.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_2_0_p23.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_2_0_p23.FolderFieldMappings,
+		ExtractFolderField:                     v2_2_0_p23.ExtractFolderField,
+	},
+	BaselineV2_2_0_p26: {
+		AllSchemaNames:                         v2_2_0_p26.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_2_0_p26.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_2_0_p26.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_2_0_p26.HasSchema,
+		GetFieldDescription:                    v2_2_0_p26.GetFieldDescription,
+		GetFieldType:                           v2_2_0_p26.GetFieldType,
+		IsReadOnlyField:                        v2_2_0_p26.IsReadOnlyField,
+		IsRequiredField:                        v2_2_0_p26.IsRequiredField,
+		IsDeprecatedField:                      v2_2_0_p26.IsDeprecatedField,
+		GetValidEnumValues:                     v2_2_0_p26.GetValidEnumValues,
+		HasEnumConstraint:                      v2_2_0_p26.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_2_0_p26.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_2_0_p26.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_2_0_p26.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_2_0_p26.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_2_0_p26.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_2_0_p26.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_2_0_p26.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_2_0_p26.FolderFieldMappings,
+		ExtractFolderField:                     v2_2_0_p26.ExtractFolderField,
+	},
+	BaselineV2_2_0_p32: {
+		AllSchemaNames:                         v2_2_0_p32.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_2_0_p32.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_2_0_p32.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_2_0_p32.HasSchema,
+		GetFieldDescription:                    v2_2_0_p32.GetFieldDescription,
+		GetFieldType:                           v2_2_0_p32.GetFieldType,
+		IsReadOnlyField:                        v2_2_0_p32.IsReadOnlyField,
+		IsRequiredField:                        v2_2_0_p32.IsRequiredField,
+		IsDeprecatedField:                      v2_2_0_p32.IsDeprecatedField,
+		GetValidEnumValues:                     v2_2_0_p32.GetValidEnumValues,
+		HasEnumConstraint:                      v2_2_0_p32.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_2_0_p32.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_2_0_p32.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_2_0_p32.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_2_0_p32.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_2_0_p32.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_2_0_p32.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_2_0_p32.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_2_0_p32.FolderFieldMappings,
+		ExtractFolderField:                     v2_2_0_p32.ExtractFolderField,
+	},
+	BaselineV2_2_0_p33: {
+		AllSchemaNames:                         v2_2_0_p33.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_2_0_p33.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_2_0_p33.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_2_0_p33.HasSchema,
+		GetFieldDescription:                    v2_2_0_p33.GetFieldDescription,
+		GetFieldType:                           v2_2_0_p33.GetFieldType,
+		IsReadOnlyField:                        v2_2_0_p33.IsReadOnlyField,
+		IsRequiredField:                        v2_2_0_p33.IsRequiredField,
+		IsDeprecatedField:                      v2_2_0_p33.IsDeprecatedField,
+		GetValidEnumValues:                     v2_2_0_p33.GetValidEnumValues,
+		HasEnumConstraint:                      v2_2_0_p33.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_2_0_p33.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_2_0_p33.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_2_0_p33.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_2_0_p33.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_2_0_p33.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_2_0_p33.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_2_0_p33.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_2_0_p33.FolderFieldMappings,
+		ExtractFolderField:                     v2_2_0_p33.ExtractFolderField,
+	},
+	BaselineV2_2_0_p43: {
+		AllSchemaNames:                         v2_2_0_p43.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_2_0_p43.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_2_0_p43.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_2_0_p43.HasSchema,
+		GetFieldDescription:                    v2_2_0_p43.GetFieldDescription,
+		GetFieldType:                           v2_2_0_p43.GetFieldType,
+		IsReadOnlyField:                        v2_2_0_p43.IsReadOnlyField,
+		IsRequiredField:                        v2_2_0_p43.IsRequiredField,
+		IsDeprecatedField:                      v2_2_0_p43.IsDeprecatedField,
+		GetValidEnumValues:                     v2_2_0_p43.GetValidEnumValues,
+		HasEnumConstraint:                      v2_2_0_p43.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_2_0_p43.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_2_0_p43.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_2_0_p43.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_2_0_p43.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_2_0_p43.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_2_0_p43.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_2_0_p43.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_2_0_p43.FolderFieldMappings,
+		ExtractFolderField:                     v2_2_0_p43.ExtractFolderField,
+	},
+	BaselineV2_2_0_p44: {
+		AllSchemaNames:                         v2_2_0_p44.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_2_0_p44.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_2_0_p44.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_2_0_p44.HasSchema,
+		GetFieldDescription:                    v2_2_0_p44.GetFieldDescription,
+		GetFieldType:                           v2_2_0_p44.GetFieldType,
+		IsReadOnlyField:                        v2_2_0_p44.IsReadOnlyField,
+		IsRequiredField:                        v2_2_0_p44.IsRequiredField,
+		IsDeprecatedField:                      v2_2_0_p44.IsDeprecatedField,
+		GetValidEnumValues:                     v2_2_0_p44.GetValidEnumValues,
+		HasEnumConstraint:                      v2_2_0_p44.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_2_0_p44.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_2_0_p44.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_2_0_p44.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_2_0_p44.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_2_0_p44.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_2_0_p44.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_2_0_p44.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_2_0_p44.FolderFieldMappings,
+		ExtractFolderField:                     v2_2_0_p44.ExtractFolderField,
+	},
+	BaselineV2_3_0_p1: {
+		AllSchemaNames:                         v2_3_0_p1.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_3_0_p1.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_3_0_p1.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_3_0_p1.HasSchema,
+		GetFieldDescription:                    v2_3_0_p1.GetFieldDescription,
+		GetFieldType:                           v2_3_0_p1.GetFieldType,
+		IsReadOnlyField:                        v2_3_0_p1.IsReadOnlyField,
+		IsRequiredField:                        v2_3_0_p1.IsRequiredField,
+		IsDeprecatedField:                      v2_3_0_p1.IsDeprecatedField,
+		GetValidEnumValues:                     v2_3_0_p1.GetValidEnumValues,
+		HasEnumConstraint:                      v2_3_0_p1.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_3_0_p1.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_3_0_p1.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_3_0_p1.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_3_0_p1.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_3_0_p1.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_3_0_p1.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_3_0_p1.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_3_0_p1.FolderFieldMappings,
+		ExtractFolderField:                     v2_3_0_p1.ExtractFolderField,
+	},
+	BaselineV2_3_0_p3: {
+		AllSchemaNames:                         v2_3_0_p3.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_3_0_p3.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_3_0_p3.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_3_0_p3.HasSchema,
+		GetFieldDescription:                    v2_3_0_p3.GetFieldDescription,
+		GetFieldType:                           v2_3_0_p3.GetFieldType,
+		IsReadOnlyField:                        v2_3_0_p3.IsReadOnlyField,
+		IsRequiredField:                        v2_3_0_p3.IsRequiredField,
+		IsDeprecatedField:                      v2_3_0_p3.IsDeprecatedField,
+		GetValidEnumValues:                     v2_3_0_p3.GetValidEnumValues,
+		HasEnumConstraint:                      v2_3_0_p3.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_3_0_p3.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_3_0_p3.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_3_0_p3.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_3_0_p3.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_3_0_p3.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_3_0_p3.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_3_0_p3.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_3_0_p3.FolderFieldMappings,
+		ExtractFolderField:                     v2_3_0_p3.ExtractFolderField,
+	},
+	BaselineV2_3_0_p5: {
+		AllSchemaNames:                         v2_3_0_p5.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_3_0_p5.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_3_0_p5.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_3_0_p5.HasSchema,
+		GetFieldDescription:                    v2_3_0_p5.GetFieldDescription,
+		GetFieldType:                           v2_3_0_p5.GetFieldType,
+		IsReadOnlyField:                        v2_3_0_p5.IsReadOnlyField,
+		IsRequiredField:                        v2_3_0_p5.IsRequiredField,
+		IsDeprecatedField:                      v2_3_0_p5.IsDeprecatedField,
+		GetValidEnumValues:                     v2_3_0_p5.GetValidEnumValues,
+		HasEnumConstraint:                      v2_3_0_p5.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_3_0_p5.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_3_0_p5.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_3_0_p5.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_3_0_p5.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_3_0_p5.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_3_0_p5.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_3_0_p5.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_3_0_p5.FolderFieldMappings,
+		ExtractFolderField:                     v2_3_0_p5.ExtractFolderField,
+	},
+	BaselineV2_3_0_p7: {
+		AllSchemaNames:                         v2_3_0_p7.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_3_0_p7.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_3_0_p7.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_3_0_p7.HasSchema,
+		GetFieldDescription:                    v2_3_0_p7.GetFieldDescription,
+		GetFieldType:                           v2_3_0_p7.GetFieldType,
+		IsReadOnlyField:                        v2_3_0_p7.IsReadOnlyField,
+		IsRequiredField:                        v2_3_0_p7.IsRequiredField,
+		IsDeprecatedField:                      v2_3_0_p7.IsDeprecatedField,
+		GetValidEnumValues:                     v2_3_0_p7.GetValidEnumValues,
+		HasEnumConstraint:                      v2_3_0_p7.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_3_0_p7.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_3_0_p7.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_3_0_p7.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_3_0_p7.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_3_0_p7.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_3_0_p7.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_3_0_p7.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_3_0_p7.FolderFieldMappings,
+		ExtractFolderField:                     v2_3_0_p7.ExtractFolderField,
+	},
+	BaselineV2_3_0_p11: {
+		AllSchemaNames:                         v2_3_0_p11.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_3_0_p11.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_3_0_p11.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_3_0_p11.HasSchema,
+		GetFieldDescription:                    v2_3_0_p11.GetFieldDescription,
+		GetFieldType:                           v2_3_0_p11.GetFieldType,
+		IsReadOnlyField:                        v2_3_0_p11.IsReadOnlyField,
+		IsRequiredField:                        v2_3_0_p11.IsRequiredField,
+		IsDeprecatedField:                      v2_3_0_p11.IsDeprecatedField,
+		GetValidEnumValues:                     v2_3_0_p11.GetValidEnumValues,
+		HasEnumConstraint:                      v2_3_0_p11.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_3_0_p11.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_3_0_p11.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_3_0_p11.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_3_0_p11.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_3_0_p11.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_3_0_p11.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_3_0_p11.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_3_0_p11.FolderFieldMappings,
+		ExtractFolderField:                     v2_3_0_p11.ExtractFolderField,
+	},
+	BaselineV2_3_0_p14: {
+		AllSchemaNames:                         v2_3_0_p14.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_3_0_p14.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_3_0_p14.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_3_0_p14.HasSchema,
+		GetFieldDescription:                    v2_3_0_p14.GetFieldDescription,
+		GetFieldType:                           v2_3_0_p14.GetFieldType,
+		IsReadOnlyField:                        v2_3_0_p14.IsReadOnlyField,
+		IsRequiredField:                        v2_3_0_p14.IsRequiredField,
+		IsDeprecatedField:                      v2_3_0_p14.IsDeprecatedField,
+		GetValidEnumValues:                     v2_3_0_p14.GetValidEnumValues,
+		HasEnumConstraint:                      v2_3_0_p14.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_3_0_p14.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_3_0_p14.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_3_0_p14.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_3_0_p14.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_3_0_p14.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_3_0_p14.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_3_0_p14.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_3_0_p14.FolderFieldMappings,
+		ExtractFolderField:                     v2_3_0_p14.ExtractFolderField,
+	},
+	BaselineV2_3_0_p22: {
+		AllSchemaNames:                         v2_3_0_p22.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_3_0_p22.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_3_0_p22.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_3_0_p22.HasSchema,
+		GetFieldDescription:                    v2_3_0_p22.GetFieldDescription,
+		GetFieldType:                           v2_3_0_p22.GetFieldType,
+		IsReadOnlyField:                        v2_3_0_p22.IsReadOnlyField,
+		IsRequiredField:                        v2_3_0_p22.IsRequiredField,
+		IsDeprecatedField:                      v2_3_0_p22.IsDeprecatedField,
+		GetValidEnumValues:                     v2_3_0_p22.GetValidEnumValues,
+		HasEnumConstraint:                      v2_3_0_p22.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_3_0_p22.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_3_0_p22.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_3_0_p22.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_3_0_p22.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_3_0_p22.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_3_0_p22.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_3_0_p22.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_3_0_p22.FolderFieldMappings,
+		ExtractFolderField:                     v2_3_0_p22.ExtractFolderField,
+	},
+	BaselineV2_3_0_p23: {
+		AllSchemaNames:                         v2_3_0_p23.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_3_0_p23.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_3_0_p23.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_3_0_p23.HasSchema,
+		GetFieldDescription:                    v2_3_0_p23.GetFieldDescription,
+		GetFieldType:                           v2_3_0_p23.GetFieldType,
+		IsReadOnlyField:                        v2_3_0_p23.IsReadOnlyField,
+		IsRequiredField:                        v2_3_0_p23.IsRequiredField,
+		IsDeprecatedField:                      v2_3_0_p23.IsDeprecatedField,
+		GetValidEnumValues:                     v2_3_0_p23.GetValidEnumValues,
+		HasEnumConstraint:                      v2_3_0_p23.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_3_0_p23.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_3_0_p23.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_3_0_p23.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_3_0_p23.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_3_0_p23.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_3_0_p23.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_3_0_p23.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_3_0_p23.FolderFieldMappings,
+		ExtractFolderField:                     v2_3_0_p23.ExtractFolderField,
+	},
+	BaselineV2_3_0_p26: {
+		AllSchemaNames:                         v2_3_0_p26.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_3_0_p26.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_3_0_p26.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_3_0_p26.HasSchema,
+		GetFieldDescription:                    v2_3_0_p26.GetFieldDescription,
+		GetFieldType:                           v2_3_0_p26.GetFieldType,
+		IsReadOnlyField:                        v2_3_0_p26.IsReadOnlyField,
+		IsRequiredField:                        v2_3_0_p26.IsRequiredField,
+		IsDeprecatedField:                      v2_3_0_p26.IsDeprecatedField,
+		GetValidEnumValues:                     v2_3_0_p26.GetValidEnumValues,
+		HasEnumConstraint:                      v2_3_0_p26.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_3_0_p26.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_3_0_p26.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_3_0_p26.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_3_0_p26.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_3_0_p26.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_3_0_p26.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_3_0_p26.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_3_0_p26.FolderFieldMappings,
+		ExtractFolderField:                     v2_3_0_p26.ExtractFolderField,
+	},
+	BaselineV2_3_0_p27: {
+		AllSchemaNames:                         v2_3_0_p27.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_3_0_p27.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_3_0_p27.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_3_0_p27.HasSchema,
+		GetFieldDescription:                    v2_3_0_p27.GetFieldDescription,
+		GetFieldType:                           v2_3_0_p27.GetFieldType,
+		IsReadOnlyField:                        v2_3_0_p27.IsReadOnlyField,
+		IsRequiredField:                        v2_3_0_p27.IsRequiredField,
+		IsDeprecatedField:                      v2_3_0_p27.IsDeprecatedField,
+		GetValidEnumValues:                     v2_3_0_p27.GetValidEnumValues,
+		HasEnumConstraint:                      v2_3_0_p27.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_3_0_p27.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_3_0_p27.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_3_0_p27.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_3_0_p27.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_3_0_p27.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_3_0_p27.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_3_0_p27.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_3_0_p27.FolderFieldMappings,
+		ExtractFolderField:                     v2_3_0_p27.ExtractFolderField,
+	},
+	BaselineV2_3_0_p31: {
+		AllSchemaNames:                         v2_3_0_p31.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_3_0_p31.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_3_0_p31.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_3_0_p31.HasSchema,
+		GetFieldDescription:                    v2_3_0_p31.GetFieldDescription,
+		GetFieldType:                           v2_3_0_p31.GetFieldType,
+		IsReadOnlyField:                        v2_3_0_p31.IsReadOnlyField,
+		IsRequiredField:                        v2_3_0_p31.IsRequiredField,
+		IsDeprecatedField:                      v2_3_0_p31.IsDeprecatedField,
+		GetValidEnumValues:                     v2_3_0_p31.GetValidEnumValues,
+		HasEnumConstraint:                      v2_3_0_p31.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_3_0_p31.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_3_0_p31.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_3_0_p31.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_3_0_p31.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_3_0_p31.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_3_0_p31.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_3_0_p31.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_3_0_p31.FolderFieldMappings,
+		ExtractFolderField:                     v2_3_0_p31.ExtractFolderField,
+	},
+	BaselineV2_3_0_p33: {
+		AllSchemaNames:                         v2_3_0_p33.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_3_0_p33.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_3_0_p33.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_3_0_p33.HasSchema,
+		GetFieldDescription:                    v2_3_0_p33.GetFieldDescription,
+		GetFieldType:                           v2_3_0_p33.GetFieldType,
+		IsReadOnlyField:                        v2_3_0_p33.IsReadOnlyField,
+		IsRequiredField:                        v2_3_0_p33.IsRequiredField,
+		IsDeprecatedField:                      v2_3_0_p33.IsDeprecatedField,
+		GetValidEnumValues:                     v2_3_0_p33.GetValidEnumValues,
+		HasEnumConstraint:                      v2_3_0_p33.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_3_0_p33.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_3_0_p33.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_3_0_p33.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_3_0_p33.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_3_0_p33.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_3_0_p33.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_3_0_p33.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_3_0_p33.FolderFieldMappings,
+		ExtractFolderField:                     v2_3_0_p33.ExtractFolderField,
+	},
+	BaselineV2_3_0_p36: {
+		AllSchemaNames:                         v2_3_0_p36.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_3_0_p36.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_3_0_p36.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_3_0_p36.HasSchema,
+		GetFieldDescription:                    v2_3_0_p36.GetFieldDescription,
+		GetFieldType:                           v2_3_0_p36.GetFieldType,
+		IsReadOnlyField:                        v2_3_0_p36.IsReadOnlyField,
+		IsRequiredField:                        v2_3_0_p36.IsRequiredField,
+		IsDeprecatedField:                      v2_3_0_p36.IsDeprecatedField,
+		GetValidEnumValues:                     v2_3_0_p36.GetValidEnumValues,
+		HasEnumConstraint:                      v2_3_0_p36.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_3_0_p36.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_3_0_p36.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_3_0_p36.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_3_0_p36.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_3_0_p36.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_3_0_p36.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_3_0_p36.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_3_0_p36.FolderFieldMappings,
+		ExtractFolderField:                     v2_3_0_p36.ExtractFolderField,
+	},
+	BaselineV2_3_0_p37: {
+		AllSchemaNames:                         v2_3_0_p37.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_3_0_p37.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_3_0_p37.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_3_0_p37.HasSchema,
+		GetFieldDescription:                    v2_3_0_p37.GetFieldDescription,
+		GetFieldType:                           v2_3_0_p37.GetFieldType,
+		IsReadOnlyField:                        v2_3_0_p37.IsReadOnlyField,
+		IsRequiredField:                        v2_3_0_p37.IsRequiredField,
+		IsDeprecatedField:                      v2_3_0_p37.IsDeprecatedField,
+		GetValidEnumValues:                     v2_3_0_p37.GetValidEnumValues,
+		HasEnumConstraint:                      v2_3_0_p37.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_3_0_p37.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_3_0_p37.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_3_0_p37.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_3_0_p37.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_3_0_p37.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_3_0_p37.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_3_0_p37.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_3_0_p37.FolderFieldMappings,
+		ExtractFolderField:                     v2_3_0_p37.ExtractFolderField,
+	},
+	BaselineV2_3_0_p39: {
+		AllSchemaNames:                         v2_3_0_p39.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_3_0_p39.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_3_0_p39.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_3_0_p39.HasSchema,
+		GetFieldDescription:                    v2_3_0_p39.GetFieldDescription,
+		GetFieldType:                           v2_3_0_p39.GetFieldType,
+		IsReadOnlyField:                        v2_3_0_p39.IsReadOnlyField,
+		IsRequiredField:                        v2_3_0_p39.IsRequiredField,
+		IsDeprecatedField:                      v2_3_0_p39.IsDeprecatedField,
+		GetValidEnumValues:                     v2_3_0_p39.GetValidEnumValues,
+		HasEnumConstraint:                      v2_3_0_p39.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_3_0_p39.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_3_0_p39.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_3_0_p39.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_3_0_p39.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_3_0_p39.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_3_0_p39.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_3_0_p39.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_3_0_p39.FolderFieldMappings,
+		ExtractFolderField:                     v2_3_0_p39.ExtractFolderField,
+	},
+	BaselineV2_3_0_p40: {
+		AllSchemaNames:                         v2_3_0_p40.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_3_0_p40.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_3_0_p40.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_3_0_p40.HasSchema,
+		GetFieldDescription:                    v2_3_0_p40.GetFieldDescription,
+		GetFieldType:                           v2_3_0_p40.GetFieldType,
+		IsReadOnlyField:                        v2_3_0_p40.IsReadOnlyField,
+		IsRequiredField:                        v2_3_0_p40.IsRequiredField,
+		IsDeprecatedField:                      v2_3_0_p40.IsDeprecatedField,
+		GetValidEnumValues:                     v2_3_0_p40.GetValidEnumValues,
+		HasEnumConstraint:                      v2_3_0_p40.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_3_0_p40.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_3_0_p40.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_3_0_p40.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_3_0_p40.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_3_0_p40.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_3_0_p40.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_3_0_p40.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_3_0_p40.FolderFieldMappings,
+		ExtractFolderField:                     v2_3_0_p40.ExtractFolderField,
+	},
+	BaselineV2_3_0_p41: {
+		AllSchemaNames:                         v2_3_0_p41.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_3_0_p41.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_3_0_p41.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_3_0_p41.HasSchema,
+		GetFieldDescription:                    v2_3_0_p41.GetFieldDescription,
+		GetFieldType:                           v2_3_0_p41.GetFieldType,
+		IsReadOnlyField:                        v2_3_0_p41.IsReadOnlyField,
+		IsRequiredField:                        v2_3_0_p41.IsRequiredField,
+		IsDeprecatedField:                      v2_3_0_p41.IsDeprecatedField,
+		GetValidEnumValues:                     v2_3_0_p41.GetValidEnumValues,
+		HasEnumConstraint:                      v2_3_0_p41.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_3_0_p41.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_3_0_p41.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_3_0_p41.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_3_0_p41.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_3_0_p41.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_3_0_p41.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_3_0_p41.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_3_0_p41.FolderFieldMappings,
+		ExtractFolderField:                     v2_3_0_p41.ExtractFolderField,
+	},
+	BaselineV2_4_0_p1: {
+		AllSchemaNames:                         v2_4_0_p1.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_4_0_p1.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_4_0_p1.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_4_0_p1.HasSchema,
+		GetFieldDescription:                    v2_4_0_p1.GetFieldDescription,
+		GetFieldType:                           v2_4_0_p1.GetFieldType,
+		IsReadOnlyField:                        v2_4_0_p1.IsReadOnlyField,
+		IsRequiredField:                        v2_4_0_p1.IsRequiredField,
+		IsDeprecatedField:                      v2_4_0_p1.IsDeprecatedField,
+		GetValidEnumValues:                     v2_4_0_p1.GetValidEnumValues,
+		HasEnumConstraint:                      v2_4_0_p1.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_4_0_p1.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_4_0_p1.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_4_0_p1.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_4_0_p1.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_4_0_p1.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_4_0_p1.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_4_0_p1.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_4_0_p1.FolderFieldMappings,
+		ExtractFolderField:                     v2_4_0_p1.ExtractFolderField,
+	},
+	BaselineV2_4_0_p6: {
+		AllSchemaNames:                         v2_4_0_p6.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_4_0_p6.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_4_0_p6.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_4_0_p6.HasSchema,
+		GetFieldDescription:                    v2_4_0_p6.GetFieldDescription,
+		GetFieldType:                           v2_4_0_p6.GetFieldType,
+		IsReadOnlyField:                        v2_4_0_p6.IsReadOnlyField,
+		IsRequiredField:                        v2_4_0_p6.IsRequiredField,
+		IsDeprecatedField:                      v2_4_0_p6.IsDeprecatedField,
+		GetValidEnumValues:                     v2_4_0_p6.GetValidEnumValues,
+		HasEnumConstraint:                      v2_4_0_p6.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_4_0_p6.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_4_0_p6.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_4_0_p6.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_4_0_p6.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_4_0_p6.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_4_0_p6.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_4_0_p6.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_4_0_p6.FolderFieldMappings,
+		ExtractFolderField:                     v2_4_0_p6.ExtractFolderField,
+	},
+	BaselineV2_4_0_p11: {
+		AllSchemaNames:                         v2_4_0_p11.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_4_0_p11.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_4_0_p11.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_4_0_p11.HasSchema,
+		GetFieldDescription:                    v2_4_0_p11.GetFieldDescription,
+		GetFieldType:                           v2_4_0_p11.GetFieldType,
+		IsReadOnlyField:                        v2_4_0_p11.IsReadOnlyField,
+		IsRequiredField:                        v2_4_0_p11.IsRequiredField,
+		IsDeprecatedField:                      v2_4_0_p11.IsDeprecatedField,
+		GetValidEnumValues:                     v2_4_0_p11.GetValidEnumValues,
+		HasEnumConstraint:                      v2_4_0_p11.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_4_0_p11.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_4_0_p11.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_4_0_p11.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_4_0_p11.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_4_0_p11.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_4_0_p11.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_4_0_p11.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_4_0_p11.FolderFieldMappings,
+		ExtractFolderField:                     v2_4_0_p11.ExtractFolderField,
+	},
+	BaselineV2_4_0_p14: {
+		AllSchemaNames:                         v2_4_0_p14.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_4_0_p14.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_4_0_p14.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_4_0_p14.HasSchema,
+		GetFieldDescription:                    v2_4_0_p14.GetFieldDescription,
+		GetFieldType:                           v2_4_0_p14.GetFieldType,
+		IsReadOnlyField:                        v2_4_0_p14.IsReadOnlyField,
+		IsRequiredField:                        v2_4_0_p14.IsRequiredField,
+		IsDeprecatedField:                      v2_4_0_p14.IsDeprecatedField,
+		GetValidEnumValues:                     v2_4_0_p14.GetValidEnumValues,
+		HasEnumConstraint:                      v2_4_0_p14.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_4_0_p14.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_4_0_p14.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_4_0_p14.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_4_0_p14.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_4_0_p14.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_4_0_p14.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_4_0_p14.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_4_0_p14.FolderFieldMappings,
+		ExtractFolderField:                     v2_4_0_p14.ExtractFolderField,
+	},
+	BaselineV2_4_0_p16: {
+		AllSchemaNames:                         v2_4_0_p16.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_4_0_p16.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_4_0_p16.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_4_0_p16.HasSchema,
+		GetFieldDescription:                    v2_4_0_p16.GetFieldDescription,
+		GetFieldType:                           v2_4_0_p16.GetFieldType,
+		IsReadOnlyField:                        v2_4_0_p16.IsReadOnlyField,
+		IsRequiredField:                        v2_4_0_p16.IsRequiredField,
+		IsDeprecatedField:                      v2_4_0_p16.IsDeprecatedField,
+		GetValidEnumValues:                     v2_4_0_p16.GetValidEnumValues,
+		HasEnumConstraint:                      v2_4_0_p16.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_4_0_p16.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_4_0_p16.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_4_0_p16.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_4_0_p16.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_4_0_p16.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_4_0_p16.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_4_0_p16.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_4_0_p16.FolderFieldMappings,
+		ExtractFolderField:                     v2_4_0_p16.ExtractFolderField,
+	},
+	BaselineV2_4_0_p17: {
+		AllSchemaNames:                         v2_4_0_p17.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_4_0_p17.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_4_0_p17.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_4_0_p17.HasSchema,
+		GetFieldDescription:                    v2_4_0_p17.GetFieldDescription,
+		GetFieldType:                           v2_4_0_p17.GetFieldType,
+		IsReadOnlyField:                        v2_4_0_p17.IsReadOnlyField,
+		IsRequiredField:                        v2_4_0_p17.IsRequiredField,
+		IsDeprecatedField:                      v2_4_0_p17.IsDeprecatedField,
+		GetValidEnumValues:                     v2_4_0_p17.GetValidEnumValues,
+		HasEnumConstraint:                      v2_4_0_p17.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_4_0_p17.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_4_0_p17.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_4_0_p17.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_4_0_p17.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_4_0_p17.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_4_0_p17.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_4_0_p17.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_4_0_p17.FolderFieldMappings,
+		ExtractFolderField:                     v2_4_0_p17.ExtractFolderField,
+	},
+	BaselineV2_4_0_p18: {
+		AllSchemaNames:                         v2_4_0_p18.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_4_0_p18.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_4_0_p18.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_4_0_p18.HasSchema,
+		GetFieldDescription:                    v2_4_0_p18.GetFieldDescription,
+		GetFieldType:                           v2_4_0_p18.GetFieldType,
+		IsReadOnlyField:                        v2_4_0_p18.IsReadOnlyField,
+		IsRequiredField:                        v2_4_0_p18.IsRequiredField,
+		IsDeprecatedField:                      v2_4_0_p18.IsDeprecatedField,
+		GetValidEnumValues:                     v2_4_0_p18.GetValidEnumValues,
+		HasEnumConstraint:                      v2_4_0_p18.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_4_0_p18.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_4_0_p18.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_4_0_p18.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_4_0_p18.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_4_0_p18.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_4_0_p18.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_4_0_p18.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_4_0_p18.FolderFieldMappings,
+		ExtractFolderField:                     v2_4_0_p18.ExtractFolderField,
+	},
+}
 
 // VersionToBaseline maps CheckMK versions to their baseline package.
 // Use LookupBaseline() instead of accessing this directly.
 var VersionToBaseline = map[string]BaselinePackage{
-	"2.2.0p1":  BaselineV2_2_p1,
-	"2.2.0p2":  BaselineV2_2_p1,
-	"2.2.0p3":  BaselineV2_2_p3,
-	"2.2.0p4":  BaselineV2_2_p4,
-	"2.2.0p5":  BaselineV2_2_p5,
-	"2.2.0p6":  BaselineV2_2_p5,
-	"2.2.0p7":  BaselineV2_2_p5,
-	"2.2.0p8":  BaselineV2_2_p8,
-	"2.2.0p9":  BaselineV2_2_p9,
-	"2.2.0p11": BaselineV2_2_p11,
-	"2.2.0p12": BaselineV2_2_p12,
-	"2.2.0p14": BaselineV2_2_p14,
-	"2.2.0p16": BaselineV2_2_p14,
-	"2.2.0p17": BaselineV2_2_p14,
-	"2.2.0p18": BaselineV2_2_p18,
-	"2.2.0p19": BaselineV2_2_p18,
-	"2.2.0p20": BaselineV2_2_p18,
-	"2.2.0p21": BaselineV2_2_p21,
-	"2.2.0p22": BaselineV2_2_p22,
-	"2.2.0p23": BaselineV2_2_p23,
-	"2.2.0p24": BaselineV2_2_p23,
-	"2.2.0p25": BaselineV2_2_p23,
-	"2.2.0p26": BaselineV2_2_p26,
-	"2.2.0p27": BaselineV2_2_p26,
-	"2.2.0p28": BaselineV2_2_p26,
-	"2.2.0p29": BaselineV2_2_p26,
-	"2.2.0p30": BaselineV2_2_p26,
-	"2.2.0p31": BaselineV2_2_p26,
-	"2.2.0p32": BaselineV2_2_p32,
-	"2.2.0p33": BaselineV2_2_p33,
-	"2.2.0p34": BaselineV2_2_p33,
-	"2.2.0p35": BaselineV2_2_p33,
-	"2.2.0p36": BaselineV2_2_p33,
-	"2.2.0p37": BaselineV2_2_p33,
-	"2.2.0p38": BaselineV2_2_p33,
-	"2.2.0p39": BaselineV2_2_p33,
-	"2.2.0p40": BaselineV2_2_p33,
-	"2.2.0p41": BaselineV2_2_p33,
-	"2.2.0p42": BaselineV2_2_p33,
-	"2.2.0p43": BaselineV2_2_p43,
-	"2.2.0p44": BaselineV2_2_p44,
-	"2.2.0p45": BaselineV2_2_p44,
-	"2.2.0p46": BaselineV2_2_p44,
-	"2.2.0p47": BaselineV2_2_p44,
-	"2.3.0p1":  BaselineV2_3_p1,
-	"2.3.0p2":  BaselineV2_3_p1,
-	"2.3.0p3":  BaselineV2_3_p3,
-	"2.3.0p4":  BaselineV2_3_p3,
-	"2.3.0p5":  BaselineV2_3_p5,
-	"2.3.0p6":  BaselineV2_3_p5,
-	"2.3.0p7":  BaselineV2_3_p7,
-	"2.3.0p8":  BaselineV2_3_p7,
-	"2.3.0p9":  BaselineV2_3_p7,
-	"2.3.0p10": BaselineV2_3_p7,
-	"2.3.0p11": BaselineV2_3_p11,
-	"2.3.0p12": BaselineV2_3_p11,
-	"2.3.0p13": BaselineV2_3_p11,
-	"2.3.0p14": BaselineV2_3_p14,
-	"2.3.0p15": BaselineV2_3_p14,
-	"2.3.0p16": BaselineV2_3_p14,
-	"2.3.0p17": BaselineV2_3_p14,
-	"2.3.0p18": BaselineV2_3_p14,
-	"2.3.0p19": BaselineV2_3_p14,
-	"2.3.0p20": BaselineV2_3_p14,
-	"2.3.0p21": BaselineV2_3_p14,
-	"2.3.0p22": BaselineV2_3_p22,
-	"2.3.0p23": BaselineV2_3_p23,
-	"2.3.0p24": BaselineV2_3_p23,
-	"2.3.0p25": BaselineV2_3_p23,
-	"2.3.0p26": BaselineV2_3_p26,
-	"2.3.0p27": BaselineV2_3_p27,
-	"2.3.0p28": BaselineV2_3_p27,
-	"2.3.0p29": BaselineV2_3_p27,
-	"2.3.0p30": BaselineV2_3_p27,
-	"2.3.0p31": BaselineV2_3_p31,
-	"2.3.0p32": BaselineV2_3_p31,
-	"2.3.0p33": BaselineV2_3_p33,
-	"2.3.0p34": BaselineV2_3_p33,
-	"2.3.0p35": BaselineV2_3_p33,
-	"2.3.0p36": BaselineV2_3_p36,
-	"2.3.0p37": BaselineV2_3_p37,
-	"2.3.0p38": BaselineV2_3_p37,
-	"2.3.0p39": BaselineV2_3_p39,
-	"2.3.0p40": BaselineV2_3_p40,
-	"2.3.0p41": BaselineV2_3_p41,
-	"2.4.0p1":  BaselineV2_4_p1,
-	"2.4.0p2":  BaselineV2_4_p1,
-	"2.4.0p3":  BaselineV2_4_p1,
-	"2.4.0p4":  BaselineV2_4_p1,
-	"2.4.0p5":  BaselineV2_4_p1,
-	"2.4.0p6":  BaselineV2_4_p6,
-	"2.4.0p7":  BaselineV2_4_p6,
-	"2.4.0p8":  BaselineV2_4_p6,
-	"2.4.0p9":  BaselineV2_4_p6,
-	"2.4.0p10": BaselineV2_4_p6,
-	"2.4.0p11": BaselineV2_4_p11,
-	"2.4.0p12": BaselineV2_4_p11,
-	"2.4.0p13": BaselineV2_4_p11,
-	"2.4.0p14": BaselineV2_4_p14,
-	"2.4.0p15": BaselineV2_4_p14,
-	"2.4.0p16": BaselineV2_4_p16,
-	"2.4.0p17": BaselineV2_4_p17,
-	"2.4.0p18": BaselineV2_4_p18,
+	"2.2.0p1":  BaselineV2_2_0_p1,
+	"2.2.0p3":  BaselineV2_2_0_p3,
+	"2.2.0p4":  BaselineV2_2_0_p4,
+	"2.2.0p5":  BaselineV2_2_0_p5,
+	"2.2.0p8":  BaselineV2_2_0_p8,
+	"2.2.0p9":  BaselineV2_2_0_p9,
+	"2.2.0p11": BaselineV2_2_0_p11,
+	"2.2.0p12": BaselineV2_2_0_p12,
+	"2.2.0p14": BaselineV2_2_0_p14,
+	"2.2.0p18": BaselineV2_2_0_p18,
+	"2.2.0p21": BaselineV2_2_0_p21,
+	"2.2.0p22": BaselineV2_2_0_p22,
+	"2.2.0p23": BaselineV2_2_0_p23,
+	"2.2.0p26": BaselineV2_2_0_p26,
+	"2.2.0p32": BaselineV2_2_0_p32,
+	"2.2.0p33": BaselineV2_2_0_p33,
+	"2.2.0p43": BaselineV2_2_0_p43,
+	"2.2.0p44": BaselineV2_2_0_p44,
+	"2.3.0p1":  BaselineV2_3_0_p1,
+	"2.3.0p3":  BaselineV2_3_0_p3,
+	"2.3.0p5":  BaselineV2_3_0_p5,
+	"2.3.0p7":  BaselineV2_3_0_p7,
+	"2.3.0p11": BaselineV2_3_0_p11,
+	"2.3.0p14": BaselineV2_3_0_p14,
+	"2.3.0p22": BaselineV2_3_0_p22,
+	"2.3.0p23": BaselineV2_3_0_p23,
+	"2.3.0p26": BaselineV2_3_0_p26,
+	"2.3.0p27": BaselineV2_3_0_p27,
+	"2.3.0p31": BaselineV2_3_0_p31,
+	"2.3.0p33": BaselineV2_3_0_p33,
+	"2.3.0p36": BaselineV2_3_0_p36,
+	"2.3.0p37": BaselineV2_3_0_p37,
+	"2.3.0p39": BaselineV2_3_0_p39,
+	"2.3.0p40": BaselineV2_3_0_p40,
+	"2.3.0p41": BaselineV2_3_0_p41,
+	"2.4.0p1":  BaselineV2_4_0_p1,
+	"2.4.0p6":  BaselineV2_4_0_p6,
+	"2.4.0p11": BaselineV2_4_0_p11,
+	"2.4.0p14": BaselineV2_4_0_p14,
+	"2.4.0p16": BaselineV2_4_0_p16,
+	"2.4.0p17": BaselineV2_4_0_p17,
+	"2.4.0p18": BaselineV2_4_0_p18,
 }
 
 // MinorToLatestBaseline maps minor versions to their latest baseline.
 // Used for unknown patch versions within a known minor.
 var MinorToLatestBaseline = map[string]BaselinePackage{
-	"2.2": BaselineV2_2_p44,
-	"2.3": BaselineV2_3_p41,
-	"2.4": BaselineV2_4_p18,
+	"2.2": BaselineV2_2_0_p44,
+	"2.3": BaselineV2_3_0_p41,
+	"2.4": BaselineV2_4_0_p18,
 }
 
 // LookupBaseline returns the baseline package for a given CheckMK version.
 // Returns empty string if the version is unknown.
 func LookupBaseline(version string) BaselinePackage {
-	// Direct match
 	if pkg, ok := VersionToBaseline[version]; ok {
 		return pkg
 	}
-
-	// Try minor version match (for future patch versions)
-	minor := extractMinor(version)
-	if pkg, ok := MinorToLatestBaseline[minor]; ok {
+	if pkg, ok := MinorToLatestBaseline[extractMinor(version)]; ok {
 		return pkg
 	}
-
 	return ""
 }
 
-// extractMinor extracts "2.4" from "2.4.0p17"
+// GetRegistry returns the function registry for a baseline.
+// Returns nil if the baseline is unknown.
+func GetRegistry(pkg BaselinePackage) *BaselineFuncs {
+	return registry[pkg]
+}
+
 func extractMinor(version string) string {
-	parts := splitVersion(version)
+	parts := strings.Split(strings.ReplaceAll(version, "p", "."), ".")
 	if len(parts) >= 2 {
 		return parts[0] + "." + parts[1]
 	}
 	return ""
 }
 
-// splitVersion splits a version string into parts
-func splitVersion(version string) []string {
-	// Handle both "2.4.0p17" and "2.4.0.17" formats
-	version = strings.ReplaceAll(version, "p", ".")
-	return strings.Split(version, ".")
-}
+// Generic Schema Introspection
 
-// ValidHostTagAgentValues returns valid tag_agent values for the given baseline.
-func ValidHostTagAgentValues(pkg BaselinePackage) []string {
-	switch pkg {
-	case BaselineV2_2_p1:
-		return v2_2_p1.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_2_p3:
-		return v2_2_p3.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_2_p4:
-		return v2_2_p4.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_2_p5:
-		return v2_2_p5.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_2_p8:
-		return v2_2_p8.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_2_p9:
-		return v2_2_p9.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_2_p11:
-		return v2_2_p11.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_2_p12:
-		return v2_2_p12.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_2_p14:
-		return v2_2_p14.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_2_p18:
-		return v2_2_p18.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_2_p21:
-		return v2_2_p21.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_2_p22:
-		return v2_2_p22.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_2_p23:
-		return v2_2_p23.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_2_p26:
-		return v2_2_p26.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_2_p32:
-		return v2_2_p32.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_2_p33:
-		return v2_2_p33.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_2_p43:
-		return v2_2_p43.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_2_p44:
-		return v2_2_p44.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_3_p1:
-		return v2_3_p1.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_3_p3:
-		return v2_3_p3.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_3_p5:
-		return v2_3_p5.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_3_p7:
-		return v2_3_p7.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_3_p11:
-		return v2_3_p11.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_3_p14:
-		return v2_3_p14.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_3_p22:
-		return v2_3_p22.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_3_p23:
-		return v2_3_p23.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_3_p26:
-		return v2_3_p26.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_3_p27:
-		return v2_3_p27.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_3_p31:
-		return v2_3_p31.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_3_p33:
-		return v2_3_p33.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_3_p36:
-		return v2_3_p36.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_3_p37:
-		return v2_3_p37.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_3_p39:
-		return v2_3_p39.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_3_p40:
-		return v2_3_p40.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_3_p41:
-		return v2_3_p41.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_4_p1:
-		return v2_4_p1.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_4_p6:
-		return v2_4_p6.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_4_p11:
-		return v2_4_p11.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_4_p14:
-		return v2_4_p14.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_4_p16:
-		return v2_4_p16.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_4_p17:
-		return v2_4_p17.ValidHostCreateAttributeTagAgentValues()
-	case BaselineV2_4_p18:
-		return v2_4_p18.ValidHostCreateAttributeTagAgentValues()
+func GetAllSchemaNames(pkg BaselinePackage) []string {
+	if r := registry[pkg]; r != nil {
+		return r.AllSchemaNames
 	}
 	return nil
 }
 
-// HostCreateAttributeFieldNames returns valid host attribute field names for the given baseline.
-func HostCreateAttributeFieldNames(pkg BaselinePackage) []string {
-	switch pkg {
-	case BaselineV2_2_p1:
-		return v2_2_p1.HostCreateAttributeFieldNames
-	case BaselineV2_2_p3:
-		return v2_2_p3.HostCreateAttributeFieldNames
-	case BaselineV2_2_p4:
-		return v2_2_p4.HostCreateAttributeFieldNames
-	case BaselineV2_2_p5:
-		return v2_2_p5.HostCreateAttributeFieldNames
-	case BaselineV2_2_p8:
-		return v2_2_p8.HostCreateAttributeFieldNames
-	case BaselineV2_2_p9:
-		return v2_2_p9.HostCreateAttributeFieldNames
-	case BaselineV2_2_p11:
-		return v2_2_p11.HostCreateAttributeFieldNames
-	case BaselineV2_2_p12:
-		return v2_2_p12.HostCreateAttributeFieldNames
-	case BaselineV2_2_p14:
-		return v2_2_p14.HostCreateAttributeFieldNames
-	case BaselineV2_2_p18:
-		return v2_2_p18.HostCreateAttributeFieldNames
-	case BaselineV2_2_p21:
-		return v2_2_p21.HostCreateAttributeFieldNames
-	case BaselineV2_2_p22:
-		return v2_2_p22.HostCreateAttributeFieldNames
-	case BaselineV2_2_p23:
-		return v2_2_p23.HostCreateAttributeFieldNames
-	case BaselineV2_2_p26:
-		return v2_2_p26.HostCreateAttributeFieldNames
-	case BaselineV2_2_p32:
-		return v2_2_p32.HostCreateAttributeFieldNames
-	case BaselineV2_2_p33:
-		return v2_2_p33.HostCreateAttributeFieldNames
-	case BaselineV2_2_p43:
-		return v2_2_p43.HostCreateAttributeFieldNames
-	case BaselineV2_2_p44:
-		return v2_2_p44.HostCreateAttributeFieldNames
-	case BaselineV2_3_p1:
-		return v2_3_p1.HostCreateAttributeFieldNames
-	case BaselineV2_3_p3:
-		return v2_3_p3.HostCreateAttributeFieldNames
-	case BaselineV2_3_p5:
-		return v2_3_p5.HostCreateAttributeFieldNames
-	case BaselineV2_3_p7:
-		return v2_3_p7.HostCreateAttributeFieldNames
-	case BaselineV2_3_p11:
-		return v2_3_p11.HostCreateAttributeFieldNames
-	case BaselineV2_3_p14:
-		return v2_3_p14.HostCreateAttributeFieldNames
-	case BaselineV2_3_p22:
-		return v2_3_p22.HostCreateAttributeFieldNames
-	case BaselineV2_3_p23:
-		return v2_3_p23.HostCreateAttributeFieldNames
-	case BaselineV2_3_p26:
-		return v2_3_p26.HostCreateAttributeFieldNames
-	case BaselineV2_3_p27:
-		return v2_3_p27.HostCreateAttributeFieldNames
-	case BaselineV2_3_p31:
-		return v2_3_p31.HostCreateAttributeFieldNames
-	case BaselineV2_3_p33:
-		return v2_3_p33.HostCreateAttributeFieldNames
-	case BaselineV2_3_p36:
-		return v2_3_p36.HostCreateAttributeFieldNames
-	case BaselineV2_3_p37:
-		return v2_3_p37.HostCreateAttributeFieldNames
-	case BaselineV2_3_p39:
-		return v2_3_p39.HostCreateAttributeFieldNames
-	case BaselineV2_3_p40:
-		return v2_3_p40.HostCreateAttributeFieldNames
-	case BaselineV2_3_p41:
-		return v2_3_p41.HostCreateAttributeFieldNames
-	case BaselineV2_4_p1:
-		return v2_4_p1.HostCreateAttributeFieldNames
-	case BaselineV2_4_p6:
-		return v2_4_p6.HostCreateAttributeFieldNames
-	case BaselineV2_4_p11:
-		return v2_4_p11.HostCreateAttributeFieldNames
-	case BaselineV2_4_p14:
-		return v2_4_p14.HostCreateAttributeFieldNames
-	case BaselineV2_4_p16:
-		return v2_4_p16.HostCreateAttributeFieldNames
-	case BaselineV2_4_p17:
-		return v2_4_p17.HostCreateAttributeFieldNames
-	case BaselineV2_4_p18:
-		return v2_4_p18.HostCreateAttributeFieldNames
+func GetSchemaFieldNames(pkg BaselinePackage, schemaName string) []string {
+	if r := registry[pkg]; r != nil && r.GetSchemaFieldNames != nil {
+		return r.GetSchemaFieldNames(schemaName)
 	}
 	return nil
 }
 
-// FolderCreateAttributeFieldNames returns valid folder attribute field names for the given baseline.
-func FolderCreateAttributeFieldNames(pkg BaselinePackage) []string {
-	switch pkg {
-	case BaselineV2_2_p1:
-		return v2_2_p1.FolderCreateAttributeFieldNames
-	case BaselineV2_2_p3:
-		return v2_2_p3.FolderCreateAttributeFieldNames
-	case BaselineV2_2_p4:
-		return v2_2_p4.FolderCreateAttributeFieldNames
-	case BaselineV2_2_p5:
-		return v2_2_p5.FolderCreateAttributeFieldNames
-	case BaselineV2_2_p8:
-		return v2_2_p8.FolderCreateAttributeFieldNames
-	case BaselineV2_2_p9:
-		return v2_2_p9.FolderCreateAttributeFieldNames
-	case BaselineV2_2_p11:
-		return v2_2_p11.FolderCreateAttributeFieldNames
-	case BaselineV2_2_p12:
-		return v2_2_p12.FolderCreateAttributeFieldNames
-	case BaselineV2_2_p14:
-		return v2_2_p14.FolderCreateAttributeFieldNames
-	case BaselineV2_2_p18:
-		return v2_2_p18.FolderCreateAttributeFieldNames
-	case BaselineV2_2_p21:
-		return v2_2_p21.FolderCreateAttributeFieldNames
-	case BaselineV2_2_p22:
-		return v2_2_p22.FolderCreateAttributeFieldNames
-	case BaselineV2_2_p23:
-		return v2_2_p23.FolderCreateAttributeFieldNames
-	case BaselineV2_2_p26:
-		return v2_2_p26.FolderCreateAttributeFieldNames
-	case BaselineV2_2_p32:
-		return v2_2_p32.FolderCreateAttributeFieldNames
-	case BaselineV2_2_p33:
-		return v2_2_p33.FolderCreateAttributeFieldNames
-	case BaselineV2_2_p43:
-		return v2_2_p43.FolderCreateAttributeFieldNames
-	case BaselineV2_2_p44:
-		return v2_2_p44.FolderCreateAttributeFieldNames
-	case BaselineV2_3_p1:
-		return v2_3_p1.FolderCreateAttributeFieldNames
-	case BaselineV2_3_p3:
-		return v2_3_p3.FolderCreateAttributeFieldNames
-	case BaselineV2_3_p5:
-		return v2_3_p5.FolderCreateAttributeFieldNames
-	case BaselineV2_3_p7:
-		return v2_3_p7.FolderCreateAttributeFieldNames
-	case BaselineV2_3_p11:
-		return v2_3_p11.FolderCreateAttributeFieldNames
-	case BaselineV2_3_p14:
-		return v2_3_p14.FolderCreateAttributeFieldNames
-	case BaselineV2_3_p22:
-		return v2_3_p22.FolderCreateAttributeFieldNames
-	case BaselineV2_3_p23:
-		return v2_3_p23.FolderCreateAttributeFieldNames
-	case BaselineV2_3_p26:
-		return v2_3_p26.FolderCreateAttributeFieldNames
-	case BaselineV2_3_p27:
-		return v2_3_p27.FolderCreateAttributeFieldNames
-	case BaselineV2_3_p31:
-		return v2_3_p31.FolderCreateAttributeFieldNames
-	case BaselineV2_3_p33:
-		return v2_3_p33.FolderCreateAttributeFieldNames
-	case BaselineV2_3_p36:
-		return v2_3_p36.FolderCreateAttributeFieldNames
-	case BaselineV2_3_p37:
-		return v2_3_p37.FolderCreateAttributeFieldNames
-	case BaselineV2_3_p39:
-		return v2_3_p39.FolderCreateAttributeFieldNames
-	case BaselineV2_3_p40:
-		return v2_3_p40.FolderCreateAttributeFieldNames
-	case BaselineV2_3_p41:
-		return v2_3_p41.FolderCreateAttributeFieldNames
-	case BaselineV2_4_p1:
-		return v2_4_p1.FolderCreateAttributeFieldNames
-	case BaselineV2_4_p6:
-		return v2_4_p6.FolderCreateAttributeFieldNames
-	case BaselineV2_4_p11:
-		return v2_4_p11.FolderCreateAttributeFieldNames
-	case BaselineV2_4_p14:
-		return v2_4_p14.FolderCreateAttributeFieldNames
-	case BaselineV2_4_p16:
-		return v2_4_p16.FolderCreateAttributeFieldNames
-	case BaselineV2_4_p17:
-		return v2_4_p17.FolderCreateAttributeFieldNames
-	case BaselineV2_4_p18:
-		return v2_4_p18.FolderCreateAttributeFieldNames
+func GetSchemaRequiredFieldNames(pkg BaselinePackage, schemaName string) []string {
+	if r := registry[pkg]; r != nil && r.GetSchemaRequiredFieldNames != nil {
+		return r.GetSchemaRequiredFieldNames(schemaName)
 	}
 	return nil
 }
 
-// GetFieldDescription returns the description for a field in a schema for the given baseline.
+func HasSchema(pkg BaselinePackage, schemaName string) bool {
+	if r := registry[pkg]; r != nil && r.HasSchema != nil {
+		return r.HasSchema(schemaName)
+	}
+	return false
+}
+
+// Field Metadata
+
 func GetFieldDescription(pkg BaselinePackage, schemaName, fieldName string) string {
-	switch pkg {
-	case BaselineV2_2_p1:
-		return v2_2_p1.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_2_p3:
-		return v2_2_p3.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_2_p4:
-		return v2_2_p4.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_2_p5:
-		return v2_2_p5.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_2_p8:
-		return v2_2_p8.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_2_p9:
-		return v2_2_p9.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_2_p11:
-		return v2_2_p11.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_2_p12:
-		return v2_2_p12.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_2_p14:
-		return v2_2_p14.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_2_p18:
-		return v2_2_p18.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_2_p21:
-		return v2_2_p21.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_2_p22:
-		return v2_2_p22.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_2_p23:
-		return v2_2_p23.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_2_p26:
-		return v2_2_p26.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_2_p32:
-		return v2_2_p32.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_2_p33:
-		return v2_2_p33.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_2_p43:
-		return v2_2_p43.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_2_p44:
-		return v2_2_p44.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_3_p1:
-		return v2_3_p1.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_3_p3:
-		return v2_3_p3.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_3_p5:
-		return v2_3_p5.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_3_p7:
-		return v2_3_p7.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_3_p11:
-		return v2_3_p11.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_3_p14:
-		return v2_3_p14.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_3_p22:
-		return v2_3_p22.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_3_p23:
-		return v2_3_p23.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_3_p26:
-		return v2_3_p26.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_3_p27:
-		return v2_3_p27.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_3_p31:
-		return v2_3_p31.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_3_p33:
-		return v2_3_p33.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_3_p36:
-		return v2_3_p36.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_3_p37:
-		return v2_3_p37.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_3_p39:
-		return v2_3_p39.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_3_p40:
-		return v2_3_p40.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_3_p41:
-		return v2_3_p41.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_4_p1:
-		return v2_4_p1.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_4_p6:
-		return v2_4_p6.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_4_p11:
-		return v2_4_p11.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_4_p14:
-		return v2_4_p14.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_4_p16:
-		return v2_4_p16.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_4_p17:
-		return v2_4_p17.GetFieldDescription(schemaName, fieldName)
-	case BaselineV2_4_p18:
-		return v2_4_p18.GetFieldDescription(schemaName, fieldName)
+	if r := registry[pkg]; r != nil && r.GetFieldDescription != nil {
+		return r.GetFieldDescription(schemaName, fieldName)
 	}
 	return ""
 }
 
-// GetFieldType returns the OpenAPI type for a field in a schema for the given baseline.
 func GetFieldType(pkg BaselinePackage, schemaName, fieldName string) string {
-	switch pkg {
-	case BaselineV2_2_p1:
-		return v2_2_p1.GetFieldType(schemaName, fieldName)
-	case BaselineV2_2_p3:
-		return v2_2_p3.GetFieldType(schemaName, fieldName)
-	case BaselineV2_2_p4:
-		return v2_2_p4.GetFieldType(schemaName, fieldName)
-	case BaselineV2_2_p5:
-		return v2_2_p5.GetFieldType(schemaName, fieldName)
-	case BaselineV2_2_p8:
-		return v2_2_p8.GetFieldType(schemaName, fieldName)
-	case BaselineV2_2_p9:
-		return v2_2_p9.GetFieldType(schemaName, fieldName)
-	case BaselineV2_2_p11:
-		return v2_2_p11.GetFieldType(schemaName, fieldName)
-	case BaselineV2_2_p12:
-		return v2_2_p12.GetFieldType(schemaName, fieldName)
-	case BaselineV2_2_p14:
-		return v2_2_p14.GetFieldType(schemaName, fieldName)
-	case BaselineV2_2_p18:
-		return v2_2_p18.GetFieldType(schemaName, fieldName)
-	case BaselineV2_2_p21:
-		return v2_2_p21.GetFieldType(schemaName, fieldName)
-	case BaselineV2_2_p22:
-		return v2_2_p22.GetFieldType(schemaName, fieldName)
-	case BaselineV2_2_p23:
-		return v2_2_p23.GetFieldType(schemaName, fieldName)
-	case BaselineV2_2_p26:
-		return v2_2_p26.GetFieldType(schemaName, fieldName)
-	case BaselineV2_2_p32:
-		return v2_2_p32.GetFieldType(schemaName, fieldName)
-	case BaselineV2_2_p33:
-		return v2_2_p33.GetFieldType(schemaName, fieldName)
-	case BaselineV2_2_p43:
-		return v2_2_p43.GetFieldType(schemaName, fieldName)
-	case BaselineV2_2_p44:
-		return v2_2_p44.GetFieldType(schemaName, fieldName)
-	case BaselineV2_3_p1:
-		return v2_3_p1.GetFieldType(schemaName, fieldName)
-	case BaselineV2_3_p3:
-		return v2_3_p3.GetFieldType(schemaName, fieldName)
-	case BaselineV2_3_p5:
-		return v2_3_p5.GetFieldType(schemaName, fieldName)
-	case BaselineV2_3_p7:
-		return v2_3_p7.GetFieldType(schemaName, fieldName)
-	case BaselineV2_3_p11:
-		return v2_3_p11.GetFieldType(schemaName, fieldName)
-	case BaselineV2_3_p14:
-		return v2_3_p14.GetFieldType(schemaName, fieldName)
-	case BaselineV2_3_p22:
-		return v2_3_p22.GetFieldType(schemaName, fieldName)
-	case BaselineV2_3_p23:
-		return v2_3_p23.GetFieldType(schemaName, fieldName)
-	case BaselineV2_3_p26:
-		return v2_3_p26.GetFieldType(schemaName, fieldName)
-	case BaselineV2_3_p27:
-		return v2_3_p27.GetFieldType(schemaName, fieldName)
-	case BaselineV2_3_p31:
-		return v2_3_p31.GetFieldType(schemaName, fieldName)
-	case BaselineV2_3_p33:
-		return v2_3_p33.GetFieldType(schemaName, fieldName)
-	case BaselineV2_3_p36:
-		return v2_3_p36.GetFieldType(schemaName, fieldName)
-	case BaselineV2_3_p37:
-		return v2_3_p37.GetFieldType(schemaName, fieldName)
-	case BaselineV2_3_p39:
-		return v2_3_p39.GetFieldType(schemaName, fieldName)
-	case BaselineV2_3_p40:
-		return v2_3_p40.GetFieldType(schemaName, fieldName)
-	case BaselineV2_3_p41:
-		return v2_3_p41.GetFieldType(schemaName, fieldName)
-	case BaselineV2_4_p1:
-		return v2_4_p1.GetFieldType(schemaName, fieldName)
-	case BaselineV2_4_p6:
-		return v2_4_p6.GetFieldType(schemaName, fieldName)
-	case BaselineV2_4_p11:
-		return v2_4_p11.GetFieldType(schemaName, fieldName)
-	case BaselineV2_4_p14:
-		return v2_4_p14.GetFieldType(schemaName, fieldName)
-	case BaselineV2_4_p16:
-		return v2_4_p16.GetFieldType(schemaName, fieldName)
-	case BaselineV2_4_p17:
-		return v2_4_p17.GetFieldType(schemaName, fieldName)
-	case BaselineV2_4_p18:
-		return v2_4_p18.GetFieldType(schemaName, fieldName)
+	if r := registry[pkg]; r != nil && r.GetFieldType != nil {
+		return r.GetFieldType(schemaName, fieldName)
 	}
 	return ""
 }
 
-// IsReadOnlyField checks if a field is read-only for a given schema and baseline.
 func IsReadOnlyField(pkg BaselinePackage, schemaName, fieldName string) bool {
-	switch pkg {
-	case BaselineV2_2_p1:
-		return v2_2_p1.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_2_p3:
-		return v2_2_p3.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_2_p4:
-		return v2_2_p4.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_2_p5:
-		return v2_2_p5.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_2_p8:
-		return v2_2_p8.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_2_p9:
-		return v2_2_p9.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_2_p11:
-		return v2_2_p11.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_2_p12:
-		return v2_2_p12.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_2_p14:
-		return v2_2_p14.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_2_p18:
-		return v2_2_p18.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_2_p21:
-		return v2_2_p21.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_2_p22:
-		return v2_2_p22.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_2_p23:
-		return v2_2_p23.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_2_p26:
-		return v2_2_p26.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_2_p32:
-		return v2_2_p32.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_2_p33:
-		return v2_2_p33.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_2_p43:
-		return v2_2_p43.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_2_p44:
-		return v2_2_p44.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_3_p1:
-		return v2_3_p1.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_3_p3:
-		return v2_3_p3.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_3_p5:
-		return v2_3_p5.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_3_p7:
-		return v2_3_p7.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_3_p11:
-		return v2_3_p11.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_3_p14:
-		return v2_3_p14.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_3_p22:
-		return v2_3_p22.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_3_p23:
-		return v2_3_p23.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_3_p26:
-		return v2_3_p26.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_3_p27:
-		return v2_3_p27.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_3_p31:
-		return v2_3_p31.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_3_p33:
-		return v2_3_p33.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_3_p36:
-		return v2_3_p36.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_3_p37:
-		return v2_3_p37.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_3_p39:
-		return v2_3_p39.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_3_p40:
-		return v2_3_p40.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_3_p41:
-		return v2_3_p41.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_4_p1:
-		return v2_4_p1.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_4_p6:
-		return v2_4_p6.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_4_p11:
-		return v2_4_p11.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_4_p14:
-		return v2_4_p14.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_4_p16:
-		return v2_4_p16.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_4_p17:
-		return v2_4_p17.IsReadOnlyField(schemaName, fieldName)
-	case BaselineV2_4_p18:
-		return v2_4_p18.IsReadOnlyField(schemaName, fieldName)
+	if r := registry[pkg]; r != nil && r.IsReadOnlyField != nil {
+		return r.IsReadOnlyField(schemaName, fieldName)
 	}
 	return false
 }
 
-// IsRequiredField checks if a field is required for a given schema and baseline.
 func IsRequiredField(pkg BaselinePackage, schemaName, fieldName string) bool {
-	switch pkg {
-	case BaselineV2_2_p1:
-		return v2_2_p1.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_2_p3:
-		return v2_2_p3.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_2_p4:
-		return v2_2_p4.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_2_p5:
-		return v2_2_p5.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_2_p8:
-		return v2_2_p8.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_2_p9:
-		return v2_2_p9.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_2_p11:
-		return v2_2_p11.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_2_p12:
-		return v2_2_p12.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_2_p14:
-		return v2_2_p14.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_2_p18:
-		return v2_2_p18.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_2_p21:
-		return v2_2_p21.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_2_p22:
-		return v2_2_p22.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_2_p23:
-		return v2_2_p23.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_2_p26:
-		return v2_2_p26.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_2_p32:
-		return v2_2_p32.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_2_p33:
-		return v2_2_p33.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_2_p43:
-		return v2_2_p43.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_2_p44:
-		return v2_2_p44.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_3_p1:
-		return v2_3_p1.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_3_p3:
-		return v2_3_p3.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_3_p5:
-		return v2_3_p5.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_3_p7:
-		return v2_3_p7.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_3_p11:
-		return v2_3_p11.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_3_p14:
-		return v2_3_p14.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_3_p22:
-		return v2_3_p22.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_3_p23:
-		return v2_3_p23.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_3_p26:
-		return v2_3_p26.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_3_p27:
-		return v2_3_p27.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_3_p31:
-		return v2_3_p31.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_3_p33:
-		return v2_3_p33.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_3_p36:
-		return v2_3_p36.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_3_p37:
-		return v2_3_p37.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_3_p39:
-		return v2_3_p39.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_3_p40:
-		return v2_3_p40.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_3_p41:
-		return v2_3_p41.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_4_p1:
-		return v2_4_p1.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_4_p6:
-		return v2_4_p6.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_4_p11:
-		return v2_4_p11.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_4_p14:
-		return v2_4_p14.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_4_p16:
-		return v2_4_p16.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_4_p17:
-		return v2_4_p17.IsRequiredField(schemaName, fieldName)
-	case BaselineV2_4_p18:
-		return v2_4_p18.IsRequiredField(schemaName, fieldName)
+	if r := registry[pkg]; r != nil && r.IsRequiredField != nil {
+		return r.IsRequiredField(schemaName, fieldName)
 	}
 	return false
 }
 
-// HostCreateAttributeCompareKeyFields returns compare key fields for HostCreateAttribute.
-func HostCreateAttributeCompareKeyFields(pkg BaselinePackage) []string {
-	switch pkg {
-	case BaselineV2_2_p1:
-		return v2_2_p1.HostCreateAttributeCompareKeyFields
-	case BaselineV2_2_p3:
-		return v2_2_p3.HostCreateAttributeCompareKeyFields
-	case BaselineV2_2_p4:
-		return v2_2_p4.HostCreateAttributeCompareKeyFields
-	case BaselineV2_2_p5:
-		return v2_2_p5.HostCreateAttributeCompareKeyFields
-	case BaselineV2_2_p8:
-		return v2_2_p8.HostCreateAttributeCompareKeyFields
-	case BaselineV2_2_p9:
-		return v2_2_p9.HostCreateAttributeCompareKeyFields
-	case BaselineV2_2_p11:
-		return v2_2_p11.HostCreateAttributeCompareKeyFields
-	case BaselineV2_2_p12:
-		return v2_2_p12.HostCreateAttributeCompareKeyFields
-	case BaselineV2_2_p14:
-		return v2_2_p14.HostCreateAttributeCompareKeyFields
-	case BaselineV2_2_p18:
-		return v2_2_p18.HostCreateAttributeCompareKeyFields
-	case BaselineV2_2_p21:
-		return v2_2_p21.HostCreateAttributeCompareKeyFields
-	case BaselineV2_2_p22:
-		return v2_2_p22.HostCreateAttributeCompareKeyFields
-	case BaselineV2_2_p23:
-		return v2_2_p23.HostCreateAttributeCompareKeyFields
-	case BaselineV2_2_p26:
-		return v2_2_p26.HostCreateAttributeCompareKeyFields
-	case BaselineV2_2_p32:
-		return v2_2_p32.HostCreateAttributeCompareKeyFields
-	case BaselineV2_2_p33:
-		return v2_2_p33.HostCreateAttributeCompareKeyFields
-	case BaselineV2_2_p43:
-		return v2_2_p43.HostCreateAttributeCompareKeyFields
-	case BaselineV2_2_p44:
-		return v2_2_p44.HostCreateAttributeCompareKeyFields
-	case BaselineV2_3_p1:
-		return v2_3_p1.HostCreateAttributeCompareKeyFields
-	case BaselineV2_3_p3:
-		return v2_3_p3.HostCreateAttributeCompareKeyFields
-	case BaselineV2_3_p5:
-		return v2_3_p5.HostCreateAttributeCompareKeyFields
-	case BaselineV2_3_p7:
-		return v2_3_p7.HostCreateAttributeCompareKeyFields
-	case BaselineV2_3_p11:
-		return v2_3_p11.HostCreateAttributeCompareKeyFields
-	case BaselineV2_3_p14:
-		return v2_3_p14.HostCreateAttributeCompareKeyFields
-	case BaselineV2_3_p22:
-		return v2_3_p22.HostCreateAttributeCompareKeyFields
-	case BaselineV2_3_p23:
-		return v2_3_p23.HostCreateAttributeCompareKeyFields
-	case BaselineV2_3_p26:
-		return v2_3_p26.HostCreateAttributeCompareKeyFields
-	case BaselineV2_3_p27:
-		return v2_3_p27.HostCreateAttributeCompareKeyFields
-	case BaselineV2_3_p31:
-		return v2_3_p31.HostCreateAttributeCompareKeyFields
-	case BaselineV2_3_p33:
-		return v2_3_p33.HostCreateAttributeCompareKeyFields
-	case BaselineV2_3_p36:
-		return v2_3_p36.HostCreateAttributeCompareKeyFields
-	case BaselineV2_3_p37:
-		return v2_3_p37.HostCreateAttributeCompareKeyFields
-	case BaselineV2_3_p39:
-		return v2_3_p39.HostCreateAttributeCompareKeyFields
-	case BaselineV2_3_p40:
-		return v2_3_p40.HostCreateAttributeCompareKeyFields
-	case BaselineV2_3_p41:
-		return v2_3_p41.HostCreateAttributeCompareKeyFields
-	case BaselineV2_4_p1:
-		return v2_4_p1.HostCreateAttributeCompareKeyFields
-	case BaselineV2_4_p6:
-		return v2_4_p6.HostCreateAttributeCompareKeyFields
-	case BaselineV2_4_p11:
-		return v2_4_p11.HostCreateAttributeCompareKeyFields
-	case BaselineV2_4_p14:
-		return v2_4_p14.HostCreateAttributeCompareKeyFields
-	case BaselineV2_4_p16:
-		return v2_4_p16.HostCreateAttributeCompareKeyFields
-	case BaselineV2_4_p17:
-		return v2_4_p17.HostCreateAttributeCompareKeyFields
-	case BaselineV2_4_p18:
-		return v2_4_p18.HostCreateAttributeCompareKeyFields
-	}
-	return nil
-}
-
-// FolderCreateAttributeCompareKeyFields returns compare key fields for FolderCreateAttribute.
-func FolderCreateAttributeCompareKeyFields(pkg BaselinePackage) []string {
-	switch pkg {
-	case BaselineV2_2_p1:
-		return v2_2_p1.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_2_p3:
-		return v2_2_p3.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_2_p4:
-		return v2_2_p4.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_2_p5:
-		return v2_2_p5.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_2_p8:
-		return v2_2_p8.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_2_p9:
-		return v2_2_p9.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_2_p11:
-		return v2_2_p11.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_2_p12:
-		return v2_2_p12.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_2_p14:
-		return v2_2_p14.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_2_p18:
-		return v2_2_p18.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_2_p21:
-		return v2_2_p21.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_2_p22:
-		return v2_2_p22.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_2_p23:
-		return v2_2_p23.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_2_p26:
-		return v2_2_p26.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_2_p32:
-		return v2_2_p32.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_2_p33:
-		return v2_2_p33.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_2_p43:
-		return v2_2_p43.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_2_p44:
-		return v2_2_p44.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_3_p1:
-		return v2_3_p1.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_3_p3:
-		return v2_3_p3.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_3_p5:
-		return v2_3_p5.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_3_p7:
-		return v2_3_p7.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_3_p11:
-		return v2_3_p11.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_3_p14:
-		return v2_3_p14.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_3_p22:
-		return v2_3_p22.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_3_p23:
-		return v2_3_p23.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_3_p26:
-		return v2_3_p26.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_3_p27:
-		return v2_3_p27.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_3_p31:
-		return v2_3_p31.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_3_p33:
-		return v2_3_p33.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_3_p36:
-		return v2_3_p36.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_3_p37:
-		return v2_3_p37.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_3_p39:
-		return v2_3_p39.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_3_p40:
-		return v2_3_p40.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_3_p41:
-		return v2_3_p41.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_4_p1:
-		return v2_4_p1.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_4_p6:
-		return v2_4_p6.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_4_p11:
-		return v2_4_p11.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_4_p14:
-		return v2_4_p14.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_4_p16:
-		return v2_4_p16.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_4_p17:
-		return v2_4_p17.FolderCreateAttributeCompareKeyFields
-	case BaselineV2_4_p18:
-		return v2_4_p18.FolderCreateAttributeCompareKeyFields
-	}
-	return nil
-}
-
-// Request Builders
-
-// BuildCreateHostFromMap creates a typed CreateHost request from a map.
-func BuildCreateHostFromMap(pkg BaselinePackage, data map[string]interface{}) (interface{}, error) {
-	switch pkg {
-	case BaselineV2_2_p1:
-		return v2_2_p1.BuildCreateHostFromMap(data)
-	case BaselineV2_2_p3:
-		return v2_2_p3.BuildCreateHostFromMap(data)
-	case BaselineV2_2_p4:
-		return v2_2_p4.BuildCreateHostFromMap(data)
-	case BaselineV2_2_p5:
-		return v2_2_p5.BuildCreateHostFromMap(data)
-	case BaselineV2_2_p8:
-		return v2_2_p8.BuildCreateHostFromMap(data)
-	case BaselineV2_2_p9:
-		return v2_2_p9.BuildCreateHostFromMap(data)
-	case BaselineV2_2_p11:
-		return v2_2_p11.BuildCreateHostFromMap(data)
-	case BaselineV2_2_p12:
-		return v2_2_p12.BuildCreateHostFromMap(data)
-	case BaselineV2_2_p14:
-		return v2_2_p14.BuildCreateHostFromMap(data)
-	case BaselineV2_2_p18:
-		return v2_2_p18.BuildCreateHostFromMap(data)
-	case BaselineV2_2_p21:
-		return v2_2_p21.BuildCreateHostFromMap(data)
-	case BaselineV2_2_p22:
-		return v2_2_p22.BuildCreateHostFromMap(data)
-	case BaselineV2_2_p23:
-		return v2_2_p23.BuildCreateHostFromMap(data)
-	case BaselineV2_2_p26:
-		return v2_2_p26.BuildCreateHostFromMap(data)
-	case BaselineV2_2_p32:
-		return v2_2_p32.BuildCreateHostFromMap(data)
-	case BaselineV2_2_p33:
-		return v2_2_p33.BuildCreateHostFromMap(data)
-	case BaselineV2_2_p43:
-		return v2_2_p43.BuildCreateHostFromMap(data)
-	case BaselineV2_2_p44:
-		return v2_2_p44.BuildCreateHostFromMap(data)
-	case BaselineV2_3_p1:
-		return v2_3_p1.BuildCreateHostFromMap(data)
-	case BaselineV2_3_p3:
-		return v2_3_p3.BuildCreateHostFromMap(data)
-	case BaselineV2_3_p5:
-		return v2_3_p5.BuildCreateHostFromMap(data)
-	case BaselineV2_3_p7:
-		return v2_3_p7.BuildCreateHostFromMap(data)
-	case BaselineV2_3_p11:
-		return v2_3_p11.BuildCreateHostFromMap(data)
-	case BaselineV2_3_p14:
-		return v2_3_p14.BuildCreateHostFromMap(data)
-	case BaselineV2_3_p22:
-		return v2_3_p22.BuildCreateHostFromMap(data)
-	case BaselineV2_3_p23:
-		return v2_3_p23.BuildCreateHostFromMap(data)
-	case BaselineV2_3_p26:
-		return v2_3_p26.BuildCreateHostFromMap(data)
-	case BaselineV2_3_p27:
-		return v2_3_p27.BuildCreateHostFromMap(data)
-	case BaselineV2_3_p31:
-		return v2_3_p31.BuildCreateHostFromMap(data)
-	case BaselineV2_3_p33:
-		return v2_3_p33.BuildCreateHostFromMap(data)
-	case BaselineV2_3_p36:
-		return v2_3_p36.BuildCreateHostFromMap(data)
-	case BaselineV2_3_p37:
-		return v2_3_p37.BuildCreateHostFromMap(data)
-	case BaselineV2_3_p39:
-		return v2_3_p39.BuildCreateHostFromMap(data)
-	case BaselineV2_3_p40:
-		return v2_3_p40.BuildCreateHostFromMap(data)
-	case BaselineV2_3_p41:
-		return v2_3_p41.BuildCreateHostFromMap(data)
-	case BaselineV2_4_p1:
-		return v2_4_p1.BuildCreateHostFromMap(data)
-	case BaselineV2_4_p6:
-		return v2_4_p6.BuildCreateHostFromMap(data)
-	case BaselineV2_4_p11:
-		return v2_4_p11.BuildCreateHostFromMap(data)
-	case BaselineV2_4_p14:
-		return v2_4_p14.BuildCreateHostFromMap(data)
-	case BaselineV2_4_p16:
-		return v2_4_p16.BuildCreateHostFromMap(data)
-	case BaselineV2_4_p17:
-		return v2_4_p17.BuildCreateHostFromMap(data)
-	case BaselineV2_4_p18:
-		return v2_4_p18.BuildCreateHostFromMap(data)
-	}
-	return nil, nil
-}
-
-// BuildCreateFolderFromMap creates a typed CreateFolder request from a map.
-func BuildCreateFolderFromMap(pkg BaselinePackage, data map[string]interface{}) (interface{}, error) {
-	switch pkg {
-	case BaselineV2_2_p1:
-		return v2_2_p1.BuildCreateFolderFromMap(data)
-	case BaselineV2_2_p3:
-		return v2_2_p3.BuildCreateFolderFromMap(data)
-	case BaselineV2_2_p4:
-		return v2_2_p4.BuildCreateFolderFromMap(data)
-	case BaselineV2_2_p5:
-		return v2_2_p5.BuildCreateFolderFromMap(data)
-	case BaselineV2_2_p8:
-		return v2_2_p8.BuildCreateFolderFromMap(data)
-	case BaselineV2_2_p9:
-		return v2_2_p9.BuildCreateFolderFromMap(data)
-	case BaselineV2_2_p11:
-		return v2_2_p11.BuildCreateFolderFromMap(data)
-	case BaselineV2_2_p12:
-		return v2_2_p12.BuildCreateFolderFromMap(data)
-	case BaselineV2_2_p14:
-		return v2_2_p14.BuildCreateFolderFromMap(data)
-	case BaselineV2_2_p18:
-		return v2_2_p18.BuildCreateFolderFromMap(data)
-	case BaselineV2_2_p21:
-		return v2_2_p21.BuildCreateFolderFromMap(data)
-	case BaselineV2_2_p22:
-		return v2_2_p22.BuildCreateFolderFromMap(data)
-	case BaselineV2_2_p23:
-		return v2_2_p23.BuildCreateFolderFromMap(data)
-	case BaselineV2_2_p26:
-		return v2_2_p26.BuildCreateFolderFromMap(data)
-	case BaselineV2_2_p32:
-		return v2_2_p32.BuildCreateFolderFromMap(data)
-	case BaselineV2_2_p33:
-		return v2_2_p33.BuildCreateFolderFromMap(data)
-	case BaselineV2_2_p43:
-		return v2_2_p43.BuildCreateFolderFromMap(data)
-	case BaselineV2_2_p44:
-		return v2_2_p44.BuildCreateFolderFromMap(data)
-	case BaselineV2_3_p1:
-		return v2_3_p1.BuildCreateFolderFromMap(data)
-	case BaselineV2_3_p3:
-		return v2_3_p3.BuildCreateFolderFromMap(data)
-	case BaselineV2_3_p5:
-		return v2_3_p5.BuildCreateFolderFromMap(data)
-	case BaselineV2_3_p7:
-		return v2_3_p7.BuildCreateFolderFromMap(data)
-	case BaselineV2_3_p11:
-		return v2_3_p11.BuildCreateFolderFromMap(data)
-	case BaselineV2_3_p14:
-		return v2_3_p14.BuildCreateFolderFromMap(data)
-	case BaselineV2_3_p22:
-		return v2_3_p22.BuildCreateFolderFromMap(data)
-	case BaselineV2_3_p23:
-		return v2_3_p23.BuildCreateFolderFromMap(data)
-	case BaselineV2_3_p26:
-		return v2_3_p26.BuildCreateFolderFromMap(data)
-	case BaselineV2_3_p27:
-		return v2_3_p27.BuildCreateFolderFromMap(data)
-	case BaselineV2_3_p31:
-		return v2_3_p31.BuildCreateFolderFromMap(data)
-	case BaselineV2_3_p33:
-		return v2_3_p33.BuildCreateFolderFromMap(data)
-	case BaselineV2_3_p36:
-		return v2_3_p36.BuildCreateFolderFromMap(data)
-	case BaselineV2_3_p37:
-		return v2_3_p37.BuildCreateFolderFromMap(data)
-	case BaselineV2_3_p39:
-		return v2_3_p39.BuildCreateFolderFromMap(data)
-	case BaselineV2_3_p40:
-		return v2_3_p40.BuildCreateFolderFromMap(data)
-	case BaselineV2_3_p41:
-		return v2_3_p41.BuildCreateFolderFromMap(data)
-	case BaselineV2_4_p1:
-		return v2_4_p1.BuildCreateFolderFromMap(data)
-	case BaselineV2_4_p6:
-		return v2_4_p6.BuildCreateFolderFromMap(data)
-	case BaselineV2_4_p11:
-		return v2_4_p11.BuildCreateFolderFromMap(data)
-	case BaselineV2_4_p14:
-		return v2_4_p14.BuildCreateFolderFromMap(data)
-	case BaselineV2_4_p16:
-		return v2_4_p16.BuildCreateFolderFromMap(data)
-	case BaselineV2_4_p17:
-		return v2_4_p17.BuildCreateFolderFromMap(data)
-	case BaselineV2_4_p18:
-		return v2_4_p18.BuildCreateFolderFromMap(data)
-	}
-	return nil, nil
-}
-
-// Response Parsers
-
-// ParseHostConfigFromMap parses a map into a typed HostConfig response.
-func ParseHostConfigFromMap(pkg BaselinePackage, data map[string]interface{}) (interface{}, error) {
-	switch pkg {
-	case BaselineV2_2_p1:
-		return v2_2_p1.ParseHostConfigFromMap(data)
-	case BaselineV2_2_p3:
-		return v2_2_p3.ParseHostConfigFromMap(data)
-	case BaselineV2_2_p4:
-		return v2_2_p4.ParseHostConfigFromMap(data)
-	case BaselineV2_2_p5:
-		return v2_2_p5.ParseHostConfigFromMap(data)
-	case BaselineV2_2_p8:
-		return v2_2_p8.ParseHostConfigFromMap(data)
-	case BaselineV2_2_p9:
-		return v2_2_p9.ParseHostConfigFromMap(data)
-	case BaselineV2_2_p11:
-		return v2_2_p11.ParseHostConfigFromMap(data)
-	case BaselineV2_2_p12:
-		return v2_2_p12.ParseHostConfigFromMap(data)
-	case BaselineV2_2_p14:
-		return v2_2_p14.ParseHostConfigFromMap(data)
-	case BaselineV2_2_p18:
-		return v2_2_p18.ParseHostConfigFromMap(data)
-	case BaselineV2_2_p21:
-		return v2_2_p21.ParseHostConfigFromMap(data)
-	case BaselineV2_2_p22:
-		return v2_2_p22.ParseHostConfigFromMap(data)
-	case BaselineV2_2_p23:
-		return v2_2_p23.ParseHostConfigFromMap(data)
-	case BaselineV2_2_p26:
-		return v2_2_p26.ParseHostConfigFromMap(data)
-	case BaselineV2_2_p32:
-		return v2_2_p32.ParseHostConfigFromMap(data)
-	case BaselineV2_2_p33:
-		return v2_2_p33.ParseHostConfigFromMap(data)
-	case BaselineV2_2_p43:
-		return v2_2_p43.ParseHostConfigFromMap(data)
-	case BaselineV2_2_p44:
-		return v2_2_p44.ParseHostConfigFromMap(data)
-	case BaselineV2_3_p1:
-		return v2_3_p1.ParseHostConfigFromMap(data)
-	case BaselineV2_3_p3:
-		return v2_3_p3.ParseHostConfigFromMap(data)
-	case BaselineV2_3_p5:
-		return v2_3_p5.ParseHostConfigFromMap(data)
-	case BaselineV2_3_p7:
-		return v2_3_p7.ParseHostConfigFromMap(data)
-	case BaselineV2_3_p11:
-		return v2_3_p11.ParseHostConfigFromMap(data)
-	case BaselineV2_3_p14:
-		return v2_3_p14.ParseHostConfigFromMap(data)
-	case BaselineV2_3_p22:
-		return v2_3_p22.ParseHostConfigFromMap(data)
-	case BaselineV2_3_p23:
-		return v2_3_p23.ParseHostConfigFromMap(data)
-	case BaselineV2_3_p26:
-		return v2_3_p26.ParseHostConfigFromMap(data)
-	case BaselineV2_3_p27:
-		return v2_3_p27.ParseHostConfigFromMap(data)
-	case BaselineV2_3_p31:
-		return v2_3_p31.ParseHostConfigFromMap(data)
-	case BaselineV2_3_p33:
-		return v2_3_p33.ParseHostConfigFromMap(data)
-	case BaselineV2_3_p36:
-		return v2_3_p36.ParseHostConfigFromMap(data)
-	case BaselineV2_3_p37:
-		return v2_3_p37.ParseHostConfigFromMap(data)
-	case BaselineV2_3_p39:
-		return v2_3_p39.ParseHostConfigFromMap(data)
-	case BaselineV2_3_p40:
-		return v2_3_p40.ParseHostConfigFromMap(data)
-	case BaselineV2_3_p41:
-		return v2_3_p41.ParseHostConfigFromMap(data)
-	case BaselineV2_4_p1:
-		return v2_4_p1.ParseHostConfigFromMap(data)
-	case BaselineV2_4_p6:
-		return v2_4_p6.ParseHostConfigFromMap(data)
-	case BaselineV2_4_p11:
-		return v2_4_p11.ParseHostConfigFromMap(data)
-	case BaselineV2_4_p14:
-		return v2_4_p14.ParseHostConfigFromMap(data)
-	case BaselineV2_4_p16:
-		return v2_4_p16.ParseHostConfigFromMap(data)
-	case BaselineV2_4_p17:
-		return v2_4_p17.ParseHostConfigFromMap(data)
-	case BaselineV2_4_p18:
-		return v2_4_p18.ParseHostConfigFromMap(data)
-	}
-	return nil, nil
-}
-
-// ParseFolderFromMap parses a map into a typed Folder response.
-func ParseFolderFromMap(pkg BaselinePackage, data map[string]interface{}) (interface{}, error) {
-	switch pkg {
-	case BaselineV2_2_p1:
-		return v2_2_p1.ParseFolderFromMap(data)
-	case BaselineV2_2_p3:
-		return v2_2_p3.ParseFolderFromMap(data)
-	case BaselineV2_2_p4:
-		return v2_2_p4.ParseFolderFromMap(data)
-	case BaselineV2_2_p5:
-		return v2_2_p5.ParseFolderFromMap(data)
-	case BaselineV2_2_p8:
-		return v2_2_p8.ParseFolderFromMap(data)
-	case BaselineV2_2_p9:
-		return v2_2_p9.ParseFolderFromMap(data)
-	case BaselineV2_2_p11:
-		return v2_2_p11.ParseFolderFromMap(data)
-	case BaselineV2_2_p12:
-		return v2_2_p12.ParseFolderFromMap(data)
-	case BaselineV2_2_p14:
-		return v2_2_p14.ParseFolderFromMap(data)
-	case BaselineV2_2_p18:
-		return v2_2_p18.ParseFolderFromMap(data)
-	case BaselineV2_2_p21:
-		return v2_2_p21.ParseFolderFromMap(data)
-	case BaselineV2_2_p22:
-		return v2_2_p22.ParseFolderFromMap(data)
-	case BaselineV2_2_p23:
-		return v2_2_p23.ParseFolderFromMap(data)
-	case BaselineV2_2_p26:
-		return v2_2_p26.ParseFolderFromMap(data)
-	case BaselineV2_2_p32:
-		return v2_2_p32.ParseFolderFromMap(data)
-	case BaselineV2_2_p33:
-		return v2_2_p33.ParseFolderFromMap(data)
-	case BaselineV2_2_p43:
-		return v2_2_p43.ParseFolderFromMap(data)
-	case BaselineV2_2_p44:
-		return v2_2_p44.ParseFolderFromMap(data)
-	case BaselineV2_3_p1:
-		return v2_3_p1.ParseFolderFromMap(data)
-	case BaselineV2_3_p3:
-		return v2_3_p3.ParseFolderFromMap(data)
-	case BaselineV2_3_p5:
-		return v2_3_p5.ParseFolderFromMap(data)
-	case BaselineV2_3_p7:
-		return v2_3_p7.ParseFolderFromMap(data)
-	case BaselineV2_3_p11:
-		return v2_3_p11.ParseFolderFromMap(data)
-	case BaselineV2_3_p14:
-		return v2_3_p14.ParseFolderFromMap(data)
-	case BaselineV2_3_p22:
-		return v2_3_p22.ParseFolderFromMap(data)
-	case BaselineV2_3_p23:
-		return v2_3_p23.ParseFolderFromMap(data)
-	case BaselineV2_3_p26:
-		return v2_3_p26.ParseFolderFromMap(data)
-	case BaselineV2_3_p27:
-		return v2_3_p27.ParseFolderFromMap(data)
-	case BaselineV2_3_p31:
-		return v2_3_p31.ParseFolderFromMap(data)
-	case BaselineV2_3_p33:
-		return v2_3_p33.ParseFolderFromMap(data)
-	case BaselineV2_3_p36:
-		return v2_3_p36.ParseFolderFromMap(data)
-	case BaselineV2_3_p37:
-		return v2_3_p37.ParseFolderFromMap(data)
-	case BaselineV2_3_p39:
-		return v2_3_p39.ParseFolderFromMap(data)
-	case BaselineV2_3_p40:
-		return v2_3_p40.ParseFolderFromMap(data)
-	case BaselineV2_3_p41:
-		return v2_3_p41.ParseFolderFromMap(data)
-	case BaselineV2_4_p1:
-		return v2_4_p1.ParseFolderFromMap(data)
-	case BaselineV2_4_p6:
-		return v2_4_p6.ParseFolderFromMap(data)
-	case BaselineV2_4_p11:
-		return v2_4_p11.ParseFolderFromMap(data)
-	case BaselineV2_4_p14:
-		return v2_4_p14.ParseFolderFromMap(data)
-	case BaselineV2_4_p16:
-		return v2_4_p16.ParseFolderFromMap(data)
-	case BaselineV2_4_p17:
-		return v2_4_p17.ParseFolderFromMap(data)
-	case BaselineV2_4_p18:
-		return v2_4_p18.ParseFolderFromMap(data)
-	}
-	return nil, nil
-}
-
-// Import State Mapping
-
-// ExtractHostConfigField extracts a Terraform field value from a HostConfig API response.
-func ExtractHostConfigField(pkg BaselinePackage, response map[string]interface{}, tfField string) interface{} {
-	switch pkg {
-	case BaselineV2_2_p1:
-		return v2_2_p1.ExtractHostConfigField(response, tfField)
-	case BaselineV2_2_p3:
-		return v2_2_p3.ExtractHostConfigField(response, tfField)
-	case BaselineV2_2_p4:
-		return v2_2_p4.ExtractHostConfigField(response, tfField)
-	case BaselineV2_2_p5:
-		return v2_2_p5.ExtractHostConfigField(response, tfField)
-	case BaselineV2_2_p8:
-		return v2_2_p8.ExtractHostConfigField(response, tfField)
-	case BaselineV2_2_p9:
-		return v2_2_p9.ExtractHostConfigField(response, tfField)
-	case BaselineV2_2_p11:
-		return v2_2_p11.ExtractHostConfigField(response, tfField)
-	case BaselineV2_2_p12:
-		return v2_2_p12.ExtractHostConfigField(response, tfField)
-	case BaselineV2_2_p14:
-		return v2_2_p14.ExtractHostConfigField(response, tfField)
-	case BaselineV2_2_p18:
-		return v2_2_p18.ExtractHostConfigField(response, tfField)
-	case BaselineV2_2_p21:
-		return v2_2_p21.ExtractHostConfigField(response, tfField)
-	case BaselineV2_2_p22:
-		return v2_2_p22.ExtractHostConfigField(response, tfField)
-	case BaselineV2_2_p23:
-		return v2_2_p23.ExtractHostConfigField(response, tfField)
-	case BaselineV2_2_p26:
-		return v2_2_p26.ExtractHostConfigField(response, tfField)
-	case BaselineV2_2_p32:
-		return v2_2_p32.ExtractHostConfigField(response, tfField)
-	case BaselineV2_2_p33:
-		return v2_2_p33.ExtractHostConfigField(response, tfField)
-	case BaselineV2_2_p43:
-		return v2_2_p43.ExtractHostConfigField(response, tfField)
-	case BaselineV2_2_p44:
-		return v2_2_p44.ExtractHostConfigField(response, tfField)
-	case BaselineV2_3_p1:
-		return v2_3_p1.ExtractHostConfigField(response, tfField)
-	case BaselineV2_3_p3:
-		return v2_3_p3.ExtractHostConfigField(response, tfField)
-	case BaselineV2_3_p5:
-		return v2_3_p5.ExtractHostConfigField(response, tfField)
-	case BaselineV2_3_p7:
-		return v2_3_p7.ExtractHostConfigField(response, tfField)
-	case BaselineV2_3_p11:
-		return v2_3_p11.ExtractHostConfigField(response, tfField)
-	case BaselineV2_3_p14:
-		return v2_3_p14.ExtractHostConfigField(response, tfField)
-	case BaselineV2_3_p22:
-		return v2_3_p22.ExtractHostConfigField(response, tfField)
-	case BaselineV2_3_p23:
-		return v2_3_p23.ExtractHostConfigField(response, tfField)
-	case BaselineV2_3_p26:
-		return v2_3_p26.ExtractHostConfigField(response, tfField)
-	case BaselineV2_3_p27:
-		return v2_3_p27.ExtractHostConfigField(response, tfField)
-	case BaselineV2_3_p31:
-		return v2_3_p31.ExtractHostConfigField(response, tfField)
-	case BaselineV2_3_p33:
-		return v2_3_p33.ExtractHostConfigField(response, tfField)
-	case BaselineV2_3_p36:
-		return v2_3_p36.ExtractHostConfigField(response, tfField)
-	case BaselineV2_3_p37:
-		return v2_3_p37.ExtractHostConfigField(response, tfField)
-	case BaselineV2_3_p39:
-		return v2_3_p39.ExtractHostConfigField(response, tfField)
-	case BaselineV2_3_p40:
-		return v2_3_p40.ExtractHostConfigField(response, tfField)
-	case BaselineV2_3_p41:
-		return v2_3_p41.ExtractHostConfigField(response, tfField)
-	case BaselineV2_4_p1:
-		return v2_4_p1.ExtractHostConfigField(response, tfField)
-	case BaselineV2_4_p6:
-		return v2_4_p6.ExtractHostConfigField(response, tfField)
-	case BaselineV2_4_p11:
-		return v2_4_p11.ExtractHostConfigField(response, tfField)
-	case BaselineV2_4_p14:
-		return v2_4_p14.ExtractHostConfigField(response, tfField)
-	case BaselineV2_4_p16:
-		return v2_4_p16.ExtractHostConfigField(response, tfField)
-	case BaselineV2_4_p17:
-		return v2_4_p17.ExtractHostConfigField(response, tfField)
-	case BaselineV2_4_p18:
-		return v2_4_p18.ExtractHostConfigField(response, tfField)
-	}
-	return nil
-}
-
-// ExtractFolderField extracts a Terraform field value from a Folder API response.
-func ExtractFolderField(pkg BaselinePackage, response map[string]interface{}, tfField string) interface{} {
-	switch pkg {
-	case BaselineV2_2_p1:
-		return v2_2_p1.ExtractFolderField(response, tfField)
-	case BaselineV2_2_p3:
-		return v2_2_p3.ExtractFolderField(response, tfField)
-	case BaselineV2_2_p4:
-		return v2_2_p4.ExtractFolderField(response, tfField)
-	case BaselineV2_2_p5:
-		return v2_2_p5.ExtractFolderField(response, tfField)
-	case BaselineV2_2_p8:
-		return v2_2_p8.ExtractFolderField(response, tfField)
-	case BaselineV2_2_p9:
-		return v2_2_p9.ExtractFolderField(response, tfField)
-	case BaselineV2_2_p11:
-		return v2_2_p11.ExtractFolderField(response, tfField)
-	case BaselineV2_2_p12:
-		return v2_2_p12.ExtractFolderField(response, tfField)
-	case BaselineV2_2_p14:
-		return v2_2_p14.ExtractFolderField(response, tfField)
-	case BaselineV2_2_p18:
-		return v2_2_p18.ExtractFolderField(response, tfField)
-	case BaselineV2_2_p21:
-		return v2_2_p21.ExtractFolderField(response, tfField)
-	case BaselineV2_2_p22:
-		return v2_2_p22.ExtractFolderField(response, tfField)
-	case BaselineV2_2_p23:
-		return v2_2_p23.ExtractFolderField(response, tfField)
-	case BaselineV2_2_p26:
-		return v2_2_p26.ExtractFolderField(response, tfField)
-	case BaselineV2_2_p32:
-		return v2_2_p32.ExtractFolderField(response, tfField)
-	case BaselineV2_2_p33:
-		return v2_2_p33.ExtractFolderField(response, tfField)
-	case BaselineV2_2_p43:
-		return v2_2_p43.ExtractFolderField(response, tfField)
-	case BaselineV2_2_p44:
-		return v2_2_p44.ExtractFolderField(response, tfField)
-	case BaselineV2_3_p1:
-		return v2_3_p1.ExtractFolderField(response, tfField)
-	case BaselineV2_3_p3:
-		return v2_3_p3.ExtractFolderField(response, tfField)
-	case BaselineV2_3_p5:
-		return v2_3_p5.ExtractFolderField(response, tfField)
-	case BaselineV2_3_p7:
-		return v2_3_p7.ExtractFolderField(response, tfField)
-	case BaselineV2_3_p11:
-		return v2_3_p11.ExtractFolderField(response, tfField)
-	case BaselineV2_3_p14:
-		return v2_3_p14.ExtractFolderField(response, tfField)
-	case BaselineV2_3_p22:
-		return v2_3_p22.ExtractFolderField(response, tfField)
-	case BaselineV2_3_p23:
-		return v2_3_p23.ExtractFolderField(response, tfField)
-	case BaselineV2_3_p26:
-		return v2_3_p26.ExtractFolderField(response, tfField)
-	case BaselineV2_3_p27:
-		return v2_3_p27.ExtractFolderField(response, tfField)
-	case BaselineV2_3_p31:
-		return v2_3_p31.ExtractFolderField(response, tfField)
-	case BaselineV2_3_p33:
-		return v2_3_p33.ExtractFolderField(response, tfField)
-	case BaselineV2_3_p36:
-		return v2_3_p36.ExtractFolderField(response, tfField)
-	case BaselineV2_3_p37:
-		return v2_3_p37.ExtractFolderField(response, tfField)
-	case BaselineV2_3_p39:
-		return v2_3_p39.ExtractFolderField(response, tfField)
-	case BaselineV2_3_p40:
-		return v2_3_p40.ExtractFolderField(response, tfField)
-	case BaselineV2_3_p41:
-		return v2_3_p41.ExtractFolderField(response, tfField)
-	case BaselineV2_4_p1:
-		return v2_4_p1.ExtractFolderField(response, tfField)
-	case BaselineV2_4_p6:
-		return v2_4_p6.ExtractFolderField(response, tfField)
-	case BaselineV2_4_p11:
-		return v2_4_p11.ExtractFolderField(response, tfField)
-	case BaselineV2_4_p14:
-		return v2_4_p14.ExtractFolderField(response, tfField)
-	case BaselineV2_4_p16:
-		return v2_4_p16.ExtractFolderField(response, tfField)
-	case BaselineV2_4_p17:
-		return v2_4_p17.ExtractFolderField(response, tfField)
-	case BaselineV2_4_p18:
-		return v2_4_p18.ExtractFolderField(response, tfField)
-	}
-	return nil
-}
-
-// HostConfigFieldMappings returns the field mappings for HostConfig.
-func HostConfigFieldMappings(pkg BaselinePackage) map[string][]string {
-	switch pkg {
-	case BaselineV2_2_p1:
-		return v2_2_p1.HostConfigFieldMappings
-	case BaselineV2_2_p3:
-		return v2_2_p3.HostConfigFieldMappings
-	case BaselineV2_2_p4:
-		return v2_2_p4.HostConfigFieldMappings
-	case BaselineV2_2_p5:
-		return v2_2_p5.HostConfigFieldMappings
-	case BaselineV2_2_p8:
-		return v2_2_p8.HostConfigFieldMappings
-	case BaselineV2_2_p9:
-		return v2_2_p9.HostConfigFieldMappings
-	case BaselineV2_2_p11:
-		return v2_2_p11.HostConfigFieldMappings
-	case BaselineV2_2_p12:
-		return v2_2_p12.HostConfigFieldMappings
-	case BaselineV2_2_p14:
-		return v2_2_p14.HostConfigFieldMappings
-	case BaselineV2_2_p18:
-		return v2_2_p18.HostConfigFieldMappings
-	case BaselineV2_2_p21:
-		return v2_2_p21.HostConfigFieldMappings
-	case BaselineV2_2_p22:
-		return v2_2_p22.HostConfigFieldMappings
-	case BaselineV2_2_p23:
-		return v2_2_p23.HostConfigFieldMappings
-	case BaselineV2_2_p26:
-		return v2_2_p26.HostConfigFieldMappings
-	case BaselineV2_2_p32:
-		return v2_2_p32.HostConfigFieldMappings
-	case BaselineV2_2_p33:
-		return v2_2_p33.HostConfigFieldMappings
-	case BaselineV2_2_p43:
-		return v2_2_p43.HostConfigFieldMappings
-	case BaselineV2_2_p44:
-		return v2_2_p44.HostConfigFieldMappings
-	case BaselineV2_3_p1:
-		return v2_3_p1.HostConfigFieldMappings
-	case BaselineV2_3_p3:
-		return v2_3_p3.HostConfigFieldMappings
-	case BaselineV2_3_p5:
-		return v2_3_p5.HostConfigFieldMappings
-	case BaselineV2_3_p7:
-		return v2_3_p7.HostConfigFieldMappings
-	case BaselineV2_3_p11:
-		return v2_3_p11.HostConfigFieldMappings
-	case BaselineV2_3_p14:
-		return v2_3_p14.HostConfigFieldMappings
-	case BaselineV2_3_p22:
-		return v2_3_p22.HostConfigFieldMappings
-	case BaselineV2_3_p23:
-		return v2_3_p23.HostConfigFieldMappings
-	case BaselineV2_3_p26:
-		return v2_3_p26.HostConfigFieldMappings
-	case BaselineV2_3_p27:
-		return v2_3_p27.HostConfigFieldMappings
-	case BaselineV2_3_p31:
-		return v2_3_p31.HostConfigFieldMappings
-	case BaselineV2_3_p33:
-		return v2_3_p33.HostConfigFieldMappings
-	case BaselineV2_3_p36:
-		return v2_3_p36.HostConfigFieldMappings
-	case BaselineV2_3_p37:
-		return v2_3_p37.HostConfigFieldMappings
-	case BaselineV2_3_p39:
-		return v2_3_p39.HostConfigFieldMappings
-	case BaselineV2_3_p40:
-		return v2_3_p40.HostConfigFieldMappings
-	case BaselineV2_3_p41:
-		return v2_3_p41.HostConfigFieldMappings
-	case BaselineV2_4_p1:
-		return v2_4_p1.HostConfigFieldMappings
-	case BaselineV2_4_p6:
-		return v2_4_p6.HostConfigFieldMappings
-	case BaselineV2_4_p11:
-		return v2_4_p11.HostConfigFieldMappings
-	case BaselineV2_4_p14:
-		return v2_4_p14.HostConfigFieldMappings
-	case BaselineV2_4_p16:
-		return v2_4_p16.HostConfigFieldMappings
-	case BaselineV2_4_p17:
-		return v2_4_p17.HostConfigFieldMappings
-	case BaselineV2_4_p18:
-		return v2_4_p18.HostConfigFieldMappings
-	}
-	return nil
-}
-
-// FolderFieldMappings returns the field mappings for Folder.
-func FolderFieldMappings(pkg BaselinePackage) map[string][]string {
-	switch pkg {
-	case BaselineV2_2_p1:
-		return v2_2_p1.FolderFieldMappings
-	case BaselineV2_2_p3:
-		return v2_2_p3.FolderFieldMappings
-	case BaselineV2_2_p4:
-		return v2_2_p4.FolderFieldMappings
-	case BaselineV2_2_p5:
-		return v2_2_p5.FolderFieldMappings
-	case BaselineV2_2_p8:
-		return v2_2_p8.FolderFieldMappings
-	case BaselineV2_2_p9:
-		return v2_2_p9.FolderFieldMappings
-	case BaselineV2_2_p11:
-		return v2_2_p11.FolderFieldMappings
-	case BaselineV2_2_p12:
-		return v2_2_p12.FolderFieldMappings
-	case BaselineV2_2_p14:
-		return v2_2_p14.FolderFieldMappings
-	case BaselineV2_2_p18:
-		return v2_2_p18.FolderFieldMappings
-	case BaselineV2_2_p21:
-		return v2_2_p21.FolderFieldMappings
-	case BaselineV2_2_p22:
-		return v2_2_p22.FolderFieldMappings
-	case BaselineV2_2_p23:
-		return v2_2_p23.FolderFieldMappings
-	case BaselineV2_2_p26:
-		return v2_2_p26.FolderFieldMappings
-	case BaselineV2_2_p32:
-		return v2_2_p32.FolderFieldMappings
-	case BaselineV2_2_p33:
-		return v2_2_p33.FolderFieldMappings
-	case BaselineV2_2_p43:
-		return v2_2_p43.FolderFieldMappings
-	case BaselineV2_2_p44:
-		return v2_2_p44.FolderFieldMappings
-	case BaselineV2_3_p1:
-		return v2_3_p1.FolderFieldMappings
-	case BaselineV2_3_p3:
-		return v2_3_p3.FolderFieldMappings
-	case BaselineV2_3_p5:
-		return v2_3_p5.FolderFieldMappings
-	case BaselineV2_3_p7:
-		return v2_3_p7.FolderFieldMappings
-	case BaselineV2_3_p11:
-		return v2_3_p11.FolderFieldMappings
-	case BaselineV2_3_p14:
-		return v2_3_p14.FolderFieldMappings
-	case BaselineV2_3_p22:
-		return v2_3_p22.FolderFieldMappings
-	case BaselineV2_3_p23:
-		return v2_3_p23.FolderFieldMappings
-	case BaselineV2_3_p26:
-		return v2_3_p26.FolderFieldMappings
-	case BaselineV2_3_p27:
-		return v2_3_p27.FolderFieldMappings
-	case BaselineV2_3_p31:
-		return v2_3_p31.FolderFieldMappings
-	case BaselineV2_3_p33:
-		return v2_3_p33.FolderFieldMappings
-	case BaselineV2_3_p36:
-		return v2_3_p36.FolderFieldMappings
-	case BaselineV2_3_p37:
-		return v2_3_p37.FolderFieldMappings
-	case BaselineV2_3_p39:
-		return v2_3_p39.FolderFieldMappings
-	case BaselineV2_3_p40:
-		return v2_3_p40.FolderFieldMappings
-	case BaselineV2_3_p41:
-		return v2_3_p41.FolderFieldMappings
-	case BaselineV2_4_p1:
-		return v2_4_p1.FolderFieldMappings
-	case BaselineV2_4_p6:
-		return v2_4_p6.FolderFieldMappings
-	case BaselineV2_4_p11:
-		return v2_4_p11.FolderFieldMappings
-	case BaselineV2_4_p14:
-		return v2_4_p14.FolderFieldMappings
-	case BaselineV2_4_p16:
-		return v2_4_p16.FolderFieldMappings
-	case BaselineV2_4_p17:
-		return v2_4_p17.FolderFieldMappings
-	case BaselineV2_4_p18:
-		return v2_4_p18.FolderFieldMappings
-	}
-	return nil
-}
-
-// Deprecation Warnings
-
-// IsDeprecatedField checks if a field is deprecated for a given schema and baseline.
 func IsDeprecatedField(pkg BaselinePackage, schemaName, fieldName string) bool {
-	switch pkg {
-	case BaselineV2_2_p1:
-		return v2_2_p1.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_2_p3:
-		return v2_2_p3.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_2_p4:
-		return v2_2_p4.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_2_p5:
-		return v2_2_p5.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_2_p8:
-		return v2_2_p8.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_2_p9:
-		return v2_2_p9.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_2_p11:
-		return v2_2_p11.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_2_p12:
-		return v2_2_p12.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_2_p14:
-		return v2_2_p14.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_2_p18:
-		return v2_2_p18.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_2_p21:
-		return v2_2_p21.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_2_p22:
-		return v2_2_p22.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_2_p23:
-		return v2_2_p23.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_2_p26:
-		return v2_2_p26.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_2_p32:
-		return v2_2_p32.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_2_p33:
-		return v2_2_p33.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_2_p43:
-		return v2_2_p43.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_2_p44:
-		return v2_2_p44.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_3_p1:
-		return v2_3_p1.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_3_p3:
-		return v2_3_p3.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_3_p5:
-		return v2_3_p5.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_3_p7:
-		return v2_3_p7.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_3_p11:
-		return v2_3_p11.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_3_p14:
-		return v2_3_p14.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_3_p22:
-		return v2_3_p22.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_3_p23:
-		return v2_3_p23.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_3_p26:
-		return v2_3_p26.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_3_p27:
-		return v2_3_p27.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_3_p31:
-		return v2_3_p31.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_3_p33:
-		return v2_3_p33.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_3_p36:
-		return v2_3_p36.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_3_p37:
-		return v2_3_p37.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_3_p39:
-		return v2_3_p39.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_3_p40:
-		return v2_3_p40.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_3_p41:
-		return v2_3_p41.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_4_p1:
-		return v2_4_p1.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_4_p6:
-		return v2_4_p6.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_4_p11:
-		return v2_4_p11.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_4_p14:
-		return v2_4_p14.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_4_p16:
-		return v2_4_p16.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_4_p17:
-		return v2_4_p17.IsDeprecatedField(schemaName, fieldName)
-	case BaselineV2_4_p18:
-		return v2_4_p18.IsDeprecatedField(schemaName, fieldName)
+	if r := registry[pkg]; r != nil && r.IsDeprecatedField != nil {
+		return r.IsDeprecatedField(schemaName, fieldName)
 	}
 	return false
+}
+
+// Enum Validation
+
+func GetValidEnumValues(pkg BaselinePackage, schemaName, fieldName string) []string {
+	if r := registry[pkg]; r != nil && r.GetValidEnumValues != nil {
+		return r.GetValidEnumValues(schemaName, fieldName)
+	}
+	return nil
+}
+
+func HasEnumConstraint(pkg BaselinePackage, schemaName, fieldName string) bool {
+	if r := registry[pkg]; r != nil && r.HasEnumConstraint != nil {
+		return r.HasEnumConstraint(schemaName, fieldName)
+	}
+	return false
+}
+
+// Host-specific (backwards compatibility)
+
+func ValidHostTagAgentValues(pkg BaselinePackage) []string {
+	if r := registry[pkg]; r != nil && r.ValidHostCreateAttributeTagAgentValues != nil {
+		return r.ValidHostCreateAttributeTagAgentValues()
+	}
+	return nil
+}
+
+func HostCreateAttributeFieldNames(pkg BaselinePackage) []string {
+	if r := registry[pkg]; r != nil {
+		return r.HostCreateAttributeFieldNames
+	}
+	return nil
+}
+
+func HostCreateAttributeCompareKeyFields(pkg BaselinePackage) []string {
+	if r := registry[pkg]; r != nil {
+		return r.HostCreateAttributeCompareKeyFields
+	}
+	return nil
+}
+
+func HostConfigFieldMappings(pkg BaselinePackage) map[string][]string {
+	if r := registry[pkg]; r != nil {
+		return r.HostConfigFieldMappings
+	}
+	return nil
+}
+
+func ExtractHostConfigField(pkg BaselinePackage, response map[string]interface{}, tfField string) interface{} {
+	if r := registry[pkg]; r != nil && r.ExtractHostConfigField != nil {
+		return r.ExtractHostConfigField(response, tfField)
+	}
+	return nil
+}
+
+// Folder-specific (backwards compatibility)
+
+func FolderCreateAttributeFieldNames(pkg BaselinePackage) []string {
+	if r := registry[pkg]; r != nil {
+		return r.FolderCreateAttributeFieldNames
+	}
+	return nil
+}
+
+func FolderCreateAttributeCompareKeyFields(pkg BaselinePackage) []string {
+	if r := registry[pkg]; r != nil {
+		return r.FolderCreateAttributeCompareKeyFields
+	}
+	return nil
+}
+
+func FolderFieldMappings(pkg BaselinePackage) map[string][]string {
+	if r := registry[pkg]; r != nil {
+		return r.FolderFieldMappings
+	}
+	return nil
+}
+
+func ExtractFolderField(pkg BaselinePackage, response map[string]interface{}, tfField string) interface{} {
+	if r := registry[pkg]; r != nil && r.ExtractFolderField != nil {
+		return r.ExtractFolderField(response, tfField)
+	}
+	return nil
 }

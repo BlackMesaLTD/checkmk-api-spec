@@ -256,6 +256,8 @@ func processMinorSeries(cfg *Config, manifest *Manifest, minor string, versions 
 				Package:     versionToPackage(version),
 				IsBaseline:  true,
 				MaxSeverity: "initial",
+				Path:        versionToPath(version),
+				ImportAlias: versionToImportAlias(version),
 			}
 			currentBaseline = version
 			currentBaselineSpec = specData
@@ -279,6 +281,8 @@ func processMinorSeries(cfg *Config, manifest *Manifest, minor string, versions 
 				Package:     versionToPackage(version),
 				IsBaseline:  true,
 				MaxSeverity: string(diff.MaxSeverity),
+				Path:        versionToPath(version),
+				ImportAlias: versionToImportAlias(version),
 			}
 			currentBaseline = version
 			currentBaselineSpec = specData
@@ -295,6 +299,8 @@ func processMinorSeries(cfg *Config, manifest *Manifest, minor string, versions 
 				Package:     baselineEntry.Package,
 				IsBaseline:  false,
 				MaxSeverity: string(diff.MaxSeverity),
+				Path:        baselineEntry.Path,
+				ImportAlias: baselineEntry.ImportAlias,
 			}
 		}
 	}
@@ -413,6 +419,8 @@ func runSync(cfg *Config) error {
 				Package:     versionToPackage(version),
 				IsBaseline:  true,
 				MaxSeverity: maxSeverity,
+				Path:        versionToPath(version),
+				ImportAlias: versionToImportAlias(version),
 			}
 		} else {
 			// Not a baseline - just update manifest to point to existing baseline
@@ -423,6 +431,8 @@ func runSync(cfg *Config) error {
 				Package:     baselineEntry.Package,
 				IsBaseline:  false,
 				MaxSeverity: maxSeverity,
+				Path:        baselineEntry.Path,
+				ImportAlias: baselineEntry.ImportAlias,
 			}
 		}
 
@@ -535,10 +545,35 @@ func relativeSpecPath(version string) string {
 }
 
 // versionToPackage converts version to Go package name
-// 2.4.0p17 -> v2_4_0p17
+// 2.4.0p17 -> p17
 func versionToPackage(version string) string {
-	pkg := "v" + strings.ReplaceAll(version, ".", "_")
-	return pkg
+	parts := strings.SplitN(version, "p", 2)
+	if len(parts) == 2 {
+		return "p" + parts[1]
+	}
+	return "v" + strings.ReplaceAll(version, ".", "_")
+}
+
+// versionToPath converts version to import path suffix
+// 2.4.0p17 -> v2_4_0/p17
+func versionToPath(version string) string {
+	parts := strings.SplitN(version, "p", 2)
+	if len(parts) == 2 {
+		minor := strings.ReplaceAll(parts[0], ".", "_")
+		return "v" + minor + "/p" + parts[1]
+	}
+	return "v" + strings.ReplaceAll(version, ".", "_")
+}
+
+// versionToImportAlias converts version to import alias
+// 2.4.0p17 -> v2_4_0_p17 (includes the 0 for clarity)
+func versionToImportAlias(version string) string {
+	parts := strings.SplitN(version, "p", 2)
+	if len(parts) == 2 {
+		minor := strings.ReplaceAll(parts[0], ".", "_")
+		return "v" + minor + "_p" + parts[1]
+	}
+	return "v" + strings.ReplaceAll(version, ".", "_")
 }
 
 // filterByMinor filters versions to only those matching the minor version

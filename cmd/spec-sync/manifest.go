@@ -24,9 +24,11 @@ type Manifest struct {
 type VersionEntry struct {
 	Spec        string `json:"spec"`         // Relative path: "2.4.0/p1.yaml"
 	Baseline    string `json:"baseline"`     // Baseline version: "2.4.0p1"
-	Package     string `json:"package"`      // Go package name: "v2_4_0p1"
+	Package     string `json:"package"`      // Go package name: "p1"
 	IsBaseline  bool   `json:"is_baseline"`  // True if this version IS a baseline
 	MaxSeverity string `json:"max_severity"` // Severity that triggered baseline: "initial", "breaking", "minor"
+	Path        string `json:"path"`         // Import path suffix: "v2_2_0/p1"
+	ImportAlias string `json:"import_alias"` // Import alias: "v2_2_0_p1"
 }
 
 // NewManifest creates a new empty manifest

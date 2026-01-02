@@ -11,6 +11,7 @@ import (
 	"path/filepath"
 	"regexp"
 	"sort"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -25,8 +26,14 @@ const (
 	startupTimeout = 120 * time.Second
 )
 
+const (
+	// Minimum supported minor version (2.2+, as 2.0/2.1 used legacy Web API)
+	minMinorVersion = 2
+)
+
 var (
-	versionTagRegex = regexp.MustCompile(`^2\.[234]\.[0-9]+p[0-9]+$`)
+	// Match any 2.x.x version with patch suffix (e.g., 2.5.0p1, 2.10.0p1)
+	versionTagRegex = regexp.MustCompile(`^2\.([0-9]+)\.[0-9]+p[0-9]+$`)
 	credentials     = []string{"cmkadmin:test123", "automation:test123"}
 )
 
@@ -63,8 +70,12 @@ func GetDockerHubVersions() ([]string, error) {
 		}
 
 		for _, result := range hubResp.Results {
-			if versionTagRegex.MatchString(result.Name) {
-				allVersions = append(allVersions, result.Name)
+			if matches := versionTagRegex.FindStringSubmatch(result.Name); matches != nil {
+				// matches[1] is the minor version number
+				minor, _ := strconv.Atoi(matches[1])
+				if minor >= minMinorVersion {
+					allVersions = append(allVersions, result.Name)
+				}
 			}
 		}
 

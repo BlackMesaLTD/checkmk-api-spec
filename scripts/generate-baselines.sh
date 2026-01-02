@@ -24,8 +24,9 @@ GENERATED_DIR="generated/go"
 MANIFEST_FILE="manifest.json"
 MODULE_PATH="github.com/BlackMesaLTD/checkmk-api-spec/generated/go"
 
-# Resources to generate types for
-RESOURCES="host,folder,aux_tag,tag_group,user,contact_group"
+# Generate ALL schemas (no filtering)
+# Previously used: RESOURCES="host,folder,aux_tag,tag_group,user,contact_group"
+# Now generates all schemas from OpenAPI spec for maximum coverage
 
 # Parse arguments
 while [[ $# -gt 0 ]]; do
@@ -101,14 +102,17 @@ for baseline in $BASELINES; do
     # Create output directory
     mkdir -p "$output_dir"
 
-    # Run openapi-gen
+    # Build tag for version-specific compilation (e.g., checkmk_v2_4_0)
+    build_tag="checkmk_$minor_dir"
+
+    # Run openapi-gen (generates ALL schemas from the OpenAPI spec)
     ./bin/openapi-gen \
         -spec "$spec_file" \
         -output "$output_dir/" \
-        -resources "$RESOURCES" \
-        -package "$pkg"
+        -package "$pkg" \
+        -buildtag "$build_tag"
 
-    echo "  Output: $output_dir"
+    echo "  Output: $output_dir (build tag: $build_tag)"
 done
 
 # Step 3: Generate version_types.go

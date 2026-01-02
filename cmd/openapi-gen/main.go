@@ -2,7 +2,10 @@
 //
 // Usage:
 //
-//	openapi-gen -spec specs/2.4.0p17/openapi.yaml -output generated/go/v2_4_0p17/ -package v2_4_0p17 -resources host,folder,aux_tag
+//	openapi-gen -spec specs/2.4.0/p17.yaml -output generated/go/v2_4_0/p17/ -package p17
+//
+// By default, generates ALL schemas from the OpenAPI spec.
+// Use -schemas to filter to specific schemas if needed.
 package main
 
 import (
@@ -83,16 +86,16 @@ type EnumInfo struct {
 
 // Generator holds the state for code generation
 type Generator struct {
-	spec           *OpenAPISpec
-	packageName    string
-	outputDir      string
-	version        string
-	resources      []string
-	schemasToGen   []string
-	excludeFields  map[string]bool
-	enumsFound     map[string]*EnumInfo          // Track enums to generate
-	fieldsFound    map[string][]string           // Track field names per schema
-	fieldsMeta     map[string][]FieldMetadata    // Track detailed field metadata per schema
+	spec            *OpenAPISpec
+	packageName     string
+	outputDir       string
+	version         string
+	buildTag        string                        // Optional build tag (e.g., "checkmk_v2_4")
+	schemasToGen    []string                      // Explicit list of schemas to generate (empty = all)
+	excludeFields   map[string]bool
+	enumsFound      map[string]*EnumInfo          // Track enums to generate
+	fieldsFound     map[string][]string           // Track field names per schema
+	fieldsMeta      map[string][]FieldMetadata    // Track detailed field metadata per schema
 	requiredFound   map[string][]string           // Track required fields per schema
 	readOnlyFound   map[string][]string           // Track readOnly fields per schema
 	deprecatedFound map[string][]string           // Track deprecated fields per schema
@@ -107,8 +110,8 @@ func main() {
 		outputDir   = flag.String("output", "", "Output directory for generated files")
 		packageName = flag.String("package", "generated", "Go package name")
 		version     = flag.String("version", "", "CheckMK version (e.g., 2.4.0p17)")
-		resources   = flag.String("resources", "", "Comma-separated list of resources (host,folder,aux_tag)")
-		schemas     = flag.String("schemas", "", "Comma-separated list of schemas (alternative to -resources)")
+		schemas     = flag.String("schemas", "", "Comma-separated list of schemas to filter (default: all)")
+		buildTag    = flag.String("buildtag", "", "Build tag for conditional compilation (e.g., checkmk_v2_4)")
 		listSchemas = flag.Bool("list-schemas", false, "List all available schemas and exit")
 	)
 	flag.Parse()
@@ -121,6 +124,7 @@ func main() {
 		packageName: *packageName,
 		outputDir:   *outputDir,
 		version:     *version,
+		buildTag:    *buildTag,
 		excludeFields: map[string]bool{
 			"update_attributes": true,
 			"remove_attributes": true,
@@ -146,11 +150,8 @@ func main() {
 		return
 	}
 
-	// Determine which schemas to generate
-	if *resources != "" {
-		gen.resources = strings.Split(*resources, ",")
-		gen.schemasToGen = GetSchemasForResources(gen.resources)
-	} else if *schemas != "" {
+	// Determine which schemas to generate (filter by -schemas if provided)
+	if *schemas != "" {
 		gen.schemasToGen = strings.Split(*schemas, ",")
 	}
 
@@ -211,13 +212,19 @@ func (g *Generator) Generate() error {
 	}
 
 	// Determine which schemas to generate
-	schemas := g.schemasToGen
-	if len(schemas) == 0 && g.spec.Components != nil {
-		// If no specific schemas requested, generate common ones
-		schemas = GetSchemasForResources([]string{"host", "folder", "aux_tag"})
+	var schemas []string
+	if len(g.schemasToGen) > 0 {
+		// Use explicitly requested schemas (from -schemas or -resources flags)
+		schemas = g.schemasToGen
+	} else if g.spec.Components != nil {
+		// No filtering - generate ALL schemas from the OpenAPI spec
+		for name := range g.spec.Components.Schemas {
+			schemas = append(schemas, name)
+		}
+		log.Printf("Generating all %d schemas from OpenAPI spec", len(schemas))
 	}
 
-	// Filter to only existing schemas
+	// Filter to only existing schemas (relevant when using -schemas or -resources)
 	var existingSchemas []string
 	for _, name := range schemas {
 		if g.spec.Components != nil && g.spec.Components.Schemas[name] != nil {
@@ -307,12 +314,76 @@ func (g *Generator) generateEnumsFile() error {
 	}
 	sort.Strings(enumNames)
 
+	// Build schema -> field -> enum type mapping for introspection
+	schemaFieldEnums := make(map[string]map[string]string) // schema -> field -> enum type name
+	for typeName, info := range g.enumsFound {
+		// Extract schema name from enum type name (e.g., "HostCreateAttributeTagAgent" -> "HostCreateAttribute")
+		schemaName := extractSchemaFromEnumType(typeName, info.FieldName)
+		if schemaName == "" {
+			continue
+		}
+		if schemaFieldEnums[schemaName] == nil {
+			schemaFieldEnums[schemaName] = make(map[string]string)
+		}
+		schemaFieldEnums[schemaName][info.FieldName] = typeName
+	}
+
 	// Generate each enum
 	for _, typeName := range enumNames {
 		info := g.enumsFound[typeName]
 		g.generateEnum(&buf, info)
 		buf.WriteString("\n")
 	}
+
+	// Generate EnumValuesLookup for generic access
+	buf.WriteString("// EnumValuesLookup maps schema.field to valid enum values.\n")
+	buf.WriteString("// Use GetValidEnumValues() for safe lookup.\n")
+	buf.WriteString("var EnumValuesLookup = map[string]map[string][]string{\n")
+
+	// Sort schema names
+	schemaList := make([]string, 0, len(schemaFieldEnums))
+	for schema := range schemaFieldEnums {
+		schemaList = append(schemaList, schema)
+	}
+	sort.Strings(schemaList)
+
+	for _, schema := range schemaList {
+		fields := schemaFieldEnums[schema]
+		buf.WriteString(fmt.Sprintf("\t%q: {\n", schema))
+
+		// Sort field names
+		fieldList := make([]string, 0, len(fields))
+		for field := range fields {
+			fieldList = append(fieldList, field)
+		}
+		sort.Strings(fieldList)
+
+		for _, field := range fieldList {
+			enumType := fields[field]
+			buf.WriteString(fmt.Sprintf("\t\t%q: Valid%sValues(),\n", field, enumType))
+		}
+		buf.WriteString("\t},\n")
+	}
+	buf.WriteString("}\n\n")
+
+	// Generate lookup function
+	buf.WriteString("// GetValidEnumValues returns valid enum values for a schema field.\n")
+	buf.WriteString("// Returns nil if no enum constraint exists for this field.\n")
+	buf.WriteString("func GetValidEnumValues(schemaName, fieldName string) []string {\n")
+	buf.WriteString("\tif fields, ok := EnumValuesLookup[schemaName]; ok {\n")
+	buf.WriteString("\t\treturn fields[fieldName]\n")
+	buf.WriteString("\t}\n")
+	buf.WriteString("\treturn nil\n")
+	buf.WriteString("}\n\n")
+
+	buf.WriteString("// HasEnumConstraint checks if a field has enum constraints.\n")
+	buf.WriteString("func HasEnumConstraint(schemaName, fieldName string) bool {\n")
+	buf.WriteString("\tif fields, ok := EnumValuesLookup[schemaName]; ok {\n")
+	buf.WriteString("\t\t_, hasEnum := fields[fieldName]\n")
+	buf.WriteString("\t\treturn hasEnum\n")
+	buf.WriteString("\t}\n")
+	buf.WriteString("\treturn false\n")
+	buf.WriteString("}\n")
 
 	// Write to file
 	outputPath := filepath.Join(g.outputDir, "enums.gen.go")
@@ -321,6 +392,17 @@ func (g *Generator) generateEnumsFile() error {
 	}
 
 	return nil
+}
+
+// extractSchemaFromEnumType extracts the schema name from an enum type name.
+// e.g., "HostCreateAttributeTagAgent" with fieldName "tag_agent" -> "HostCreateAttribute"
+func extractSchemaFromEnumType(typeName, fieldName string) string {
+	// Convert field name to PascalCase suffix
+	suffix := toGoTypeName(fieldName)
+	if strings.HasSuffix(typeName, suffix) {
+		return strings.TrimSuffix(typeName, suffix)
+	}
+	return ""
 }
 
 func (g *Generator) generateFieldsFile() error {
@@ -339,6 +421,69 @@ func (g *Generator) generateFieldsFile() error {
 		schemaNames = append(schemaNames, name)
 	}
 	sort.Strings(schemaNames)
+
+	// Filter to only schemas with fields for introspection
+	schemasWithFields := make([]string, 0, len(schemaNames))
+	for _, name := range schemaNames {
+		if len(g.fieldsFound[name]) > 0 {
+			schemasWithFields = append(schemasWithFields, name)
+		}
+	}
+
+	// Generate AllSchemaNames slice for introspection
+	buf.WriteString("// AllSchemaNames lists all schema names with fields in this package.\n")
+	buf.WriteString("// Use for dynamic iteration over all available schemas.\n")
+	buf.WriteString("var AllSchemaNames = []string{\n")
+	for _, name := range schemasWithFields {
+		buf.WriteString(fmt.Sprintf("\t%q,\n", name))
+	}
+	buf.WriteString("}\n\n")
+
+	// Generate SchemaFieldNames map for generic lookup
+	// Only include schemas that have fields
+	buf.WriteString("// SchemaFieldNames maps schema names to their field name slices.\n")
+	buf.WriteString("// Use GetSchemaFieldNames() for safe lookup.\n")
+	buf.WriteString("var SchemaFieldNames = map[string][]string{\n")
+	for _, schemaName := range schemaNames {
+		fields := g.fieldsFound[schemaName]
+		if len(fields) == 0 {
+			continue // Skip schemas without fields
+		}
+		typeName := toGoTypeName(schemaName)
+		buf.WriteString(fmt.Sprintf("\t%q: %sFieldNames,\n", schemaName, typeName))
+	}
+	buf.WriteString("}\n\n")
+
+	// Generate SchemaRequiredFieldNames map for generic lookup
+	buf.WriteString("// SchemaRequiredFieldNames maps schema names to their required field slices.\n")
+	buf.WriteString("// Use GetSchemaRequiredFieldNames() for safe lookup.\n")
+	buf.WriteString("var SchemaRequiredFieldNames = map[string][]string{\n")
+	for _, schemaName := range schemaNames {
+		if len(g.requiredFound[schemaName]) > 0 {
+			typeName := toGoTypeName(schemaName)
+			buf.WriteString(fmt.Sprintf("\t%q: %sRequiredFieldNames,\n", schemaName, typeName))
+		}
+	}
+	buf.WriteString("}\n\n")
+
+	// Generate generic lookup functions
+	buf.WriteString("// GetSchemaFieldNames returns all field names for a schema.\n")
+	buf.WriteString("// Returns nil if schema not found.\n")
+	buf.WriteString("func GetSchemaFieldNames(schemaName string) []string {\n")
+	buf.WriteString("\treturn SchemaFieldNames[schemaName]\n")
+	buf.WriteString("}\n\n")
+
+	buf.WriteString("// GetSchemaRequiredFieldNames returns required field names for a schema.\n")
+	buf.WriteString("// Returns nil if schema not found or has no required fields.\n")
+	buf.WriteString("func GetSchemaRequiredFieldNames(schemaName string) []string {\n")
+	buf.WriteString("\treturn SchemaRequiredFieldNames[schemaName]\n")
+	buf.WriteString("}\n\n")
+
+	buf.WriteString("// HasSchema checks if a schema exists in this package.\n")
+	buf.WriteString("func HasSchema(schemaName string) bool {\n")
+	buf.WriteString("\t_, ok := SchemaFieldNames[schemaName]\n")
+	buf.WriteString("\treturn ok\n")
+	buf.WriteString("}\n\n")
 
 	// Generate field lists
 	for _, schemaName := range schemaNames {
@@ -601,13 +746,20 @@ func (g *Generator) generateMetadataFile() error {
 }
 
 func (g *Generator) writeHeader(buf *strings.Builder, filename, description string) {
+	// Write build tag if specified (always include checkmk_all as alternative)
+	if g.buildTag != "" {
+		buf.WriteString(fmt.Sprintf("//go:build checkmk_all || %s\n\n", g.buildTag))
+	}
+
 	buf.WriteString(fmt.Sprintf("// Code generated by openapi-gen from CheckMK %s. DO NOT EDIT.\n", g.version))
 	buf.WriteString("//\n")
 	buf.WriteString(fmt.Sprintf("// %s\n", description))
 	buf.WriteString("//\n")
 	buf.WriteString(fmt.Sprintf("// Source: %s\n", filename))
-	if len(g.resources) > 0 {
-		buf.WriteString(fmt.Sprintf("// Resources: %s\n", strings.Join(g.resources, ", ")))
+	if len(g.schemasToGen) == 0 {
+		buf.WriteString("// Schemas: All (unfiltered)\n")
+	} else {
+		buf.WriteString(fmt.Sprintf("// Schemas: %d filtered\n", len(g.schemasToGen)))
 	}
 	buf.WriteString("\n")
 	buf.WriteString(fmt.Sprintf("package %s\n\n", g.packageName))
@@ -1134,12 +1286,20 @@ func toGoFieldName(s string) string {
 }
 
 func toGoConstName(s string) string {
+	// Handle negation prefix (e.g., "!cmk-agent" -> "NotCmkAgent")
+	prefix := ""
+	if strings.HasPrefix(s, "!") {
+		prefix = "Not"
+		s = strings.TrimPrefix(s, "!")
+	}
+
 	// Convert value like "cmk-agent" to "CmkAgent"
 	parts := strings.FieldsFunc(s, func(r rune) bool {
 		return !unicode.IsLetter(r) && !unicode.IsDigit(r)
 	})
 
 	var result strings.Builder
+	result.WriteString(prefix)
 	for _, part := range parts {
 		if len(part) > 0 {
 			result.WriteString(strings.ToUpper(part[:1]))
@@ -1174,7 +1334,12 @@ func writeFieldDocComment(buf *strings.Builder, description string, example inte
 	description = sanitizeComment(description)
 	buf.WriteString(fmt.Sprintf("\t// %s\n", description))
 	if example != nil {
-		buf.WriteString(fmt.Sprintf("\t// Example: %v\n", example))
+		// Sanitize example to be single-line and safe for comments
+		exampleStr := fmt.Sprintf("%v", example)
+		exampleStr = sanitizeComment(exampleStr)
+		if exampleStr != "" {
+			buf.WriteString(fmt.Sprintf("\t// Example: %s\n", exampleStr))
+		}
 	}
 }
 

@@ -17,11 +17,13 @@ on:
         type: boolean
 
 jobs:
-  update-specs:
+  sync:
+    name: Sync Specs
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
+    outputs:
+      changed: ${{ steps.sync.outputs.changed }}
+      has_new_baselines: ${{ steps.baselines.outputs.has_new }}
+      new_baselines: ${{ steps.baselines.outputs.new_baselines }}
 
     steps:
       - name: Checkout repository
@@ -49,7 +51,6 @@ jobs:
           echo "Running: ./bin/spec-sync $ARGS"
           ./bin/spec-sync $ARGS 2>&1 | tee sync-output.txt
 
-          # Check if manifest changed
           if git diff --quiet manifest.json 2>/dev/null; then
             echo "changed=false" >> $GITHUB_OUTPUT
             echo "No changes to manifest"
@@ -62,11 +63,9 @@ jobs:
         id: baselines
         if: steps.sync.outputs.changed == 'true'
         run: |
-          # Get list of baselines before and after
           git show HEAD:manifest.json 2>/dev/null | jq -r '.baselines[]' | sort > /tmp/old-baselines.txt || touch /tmp/old-baselines.txt
           jq -r '.baselines[]' manifest.json | sort > /tmp/new-baselines.txt
 
-          # Find new baselines
           NEW_BASELINES=$(comm -13 /tmp/old-baselines.txt /tmp/new-baselines.txt | tr '\n' ' ')
 
           if [ -n "$NEW_BASELINES" ]; then
@@ -78,22 +77,122 @@ jobs:
             echo "No new baselines (only version mappings updated)"
           fi
 
-      - name: Generate types for new baselines
-        if: steps.baselines.outputs.has_new == 'true'
-        run: |
-          echo "Generating types for baselines..."
-          ./scripts/generate-baselines.sh --gen-only
+      - name: Upload manifest
+        if: steps.sync.outputs.changed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: manifest
+          path: manifest.json
 
-          # Format generated code
-          go fmt ./generated/go/...
+      - name: Upload specs
+        if: steps.sync.outputs.changed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: specs
+          path: specs/
+
+  generate:
+    name: Generate Types
+    needs: sync
+    if: needs.sync.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      - name: Download manifest
+        uses: actions/download-artifact@v4
+        with:
+          name: manifest
+
+      - name: Download specs
+        uses: actions/download-artifact@v4
+        with:
+          name: specs
+          path: specs/
+
+      - name: Build tools
+        run: make build
+
+      - name: Generate baseline types
+        run: ./scripts/generate-baselines.sh
+
+      - name: Generate union descriptions
+        run: |
+          ./bin/description-union-gen \
+            -manifest manifest.json \
+            -output generated/go/union \
+            -generated generated/go
+
+      - name: Cleanup non-baseline specs
+        run: ./bin/spec-sync --cleanup
+
+      - name: Format generated code
+        run: go fmt ./generated/go/...
+
+      - name: Upload generated code
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated
+          path: |
+            generated/
+            specs/
+            manifest.json
+
+  verify:
+    name: Verify Build
+    needs: [sync, generate]
+    if: needs.sync.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      - name: Download generated code
+        uses: actions/download-artifact@v4
+        with:
+          name: generated
+
+      - name: Verify build
+        run: |
+          go build -tags "checkmk_all" ./generated/go/...
+          echo "✅ Build successful!"
+
+  create-pr:
+    name: Create Pull Request
+    needs: [sync, generate, verify]
+    if: needs.sync.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download generated code
+        uses: actions/download-artifact@v4
+        with:
+          name: generated
 
       - name: Create summary
-        if: steps.sync.outputs.changed == 'true'
         run: |
           echo "## Spec Update Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
-          # Count versions and baselines
           TOTAL=$(jq '.mapping | length' manifest.json)
           BASELINES=$(jq '.baselines | length' manifest.json)
 
@@ -101,15 +200,14 @@ jobs:
           echo "- **Baselines:** $BASELINES" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
-          if [ "${{ steps.baselines.outputs.has_new }}" = "true" ]; then
+          if [ "${{ needs.sync.outputs.has_new_baselines }}" = "true" ]; then
             echo "### New Baselines" >> $GITHUB_STEP_SUMMARY
             echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
-            echo "${{ steps.baselines.outputs.new_baselines }}" >> $GITHUB_STEP_SUMMARY
+            echo "${{ needs.sync.outputs.new_baselines }}" >> $GITHUB_STEP_SUMMARY
             echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
           fi
 
       - name: Create Pull Request
-        if: steps.sync.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -122,15 +220,12 @@ jobs:
 
             ### Changes
             - Updated `manifest.json` with new version mappings
-            ${{ steps.baselines.outputs.has_new == 'true' && '- Generated types for new baselines' || '' }}
+            ${{ needs.sync.outputs.has_new_baselines == 'true' && '- Generated types for new baselines' || '' }}
 
             ### New Baselines
             ```
-            ${{ steps.baselines.outputs.new_baselines || 'None (only version mappings updated)' }}
+            ${{ needs.sync.outputs.new_baselines || 'None (only version mappings updated)' }}
             ```
-
-            ### Summary
-            $(jq -r '"- Total versions: \(.mapping | length)\n- Baselines: \(.baselines | length)"' manifest.json)
 
             ---
             *Generated by [spec-sync workflow](.github/workflows/update-specs.yml)*
@@ -140,6 +235,10 @@ jobs:
             automated
             specs
 
-      - name: No changes
-        if: steps.sync.outputs.changed != 'true'
-        run: echo "No new versions found. Nothing to update."
+  no-changes:
+    name: No Changes
+    needs: sync
+    if: needs.sync.outputs.changed != 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "No new versions found. Nothing to update."

@@ -279,6 +279,70 @@ const (
 {{range .BaselineImports}}	Baseline{{.Alias | title}} BaselinePackage = "{{.Alias}}"
 {{end}})
 
+// BaselineFuncs contains all function references for a baseline package.
+// This registry pattern avoids repetitive switch statements.
+type BaselineFuncs struct {
+	// Schema introspection
+	AllSchemaNames              []string
+	GetSchemaFieldNames         func(string) []string
+	GetSchemaRequiredFieldNames func(string) []string
+	HasSchema                   func(string) bool
+
+	// Field metadata
+	GetFieldDescription func(string, string) string
+	GetFieldType        func(string, string) string
+	IsReadOnlyField     func(string, string) bool
+	IsRequiredField     func(string, string) bool
+	IsDeprecatedField   func(string, string) bool
+
+	// Enum validation
+	GetValidEnumValues func(string, string) []string
+	HasEnumConstraint  func(string, string) bool
+
+	// Host-specific (for backwards compatibility)
+	HostCreateAttributeFieldNames      []string
+	HostCreateAttributeCompareKeyFields []string
+	ValidHostCreateAttributeTagAgentValues func() []string
+	HostConfigFieldMappings            map[string][]string
+	ExtractHostConfigField             func(map[string]interface{}, string) interface{}
+	BuildCreateHostFromMap             func(map[string]interface{}) (*interface{}, error)
+	ParseHostConfigFromMap             func(map[string]interface{}) (*interface{}, error)
+
+	// Folder-specific (for backwards compatibility)
+	FolderCreateAttributeFieldNames      []string
+	FolderCreateAttributeCompareKeyFields []string
+	FolderFieldMappings                  map[string][]string
+	ExtractFolderField                   func(map[string]interface{}, string) interface{}
+	BuildCreateFolderFromMap             func(map[string]interface{}) (*interface{}, error)
+	ParseFolderFromMap                   func(map[string]interface{}) (*interface{}, error)
+}
+
+// registry maps baseline packages to their function implementations.
+var registry = map[BaselinePackage]*BaselineFuncs{
+{{range .BaselineImports}}	Baseline{{.Alias | title}}: {
+		AllSchemaNames:              {{.Alias}}.AllSchemaNames,
+		GetSchemaFieldNames:         {{.Alias}}.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames: {{.Alias}}.GetSchemaRequiredFieldNames,
+		HasSchema:                   {{.Alias}}.HasSchema,
+		GetFieldDescription:         {{.Alias}}.GetFieldDescription,
+		GetFieldType:                {{.Alias}}.GetFieldType,
+		IsReadOnlyField:             {{.Alias}}.IsReadOnlyField,
+		IsRequiredField:             {{.Alias}}.IsRequiredField,
+		IsDeprecatedField:           {{.Alias}}.IsDeprecatedField,
+		GetValidEnumValues:          {{.Alias}}.GetValidEnumValues,
+		HasEnumConstraint:           {{.Alias}}.HasEnumConstraint,
+		HostCreateAttributeFieldNames:       {{.Alias}}.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields: {{.Alias}}.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: {{.Alias}}.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:     {{.Alias}}.HostConfigFieldMappings,
+		ExtractHostConfigField:      {{.Alias}}.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:       {{.Alias}}.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields: {{.Alias}}.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:         {{.Alias}}.FolderFieldMappings,
+		ExtractFolderField:          {{.Alias}}.ExtractFolderField,
+	},
+{{end}}}
+
 // VersionToBaseline maps CheckMK versions to their baseline package.
 // Use LookupBaseline() instead of accessing this directly.
 var VersionToBaseline = map[string]BaselinePackage{
@@ -294,203 +358,176 @@ var MinorToLatestBaseline = map[string]BaselinePackage{
 // LookupBaseline returns the baseline package for a given CheckMK version.
 // Returns empty string if the version is unknown.
 func LookupBaseline(version string) BaselinePackage {
-	// Direct match
 	if pkg, ok := VersionToBaseline[version]; ok {
 		return pkg
 	}
-
-	// Try minor version match (for future patch versions)
-	minor := extractMinor(version)
-	if pkg, ok := MinorToLatestBaseline[minor]; ok {
+	if pkg, ok := MinorToLatestBaseline[extractMinor(version)]; ok {
 		return pkg
 	}
-
 	return ""
 }
 
-// extractMinor extracts "2.4" from "2.4.0p17"
+// GetRegistry returns the function registry for a baseline.
+// Returns nil if the baseline is unknown.
+func GetRegistry(pkg BaselinePackage) *BaselineFuncs {
+	return registry[pkg]
+}
+
 func extractMinor(version string) string {
-	parts := splitVersion(version)
+	parts := strings.Split(strings.ReplaceAll(version, "p", "."), ".")
 	if len(parts) >= 2 {
 		return parts[0] + "." + parts[1]
 	}
 	return ""
 }
 
-// splitVersion splits a version string into parts
-func splitVersion(version string) []string {
-	// Handle both "2.4.0p17" and "2.4.0.17" formats
-	version = strings.ReplaceAll(version, "p", ".")
-	return strings.Split(version, ".")
-}
+// Generic Schema Introspection
 
-// ValidHostTagAgentValues returns valid tag_agent values for the given baseline.
-func ValidHostTagAgentValues(pkg BaselinePackage) []string {
-	switch pkg {
-{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
-		return {{.Alias}}.ValidHostCreateAttributeTagAgentValues()
-{{end}}	}
+func GetAllSchemaNames(pkg BaselinePackage) []string {
+	if r := registry[pkg]; r != nil {
+		return r.AllSchemaNames
+	}
 	return nil
 }
 
-// HostCreateAttributeFieldNames returns valid host attribute field names for the given baseline.
-func HostCreateAttributeFieldNames(pkg BaselinePackage) []string {
-	switch pkg {
-{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
-		return {{.Alias}}.HostCreateAttributeFieldNames
-{{end}}	}
+func GetSchemaFieldNames(pkg BaselinePackage, schemaName string) []string {
+	if r := registry[pkg]; r != nil && r.GetSchemaFieldNames != nil {
+		return r.GetSchemaFieldNames(schemaName)
+	}
 	return nil
 }
 
-// FolderCreateAttributeFieldNames returns valid folder attribute field names for the given baseline.
-func FolderCreateAttributeFieldNames(pkg BaselinePackage) []string {
-	switch pkg {
-{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
-		return {{.Alias}}.FolderCreateAttributeFieldNames
-{{end}}	}
+func GetSchemaRequiredFieldNames(pkg BaselinePackage, schemaName string) []string {
+	if r := registry[pkg]; r != nil && r.GetSchemaRequiredFieldNames != nil {
+		return r.GetSchemaRequiredFieldNames(schemaName)
+	}
 	return nil
 }
 
-// GetFieldDescription returns the description for a field in a schema for the given baseline.
+func HasSchema(pkg BaselinePackage, schemaName string) bool {
+	if r := registry[pkg]; r != nil && r.HasSchema != nil {
+		return r.HasSchema(schemaName)
+	}
+	return false
+}
+
+// Field Metadata
+
 func GetFieldDescription(pkg BaselinePackage, schemaName, fieldName string) string {
-	switch pkg {
-{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
-		return {{.Alias}}.GetFieldDescription(schemaName, fieldName)
-{{end}}	}
+	if r := registry[pkg]; r != nil && r.GetFieldDescription != nil {
+		return r.GetFieldDescription(schemaName, fieldName)
+	}
 	return ""
 }
 
-// GetFieldType returns the OpenAPI type for a field in a schema for the given baseline.
 func GetFieldType(pkg BaselinePackage, schemaName, fieldName string) string {
-	switch pkg {
-{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
-		return {{.Alias}}.GetFieldType(schemaName, fieldName)
-{{end}}	}
+	if r := registry[pkg]; r != nil && r.GetFieldType != nil {
+		return r.GetFieldType(schemaName, fieldName)
+	}
 	return ""
 }
 
-// IsReadOnlyField checks if a field is read-only for a given schema and baseline.
 func IsReadOnlyField(pkg BaselinePackage, schemaName, fieldName string) bool {
-	switch pkg {
-{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
-		return {{.Alias}}.IsReadOnlyField(schemaName, fieldName)
-{{end}}	}
+	if r := registry[pkg]; r != nil && r.IsReadOnlyField != nil {
+		return r.IsReadOnlyField(schemaName, fieldName)
+	}
 	return false
 }
 
-// IsRequiredField checks if a field is required for a given schema and baseline.
 func IsRequiredField(pkg BaselinePackage, schemaName, fieldName string) bool {
-	switch pkg {
-{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
-		return {{.Alias}}.IsRequiredField(schemaName, fieldName)
-{{end}}	}
+	if r := registry[pkg]; r != nil && r.IsRequiredField != nil {
+		return r.IsRequiredField(schemaName, fieldName)
+	}
 	return false
 }
 
-// HostCreateAttributeCompareKeyFields returns compare key fields for HostCreateAttribute.
-func HostCreateAttributeCompareKeyFields(pkg BaselinePackage) []string {
-	switch pkg {
-{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
-		return {{.Alias}}.HostCreateAttributeCompareKeyFields
-{{end}}	}
-	return nil
-}
-
-// FolderCreateAttributeCompareKeyFields returns compare key fields for FolderCreateAttribute.
-func FolderCreateAttributeCompareKeyFields(pkg BaselinePackage) []string {
-	switch pkg {
-{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
-		return {{.Alias}}.FolderCreateAttributeCompareKeyFields
-{{end}}	}
-	return nil
-}
-
-// Request Builders
-
-// BuildCreateHostFromMap creates a typed CreateHost request from a map.
-func BuildCreateHostFromMap(pkg BaselinePackage, data map[string]interface{}) (interface{}, error) {
-	switch pkg {
-{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
-		return {{.Alias}}.BuildCreateHostFromMap(data)
-{{end}}	}
-	return nil, nil
-}
-
-// BuildCreateFolderFromMap creates a typed CreateFolder request from a map.
-func BuildCreateFolderFromMap(pkg BaselinePackage, data map[string]interface{}) (interface{}, error) {
-	switch pkg {
-{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
-		return {{.Alias}}.BuildCreateFolderFromMap(data)
-{{end}}	}
-	return nil, nil
-}
-
-// Response Parsers
-
-// ParseHostConfigFromMap parses a map into a typed HostConfig response.
-func ParseHostConfigFromMap(pkg BaselinePackage, data map[string]interface{}) (interface{}, error) {
-	switch pkg {
-{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
-		return {{.Alias}}.ParseHostConfigFromMap(data)
-{{end}}	}
-	return nil, nil
-}
-
-// ParseFolderFromMap parses a map into a typed Folder response.
-func ParseFolderFromMap(pkg BaselinePackage, data map[string]interface{}) (interface{}, error) {
-	switch pkg {
-{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
-		return {{.Alias}}.ParseFolderFromMap(data)
-{{end}}	}
-	return nil, nil
-}
-
-// Import State Mapping
-
-// ExtractHostConfigField extracts a Terraform field value from a HostConfig API response.
-func ExtractHostConfigField(pkg BaselinePackage, response map[string]interface{}, tfField string) interface{} {
-	switch pkg {
-{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
-		return {{.Alias}}.ExtractHostConfigField(response, tfField)
-{{end}}	}
-	return nil
-}
-
-// ExtractFolderField extracts a Terraform field value from a Folder API response.
-func ExtractFolderField(pkg BaselinePackage, response map[string]interface{}, tfField string) interface{} {
-	switch pkg {
-{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
-		return {{.Alias}}.ExtractFolderField(response, tfField)
-{{end}}	}
-	return nil
-}
-
-// HostConfigFieldMappings returns the field mappings for HostConfig.
-func HostConfigFieldMappings(pkg BaselinePackage) map[string][]string {
-	switch pkg {
-{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
-		return {{.Alias}}.HostConfigFieldMappings
-{{end}}	}
-	return nil
-}
-
-// FolderFieldMappings returns the field mappings for Folder.
-func FolderFieldMappings(pkg BaselinePackage) map[string][]string {
-	switch pkg {
-{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
-		return {{.Alias}}.FolderFieldMappings
-{{end}}	}
-	return nil
-}
-
-// Deprecation Warnings
-
-// IsDeprecatedField checks if a field is deprecated for a given schema and baseline.
 func IsDeprecatedField(pkg BaselinePackage, schemaName, fieldName string) bool {
-	switch pkg {
-{{range .BaselineImports}}	case Baseline{{.Alias | title}}:
-		return {{.Alias}}.IsDeprecatedField(schemaName, fieldName)
-{{end}}	}
+	if r := registry[pkg]; r != nil && r.IsDeprecatedField != nil {
+		return r.IsDeprecatedField(schemaName, fieldName)
+	}
 	return false
+}
+
+// Enum Validation
+
+func GetValidEnumValues(pkg BaselinePackage, schemaName, fieldName string) []string {
+	if r := registry[pkg]; r != nil && r.GetValidEnumValues != nil {
+		return r.GetValidEnumValues(schemaName, fieldName)
+	}
+	return nil
+}
+
+func HasEnumConstraint(pkg BaselinePackage, schemaName, fieldName string) bool {
+	if r := registry[pkg]; r != nil && r.HasEnumConstraint != nil {
+		return r.HasEnumConstraint(schemaName, fieldName)
+	}
+	return false
+}
+
+// Host-specific (backwards compatibility)
+
+func ValidHostTagAgentValues(pkg BaselinePackage) []string {
+	if r := registry[pkg]; r != nil && r.ValidHostCreateAttributeTagAgentValues != nil {
+		return r.ValidHostCreateAttributeTagAgentValues()
+	}
+	return nil
+}
+
+func HostCreateAttributeFieldNames(pkg BaselinePackage) []string {
+	if r := registry[pkg]; r != nil {
+		return r.HostCreateAttributeFieldNames
+	}
+	return nil
+}
+
+func HostCreateAttributeCompareKeyFields(pkg BaselinePackage) []string {
+	if r := registry[pkg]; r != nil {
+		return r.HostCreateAttributeCompareKeyFields
+	}
+	return nil
+}
+
+func HostConfigFieldMappings(pkg BaselinePackage) map[string][]string {
+	if r := registry[pkg]; r != nil {
+		return r.HostConfigFieldMappings
+	}
+	return nil
+}
+
+func ExtractHostConfigField(pkg BaselinePackage, response map[string]interface{}, tfField string) interface{} {
+	if r := registry[pkg]; r != nil && r.ExtractHostConfigField != nil {
+		return r.ExtractHostConfigField(response, tfField)
+	}
+	return nil
+}
+
+// Folder-specific (backwards compatibility)
+
+func FolderCreateAttributeFieldNames(pkg BaselinePackage) []string {
+	if r := registry[pkg]; r != nil {
+		return r.FolderCreateAttributeFieldNames
+	}
+	return nil
+}
+
+func FolderCreateAttributeCompareKeyFields(pkg BaselinePackage) []string {
+	if r := registry[pkg]; r != nil {
+		return r.FolderCreateAttributeCompareKeyFields
+	}
+	return nil
+}
+
+func FolderFieldMappings(pkg BaselinePackage) map[string][]string {
+	if r := registry[pkg]; r != nil {
+		return r.FolderFieldMappings
+	}
+	return nil
+}
+
+func ExtractFolderField(pkg BaselinePackage, response map[string]interface{}, tfField string) interface{} {
+	if r := registry[pkg]; r != nil && r.ExtractFolderField != nil {
+		return r.ExtractFolderField(response, tfField)
+	}
+	return nil
 }
 `))

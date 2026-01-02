@@ -44,7 +44,7 @@ version-types: build
 		-package types \
 		-module github.com/BlackMesaLTD/checkmk-api-spec/generated/go
 
-# Generate types for a specific version
+# Generate types for a specific version (generates ALL schemas)
 # Usage: make generate-version VERSION=2.4.0p17
 generate-version: build
 	@if [ -z "$(VERSION)" ]; then echo "Usage: make generate-version VERSION=2.4.0p17"; exit 1; fi
@@ -54,8 +54,7 @@ generate-version: build
 	./bin/openapi-gen \
 		-spec specs/$(MINOR)/$(PATCH).yaml \
 		-output generated/go/$(MINOR_DIR)/$(PATCH)/ \
-		-package $(PATCH) \
-		-resources host,folder,aux_tag
+		-package $(PATCH)
 	go fmt ./generated/go/...
 
 # Compare two specific versions
