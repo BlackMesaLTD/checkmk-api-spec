@@ -1,4 +1,4 @@
-.PHONY: all build clean generate help baselines sync sync-dry-run sync-bootstrap sync-cleanup
+.PHONY: all build clean generate help baselines sync sync-dry-run sync-bootstrap sync-cleanup union-descriptions
 
 # Default target
 all: build
@@ -13,6 +13,7 @@ build:
 	go build -o bin/schema-check ./cmd/schema-check
 	go build -o bin/testdata-gen ./cmd/testdata-gen
 	go build -o bin/spec-sync ./cmd/spec-sync
+	go build -o bin/description-union-gen ./cmd/description-union-gen
 	@echo "Done."
 
 # Sync specs from Docker Hub (check for new versions)
@@ -49,10 +50,11 @@ generate-version: build
 	@if [ -z "$(VERSION)" ]; then echo "Usage: make generate-version VERSION=2.4.0p17"; exit 1; fi
 	$(eval MINOR := $(shell echo $(VERSION) | sed 's/p.*//' ))
 	$(eval PATCH := $(shell echo $(VERSION) | sed 's/.*p/p/' ))
+	$(eval MINOR_DIR := v$(subst .,_,$(MINOR)))
 	./bin/openapi-gen \
 		-spec specs/$(MINOR)/$(PATCH).yaml \
-		-output generated/go/v$(subst .,_,$(VERSION))/ \
-		-package v$(subst .,_,$(VERSION)) \
+		-output generated/go/$(MINOR_DIR)/$(PATCH)/ \
+		-package $(PATCH) \
 		-resources host,folder,aux_tag
 	go fmt ./generated/go/...
 
@@ -95,6 +97,13 @@ clean:
 clean-generated:
 	rm -rf generated/go/
 
+# Generate union descriptions from all baselines
+union-descriptions: build
+	./bin/description-union-gen \
+		-manifest manifest.json \
+		-output generated/go/union \
+		-generated generated/go
+
 # Full pipeline: sync specs, cleanup, generate types
 full-pipeline: build
 	@echo "=== Full Pipeline ==="
@@ -126,6 +135,7 @@ help:
 	@echo "  Generate types:"
 	@echo "    make baselines          - Generate types for all baselines"
 	@echo "    make version-types      - Generate version_types.go mapping"
+	@echo "    make union-descriptions - Generate merged field descriptions"
 	@echo "    make generate-version VERSION=x  - Generate for specific version"
 	@echo ""
 	@echo "  Utilities:"

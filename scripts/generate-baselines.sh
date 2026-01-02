@@ -82,12 +82,13 @@ echo "=================================================="
 BASELINES=$(jq -r '.baselines[]' "$MANIFEST_FILE")
 
 for baseline in $BASELINES; do
-    pkg="v$(echo "$baseline" | tr '.' '_' | tr '-' '_')"
-    # Convert version to spec path: 2.4.0p17 -> specs/2.4.0/p17.yaml
-    minor="${baseline%p*}"
-    patch="${baseline#*p}"
+    # Convert version to hierarchical path: 2.4.0p17 -> v2_4_0/p17
+    minor="${baseline%p*}"        # e.g., 2.4.0
+    patch="${baseline#*p}"        # e.g., 17
+    minor_dir="v$(echo "$minor" | tr '.' '_')"  # e.g., v2_4_0
+    pkg="p$patch"                 # e.g., p17
     spec_file="$SPECS_DIR/$minor/p$patch.yaml"
-    output_dir="$GENERATED_DIR/$pkg"
+    output_dir="$GENERATED_DIR/$minor_dir/$pkg"
 
     if [ ! -f "$spec_file" ]; then
         echo "Warning: Spec not found for $baseline at $spec_file, skipping"
@@ -95,7 +96,7 @@ for baseline in $BASELINES; do
     fi
 
     echo ""
-    echo "Generating types for $baseline -> $pkg"
+    echo "Generating types for $baseline -> $minor_dir/$pkg"
 
     # Create output directory
     mkdir -p "$output_dir"
@@ -129,8 +130,10 @@ echo "=================================================="
 echo "Manifest file: $MANIFEST_FILE"
 echo "Generated packages:"
 for baseline in $BASELINES; do
-    pkg="v$(echo "$baseline" | tr '.' '_' | tr '-' '_')"
-    echo "  - $GENERATED_DIR/$pkg"
+    minor="${baseline%p*}"
+    patch="${baseline#*p}"
+    minor_dir="v$(echo "$minor" | tr '.' '_')"
+    echo "  - $GENERATED_DIR/$minor_dir/p$patch"
 done
 echo "Version mapping: $GENERATED_DIR/version_types.go"
 echo ""

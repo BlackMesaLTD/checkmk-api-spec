@@ -12,23 +12,23 @@ func TestLookupBaseline(t *testing.T) {
 		expected BaselinePackage
 	}{
 		// Exact matches
-		{"exact 2.2.0p1", "2.2.0p1", BaselineV2_2_0p1},
-		{"exact 2.3.0p41", "2.3.0p41", BaselineV2_3_0p41},
-		{"exact 2.4.0p17", "2.4.0p17", BaselineV2_4_0p17},
+		{"exact 2.2.0p1", "2.2.0p1", BaselineV2_2_p1},
+		{"exact 2.3.0p41", "2.3.0p41", BaselineV2_3_p41},
+		{"exact 2.4.0p17", "2.4.0p17", BaselineV2_4_p17},
 
 		// Versions that should map to a baseline (direct map entries)
-		{"2.2.0p2 maps to p1", "2.2.0p2", BaselineV2_2_0p1},
-		{"2.2.0p42 maps to p33", "2.2.0p42", BaselineV2_2_0p33},
-		{"2.3.0p2 maps to p1", "2.3.0p2", BaselineV2_3_0p1},
-		{"2.4.0p5 maps to p1", "2.4.0p5", BaselineV2_4_0p1},
+		{"2.2.0p2 maps to p1", "2.2.0p2", BaselineV2_2_p1},
+		{"2.2.0p42 maps to p33", "2.2.0p42", BaselineV2_2_p33},
+		{"2.3.0p2 maps to p1", "2.3.0p2", BaselineV2_3_p1},
+		{"2.4.0p5 maps to p1", "2.4.0p5", BaselineV2_4_p1},
 
 		// Versions NOT in map fall back to latest for minor version
-		{"2.2.0p10 not in map, falls back to latest", "2.2.0p10", BaselineV2_2_0p44},
+		{"2.2.0p10 not in map, falls back to latest", "2.2.0p10", BaselineV2_2_p44},
 
 		// Latest versions in each major
-		{"2.2.0p45", "2.2.0p45", BaselineV2_2_0p44},
-		{"2.3.0p42", "2.3.0p42", BaselineV2_3_0p41},
-		{"2.4.0p20", "2.4.0p20", BaselineV2_4_0p18},
+		{"2.2.0p45", "2.2.0p45", BaselineV2_2_p44},
+		{"2.3.0p42", "2.3.0p42", BaselineV2_3_p41},
+		{"2.4.0p20", "2.4.0p20", BaselineV2_4_p18},
 
 		// Unknown versions should return empty
 		{"unknown 1.0.0", "1.0.0", ""},
@@ -56,19 +56,19 @@ func TestValidHostTagAgentValues(t *testing.T) {
 	}{
 		{
 			name:           "2.2.0p43 has expected values",
-			baseline:       BaselineV2_2_0p43,
+			baseline:       BaselineV2_2_p43,
 			expectContains: []string{"cmk-agent", "no-agent"},
 			expectNotEmpty: true,
 		},
 		{
 			name:           "2.3.0p41 has expected values",
-			baseline:       BaselineV2_3_0p41,
+			baseline:       BaselineV2_3_p41,
 			expectContains: []string{"cmk-agent", "no-agent", "all-agents", "special-agents"},
 			expectNotEmpty: true,
 		},
 		{
 			name:           "2.4.0p17 has expected values",
-			baseline:       BaselineV2_4_0p17,
+			baseline:       BaselineV2_4_p17,
 			expectContains: []string{"cmk-agent", "no-agent", "all-agents", "special-agents"},
 			expectNotEmpty: true,
 		},
@@ -114,19 +114,19 @@ func TestHostCreateAttributeFieldNames(t *testing.T) {
 	}{
 		{
 			name:           "2.2.0p43 has expected fields",
-			baseline:       BaselineV2_2_0p43,
+			baseline:       BaselineV2_2_p43,
 			expectContains: []string{"alias", "ipaddress", "site", "tag_agent"},
 			expectNotEmpty: true,
 		},
 		{
 			name:           "2.3.0p41 has expected fields",
-			baseline:       BaselineV2_3_0p41,
+			baseline:       BaselineV2_3_p41,
 			expectContains: []string{"alias", "ipaddress", "site", "tag_agent", "labels"},
 			expectNotEmpty: true,
 		},
 		{
 			name:           "2.4.0p17 has expected fields",
-			baseline:       BaselineV2_4_0p17,
+			baseline:       BaselineV2_4_p17,
 			expectContains: []string{"alias", "ipaddress", "site", "tag_agent", "labels"},
 			expectNotEmpty: true,
 		},
@@ -167,19 +167,19 @@ func TestFolderCreateAttributeFieldNames(t *testing.T) {
 	}{
 		{
 			name:           "2.2.0p43 has expected fields",
-			baseline:       BaselineV2_2_0p43,
+			baseline:       BaselineV2_2_p43,
 			expectContains: []string{"tag_agent", "tag_criticality"},
 			expectNotEmpty: true,
 		},
 		{
 			name:           "2.3.0p41 has expected fields",
-			baseline:       BaselineV2_3_0p41,
+			baseline:       BaselineV2_3_p41,
 			expectContains: []string{"tag_agent", "tag_criticality"},
 			expectNotEmpty: true,
 		},
 		{
 			name:           "2.4.0p17 has expected fields",
-			baseline:       BaselineV2_4_0p17,
+			baseline:       BaselineV2_4_p17,
 			expectContains: []string{"tag_agent", "tag_criticality"},
 			expectNotEmpty: true,
 		},
@@ -214,18 +214,18 @@ func TestFolderCreateAttributeFieldNames(t *testing.T) {
 func TestAllBaselinesReturnValues(t *testing.T) {
 	// Test that every defined baseline returns non-nil values
 	baselines := []BaselinePackage{
-		BaselineV2_2_0p1, BaselineV2_2_0p3, BaselineV2_2_0p4, BaselineV2_2_0p5,
-		BaselineV2_2_0p8, BaselineV2_2_0p9, BaselineV2_2_0p11, BaselineV2_2_0p12,
-		BaselineV2_2_0p14, BaselineV2_2_0p18, BaselineV2_2_0p21, BaselineV2_2_0p22,
-		BaselineV2_2_0p23, BaselineV2_2_0p26, BaselineV2_2_0p32, BaselineV2_2_0p33,
-		BaselineV2_2_0p43, BaselineV2_2_0p44,
-		BaselineV2_3_0p1, BaselineV2_3_0p3, BaselineV2_3_0p5, BaselineV2_3_0p7,
-		BaselineV2_3_0p11, BaselineV2_3_0p14, BaselineV2_3_0p22, BaselineV2_3_0p23,
-		BaselineV2_3_0p26, BaselineV2_3_0p27, BaselineV2_3_0p31, BaselineV2_3_0p33,
-		BaselineV2_3_0p36, BaselineV2_3_0p37, BaselineV2_3_0p39, BaselineV2_3_0p40,
-		BaselineV2_3_0p41,
-		BaselineV2_4_0p1, BaselineV2_4_0p6, BaselineV2_4_0p11, BaselineV2_4_0p14,
-		BaselineV2_4_0p16, BaselineV2_4_0p17, BaselineV2_4_0p18,
+		BaselineV2_2_p1, BaselineV2_2_p3, BaselineV2_2_p4, BaselineV2_2_p5,
+		BaselineV2_2_p8, BaselineV2_2_p9, BaselineV2_2_p11, BaselineV2_2_p12,
+		BaselineV2_2_p14, BaselineV2_2_p18, BaselineV2_2_p21, BaselineV2_2_p22,
+		BaselineV2_2_p23, BaselineV2_2_p26, BaselineV2_2_p32, BaselineV2_2_p33,
+		BaselineV2_2_p43, BaselineV2_2_p44,
+		BaselineV2_3_p1, BaselineV2_3_p3, BaselineV2_3_p5, BaselineV2_3_p7,
+		BaselineV2_3_p11, BaselineV2_3_p14, BaselineV2_3_p22, BaselineV2_3_p23,
+		BaselineV2_3_p26, BaselineV2_3_p27, BaselineV2_3_p31, BaselineV2_3_p33,
+		BaselineV2_3_p36, BaselineV2_3_p37, BaselineV2_3_p39, BaselineV2_3_p40,
+		BaselineV2_3_p41,
+		BaselineV2_4_p1, BaselineV2_4_p6, BaselineV2_4_p11, BaselineV2_4_p14,
+		BaselineV2_4_p16, BaselineV2_4_p17, BaselineV2_4_p18,
 	}
 
 	for _, baseline := range baselines {

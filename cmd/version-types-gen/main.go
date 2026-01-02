@@ -31,9 +31,11 @@ type BaselinesInput struct {
 
 // BaselineInfo describes how a version maps to a baseline
 type BaselineInfo struct {
-	Baseline   string `json:"baseline"`
-	Package    string `json:"package"`
-	IsBaseline bool   `json:"is_baseline"`
+	Baseline    string `json:"baseline"`
+	Package     string `json:"package"`       // Go package name (e.g., "p43")
+	Path        string `json:"path"`          // Import path suffix (e.g., "v2_2_0/p43")
+	ImportAlias string `json:"import_alias"`  // Import alias (e.g., "v2_2_p43")
+	IsBaseline  bool   `json:"is_baseline"`
 }
 
 // TemplateData is passed to the code template
@@ -121,12 +123,22 @@ func generateCode(baselines *BaselinesInput, packageName, modulePath string) ([]
 	seen := make(map[string]bool)
 	for _, baseline := range baselines.Baselines {
 		info := baselines.Mapping[baseline]
-		if !seen[info.Package] {
+		// Determine import path and alias
+		importPath := info.Path
+		importAlias := info.ImportAlias
+		// Fallback for backwards compatibility with old manifest format
+		if importPath == "" {
+			importPath = info.Package
+		}
+		if importAlias == "" {
+			importAlias = info.Package
+		}
+		if !seen[importPath] {
 			tmplData.BaselineImports = append(tmplData.BaselineImports, BaselineImport{
-				Alias:   info.Package,
-				Package: modulePath + "/" + info.Package,
+				Alias:   importAlias,
+				Package: modulePath + "/" + importPath,
 			})
-			seen[info.Package] = true
+			seen[importPath] = true
 		}
 	}
 
@@ -141,10 +153,15 @@ func generateCode(baselines *BaselinesInput, packageName, modulePath string) ([]
 
 	for _, v := range versions {
 		info := baselines.Mapping[v]
+		// Use ImportAlias for package references, fallback to Package for backwards compatibility
+		pkgRef := info.ImportAlias
+		if pkgRef == "" {
+			pkgRef = info.Package
+		}
 		tmplData.VersionMapping = append(tmplData.VersionMapping, VersionMapEntry{
 			Version:  v,
 			Baseline: info.Baseline,
-			Package:  info.Package,
+			Package:  pkgRef,
 		})
 	}
 
@@ -167,10 +184,15 @@ func generateCode(baselines *BaselinesInput, packageName, modulePath string) ([]
 	for _, minor := range minors {
 		baseline := minorLatest[minor]
 		info := baselines.Mapping[baseline]
+		// Use ImportAlias for package references, fallback to Package for backwards compatibility
+		pkgRef := info.ImportAlias
+		if pkgRef == "" {
+			pkgRef = info.Package
+		}
 		tmplData.MinorBaselines = append(tmplData.MinorBaselines, MinorBaselineEntry{
 			Minor:    minor,
 			Baseline: baseline,
-			Package:  info.Package,
+			Package:  pkgRef,
 		})
 	}
 
