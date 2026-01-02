@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckMK REST API Documentation</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        h1 { color: #1a1a1a; margin-bottom: 0.5rem; }
+        .subtitle { color: #666; margin-bottom: 2rem; }
+        .version-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+        .version-card {
+            background: white;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            padding: 1.25rem;
+            transition: all 0.2s;
+        }
+        .version-card:hover {
+            border-color: #0366d6;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        .version-card h3 { margin: 0 0 0.5rem; }
+        .version-card a {
+            color: #0366d6;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .version-card a:hover { text-decoration: underline; }
+        .version-card .stats { color: #666; font-size: 0.9rem; }
+        .minor-section { margin-bottom: 2.5rem; }
+        .minor-section h2 {
+            color: #333;
+            border-bottom: 2px solid #0366d6;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CheckMK REST API</h1>
+        <p class="subtitle">Select a version to view the interactive API documentation.</p>
+
+        <div id="versions"></div>
+    </div>
+
+    <script>
+        fetch('versions.json')
+            .then(r => r.json())
+            .then(versions => {
+                // Group by minor version
+                const grouped = {};
+                versions.forEach(v => {
+                    if (!grouped[v.Minor]) grouped[v.Minor] = [];
+                    grouped[v.Minor].push(v);
+                });
+
+                const container = document.getElementById('versions');
+
+                // Sort minor versions descending
+                Object.keys(grouped).sort().reverse().forEach(minor => {
+                    const section = document.createElement('div');
+                    section.className = 'minor-section';
+                    section.innerHTML = '<h2>CheckMK ' + minor + '.x</h2>';
+
+                    const grid = document.createElement('div');
+                    grid.className = 'version-grid';
+
+                    // Sort versions descending within minor
+                    grouped[minor].sort((a, b) => b.Version.localeCompare(a.Version)).forEach(v => {
+                        const path = v.Version.replace(/\./g, '_');
+                        grid.innerHTML +=
+                            '<div class="version-card">' +
+                                '<h3><a href="' + path + '/">' + v.Version + '</a></h3>' +
+                                '<p class="stats">' + v.EndpointCount + ' endpoints, ' + v.SchemaCount + ' schemas</p>' +
+                            '</div>';
+                    });
+
+                    section.appendChild(grid);
+                    container.appendChild(section);
+                });
+            });
+    </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-.PHONY: all build clean generate help baselines sync sync-dry-run sync-bootstrap sync-cleanup union-descriptions
+.PHONY: all build clean generate help baselines sync sync-dry-run sync-bootstrap sync-cleanup union-descriptions docs docs-markdown docs-redoc clean-docs
 
 # Default target
 all: build
@@ -9,6 +9,7 @@ build:
 	go build -o bin/openapi-gen ./cmd/openapi-gen
 	go build -o bin/openapi-filter ./cmd/openapi-filter
 	go build -o bin/openapi-diff ./cmd/openapi-diff
+	go build -o bin/openapi-docs-gen ./cmd/openapi-docs-gen
 	go build -o bin/version-types-gen ./cmd/version-types-gen
 	go build -o bin/schema-check ./cmd/schema-check
 	go build -o bin/testdata-gen ./cmd/testdata-gen
@@ -117,6 +118,51 @@ full-pipeline: build
 	@echo ""
 	@echo "Pipeline complete!"
 
+# === Documentation Generation ===
+
+# Generate all documentation (markdown + ReDoc HTML)
+docs: build
+	@echo "Generating documentation..."
+	./bin/openapi-docs-gen \
+		-manifest manifest.json \
+		-docs-output docs \
+		-redoc-output public \
+		-specs-dir specs \
+		-format all
+	@echo "Documentation generated in docs/ and public/"
+
+# Generate markdown documentation only
+docs-markdown: build
+	./bin/openapi-docs-gen \
+		-manifest manifest.json \
+		-docs-output docs \
+		-specs-dir specs \
+		-format markdown
+
+# Generate ReDoc HTML only
+docs-redoc: build
+	./bin/openapi-docs-gen \
+		-manifest manifest.json \
+		-redoc-output public \
+		-specs-dir specs \
+		-format redoc
+
+# Generate docs for a single version
+# Usage: make docs-version VERSION=2.4.0p17
+docs-version: build
+	@if [ -z "$(VERSION)" ]; then echo "Usage: make docs-version VERSION=2.4.0p17"; exit 1; fi
+	$(eval MINOR := $(shell echo $(VERSION) | sed 's/p.*//' ))
+	$(eval PATCH := $(shell echo $(VERSION) | sed 's/.*p/p/' ))
+	./bin/openapi-docs-gen \
+		-spec specs/$(MINOR)/$(PATCH).yaml \
+		-output docs/v$(subst .,_,$(MINOR))/$(PATCH) \
+		-format markdown
+
+# Clean generated documentation
+clean-docs:
+	rm -rf docs/
+	rm -rf public/
+
 # Help
 help:
 	@echo "CheckMK API Spec - Makefile targets:"
@@ -136,6 +182,13 @@ help:
 	@echo "    make version-types      - Generate version_types.go mapping"
 	@echo "    make union-descriptions - Generate merged field descriptions"
 	@echo "    make generate-version VERSION=x  - Generate for specific version"
+	@echo ""
+	@echo "  Documentation:"
+	@echo "    make docs               - Generate all docs (markdown + ReDoc)"
+	@echo "    make docs-markdown      - Generate markdown docs only"
+	@echo "    make docs-redoc         - Generate ReDoc HTML only"
+	@echo "    make docs-version VERSION=x  - Generate docs for specific version"
+	@echo "    make clean-docs         - Remove generated documentation"
 	@echo ""
 	@echo "  Utilities:"
 	@echo "    make diff OLD=x NEW=y   - Compare two versions"
