@@ -1,4 +1,4 @@
-.PHONY: all build clean generate help baselines sync sync-dry-run sync-bootstrap sync-cleanup union-descriptions docs docs-markdown docs-redoc clean-docs
+.PHONY: all build clean generate help baselines sync sync-dry-run sync-bootstrap sync-cleanup union-descriptions docs clean-docs
 
 # Default target
 all: build
@@ -75,6 +75,13 @@ diff: build
 		-new specs/$(NEW_MINOR)/$(NEW_PATCH).yaml \
 		-output diffs/$(OLD)-to-$(NEW).json
 
+# Generate diffs for all consecutive baselines
+diffs-all: build
+	@echo "Generating diffs for all consecutive baselines..."
+	@mkdir -p diffs
+	./scripts/generate-all-diffs.sh
+	@echo "Diffs generated in diffs/"
+
 # Check schema completeness for a version
 # Usage: make check VERSION=2.4.0p17
 check: build
@@ -120,32 +127,15 @@ full-pipeline: build
 
 # === Documentation Generation ===
 
-# Generate all documentation (markdown + ReDoc HTML)
+# Generate markdown documentation for GitHub browsing
 docs: build
-	@echo "Generating documentation..."
-	./bin/openapi-docs-gen \
-		-manifest manifest.json \
-		-docs-output docs \
-		-redoc-output public \
-		-specs-dir specs \
-		-format all
-	@echo "Documentation generated in docs/ and public/"
-
-# Generate markdown documentation only
-docs-markdown: build
+	@echo "Generating markdown documentation..."
 	./bin/openapi-docs-gen \
 		-manifest manifest.json \
 		-docs-output docs \
 		-specs-dir specs \
 		-format markdown
-
-# Generate ReDoc HTML only
-docs-redoc: build
-	./bin/openapi-docs-gen \
-		-manifest manifest.json \
-		-redoc-output public \
-		-specs-dir specs \
-		-format redoc
+	@echo "Documentation generated in docs/"
 
 # Generate docs for a single version
 # Usage: make docs-version VERSION=2.4.0p17
@@ -161,7 +151,6 @@ docs-version: build
 # Clean generated documentation
 clean-docs:
 	rm -rf docs/
-	rm -rf public/
 
 # Help
 help:
@@ -184,9 +173,7 @@ help:
 	@echo "    make generate-version VERSION=x  - Generate for specific version"
 	@echo ""
 	@echo "  Documentation:"
-	@echo "    make docs               - Generate all docs (markdown + ReDoc)"
-	@echo "    make docs-markdown      - Generate markdown docs only"
-	@echo "    make docs-redoc         - Generate ReDoc HTML only"
+	@echo "    make docs               - Generate markdown docs for GitHub"
 	@echo "    make docs-version VERSION=x  - Generate docs for specific version"
 	@echo "    make clean-docs         - Remove generated documentation"
 	@echo ""
