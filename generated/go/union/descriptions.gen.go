@@ -2086,7 +2086,7 @@ var UnionDescriptions = map[string]map[string]UnionField{
 	},
 	"AsciiMailPluginCreate": {
 		"plugin_name": {
-			Description: "The plug-in name.",
+			Description: "The ASCII Mail plug-in.",
 			Type:        "string",
 			MinVersion:  "2.2",
 			MaxVersion:  "",
@@ -4652,7 +4652,7 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "",
 		},
 		"plugin_name": {
-			Description: "The plug-in name.",
+			Description: "The Cisco plug-in.",
 			Type:        "string",
 			MinVersion:  "2.2",
 			MaxVersion:  "",
@@ -5598,6 +5598,14 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			Type:        "string",
 			MinVersion:  "2.2",
 			MaxVersion:  "2.2",
+		},
+	},
+	"ContactSelection": {
+		"explicit_email_addresses": {
+			Description: "Send notifications to the following explicit email addresses (non-CSE editions only).",
+			Type:        "",
+			MinVersion:  "2.4",
+			MaxVersion:  "",
 		},
 	},
 	"CreateClusterHost": {
@@ -8242,7 +8250,7 @@ var UnionDescriptions = map[string]map[string]UnionField{
 	},
 	"HTMLMailPluginCreate": {
 		"plugin_name": {
-			Description: "The plug-in name.",
+			Description: "The HTML mail plug-in.",
 			Type:        "string",
 			MinVersion:  "2.2",
 			MaxVersion:  "",
@@ -9590,7 +9598,7 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "",
 		},
 		"plugin_name": {
-			Description: "The plug-in name.",
+			Description: "The Ilert plug-in.",
 			Type:        "string",
 			MinVersion:  "2.2",
 			MaxVersion:  "",
@@ -9978,7 +9986,7 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "2.3",
 		},
 		"plugin_name": {
-			Description: "The plug-in name.",
+			Description: "The Jira plug-in.",
 			Type:        "string",
 			MinVersion:  "2.2",
 			MaxVersion:  "",
@@ -10710,7 +10718,15 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "",
 		},
 	},
-	"LDAPGroupsToRolesRequestWithCustomRoles": {
+	"LDAPGroupsToRoles": {
+		"handle_nested": {
+			Description: "Once you enable this option, this plug-in will not only handle direct group memberships, instead it will also dig into nested groups and treat the members of those groups as contact group members as well. Please bear in mind that this feature might increase the execution time of your LDAP sync",
+			Type:        "boolean",
+			MinVersion:  "2.4",
+			MaxVersion:  "",
+		},
+	},
+	"LDAPGroupsToRolesRequest": {
 		"handle_nested": {
 			Description: "Once you enable this option, this plug-in will not only handle direct group memberships, instead it will also dig into nested groups and treat the members of those groups as contact group members as well. Please bear in mind that this feature might increase the execution time of your LDAP sync",
 			Type:        "boolean",
@@ -10724,12 +10740,26 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "",
 		},
 	},
+	"LDAPGroupsToRolesRequestWithCustomRoles": {
+		"handle_nested": {
+			Description: "Once you enable this option, this plug-in will not only handle direct group memberships, instead it will also dig into nested groups and treat the members of those groups as contact group members as well. Please bear in mind that this feature might increase the execution time of your LDAP sync",
+			Type:        "boolean",
+			MinVersion:  "2.4",
+			MaxVersion:  "2.4",
+		},
+		"state": {
+			Description: "This config parameter is enabled.",
+			Type:        "",
+			MinVersion:  "2.4",
+			MaxVersion:  "2.4",
+		},
+	},
 	"LDAPGroupsToRolesWithCustomRoles": {
 		"handle_nested": {
 			Description: "Once you enable this option, this plug-in will not only handle direct group memberships, instead it will also dig into nested groups and treat the members of those groups as contact group members as well. Please bear in mind that this feature might increase the execution time of your LDAP sync",
 			Type:        "boolean",
 			MinVersion:  "2.4",
-			MaxVersion:  "",
+			MaxVersion:  "2.4",
 		},
 	},
 	"LDAPGroupsToSyncDisableNotifications": {
@@ -11722,7 +11752,7 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "",
 		},
 		"plugin_name": {
-			Description: "The plug-in name.",
+			Description: "The MicrosoftTeams plug-in.",
 			Type:        "string",
 			MinVersion:  "2.2",
 			MaxVersion:  "",
@@ -11880,7 +11910,7 @@ var UnionDescriptions = map[string]map[string]UnionField{
 	},
 	"MkEventDPluginCreate": {
 		"plugin_name": {
-			Description: "The plug-in name.",
+			Description: "The MkEventd plug-in.",
 			Type:        "string",
 			MinVersion:  "2.2",
 			MaxVersion:  "",
@@ -12558,7 +12588,7 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "",
 		},
 		"plugin_name": {
-			Description: "The plug-in name.",
+			Description: "The OpsGenie plug-in.",
 			Type:        "string",
 			MinVersion:  "2.2",
 			MaxVersion:  "",
@@ -12620,7 +12650,7 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "",
 		},
 		"plugin_name": {
-			Description: "The plug-in name.",
+			Description: "The PagerDuty plug-in.",
 			Type:        "string",
 			MinVersion:  "2.2",
 			MaxVersion:  "",
@@ -13316,7 +13346,7 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "",
 		},
 		"plugin_name": {
-			Description: "The plug-in name.",
+			Description: "The Pushover plug-in.",
 			Type:        "string",
 			MinVersion:  "2.2",
 			MaxVersion:  "",
@@ -14354,7 +14384,7 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "",
 		},
 		"plugin_name": {
-			Description: "The plug-in name.",
+			Description: "The SMS API plug-in.",
 			Type:        "string",
 			MinVersion:  "2.2",
 			MaxVersion:  "",
@@ -14380,7 +14410,7 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "",
 		},
 		"plugin_name": {
-			Description: "The plug-in name.",
+			Description: "The SMS plug-in.",
 			Type:        "string",
 			MinVersion:  "2.2",
 			MaxVersion:  "",
@@ -14786,7 +14816,7 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "",
 		},
 		"plugin_name": {
-			Description: "The plug-in name.",
+			Description: "The ServiceNow plug-in.",
 			Type:        "string",
 			MinVersion:  "2.2",
 			MaxVersion:  "",
@@ -15004,7 +15034,7 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "",
 		},
 		"plugin_name": {
-			Description: "The plug-in name.",
+			Description: "The Signl4 plug-in.",
 			Type:        "string",
 			MinVersion:  "2.2",
 			MaxVersion:  "",
@@ -15168,7 +15198,7 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "",
 		},
 		"plugin_name": {
-			Description: "The plug-in name.",
+			Description: "The Slack plug-in.",
 			Type:        "string",
 			MinVersion:  "2.2",
 			MaxVersion:  "",
@@ -15380,7 +15410,7 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "",
 		},
 		"plugin_name": {
-			Description: "The plug-in name.",
+			Description: "The Spectrum plug-in.",
 			Type:        "string",
 			MinVersion:  "2.2",
 			MaxVersion:  "",
@@ -17180,7 +17210,7 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "",
 		},
 		"plugin_name": {
-			Description: "The plug-in name.",
+			Description: "The Victorops plug-in.",
 			Type:        "string",
 			MinVersion:  "2.2",
 			MaxVersion:  "",
