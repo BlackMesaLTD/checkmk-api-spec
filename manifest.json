@@ -212,7 +212,10 @@
     "2.4.0p23": {"spec":"2.4.0/p20.yaml","baseline":"2.4.0p20","package":"p20","is_baseline":false,"max_severity":"none","path":"v2_4_0/p20","import_alias":"v2_4_0_p20"},
     "2.4.0p24": {"spec":"2.4.0/p20.yaml","baseline":"2.4.0p20","package":"p20","is_baseline":false,"max_severity":"none","path":"v2_4_0/p20","import_alias":"v2_4_0_p20"},
     "2.4.0p25": {"spec":"2.4.0/p20.yaml","baseline":"2.4.0p20","package":"p20","is_baseline":false,"max_severity":"none","path":"v2_4_0/p20","import_alias":"v2_4_0_p20"},
-    "2.4.0p26": {"spec":"2.4.0/p26.yaml","baseline":"2.4.0p26","package":"p26","is_baseline":true,"max_severity":"breaking","path":"v2_4_0/p26","import_alias":"v2_4_0_p26"}
+    "2.4.0p26": {"spec":"2.4.0/p26.yaml","baseline":"2.4.0p26","package":"p26","is_baseline":true,"max_severity":"breaking","path":"v2_4_0/p26","import_alias":"v2_4_0_p26"},
+    "2.4.0p27": {"spec":"2.4.0/p26.yaml","baseline":"2.4.0p26","package":"p26","is_baseline":false,"max_severity":"none","path":"v2_4_0/p26","import_alias":"v2_4_0_p26"},
+    "2.4.0p28": {"spec":"2.4.0/p26.yaml","baseline":"2.4.0p26","package":"p26","is_baseline":false,"max_severity":"none","path":"v2_4_0/p26","import_alias":"v2_4_0_p26"},
+    "2.4.0p29": {"spec":"2.4.0/p26.yaml","baseline":"2.4.0p26","package":"p26","is_baseline":false,"max_severity":"none","path":"v2_4_0/p26","import_alias":"v2_4_0_p26"}
   },
-  "last_checked": "2026-04-20T09:23:53Z"
+  "last_checked": "2026-05-18T09:55:50Z"
 }
