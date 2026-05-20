@@ -2459,6 +2459,9 @@ var VersionToBaseline = map[string]BaselinePackage{
 	"2.4.0p24": BaselineV2_4_0_p20,
 	"2.4.0p25": BaselineV2_4_0_p20,
 	"2.4.0p26": BaselineV2_4_0_p26,
+	"2.4.0p27": BaselineV2_4_0_p26,
+	"2.4.0p28": BaselineV2_4_0_p26,
+	"2.4.0p29": BaselineV2_4_0_p26,
 }
 
 // MinorToLatestBaseline maps minor versions to their latest baseline.
