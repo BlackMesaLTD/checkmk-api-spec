@@ -98,6 +98,8 @@ import (
 	v2_4_0_p20 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p20"
 	v2_4_0_p26 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p26"
 	v2_4_0_p3 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p3"
+	v2_4_0_p30 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p30"
+	v2_4_0_p32 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p32"
 	v2_4_0_p4 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p4"
 	v2_4_0_p5 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p5"
 	v2_4_0_p6 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_4_0/p6"
@@ -206,6 +208,8 @@ const (
 	BaselineV2_4_0_p19 BaselinePackage = "v2_4_0_p19"
 	BaselineV2_4_0_p20 BaselinePackage = "v2_4_0_p20"
 	BaselineV2_4_0_p26 BaselinePackage = "v2_4_0_p26"
+	BaselineV2_4_0_p30 BaselinePackage = "v2_4_0_p30"
+	BaselineV2_4_0_p32 BaselinePackage = "v2_4_0_p32"
 )
 
 // BaselineFuncs contains all function references for a baseline package.
@@ -2338,6 +2342,50 @@ var registry = map[BaselinePackage]*BaselineFuncs{
 		FolderFieldMappings:                    v2_4_0_p26.FolderFieldMappings,
 		ExtractFolderField:                     v2_4_0_p26.ExtractFolderField,
 	},
+	BaselineV2_4_0_p30: {
+		AllSchemaNames:                         v2_4_0_p30.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_4_0_p30.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_4_0_p30.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_4_0_p30.HasSchema,
+		GetFieldDescription:                    v2_4_0_p30.GetFieldDescription,
+		GetFieldType:                           v2_4_0_p30.GetFieldType,
+		IsReadOnlyField:                        v2_4_0_p30.IsReadOnlyField,
+		IsRequiredField:                        v2_4_0_p30.IsRequiredField,
+		IsDeprecatedField:                      v2_4_0_p30.IsDeprecatedField,
+		GetValidEnumValues:                     v2_4_0_p30.GetValidEnumValues,
+		HasEnumConstraint:                      v2_4_0_p30.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_4_0_p30.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_4_0_p30.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_4_0_p30.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_4_0_p30.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_4_0_p30.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_4_0_p30.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_4_0_p30.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_4_0_p30.FolderFieldMappings,
+		ExtractFolderField:                     v2_4_0_p30.ExtractFolderField,
+	},
+	BaselineV2_4_0_p32: {
+		AllSchemaNames:                         v2_4_0_p32.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_4_0_p32.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_4_0_p32.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_4_0_p32.HasSchema,
+		GetFieldDescription:                    v2_4_0_p32.GetFieldDescription,
+		GetFieldType:                           v2_4_0_p32.GetFieldType,
+		IsReadOnlyField:                        v2_4_0_p32.IsReadOnlyField,
+		IsRequiredField:                        v2_4_0_p32.IsRequiredField,
+		IsDeprecatedField:                      v2_4_0_p32.IsDeprecatedField,
+		GetValidEnumValues:                     v2_4_0_p32.GetValidEnumValues,
+		HasEnumConstraint:                      v2_4_0_p32.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_4_0_p32.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_4_0_p32.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_4_0_p32.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_4_0_p32.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_4_0_p32.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_4_0_p32.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_4_0_p32.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_4_0_p32.FolderFieldMappings,
+		ExtractFolderField:                     v2_4_0_p32.ExtractFolderField,
+	},
 }
 
 // VersionToBaseline maps CheckMK versions to their baseline package.
@@ -2433,6 +2481,8 @@ var VersionToBaseline = map[string]BaselinePackage{
 	"2.3.0p44": BaselineV2_3_0_p42,
 	"2.3.0p45": BaselineV2_3_0_p42,
 	"2.3.0p46": BaselineV2_3_0_p42,
+	"2.3.0p47": BaselineV2_3_0_p42,
+	"2.3.0p48": BaselineV2_3_0_p42,
 	"2.4.0p1":  BaselineV2_4_0_p1,
 	"2.4.0p2":  BaselineV2_4_0_p2,
 	"2.4.0p3":  BaselineV2_4_0_p3,
@@ -2462,6 +2512,9 @@ var VersionToBaseline = map[string]BaselinePackage{
 	"2.4.0p27": BaselineV2_4_0_p26,
 	"2.4.0p28": BaselineV2_4_0_p26,
 	"2.4.0p29": BaselineV2_4_0_p26,
+	"2.4.0p30": BaselineV2_4_0_p30,
+	"2.4.0p31": BaselineV2_4_0_p30,
+	"2.4.0p32": BaselineV2_4_0_p32,
 }
 
 // MinorToLatestBaseline maps minor versions to their latest baseline.
@@ -2469,7 +2522,7 @@ var VersionToBaseline = map[string]BaselinePackage{
 var MinorToLatestBaseline = map[string]BaselinePackage{
 	"2.2": BaselineV2_2_0_p44,
 	"2.3": BaselineV2_3_0_p42,
-	"2.4": BaselineV2_4_0_p26,
+	"2.4": BaselineV2_4_0_p32,
 }
 
 // LookupBaseline returns the baseline package for a given CheckMK version.
