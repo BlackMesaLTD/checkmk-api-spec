@@ -1,0 +1,22 @@
+name: Trigger Website Deploy
+
+# The docs website (deitChi/checkmk-docs-website) builds itself by fetching
+# manifest.json + specs from this repo's main branch. It only rebuilds on a
+# push to its own repo, so this workflow pokes its Vercel deploy hook whenever
+# the source data changes here — keeping the live site in sync automatically.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'manifest.json'
+      - 'specs/**'
+      - 'changelog.json'
+  workflow_dispatch: {}
+
+jobs:
+  trigger:
+    name: Poke Vercel deploy hook
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger rebuild
+        run: curl -fsS -X POST "${{ secrets.VERCEL_DEPLOY_TRIGGER }}"
