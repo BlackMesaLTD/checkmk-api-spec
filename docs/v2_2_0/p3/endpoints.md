@@ -360,6 +360,27 @@ Show all BI packs
 
 ---
 
+### GET /objects/bi_aggregation/{aggregation_id}
+
+Get a BI aggregation
+
+**Parameters:**
+
+| Name | In | Type | Required | Description |
+|------|-----|------|----------|-------------|
+| `aggregation_id` | path | string | Yes | The unique id for the aggregation |
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 200 | OK: The operation was done successfully. | [BIAggregationEndpoint](schemas.md#biaggregationendpoint) |
+| 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
+| 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
+
+---
+
 ### DELETE /objects/bi_aggregation/{aggregation_id}
 
 Delete a BI aggregation
@@ -378,32 +399,6 @@ Delete a BI aggregation
 | 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
 | 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
-
----
-
-### PUT /objects/bi_aggregation/{aggregation_id}
-
-Update an existing BI aggregation
-
-**Parameters:**
-
-| Name | In | Type | Required | Description |
-|------|-----|------|----------|-------------|
-| `Content-Type` | header | string | Yes | A header specifying which type of content is in the request/response body. Th... |
-| `aggregation_id` | path | string | Yes | The unique id for the aggregation |
-
-**Request Body:** [BIAggregationEndpoint](schemas.md#biaggregationendpoint)
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [BIAggregationEndpoint](schemas.md#biaggregationendpoint) |
-| 400 | Bad Request: Parameter or validation failure. | [ApiError](schemas.md#apierror) |
-| 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
-| 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
-| 415 | Unsupported Media Type: The submitted content-type is not supported. | [ApiError](schemas.md#apierror) |
 
 ---
 
@@ -433,45 +428,24 @@ Create a BI aggregation
 
 ---
 
-### GET /objects/bi_aggregation/{aggregation_id}
+### PUT /objects/bi_aggregation/{aggregation_id}
 
-Get a BI aggregation
-
-**Parameters:**
-
-| Name | In | Type | Required | Description |
-|------|-----|------|----------|-------------|
-| `aggregation_id` | path | string | Yes | The unique id for the aggregation |
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [BIAggregationEndpoint](schemas.md#biaggregationendpoint) |
-| 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
-| 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
-
----
-
-### PUT /objects/bi_pack/{pack_id}
-
-Update an existing BI pack
+Update an existing BI aggregation
 
 **Parameters:**
 
 | Name | In | Type | Required | Description |
 |------|-----|------|----------|-------------|
 | `Content-Type` | header | string | Yes | A header specifying which type of content is in the request/response body. Th... |
-| `pack_id` | path | string | Yes | The unique id for the aggregation pack |
+| `aggregation_id` | path | string | Yes | The unique id for the aggregation |
 
-**Request Body:** [BIPackEndpoint](schemas.md#bipackendpoint)
+**Request Body:** [BIAggregationEndpoint](schemas.md#biaggregationendpoint)
 
 **Responses:**
 
 | Code | Description | Schema |
 |------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [BIPackEndpoint](schemas.md#bipackendpoint) |
+| 200 | OK: The operation was done successfully. | [BIAggregationEndpoint](schemas.md#biaggregationendpoint) |
 | 400 | Bad Request: Parameter or validation failure. | [ApiError](schemas.md#apierror) |
 | 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
 | 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
@@ -495,6 +469,27 @@ Delete BI pack
 | Code | Description | Schema |
 |------|-------------|--------|
 | 204 | No Content: Operation done successfully. No further output. | - |
+| 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
+| 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
+
+---
+
+### GET /objects/bi_pack/{pack_id}
+
+Get a BI pack and its rules and aggregations
+
+**Parameters:**
+
+| Name | In | Type | Required | Description |
+|------|-----|------|----------|-------------|
+| `pack_id` | path | string | Yes | The unique id for the aggregation pack |
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 200 | OK: The operation was done successfully. | [DomainObject](schemas.md#domainobject) |
 | 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
 | 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
@@ -527,24 +522,55 @@ Create a new BI pack
 
 ---
 
-### GET /objects/bi_pack/{pack_id}
+### PUT /objects/bi_pack/{pack_id}
 
-Get a BI pack and its rules and aggregations
+Update an existing BI pack
 
 **Parameters:**
 
 | Name | In | Type | Required | Description |
 |------|-----|------|----------|-------------|
+| `Content-Type` | header | string | Yes | A header specifying which type of content is in the request/response body. Th... |
 | `pack_id` | path | string | Yes | The unique id for the aggregation pack |
+
+**Request Body:** [BIPackEndpoint](schemas.md#bipackendpoint)
 
 **Responses:**
 
 | Code | Description | Schema |
 |------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [DomainObject](schemas.md#domainobject) |
+| 200 | OK: The operation was done successfully. | [BIPackEndpoint](schemas.md#bipackendpoint) |
+| 400 | Bad Request: Parameter or validation failure. | [ApiError](schemas.md#apierror) |
 | 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
 | 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
+| 415 | Unsupported Media Type: The submitted content-type is not supported. | [ApiError](schemas.md#apierror) |
+
+---
+
+### PUT /objects/bi_rule/{rule_id}
+
+Update an existing BI rule
+
+**Parameters:**
+
+| Name | In | Type | Required | Description |
+|------|-----|------|----------|-------------|
+| `Content-Type` | header | string | Yes | A header specifying which type of content is in the request/response body. Th... |
+| `rule_id` | path | string | Yes | The unique id for the rule |
+
+**Request Body:** [BIRuleEndpoint](schemas.md#biruleendpoint)
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 200 | OK: The operation was done successfully. | [BIRuleEndpoint](schemas.md#biruleendpoint) |
+| 400 | Bad Request: Parameter or validation failure. | [ApiError](schemas.md#apierror) |
+| 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
+| 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
+| 415 | Unsupported Media Type: The submitted content-type is not supported. | [ApiError](schemas.md#apierror) |
 
 ---
 
@@ -574,27 +600,6 @@ Create a new BI rule
 
 ---
 
-### GET /objects/bi_rule/{rule_id}
-
-Show a BI rule
-
-**Parameters:**
-
-| Name | In | Type | Required | Description |
-|------|-----|------|----------|-------------|
-| `rule_id` | path | string | Yes | The unique id for the rule |
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [BIRuleEndpoint](schemas.md#biruleendpoint) |
-| 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
-| 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
-
----
-
 ### DELETE /objects/bi_rule/{rule_id}
 
 Delete BI rule
@@ -617,29 +622,24 @@ Delete BI rule
 
 ---
 
-### PUT /objects/bi_rule/{rule_id}
+### GET /objects/bi_rule/{rule_id}
 
-Update an existing BI rule
+Show a BI rule
 
 **Parameters:**
 
 | Name | In | Type | Required | Description |
 |------|-----|------|----------|-------------|
-| `Content-Type` | header | string | Yes | A header specifying which type of content is in the request/response body. Th... |
 | `rule_id` | path | string | Yes | The unique id for the rule |
-
-**Request Body:** [BIRuleEndpoint](schemas.md#biruleendpoint)
 
 **Responses:**
 
 | Code | Description | Schema |
 |------|-------------|--------|
 | 200 | OK: The operation was done successfully. | [BIRuleEndpoint](schemas.md#biruleendpoint) |
-| 400 | Bad Request: Parameter or validation failure. | [ApiError](schemas.md#apierror) |
 | 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
 | 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
-| 415 | Unsupported Media Type: The submitted content-type is not supported. | [ApiError](schemas.md#apierror) |
 
 ---
 
@@ -888,20 +888,6 @@ Bulk update contact groups
 
 ---
 
-### GET /domain-types/contact_group_config/collections/all
-
-Show all contact groups
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [ContactGroupCollection](schemas.md#contactgroupcollection) |
-| 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
-
----
-
 ### POST /domain-types/contact_group_config/collections/all
 
 Create a contact group
@@ -923,6 +909,42 @@ Create a contact group
 | 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
 | 415 | Unsupported Media Type: The submitted content-type is not supported. | [ApiError](schemas.md#apierror) |
+
+---
+
+### GET /domain-types/contact_group_config/collections/all
+
+Show all contact groups
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 200 | OK: The operation was done successfully. | [ContactGroupCollection](schemas.md#contactgroupcollection) |
+| 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
+
+---
+
+### DELETE /objects/contact_group_config/{name}
+
+Delete a contact group
+
+**Parameters:**
+
+| Name | In | Type | Required | Description |
+|------|-----|------|----------|-------------|
+| `name` | path | string | Yes | The identifier name of the group. |
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 204 | No Content: Operation done successfully. No further output. | - |
+| 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
+| 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
+| 409 | Conflict: The request is in conflict with the stored resource. | [ApiError](schemas.md#apierror) |
 
 ---
 
@@ -973,28 +995,6 @@ Update a contact group
 | 412 | Precondition Failed: The value of the If-Match header doesn't match the object's ETag. | [ApiError](schemas.md#apierror) |
 | 415 | Unsupported Media Type: The submitted content-type is not supported. | [ApiError](schemas.md#apierror) |
 | 428 | Precondition Required: The required If-Match header is missing. | [ApiError](schemas.md#apierror) |
-
----
-
-### DELETE /objects/contact_group_config/{name}
-
-Delete a contact group
-
-**Parameters:**
-
-| Name | In | Type | Required | Description |
-|------|-----|------|----------|-------------|
-| `name` | path | string | Yes | The identifier name of the group. |
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 204 | No Content: Operation done successfully. No further output. | - |
-| 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
-| 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
-| 409 | Conflict: The request is in conflict with the stored resource. | [ApiError](schemas.md#apierror) |
 
 ---
 
@@ -1552,20 +1552,6 @@ Bulk update host groups
 
 ---
 
-### GET /domain-types/host_group_config/collections/all
-
-Show all host groups
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [HostGroupCollection](schemas.md#hostgroupcollection) |
-| 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
-
----
-
 ### POST /domain-types/host_group_config/collections/all
 
 Create a host group
@@ -1587,6 +1573,20 @@ Create a host group
 | 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
 | 415 | Unsupported Media Type: The submitted content-type is not supported. | [ApiError](schemas.md#apierror) |
+
+---
+
+### GET /domain-types/host_group_config/collections/all
+
+Show all host groups
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 200 | OK: The operation was done successfully. | [HostGroupCollection](schemas.md#hostgroupcollection) |
+| 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
 
 ---
 
@@ -1925,35 +1925,6 @@ Create a cluster host
 
 ---
 
-### PUT /objects/host_config/{host_name}
-
-Update a host
-
-**Parameters:**
-
-| Name | In | Type | Required | Description |
-|------|-----|------|----------|-------------|
-| `If-Match` | header | string | Yes | The value of the, to be modified, object's ETag header. You can get this valu... |
-| `Content-Type` | header | string | Yes | A header specifying which type of content is in the request/response body. Th... |
-| `host_name` | path | string | Yes | A hostname. |
-
-**Request Body:** [UpdateHost](schemas.md#updatehost)
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [HostConfig](schemas.md#hostconfig) |
-| 400 | Bad Request: Parameter or validation failure. | [ApiError](schemas.md#apierror) |
-| 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
-| 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
-| 412 | Precondition Failed: The value of the If-Match header doesn't match the object's ETag. | [ApiError](schemas.md#apierror) |
-| 415 | Unsupported Media Type: The submitted content-type is not supported. | [ApiError](schemas.md#apierror) |
-| 428 | Precondition Required: The required If-Match header is missing. | [ApiError](schemas.md#apierror) |
-
----
-
 ### DELETE /objects/host_config/{host_name}
 
 Delete a host
@@ -1995,6 +1966,35 @@ Show a host
 | 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
 | 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
+
+---
+
+### PUT /objects/host_config/{host_name}
+
+Update a host
+
+**Parameters:**
+
+| Name | In | Type | Required | Description |
+|------|-----|------|----------|-------------|
+| `If-Match` | header | string | Yes | The value of the, to be modified, object's ETag header. You can get this valu... |
+| `Content-Type` | header | string | Yes | A header specifying which type of content is in the request/response body. Th... |
+| `host_name` | path | string | Yes | A hostname. |
+
+**Request Body:** [UpdateHost](schemas.md#updatehost)
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 200 | OK: The operation was done successfully. | [HostConfig](schemas.md#hostconfig) |
+| 400 | Bad Request: Parameter or validation failure. | [ApiError](schemas.md#apierror) |
+| 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
+| 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
+| 412 | Precondition Failed: The value of the If-Match header doesn't match the object's ETag. | [ApiError](schemas.md#apierror) |
+| 415 | Unsupported Media Type: The submitted content-type is not supported. | [ApiError](schemas.md#apierror) |
+| 428 | Precondition Required: The required If-Match header is missing. | [ApiError](schemas.md#apierror) |
 
 ---
 
@@ -2205,6 +2205,20 @@ Display some version information
 
 ## Passwords
 
+### GET /domain-types/password/collections/all
+
+Show all passwords
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 200 | OK: The operation was done successfully. | [PasswordCollection](schemas.md#passwordcollection) |
+| 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
+
+---
+
 ### POST /domain-types/password/collections/all
 
 Create a password
@@ -2226,20 +2240,6 @@ Create a password
 | 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
 | 415 | Unsupported Media Type: The submitted content-type is not supported. | [ApiError](schemas.md#apierror) |
-
----
-
-### GET /domain-types/password/collections/all
-
-Show all passwords
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [PasswordCollection](schemas.md#passwordcollection) |
-| 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
 
 ---
 
@@ -3220,27 +3220,6 @@ Show all user roles
 
 ---
 
-### GET /objects/user_role/{role_id}
-
-Show a user role
-
-**Parameters:**
-
-| Name | In | Type | Required | Description |
-|------|-----|------|----------|-------------|
-| `role_id` | path | string | Yes | An existing user role. |
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [UserRoleObject](schemas.md#userroleobject) |
-| 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
-| 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
-
----
-
 ### DELETE /objects/user_role/{role_id}
 
 Delete a user role
@@ -3288,6 +3267,27 @@ Edit a user role
 
 ---
 
+### GET /objects/user_role/{role_id}
+
+Show a user role
+
+**Parameters:**
+
+| Name | In | Type | Required | Description |
+|------|-----|------|----------|-------------|
+| `role_id` | path | string | Yes | An existing user role. |
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 200 | OK: The operation was done successfully. | [UserRoleObject](schemas.md#userroleobject) |
+| 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
+| 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
+
+---
+
 ## Users
 
 ### POST /domain-types/user_config/collections/all
@@ -3325,6 +3325,35 @@ Show all users
 | 200 | OK: The operation was done successfully. | [UserCollection](schemas.md#usercollection) |
 | 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
+
+---
+
+### PUT /objects/user_config/{username}
+
+Edit a user
+
+**Parameters:**
+
+| Name | In | Type | Required | Description |
+|------|-----|------|----------|-------------|
+| `If-Match` | header | string | Yes | The value of the, to be modified, object's ETag header. You can get this valu... |
+| `Content-Type` | header | string | Yes | A header specifying which type of content is in the request/response body. Th... |
+| `username` | path | string | Yes | A username. |
+
+**Request Body:** [UpdateUser](schemas.md#updateuser)
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 200 | OK: The operation was done successfully. | [UserObject](schemas.md#userobject) |
+| 400 | Bad Request: Parameter or validation failure. | [ApiError](schemas.md#apierror) |
+| 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
+| 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
+| 412 | Precondition Failed: The value of the If-Match header doesn't match the object's ETag. | [ApiError](schemas.md#apierror) |
+| 415 | Unsupported Media Type: The submitted content-type is not supported. | [ApiError](schemas.md#apierror) |
+| 428 | Precondition Required: The required If-Match header is missing. | [ApiError](schemas.md#apierror) |
 
 ---
 
@@ -3367,35 +3396,6 @@ Delete a user
 | 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
 | 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
-
----
-
-### PUT /objects/user_config/{username}
-
-Edit a user
-
-**Parameters:**
-
-| Name | In | Type | Required | Description |
-|------|-----|------|----------|-------------|
-| `If-Match` | header | string | Yes | The value of the, to be modified, object's ETag header. You can get this valu... |
-| `Content-Type` | header | string | Yes | A header specifying which type of content is in the request/response body. Th... |
-| `username` | path | string | Yes | A username. |
-
-**Request Body:** [UpdateUser](schemas.md#updateuser)
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [UserObject](schemas.md#userobject) |
-| 400 | Bad Request: Parameter or validation failure. | [ApiError](schemas.md#apierror) |
-| 403 | Forbidden: Configuration via Setup is disabled. | [ApiError](schemas.md#apierror) |
-| 404 | Not Found: The requested object has not been found. | [ApiError](schemas.md#apierror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [ApiError](schemas.md#apierror) |
-| 412 | Precondition Failed: The value of the If-Match header doesn't match the object's ETag. | [ApiError](schemas.md#apierror) |
-| 415 | Unsupported Media Type: The submitted content-type is not supported. | [ApiError](schemas.md#apierror) |
-| 428 | Precondition Required: The required If-Match header is missing. | [ApiError](schemas.md#apierror) |
 
 ---
 

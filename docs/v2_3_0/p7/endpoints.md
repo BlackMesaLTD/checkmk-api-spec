@@ -338,27 +338,6 @@ Show Auxiliary Tags
 
 ---
 
-### GET /objects/aux_tag/{aux_tag_id}
-
-Show an Auxiliary Tag
-
-**Parameters:**
-
-| Name | In | Type | Required | Description |
-|------|-----|------|----------|-------------|
-| `aux_tag_id` | path | string | Yes | An auxiliary tag id |
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [AuxTagResponse](schemas.md#auxtagresponse) |
-| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
-| 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
-
----
-
 ### PUT /objects/aux_tag/{aux_tag_id}
 
 Update an aux tag
@@ -382,6 +361,27 @@ Update an aux tag
 | 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
 | 415 | Unsupported Media Type: The submitted content-type is not supported. | [Api415DefaultError](schemas.md#api415defaulterror) |
+
+---
+
+### GET /objects/aux_tag/{aux_tag_id}
+
+Show an Auxiliary Tag
+
+**Parameters:**
+
+| Name | In | Type | Required | Description |
+|------|-----|------|----------|-------------|
+| `aux_tag_id` | path | string | Yes | An auxiliary tag id |
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 200 | OK: The operation was done successfully. | [AuxTagResponse](schemas.md#auxtagresponse) |
+| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
+| 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
 
 ---
 
@@ -411,6 +411,27 @@ Delete an Auxiliary Tag
 
 ## Business intelligence (BI)
 
+### GET /domain-types/bi_aggregation/actions/aggregation_state/invoke
+
+Get the state of BI aggregations
+
+**Parameters:**
+
+| Name | In | Type | Required | Description |
+|------|-----|------|----------|-------------|
+| `filter_names` | query | array | No | Filter by names |
+| `filter_groups` | query | array | No | Filter by group |
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 200 | OK: The operation was done successfully. | [BIAggregationStateResponse](schemas.md#biaggregationstateresponse) |
+| 400 | Bad Request: Parameter or validation failure. | [Api400DefaultError](schemas.md#api400defaulterror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
+
+---
+
 ### POST /domain-types/bi_aggregation/actions/aggregation_state/invoke
 
 Get the state of BI aggregations
@@ -434,27 +455,6 @@ Get the state of BI aggregations
 
 ---
 
-### GET /domain-types/bi_aggregation/actions/aggregation_state/invoke
-
-Get the state of BI aggregations
-
-**Parameters:**
-
-| Name | In | Type | Required | Description |
-|------|-----|------|----------|-------------|
-| `filter_names` | query | array | No | Filter by names |
-| `filter_groups` | query | array | No | Filter by group |
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [BIAggregationStateResponse](schemas.md#biaggregationstateresponse) |
-| 400 | Bad Request: Parameter or validation failure. | [Api400DefaultError](schemas.md#api400defaulterror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
-
----
-
 ### GET /domain-types/bi_pack/collections/all
 
 Show all BI packs
@@ -469,9 +469,9 @@ Show all BI packs
 
 ---
 
-### GET /objects/bi_aggregation/{aggregation_id}
+### DELETE /objects/bi_aggregation/{aggregation_id}
 
-Get a BI aggregation
+Delete a BI aggregation
 
 **Parameters:**
 
@@ -483,36 +483,10 @@ Get a BI aggregation
 
 | Code | Description | Schema |
 |------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [BIAggregationEndpoint](schemas.md#biaggregationendpoint) |
+| 204 | No Content: Operation done successfully. No further output. | - |
 | 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
 | 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
-
----
-
-### POST /objects/bi_aggregation/{aggregation_id}
-
-Create a BI aggregation
-
-**Parameters:**
-
-| Name | In | Type | Required | Description |
-|------|-----|------|----------|-------------|
-| `Content-Type` | header | string | Yes | A header specifying which type of content is in the request/response body. Th... |
-| `aggregation_id` | path | string | Yes | The unique id for the aggregation |
-
-**Request Body:** [BIAggregationEndpoint](schemas.md#biaggregationendpoint)
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [BIAggregationEndpoint](schemas.md#biaggregationendpoint) |
-| 400 | Bad Request: Parameter or validation failure. | [Api400DefaultError](schemas.md#api400defaulterror) |
-| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
-| 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
-| 415 | Unsupported Media Type: The submitted content-type is not supported. | [Api415DefaultError](schemas.md#api415defaulterror) |
 
 ---
 
@@ -542,9 +516,35 @@ Update an existing BI aggregation
 
 ---
 
-### DELETE /objects/bi_aggregation/{aggregation_id}
+### POST /objects/bi_aggregation/{aggregation_id}
 
-Delete a BI aggregation
+Create a BI aggregation
+
+**Parameters:**
+
+| Name | In | Type | Required | Description |
+|------|-----|------|----------|-------------|
+| `Content-Type` | header | string | Yes | A header specifying which type of content is in the request/response body. Th... |
+| `aggregation_id` | path | string | Yes | The unique id for the aggregation |
+
+**Request Body:** [BIAggregationEndpoint](schemas.md#biaggregationendpoint)
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 200 | OK: The operation was done successfully. | [BIAggregationEndpoint](schemas.md#biaggregationendpoint) |
+| 400 | Bad Request: Parameter or validation failure. | [Api400DefaultError](schemas.md#api400defaulterror) |
+| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
+| 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
+| 415 | Unsupported Media Type: The submitted content-type is not supported. | [Api415DefaultError](schemas.md#api415defaulterror) |
+
+---
+
+### GET /objects/bi_aggregation/{aggregation_id}
+
+Get a BI aggregation
 
 **Parameters:**
 
@@ -556,7 +556,7 @@ Delete a BI aggregation
 
 | Code | Description | Schema |
 |------|-------------|--------|
-| 204 | No Content: Operation done successfully. No further output. | - |
+| 200 | OK: The operation was done successfully. | [BIAggregationEndpoint](schemas.md#biaggregationendpoint) |
 | 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
 | 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
@@ -581,6 +581,32 @@ Get a BI pack and its rules and aggregations
 | 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
 | 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
+
+---
+
+### PUT /objects/bi_pack/{pack_id}
+
+Update an existing BI pack
+
+**Parameters:**
+
+| Name | In | Type | Required | Description |
+|------|-----|------|----------|-------------|
+| `Content-Type` | header | string | Yes | A header specifying which type of content is in the request/response body. Th... |
+| `pack_id` | path | string | Yes | The unique id for the aggregation pack |
+
+**Request Body:** [BIPackEndpoint](schemas.md#bipackendpoint)
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 200 | OK: The operation was done successfully. | [BIPackEndpoint](schemas.md#bipackendpoint) |
+| 400 | Bad Request: Parameter or validation failure. | [Api400DefaultError](schemas.md#api400defaulterror) |
+| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
+| 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
+| 415 | Unsupported Media Type: The submitted content-type is not supported. | [Api415DefaultError](schemas.md#api415defaulterror) |
 
 ---
 
@@ -631,72 +657,29 @@ Delete BI pack
 
 ---
 
-### PUT /objects/bi_pack/{pack_id}
+### PUT /objects/bi_rule/{rule_id}
 
-Update an existing BI pack
+Update an existing BI rule
 
 **Parameters:**
 
 | Name | In | Type | Required | Description |
 |------|-----|------|----------|-------------|
 | `Content-Type` | header | string | Yes | A header specifying which type of content is in the request/response body. Th... |
-| `pack_id` | path | string | Yes | The unique id for the aggregation pack |
-
-**Request Body:** [BIPackEndpoint](schemas.md#bipackendpoint)
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [BIPackEndpoint](schemas.md#bipackendpoint) |
-| 400 | Bad Request: Parameter or validation failure. | [Api400DefaultError](schemas.md#api400defaulterror) |
-| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
-| 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
-| 415 | Unsupported Media Type: The submitted content-type is not supported. | [Api415DefaultError](schemas.md#api415defaulterror) |
-
----
-
-### DELETE /objects/bi_rule/{rule_id}
-
-Delete BI rule
-
-**Parameters:**
-
-| Name | In | Type | Required | Description |
-|------|-----|------|----------|-------------|
 | `rule_id` | path | string | Yes | The unique id for the rule |
 
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 204 | No Content: Operation done successfully. No further output. | - |
-| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
-| 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
-| 409 | Conflict: The request is in conflict with the stored resource. | [Api409DefaultError](schemas.md#api409defaulterror) |
-
----
-
-### GET /objects/bi_rule/{rule_id}
-
-Show a BI rule
-
-**Parameters:**
-
-| Name | In | Type | Required | Description |
-|------|-----|------|----------|-------------|
-| `rule_id` | path | string | Yes | The unique id for the rule |
+**Request Body:** [BIRuleEndpoint](schemas.md#biruleendpoint)
 
 **Responses:**
 
 | Code | Description | Schema |
 |------|-------------|--------|
 | 200 | OK: The operation was done successfully. | [BIRuleEndpoint](schemas.md#biruleendpoint) |
+| 400 | Bad Request: Parameter or validation failure. | [Api400DefaultError](schemas.md#api400defaulterror) |
 | 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
 | 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
+| 415 | Unsupported Media Type: The submitted content-type is not supported. | [Api415DefaultError](schemas.md#api415defaulterror) |
 
 ---
 
@@ -726,29 +709,46 @@ Create a new BI rule
 
 ---
 
-### PUT /objects/bi_rule/{rule_id}
+### GET /objects/bi_rule/{rule_id}
 
-Update an existing BI rule
+Show a BI rule
 
 **Parameters:**
 
 | Name | In | Type | Required | Description |
 |------|-----|------|----------|-------------|
-| `Content-Type` | header | string | Yes | A header specifying which type of content is in the request/response body. Th... |
 | `rule_id` | path | string | Yes | The unique id for the rule |
-
-**Request Body:** [BIRuleEndpoint](schemas.md#biruleendpoint)
 
 **Responses:**
 
 | Code | Description | Schema |
 |------|-------------|--------|
 | 200 | OK: The operation was done successfully. | [BIRuleEndpoint](schemas.md#biruleendpoint) |
-| 400 | Bad Request: Parameter or validation failure. | [Api400DefaultError](schemas.md#api400defaulterror) |
 | 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
 | 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
-| 415 | Unsupported Media Type: The submitted content-type is not supported. | [Api415DefaultError](schemas.md#api415defaulterror) |
+
+---
+
+### DELETE /objects/bi_rule/{rule_id}
+
+Delete BI rule
+
+**Parameters:**
+
+| Name | In | Type | Required | Description |
+|------|-----|------|----------|-------------|
+| `rule_id` | path | string | Yes | The unique id for the rule |
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 204 | No Content: Operation done successfully. No further output. | - |
+| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
+| 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
+| 409 | Conflict: The request is in conflict with the stored resource. | [Api409DefaultError](schemas.md#api409defaulterror) |
 
 ---
 
@@ -1493,31 +1493,6 @@ Show all folders
 
 ---
 
-### DELETE /objects/folder_config/{folder}
-
-Delete a folder
-
-**Parameters:**
-
-| Name | In | Type | Required | Description |
-|------|-----|------|----------|-------------|
-| `delete_mode` | query | string | No | Delete policy: 'recursive': Deletes the folder and all the elements it contai... |
-| `folder` | path | string | Yes | The path of the folder being requested. Please be aware that slashes can't be... |
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 204 | No Content: Operation done successfully. No further output. | - |
-| 400 | Bad Request: Parameter or validation failure. | [Api400DefaultError](schemas.md#api400defaulterror) |
-| 401 | Unauthorized: The user is not authorized to do this request. | [Api401DefaultError](schemas.md#api401defaulterror) |
-| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
-| 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
-| 409 | Conflict: The request is in conflict with the stored resource. | [Api409DefaultError](schemas.md#api409defaulterror) |
-
----
-
 ### GET /objects/folder_config/{folder}
 
 Show a folder
@@ -1567,6 +1542,31 @@ Update a folder
 | 412 | Precondition Failed: The value of the If-Match header doesn't match the object's ETag. | [Api412DefaultError](schemas.md#api412defaulterror) |
 | 415 | Unsupported Media Type: The submitted content-type is not supported. | [Api415DefaultError](schemas.md#api415defaulterror) |
 | 428 | Precondition Required: The required If-Match header is missing. | [Api428DefaultError](schemas.md#api428defaulterror) |
+
+---
+
+### DELETE /objects/folder_config/{folder}
+
+Delete a folder
+
+**Parameters:**
+
+| Name | In | Type | Required | Description |
+|------|-----|------|----------|-------------|
+| `delete_mode` | query | string | No | Delete policy: 'recursive': Deletes the folder and all the elements it contai... |
+| `folder` | path | string | Yes | The path of the folder being requested. Please be aware that slashes can't be... |
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 204 | No Content: Operation done successfully. No further output. | - |
+| 400 | Bad Request: Parameter or validation failure. | [Api400DefaultError](schemas.md#api400defaulterror) |
+| 401 | Unauthorized: The user is not authorized to do this request. | [Api401DefaultError](schemas.md#api401defaulterror) |
+| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
+| 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
+| 409 | Conflict: The request is in conflict with the stored resource. | [Api409DefaultError](schemas.md#api409defaulterror) |
 
 ---
 
@@ -1696,20 +1696,6 @@ Bulk update host groups
 
 ---
 
-### GET /domain-types/host_group_config/collections/all
-
-Show all host groups
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [HostGroupCollection](schemas.md#hostgroupcollection) |
-| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
-
----
-
 ### POST /domain-types/host_group_config/collections/all
 
 Create a host group
@@ -1731,6 +1717,20 @@ Create a host group
 | 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
 | 415 | Unsupported Media Type: The submitted content-type is not supported. | [Api415DefaultError](schemas.md#api415defaulterror) |
+
+---
+
+### GET /domain-types/host_group_config/collections/all
+
+Show all host groups
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 200 | OK: The operation was done successfully. | [HostGroupCollection](schemas.md#hostgroupcollection) |
+| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
 
 ---
 
@@ -2088,35 +2088,6 @@ Create a cluster host
 
 ---
 
-### PUT /objects/host_config/{host_name}
-
-Update a host
-
-**Parameters:**
-
-| Name | In | Type | Required | Description |
-|------|-----|------|----------|-------------|
-| `If-Match` | header | string | Yes | The value of the, to be modified, object's ETag header. You can get this valu... |
-| `Content-Type` | header | string | Yes | A header specifying which type of content is in the request/response body. Th... |
-| `host_name` | path | string | Yes | A host name. |
-
-**Request Body:** [UpdateHost](schemas.md#updatehost)
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [HostConfig](schemas.md#hostconfig) |
-| 400 | Bad Request: Parameter or validation failure. | [Api400DefaultError](schemas.md#api400defaulterror) |
-| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
-| 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
-| 412 | Precondition Failed: The value of the If-Match header doesn't match the object's ETag. | [Api412DefaultError](schemas.md#api412defaulterror) |
-| 415 | Unsupported Media Type: The submitted content-type is not supported. | [Api415DefaultError](schemas.md#api415defaulterror) |
-| 428 | Precondition Required: The required If-Match header is missing. | [Api428DefaultError](schemas.md#api428defaulterror) |
-
----
-
 ### DELETE /objects/host_config/{host_name}
 
 Delete a host
@@ -2158,6 +2129,35 @@ Show a host
 | 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
 | 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
+
+---
+
+### PUT /objects/host_config/{host_name}
+
+Update a host
+
+**Parameters:**
+
+| Name | In | Type | Required | Description |
+|------|-----|------|----------|-------------|
+| `If-Match` | header | string | Yes | The value of the, to be modified, object's ETag header. You can get this valu... |
+| `Content-Type` | header | string | Yes | A header specifying which type of content is in the request/response body. Th... |
+| `host_name` | path | string | Yes | A host name. |
+
+**Request Body:** [UpdateHost](schemas.md#updatehost)
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 200 | OK: The operation was done successfully. | [HostConfig](schemas.md#hostconfig) |
+| 400 | Bad Request: Parameter or validation failure. | [Api400DefaultError](schemas.md#api400defaulterror) |
+| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
+| 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
+| 412 | Precondition Failed: The value of the If-Match header doesn't match the object's ETag. | [Api412DefaultError](schemas.md#api412defaulterror) |
+| 415 | Unsupported Media Type: The submitted content-type is not supported. | [Api415DefaultError](schemas.md#api415defaulterror) |
+| 428 | Precondition Required: The required If-Match header is missing. | [Api428DefaultError](schemas.md#api428defaulterror) |
 
 ---
 
@@ -2407,27 +2407,6 @@ Show all notification rules
 
 ---
 
-### GET /objects/notification_rule/{rule_id}
-
-Show a notification rule
-
-**Parameters:**
-
-| Name | In | Type | Required | Description |
-|------|-----|------|----------|-------------|
-| `rule_id` | path | string | Yes | The notification rule ID. |
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [NotificationRuleResponse](schemas.md#notificationruleresponse) |
-| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
-| 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
-
----
-
 ### PUT /objects/notification_rule/{rule_id}
 
 Update a notification rule
@@ -2451,6 +2430,27 @@ Update a notification rule
 | 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
 | 415 | Unsupported Media Type: The submitted content-type is not supported. | [Api415DefaultError](schemas.md#api415defaulterror) |
+
+---
+
+### GET /objects/notification_rule/{rule_id}
+
+Show a notification rule
+
+**Parameters:**
+
+| Name | In | Type | Required | Description |
+|------|-----|------|----------|-------------|
+| `rule_id` | path | string | Yes | The notification rule ID. |
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 200 | OK: The operation was done successfully. | [NotificationRuleResponse](schemas.md#notificationruleresponse) |
+| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
+| 404 | Not Found: The requested object has not be found. | [Api404DefaultError](schemas.md#api404defaulterror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
 
 ---
 
@@ -2506,20 +2506,6 @@ Start the parent scan background job
 
 ## Passwords
 
-### GET /domain-types/password/collections/all
-
-Show all passwords
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [PasswordCollection](schemas.md#passwordcollection) |
-| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
-
----
-
 ### POST /domain-types/password/collections/all
 
 Create a password
@@ -2541,6 +2527,20 @@ Create a password
 | 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
 | 415 | Unsupported Media Type: The submitted content-type is not supported. | [Api415DefaultError](schemas.md#api415defaulterror) |
+
+---
+
+### GET /domain-types/password/collections/all
+
+Show all passwords
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 200 | OK: The operation was done successfully. | [PasswordCollection](schemas.md#passwordcollection) |
+| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
 
 ---
 
@@ -2617,6 +2617,27 @@ Update a password
 
 ## Rules
 
+### GET /domain-types/rule/collections/all
+
+List rules
+
+**Parameters:**
+
+| Name | In | Type | Required | Description |
+|------|-----|------|----------|-------------|
+| `ruleset_name` | query | string | Yes | The name of the ruleset. |
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 200 | OK: The operation was done successfully. | [RuleCollection](schemas.md#rulecollection) |
+| 400 | Bad Request: Parameter or validation failure. | [Api400DefaultError](schemas.md#api400defaulterror) |
+| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
+
+---
+
 ### POST /domain-types/rule/collections/all
 
 Create rule
@@ -2638,27 +2659,6 @@ Create rule
 | 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
 | 415 | Unsupported Media Type: The submitted content-type is not supported. | [Api415DefaultError](schemas.md#api415defaulterror) |
-
----
-
-### GET /domain-types/rule/collections/all
-
-List rules
-
-**Parameters:**
-
-| Name | In | Type | Required | Description |
-|------|-----|------|----------|-------------|
-| `ruleset_name` | query | string | Yes | The name of the ruleset. |
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [RuleCollection](schemas.md#rulecollection) |
-| 400 | Bad Request: Parameter or validation failure. | [Api400DefaultError](schemas.md#api400defaulterror) |
-| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
 
 ---
 
@@ -3397,20 +3397,6 @@ Logout from a remote site
 
 ## Time periods
 
-### GET /domain-types/time_period/collections/all
-
-Show all time periods
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [TimePeriodResponseCollection](schemas.md#timeperiodresponsecollection) |
-| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
-
----
-
 ### POST /domain-types/time_period/collections/all
 
 Create a time period
@@ -3432,6 +3418,20 @@ Create a time period
 | 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
 | 415 | Unsupported Media Type: The submitted content-type is not supported. | [Api415DefaultError](schemas.md#api415defaulterror) |
+
+---
+
+### GET /domain-types/time_period/collections/all
+
+Show all time periods
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 200 | OK: The operation was done successfully. | [TimePeriodResponseCollection](schemas.md#timeperiodresponsecollection) |
+| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
 
 ---
 
@@ -3514,20 +3514,6 @@ Update a time period
 
 ## User Roles
 
-### GET /domain-types/user_role/collections/all
-
-Show all user roles
-
-**Responses:**
-
-| Code | Description | Schema |
-|------|-------------|--------|
-| 200 | OK: The operation was done successfully. | [UserRoleCollection](schemas.md#userrolecollection) |
-| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
-| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
-
----
-
 ### POST /domain-types/user_role/collections/all
 
 Create/clone a user role
@@ -3549,6 +3535,20 @@ Create/clone a user role
 | 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
 | 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
 | 415 | Unsupported Media Type: The submitted content-type is not supported. | [Api415DefaultError](schemas.md#api415defaulterror) |
+
+---
+
+### GET /domain-types/user_role/collections/all
+
+Show all user roles
+
+**Responses:**
+
+| Code | Description | Schema |
+|------|-------------|--------|
+| 200 | OK: The operation was done successfully. | [UserRoleCollection](schemas.md#userrolecollection) |
+| 403 | Forbidden: Configuration via Setup is disabled. | [Api403DefaultError](schemas.md#api403defaulterror) |
+| 406 | Not Acceptable: The requests accept headers can not be satisfied. | [Api406DefaultError](schemas.md#api406defaulterror) |
 
 ---
 
