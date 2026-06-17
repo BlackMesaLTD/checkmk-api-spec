@@ -17,14 +17,42 @@ import (
 )
 
 const (
-	dockerHubAPI   = "https://hub.docker.com/v2/repositories/checkmk/check-mk-raw/tags"
-	dockerImage    = "checkmk/check-mk-raw"
 	siteName       = "cmk"
 	containerPort  = "5000"
 	apiVersion     = "1.0"
 	fetchTimeout   = 120 * time.Second
 	startupTimeout = 120 * time.Second
 )
+
+// CheckMK Docker editions.
+//
+// Versions 2.2-2.4 are published as the RAW edition (checkmk/check-mk-raw).
+// From 2.5 onward the RAW edition was rebranded "Community"
+// (checkmk/check-mk-community); check-mk-raw carries no 2.5+ tags. Both
+// repositories are queried so legacy and new versions harvest together, and
+// each version is pulled from the repository that actually publishes it.
+const (
+	rawImage       = "checkmk/check-mk-raw"
+	communityImage = "checkmk/check-mk-community"
+)
+
+// harvestRepos lists every image queried for available versions.
+var harvestRepos = []string{rawImage, communityImage}
+
+// dockerHubTagsURL builds the Docker Hub tags API endpoint for an image.
+func dockerHubTagsURL(image string) string {
+	return "https://hub.docker.com/v2/repositories/" + image + "/tags"
+}
+
+// repoForVersion returns the Docker image that publishes the given CheckMK
+// version: 2.2-2.4 -> RAW, 2.5+ (and any later major) -> Community.
+func repoForVersion(version string) string {
+	v := parseVersion(version)
+	if v[0] > 2 || (v[0] == 2 && v[1] >= 5) {
+		return communityImage
+	}
+	return rawImage
+}
 
 const (
 	// Minimum supported minor version (2.2+, as 2.0/2.1 used legacy Web API)
@@ -45,10 +73,33 @@ type DockerHubResponse struct {
 	Next string `json:"next"`
 }
 
-// GetDockerHubVersions fetches all available versions from Docker Hub
+// GetDockerHubVersions fetches all available versions across every edition repo
+// (RAW for 2.2-2.4, Community for 2.5+), unioned and de-duplicated.
 func GetDockerHubVersions() ([]string, error) {
+	seen := make(map[string]bool)
 	var allVersions []string
-	url := dockerHubAPI + "?page_size=100"
+
+	for _, image := range harvestRepos {
+		versions, err := getRepoVersions(image)
+		if err != nil {
+			return nil, fmt.Errorf("%s: %w", image, err)
+		}
+		for _, v := range versions {
+			if !seen[v] {
+				seen[v] = true
+				allVersions = append(allVersions, v)
+			}
+		}
+	}
+
+	sortVersions(allVersions)
+	return allVersions, nil
+}
+
+// getRepoVersions fetches matching versions from a single Docker Hub repository.
+func getRepoVersions(image string) ([]string, error) {
+	var versions []string
+	url := dockerHubTagsURL(image) + "?page_size=100"
 
 	client := &http.Client{Timeout: 30 * time.Second}
 
@@ -57,9 +108,9 @@ func GetDockerHubVersions() ([]string, error) {
 		if err != nil {
 			return nil, fmt.Errorf("failed to fetch Docker Hub tags: %w", err)
 		}
-		defer resp.Body.Close()
 
 		body, err := io.ReadAll(resp.Body)
+		resp.Body.Close()
 		if err != nil {
 			return nil, fmt.Errorf("failed to read response: %w", err)
 		}
@@ -74,7 +125,7 @@ func GetDockerHubVersions() ([]string, error) {
 				// matches[1] is the minor version number
 				minor, _ := strconv.Atoi(matches[1])
 				if minor >= minMinorVersion {
-					allVersions = append(allVersions, result.Name)
+					versions = append(versions, result.Name)
 				}
 			}
 		}
@@ -82,14 +133,12 @@ func GetDockerHubVersions() ([]string, error) {
 		url = hubResp.Next
 	}
 
-	// Sort versions
-	sortVersions(allVersions)
-	return allVersions, nil
+	return versions, nil
 }
 
 // FetchSpecFromDocker fetches the OpenAPI spec from a Docker container
 func FetchSpecFromDocker(version string, specsDir string, verbose bool) ([]byte, error) {
-	image := fmt.Sprintf("%s:%s", dockerImage, version)
+	image := fmt.Sprintf("%s:%s", repoForVersion(version), version)
 	containerName := fmt.Sprintf("spec-fetch-%s", strings.ReplaceAll(version, ".", "-"))
 
 	// Cleanup any existing container with same name
@@ -139,18 +188,34 @@ func FetchSpecFromDocker(version string, specsDir string, verbose bool) ([]byte,
 	// Extra wait for site initialization
 	time.Sleep(10 * time.Second)
 
-	// Fetch the spec
-	specURL := fmt.Sprintf("http://localhost:%s/%s/check_mk/api/%s/openapi-swagger-ui.yaml",
-		containerPort, siteName, apiVersion)
+	// From 2.5 the spec is precomputed and stored at site creation rather than
+	// generated on demand. Regenerate it first (best-effort) so it is present
+	// before we fetch; harmless on older versions.
+	exec.Command("docker", "exec", containerID,
+		"su", "-", siteName, "-c", "cmk-compute-api-spec").Run()
+
+	// Candidate spec endpoints. openapi-swagger-ui.yaml is the legacy path used
+	// by 2.2-2.5; openapi-doc.yaml is the fallback served when the former 404s.
+	specEndpoints := []string{
+		fmt.Sprintf("http://localhost:%s/%s/check_mk/api/%s/openapi-swagger-ui.yaml",
+			containerPort, siteName, apiVersion),
+		fmt.Sprintf("http://localhost:%s/%s/check_mk/api/%s/openapi-doc.yaml",
+			containerPort, siteName, apiVersion),
+	}
 
 	var specData []byte
-	for _, creds := range credentials {
-		curlCmd := exec.Command("docker", "exec", containerID,
-			"curl", "-s", "-u", creds, specURL)
+	for _, specURL := range specEndpoints {
+		for _, creds := range credentials {
+			curlCmd := exec.Command("docker", "exec", containerID,
+				"curl", "-s", "-u", creds, specURL)
 
-		data, err := curlCmd.Output()
-		if err == nil && len(data) > 0 && strings.Contains(string(data), "info:") {
-			specData = data
+			data, err := curlCmd.Output()
+			if err == nil && len(data) > 0 && strings.Contains(string(data), "info:") {
+				specData = data
+				break
+			}
+		}
+		if len(specData) > 0 {
 			break
 		}
 	}
