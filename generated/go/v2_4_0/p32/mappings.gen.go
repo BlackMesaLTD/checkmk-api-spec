@@ -7,7 +7,7 @@
 // Source: mappings.gen.go
 // Schemas: All (unfiltered)
 
-package p20
+package p32
 
 // HostConfigFieldMappings maps Terraform field names to API response paths.
 var HostConfigFieldMappings = map[string][]string{
