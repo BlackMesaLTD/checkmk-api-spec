@@ -96,7 +96,10 @@
     "2.4.0p20",
     "2.4.0p26",
     "2.4.0p30",
-    "2.4.0p32"
+    "2.4.0p32",
+    "2.5.0p1",
+    "2.5.0p3",
+    "2.5.0p6"
   ],
   "mapping": {
     "2.2.0p1": {"spec":"2.2.0/p1.yaml","baseline":"2.2.0p1","package":"p1","is_baseline":true,"max_severity":"initial","path":"v2_2_0/p1","import_alias":"v2_2_0_p1"},
@@ -222,7 +225,13 @@
     "2.4.0p29": {"spec":"2.4.0/p26.yaml","baseline":"2.4.0p26","package":"p26","is_baseline":false,"max_severity":"none","path":"v2_4_0/p26","import_alias":"v2_4_0_p26"},
     "2.4.0p30": {"spec":"2.4.0/p30.yaml","baseline":"2.4.0p30","package":"p30","is_baseline":true,"max_severity":"minor","path":"v2_4_0/p30","import_alias":"v2_4_0_p30"},
     "2.4.0p31": {"spec":"2.4.0/p30.yaml","baseline":"2.4.0p30","package":"p30","is_baseline":false,"max_severity":"none","path":"v2_4_0/p30","import_alias":"v2_4_0_p30"},
-    "2.4.0p32": {"spec":"2.4.0/p32.yaml","baseline":"2.4.0p32","package":"p32","is_baseline":true,"max_severity":"minor","path":"v2_4_0/p32","import_alias":"v2_4_0_p32"}
+    "2.4.0p32": {"spec":"2.4.0/p32.yaml","baseline":"2.4.0p32","package":"p32","is_baseline":true,"max_severity":"minor","path":"v2_4_0/p32","import_alias":"v2_4_0_p32"},
+    "2.5.0p1": {"spec":"2.5.0/p1.yaml","baseline":"2.5.0p1","package":"p1","is_baseline":true,"max_severity":"initial","path":"v2_5_0/p1","import_alias":"v2_5_0_p1"},
+    "2.5.0p2": {"spec":"2.5.0/p1.yaml","baseline":"2.5.0p1","package":"p1","is_baseline":false,"max_severity":"none","path":"v2_5_0/p1","import_alias":"v2_5_0_p1"},
+    "2.5.0p3": {"spec":"2.5.0/p3.yaml","baseline":"2.5.0p3","package":"p3","is_baseline":true,"max_severity":"minor","path":"v2_5_0/p3","import_alias":"v2_5_0_p3"},
+    "2.5.0p4": {"spec":"2.5.0/p3.yaml","baseline":"2.5.0p3","package":"p3","is_baseline":false,"max_severity":"none","path":"v2_5_0/p3","import_alias":"v2_5_0_p3"},
+    "2.5.0p5": {"spec":"2.5.0/p3.yaml","baseline":"2.5.0p3","package":"p3","is_baseline":false,"max_severity":"none","path":"v2_5_0/p3","import_alias":"v2_5_0_p3"},
+    "2.5.0p6": {"spec":"2.5.0/p6.yaml","baseline":"2.5.0p6","package":"p6","is_baseline":true,"max_severity":"minor","path":"v2_5_0/p6","import_alias":"v2_5_0_p6"}
   },
-  "last_checked": "2026-06-15T11:59:58Z"
+  "last_checked": "2026-06-17T20:37:38+01:00"
 }
