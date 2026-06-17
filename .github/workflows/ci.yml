@@ -1,0 +1,50 @@
+name: CI
+
+# Runs whenever the Go tooling (generator, diff, spec-sync, etc.) is touched,
+# so changes to code are tested on every PR — not only during scheduled spec
+# harvests.
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.go'
+      - 'go.mod'
+      - 'go.sum'
+      - 'Makefile'
+      - 'cmd/**'
+      - 'scripts/**'
+      - '.github/workflows/ci.yml'
+  pull_request:
+    paths:
+      - '**.go'
+      - 'go.mod'
+      - 'go.sum'
+      - 'Makefile'
+      - 'cmd/**'
+      - 'scripts/**'
+      - '.github/workflows/ci.yml'
+
+jobs:
+  test:
+    name: Build, Vet & Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Build tools
+        run: make build
+
+      - name: Vet
+        run: go vet ./cmd/...
+
+      - name: Test
+        run: go test ./cmd/...
+
+      - name: Verify generated code builds
+        run: go build -tags "checkmk_all" ./generated/go/...
