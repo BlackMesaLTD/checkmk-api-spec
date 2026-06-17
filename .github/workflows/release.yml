@@ -43,17 +43,18 @@ jobs:
       - name: Generate release notes
         id: notes
         run: |
-          # Count baselines per minor version
-          BASELINES_22=$(jq '[.baselines[] | select(startswith("2.2"))] | length' manifest.json)
-          BASELINES_23=$(jq '[.baselines[] | select(startswith("2.3"))] | length' manifest.json)
-          BASELINES_24=$(jq '[.baselines[] | select(startswith("2.4"))] | length' manifest.json)
           TOTAL_VERSIONS=$(jq '.mapping | length' manifest.json)
           TOTAL_BASELINES=$(jq '.baselines | length' manifest.json)
 
-          # Get latest baseline per minor version
-          LATEST_22=$(jq -r '[.baselines[] | select(startswith("2.2"))] | last // "none"' manifest.json)
-          LATEST_23=$(jq -r '[.baselines[] | select(startswith("2.3"))] | last // "none"' manifest.json)
-          LATEST_24=$(jq -r '[.baselines[] | select(startswith("2.4"))] | last // "none"' manifest.json)
+          # Build one coverage row per minor version present in the manifest,
+          # so new series (2.5, 2.6, ...) appear automatically.
+          COVERAGE=$(jq -r '
+            .baselines
+            | group_by(capture("^(?<m>[0-9]+\\.[0-9]+)").m)
+            | map({minor: (.[0] | capture("^(?<m>[0-9]+\\.[0-9]+)").m), count: length, latest: last})
+            | .[]
+            | "| \(.minor).x | \(.count) | \(.latest) |"
+          ' manifest.json)
 
           cat << EOF > release-notes.md
           ## CheckMK API Spec ${{ steps.version.outputs.new_version }}
@@ -64,9 +65,7 @@ jobs:
 
           | Version | Baselines | Latest |
           |---------|-----------|--------|
-          | 2.2.x | ${BASELINES_22} | ${LATEST_22} |
-          | 2.3.x | ${BASELINES_23} | ${LATEST_23} |
-          | 2.4.x | ${BASELINES_24} | ${LATEST_24} |
+          ${COVERAGE}
 
           **Total:** ${TOTAL_VERSIONS} versions mapped to ${TOTAL_BASELINES} baselines
 
