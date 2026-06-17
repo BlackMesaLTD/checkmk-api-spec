@@ -63,6 +63,56 @@ type Schema struct {
 	Title      string `yaml:"title"`
 }
 
+// UnmarshalYAML normalizes OpenAPI 3.1 schemas into the 3.0 shape the rest of
+// the generator expects. In 3.1 (JSON Schema 2020-12) a nullable field is
+// written as `type: [<type>, "null"]` instead of `type: <type>` plus
+// `nullable: true`. We rewrite the array form back to a scalar type and set
+// Nullable, so both spec versions decode identically.
+func (s *Schema) UnmarshalYAML(value *yaml.Node) error {
+	normalizeTypeNode(value)
+	type alias Schema
+	return value.Decode((*alias)(s))
+}
+
+// normalizeTypeNode rewrites an array-form `type` node (e.g. ["string","null"])
+// into a scalar `type` plus a `nullable: true` entry, in place.
+func normalizeTypeNode(node *yaml.Node) {
+	if node.Kind != yaml.MappingNode {
+		return
+	}
+	var typeVal *yaml.Node
+	hasNullable := false
+	for i := 0; i+1 < len(node.Content); i += 2 {
+		switch node.Content[i].Value {
+		case "type":
+			typeVal = node.Content[i+1]
+		case "nullable":
+			hasNullable = true
+		}
+	}
+	if typeVal == nil || typeVal.Kind != yaml.SequenceNode {
+		return
+	}
+
+	primary, hasNull := "", false
+	for _, item := range typeVal.Content {
+		if item.Value == "null" {
+			hasNull = true
+			continue
+		}
+		if primary == "" {
+			primary = item.Value
+		}
+	}
+
+	*typeVal = yaml.Node{Kind: yaml.ScalarNode, Tag: "!!str", Value: primary}
+	if hasNull && !hasNullable {
+		node.Content = append(node.Content,
+			&yaml.Node{Kind: yaml.ScalarNode, Tag: "!!str", Value: "nullable"},
+			&yaml.Node{Kind: yaml.ScalarNode, Tag: "!!bool", Value: "true"})
+	}
+}
+
 // FieldMetadata holds comprehensive metadata about a field
 type FieldMetadata struct {
 	Name        string

@@ -775,8 +775,23 @@ func getRequiredFields(schema map[string]interface{}) map[string]bool {
 
 func getType(prop interface{}) string {
 	if propMap, ok := prop.(map[string]interface{}); ok {
-		if t, ok := propMap["type"].(string); ok {
+		switch t := propMap["type"].(type) {
+		case string:
 			return t
+		case []interface{}:
+			// OpenAPI 3.1 / JSON Schema 2020-12 allows a list of types such as
+			// ["string", "null"]. Join the members so a nullability change
+			// between two 3.1 specs registers as a type change.
+			var parts []string
+			for _, item := range t {
+				if s, ok := item.(string); ok {
+					parts = append(parts, s)
+				}
+			}
+			if len(parts) > 0 {
+				sort.Strings(parts)
+				return strings.Join(parts, "|")
+			}
 		}
 		if ref, ok := propMap["$ref"].(string); ok {
 			// Extract schema name from ref
