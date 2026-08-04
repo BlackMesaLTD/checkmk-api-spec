@@ -8205,6 +8205,12 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MinVersion:  "2.2",
 			MaxVersion:  "",
 		},
+		"metrics_association": {
+			Description: "[Only in editions: Ultimate, Ultimate with multi-tenancy, Cloud] Configuration for metrics association backend",
+			Type:        "",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
+		},
 		"network_scan": {
 			Description: "Configuration for automatic network scan. Pings will besent to each IP address in the configured ranges to checkif a host is up or down. Each found host will be added tothe folder by it's host name (if possible) or IP address.",
 			Type:        "",
@@ -8413,6 +8419,12 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MinVersion:  "2.2",
 			MaxVersion:  "",
 		},
+		"metrics_association": {
+			Description: "[Only in editions: Ultimate, Ultimate with multi-tenancy, Cloud] Configuration for metrics association backend",
+			Type:        "",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
+		},
 		"network_scan": {
 			Description: "Configuration for automatic network scan. Pings will besent to each IP address in the configured ranges to checkif a host is up or down. Each found host will be added tothe folder by it's host name (if possible) or IP address.",
 			Type:        "",
@@ -8522,6 +8534,12 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			Type:        "",
 			MinVersion:  "2.2",
 			MaxVersion:  "2.4",
+		},
+		"metrics_association": {
+			Description: "[Only in editions: Ultimate, Ultimate with multi-tenancy, Cloud] Configuration for metrics association backend",
+			Type:        "",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
 		},
 		"network_scan": {
 			Description: "Configuration for automatic network scan. Pings will besent to each IP address in the configured ranges to checkif a host is up or down. Each found host will be added tothe folder by it's host name (if possible) or IP address.",
