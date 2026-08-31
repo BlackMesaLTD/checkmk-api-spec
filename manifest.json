@@ -74,6 +74,7 @@
     "2.3.0p40",
     "2.3.0p41",
     "2.3.0p42",
+    "2.3.0p49",
     "2.4.0p1",
     "2.4.0p2",
     "2.4.0p3",
@@ -197,6 +198,7 @@
     "2.3.0p46": {"spec":"2.3.0/p42.yaml","baseline":"2.3.0p42","package":"p42","is_baseline":false,"max_severity":"none","path":"v2_3_0/p42","import_alias":"v2_3_0_p42"},
     "2.3.0p47": {"spec":"2.3.0/p42.yaml","baseline":"2.3.0p42","package":"p42","is_baseline":false,"max_severity":"none","path":"v2_3_0/p42","import_alias":"v2_3_0_p42"},
     "2.3.0p48": {"spec":"2.3.0/p42.yaml","baseline":"2.3.0p42","package":"p42","is_baseline":false,"max_severity":"none","path":"v2_3_0/p42","import_alias":"v2_3_0_p42"},
+    "2.3.0p49": {"spec":"2.3.0/p49.yaml","baseline":"2.3.0p49","package":"p49","is_baseline":true,"max_severity":"minor","path":"v2_3_0/p49","import_alias":"v2_3_0_p49"},
     "2.4.0p1": {"spec":"2.4.0/p1.yaml","baseline":"2.4.0p1","package":"p1","is_baseline":true,"max_severity":"initial","path":"v2_4_0/p1","import_alias":"v2_4_0_p1"},
     "2.4.0p2": {"spec":"2.4.0/p2.yaml","baseline":"2.4.0p2","package":"p2","is_baseline":true,"max_severity":"breaking","path":"v2_4_0/p2","import_alias":"v2_4_0_p2"},
     "2.4.0p3": {"spec":"2.4.0/p3.yaml","baseline":"2.4.0p3","package":"p3","is_baseline":true,"max_severity":"breaking","path":"v2_4_0/p3","import_alias":"v2_4_0_p3"},
@@ -232,6 +234,7 @@
     "2.4.0p33": {"spec":"2.4.0/p33.yaml","baseline":"2.4.0p33","package":"p33","is_baseline":true,"max_severity":"minor","path":"v2_4_0/p33","import_alias":"v2_4_0_p33"},
     "2.4.0p34": {"spec":"2.4.0/p33.yaml","baseline":"2.4.0p33","package":"p33","is_baseline":false,"max_severity":"none","path":"v2_4_0/p33","import_alias":"v2_4_0_p33"},
     "2.4.0p35": {"spec":"2.4.0/p33.yaml","baseline":"2.4.0p33","package":"p33","is_baseline":false,"max_severity":"none","path":"v2_4_0/p33","import_alias":"v2_4_0_p33"},
+    "2.4.0p36": {"spec":"2.4.0/p33.yaml","baseline":"2.4.0p33","package":"p33","is_baseline":false,"max_severity":"none","path":"v2_4_0/p33","import_alias":"v2_4_0_p33"},
     "2.5.0p1": {"spec":"2.5.0/p1.yaml","baseline":"2.5.0p1","package":"p1","is_baseline":true,"max_severity":"initial","path":"v2_5_0/p1","import_alias":"v2_5_0_p1"},
     "2.5.0p2": {"spec":"2.5.0/p1.yaml","baseline":"2.5.0p1","package":"p1","is_baseline":false,"max_severity":"none","path":"v2_5_0/p1","import_alias":"v2_5_0_p1"},
     "2.5.0p3": {"spec":"2.5.0/p3.yaml","baseline":"2.5.0p3","package":"p3","is_baseline":true,"max_severity":"minor","path":"v2_5_0/p3","import_alias":"v2_5_0_p3"},
@@ -241,7 +244,9 @@
     "2.5.0p7": {"spec":"2.5.0/p6.yaml","baseline":"2.5.0p6","package":"p6","is_baseline":false,"max_severity":"none","path":"v2_5_0/p6","import_alias":"v2_5_0_p6"},
     "2.5.0p8": {"spec":"2.5.0/p8.yaml","baseline":"2.5.0p8","package":"p8","is_baseline":true,"max_severity":"minor","path":"v2_5_0/p8","import_alias":"v2_5_0_p8"},
     "2.5.0p9": {"spec":"2.5.0/p8.yaml","baseline":"2.5.0p8","package":"p8","is_baseline":false,"max_severity":"none","path":"v2_5_0/p8","import_alias":"v2_5_0_p8"},
-    "2.5.0p10": {"spec":"2.5.0/p10.yaml","baseline":"2.5.0p10","package":"p10","is_baseline":true,"max_severity":"minor","path":"v2_5_0/p10","import_alias":"v2_5_0_p10"}
+    "2.5.0p10": {"spec":"2.5.0/p10.yaml","baseline":"2.5.0p10","package":"p10","is_baseline":true,"max_severity":"minor","path":"v2_5_0/p10","import_alias":"v2_5_0_p10"},
+    "2.5.0p11": {"spec":"2.5.0/p10.yaml","baseline":"2.5.0p10","package":"p10","is_baseline":false,"max_severity":"none","path":"v2_5_0/p10","import_alias":"v2_5_0_p10"},
+    "2.5.0p12": {"spec":"2.5.0/p10.yaml","baseline":"2.5.0p10","package":"p10","is_baseline":false,"max_severity":"none","path":"v2_5_0/p10","import_alias":"v2_5_0_p10"}
   },
-  "last_checked": "2026-08-03T09:36:48Z"
+  "last_checked": "2026-08-31T12:32:38Z"
 }
