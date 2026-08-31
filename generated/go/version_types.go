@@ -78,6 +78,7 @@ import (
 	v2_3_0_p40 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p40"
 	v2_3_0_p41 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p41"
 	v2_3_0_p42 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p42"
+	v2_3_0_p49 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p49"
 	v2_3_0_p5 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p5"
 	v2_3_0_p6 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p6"
 	v2_3_0_p7 "github.com/BlackMesaLTD/checkmk-api-spec/generated/go/v2_3_0/p7"
@@ -193,6 +194,7 @@ const (
 	BaselineV2_3_0_p40 BaselinePackage = "v2_3_0_p40"
 	BaselineV2_3_0_p41 BaselinePackage = "v2_3_0_p41"
 	BaselineV2_3_0_p42 BaselinePackage = "v2_3_0_p42"
+	BaselineV2_3_0_p49 BaselinePackage = "v2_3_0_p49"
 	BaselineV2_4_0_p1  BaselinePackage = "v2_4_0_p1"
 	BaselineV2_4_0_p2  BaselinePackage = "v2_4_0_p2"
 	BaselineV2_4_0_p3  BaselinePackage = "v2_4_0_p3"
@@ -1892,6 +1894,28 @@ var registry = map[BaselinePackage]*BaselineFuncs{
 		FolderFieldMappings:                    v2_3_0_p42.FolderFieldMappings,
 		ExtractFolderField:                     v2_3_0_p42.ExtractFolderField,
 	},
+	BaselineV2_3_0_p49: {
+		AllSchemaNames:                         v2_3_0_p49.AllSchemaNames,
+		GetSchemaFieldNames:                    v2_3_0_p49.GetSchemaFieldNames,
+		GetSchemaRequiredFieldNames:            v2_3_0_p49.GetSchemaRequiredFieldNames,
+		HasSchema:                              v2_3_0_p49.HasSchema,
+		GetFieldDescription:                    v2_3_0_p49.GetFieldDescription,
+		GetFieldType:                           v2_3_0_p49.GetFieldType,
+		IsReadOnlyField:                        v2_3_0_p49.IsReadOnlyField,
+		IsRequiredField:                        v2_3_0_p49.IsRequiredField,
+		IsDeprecatedField:                      v2_3_0_p49.IsDeprecatedField,
+		GetValidEnumValues:                     v2_3_0_p49.GetValidEnumValues,
+		HasEnumConstraint:                      v2_3_0_p49.HasEnumConstraint,
+		HostCreateAttributeFieldNames:          v2_3_0_p49.HostCreateAttributeFieldNames,
+		HostCreateAttributeCompareKeyFields:    v2_3_0_p49.HostCreateAttributeCompareKeyFields,
+		ValidHostCreateAttributeTagAgentValues: v2_3_0_p49.ValidHostCreateAttributeTagAgentValues,
+		HostConfigFieldMappings:                v2_3_0_p49.HostConfigFieldMappings,
+		ExtractHostConfigField:                 v2_3_0_p49.ExtractHostConfigField,
+		FolderCreateAttributeFieldNames:        v2_3_0_p49.FolderCreateAttributeFieldNames,
+		FolderCreateAttributeCompareKeyFields:  v2_3_0_p49.FolderCreateAttributeCompareKeyFields,
+		FolderFieldMappings:                    v2_3_0_p49.FolderFieldMappings,
+		ExtractFolderField:                     v2_3_0_p49.ExtractFolderField,
+	},
 	BaselineV2_4_0_p1: {
 		AllSchemaNames:                         v2_4_0_p1.AllSchemaNames,
 		GetSchemaFieldNames:                    v2_4_0_p1.GetSchemaFieldNames,
@@ -2627,6 +2651,7 @@ var VersionToBaseline = map[string]BaselinePackage{
 	"2.3.0p46": BaselineV2_3_0_p42,
 	"2.3.0p47": BaselineV2_3_0_p42,
 	"2.3.0p48": BaselineV2_3_0_p42,
+	"2.3.0p49": BaselineV2_3_0_p49,
 	"2.4.0p1":  BaselineV2_4_0_p1,
 	"2.4.0p2":  BaselineV2_4_0_p2,
 	"2.4.0p3":  BaselineV2_4_0_p3,
@@ -2662,6 +2687,7 @@ var VersionToBaseline = map[string]BaselinePackage{
 	"2.4.0p33": BaselineV2_4_0_p33,
 	"2.4.0p34": BaselineV2_4_0_p33,
 	"2.4.0p35": BaselineV2_4_0_p33,
+	"2.4.0p36": BaselineV2_4_0_p33,
 	"2.5.0p1":  BaselineV2_5_0_p1,
 	"2.5.0p2":  BaselineV2_5_0_p1,
 	"2.5.0p3":  BaselineV2_5_0_p3,
@@ -2672,13 +2698,15 @@ var VersionToBaseline = map[string]BaselinePackage{
 	"2.5.0p8":  BaselineV2_5_0_p8,
 	"2.5.0p9":  BaselineV2_5_0_p8,
 	"2.5.0p10": BaselineV2_5_0_p10,
+	"2.5.0p11": BaselineV2_5_0_p10,
+	"2.5.0p12": BaselineV2_5_0_p10,
 }
 
 // MinorToLatestBaseline maps minor versions to their latest baseline.
 // Used for unknown patch versions within a known minor.
 var MinorToLatestBaseline = map[string]BaselinePackage{
 	"2.2": BaselineV2_2_0_p44,
-	"2.3": BaselineV2_3_0_p42,
+	"2.3": BaselineV2_3_0_p49,
 	"2.4": BaselineV2_4_0_p33,
 	"2.5": BaselineV2_5_0_p10,
 }
