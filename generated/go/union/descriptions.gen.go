@@ -1097,31 +1097,63 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			Description: "Detailed information on what exactly went wrong.",
 			Type:        "string",
 			MinVersion:  "2.3",
-			MaxVersion:  "2.4",
+			MaxVersion:  "2.5",
 		},
 		"ext": {
 			Description: "Additional information about the error.",
 			Type:        "object",
 			MinVersion:  "2.3",
-			MaxVersion:  "2.4",
+			MaxVersion:  "2.5",
 		},
 		"fields": {
 			Description: "Detailed error messages on all fields failing validation.",
 			Type:        "object",
 			MinVersion:  "2.3",
-			MaxVersion:  "2.4",
+			MaxVersion:  "2.5",
 		},
 		"status": {
 			Description: "The HTTP status code.",
 			Type:        "integer",
 			MinVersion:  "2.3",
-			MaxVersion:  "2.4",
+			MaxVersion:  "2.5",
 		},
 		"title": {
 			Description: "A summary of the problem.",
 			Type:        "string",
 			MinVersion:  "2.3",
-			MaxVersion:  "2.4",
+			MaxVersion:  "2.5",
+		},
+	},
+	"Api403CustomError6": {
+		"detail": {
+			Description: "Detailed information on what exactly went wrong.",
+			Type:        "string",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
+		},
+		"ext": {
+			Description: "Additional information about the error.",
+			Type:        "object",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
+		},
+		"fields": {
+			Description: "Detailed error messages on all fields failing validation.",
+			Type:        "object",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
+		},
+		"status": {
+			Description: "The HTTP status code.",
+			Type:        "integer",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
+		},
+		"title": {
+			Description: "A summary of the problem.",
+			Type:        "string",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
 		},
 	},
 	"Api403DefaultError": {
@@ -7820,7 +7852,29 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "",
 		},
 	},
+	"EventConsoleAlertAttributes": {
+		"match_type": {
+			Description: "How this rule treats Event Console alerts. `match_only_event_console_alerts`: Event Console alerts match this rule. If at least one filter is set in `values`, the rule matches Event Console alerts exclusively and host and service notifications no longer match it. Without any filter, Event Console...",
+			Type:        "string",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
+		},
+	},
+	"EventConsoleAlertAttributesBase": {
+		"match_type": {
+			Description: "How this rule treats Event Console alerts. `match_only_event_console_alerts`: Event Console alerts match this rule. If at least one filter is set in `values`, the rule matches Event Console alerts exclusively and host and service notifications no longer match it. Without any filter, Event Console...",
+			Type:        "string",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
+		},
+	},
 	"EventConsoleAlertsResponse": {
+		"match_type": {
+			Description: "How this rule treats Event Console alerts. `match_only_event_console_alerts`: Event Console alerts match this rule. If at least one filter is set in `values`, the rule matches Event Console alerts exclusively and host and service notifications no longer match it. Without any filter, Event Console...",
+			Type:        "string",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
+		},
 		"state": {
 			Description: "To enable or disable this field",
 			Type:        "string",
@@ -13889,6 +13943,12 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			Description: "The PagerDuty plug-in.",
 			Type:        "string",
 			MinVersion:  "2.2",
+			MaxVersion:  "",
+		},
+		"webhook_url": {
+			Description: "PagerDuty Events API v2 endpoint to post incidents to. Pick the URL matching the PagerDuty region (US or EU) your account belongs to.",
+			Type:        "string",
+			MinVersion:  "2.5",
 			MaxVersion:  "",
 		},
 	},
