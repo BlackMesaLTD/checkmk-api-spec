@@ -9,6 +9,23 @@
 
 package p11
 
+// HostConfigFieldMappings maps Terraform field names to API response paths.
+var HostConfigFieldMappings = map[string][]string{
+	"host_name": {"id"}, // Host name from API id field
+	"folder": {"extensions", "folder"}, // Folder path from extensions
+	"attributes": {"extensions", "attributes"}, // Host attributes from extensions
+}
+
+// ExtractHostConfigField extracts a Terraform field value from a HostConfig API response.
+// Returns nil if the path doesn't exist.
+func ExtractHostConfigField(response map[string]interface{}, tfField string) interface{} {
+	path, ok := HostConfigFieldMappings[tfField]
+	if !ok {
+		return nil
+	}
+	return extractNestedField(response, path)
+}
+
 // FolderFieldMappings maps Terraform field names to API response paths.
 var FolderFieldMappings = map[string][]string{
 	"name": {"id"}, // Folder ID/name
@@ -21,23 +38,6 @@ var FolderFieldMappings = map[string][]string{
 // Returns nil if the path doesn't exist.
 func ExtractFolderField(response map[string]interface{}, tfField string) interface{} {
 	path, ok := FolderFieldMappings[tfField]
-	if !ok {
-		return nil
-	}
-	return extractNestedField(response, path)
-}
-
-// HostConfigFieldMappings maps Terraform field names to API response paths.
-var HostConfigFieldMappings = map[string][]string{
-	"host_name": {"id"}, // Host name from API id field
-	"folder": {"extensions", "folder"}, // Folder path from extensions
-	"attributes": {"extensions", "attributes"}, // Host attributes from extensions
-}
-
-// ExtractHostConfigField extracts a Terraform field value from a HostConfig API response.
-// Returns nil if the path doesn't exist.
-func ExtractHostConfigField(response map[string]interface{}, tfField string) interface{} {
-	path, ok := HostConfigFieldMappings[tfField]
 	if !ok {
 		return nil
 	}
