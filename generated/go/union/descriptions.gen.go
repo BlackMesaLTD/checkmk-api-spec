@@ -809,31 +809,31 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			Description: "Detailed information on what exactly went wrong.",
 			Type:        "string",
 			MinVersion:  "2.3",
-			MaxVersion:  "",
+			MaxVersion:  "2.5",
 		},
 		"ext": {
 			Description: "Additional information about the error.",
 			Type:        "object",
 			MinVersion:  "2.3",
-			MaxVersion:  "",
+			MaxVersion:  "2.5",
 		},
 		"fields": {
 			Description: "Detailed error messages on all fields failing validation.",
 			Type:        "object",
 			MinVersion:  "2.3",
-			MaxVersion:  "",
+			MaxVersion:  "2.5",
 		},
 		"status": {
 			Description: "The HTTP status code.",
 			Type:        "integer",
 			MinVersion:  "2.3",
-			MaxVersion:  "",
+			MaxVersion:  "2.5",
 		},
 		"title": {
 			Description: "A summary of the problem.",
 			Type:        "string",
 			MinVersion:  "2.3",
-			MaxVersion:  "",
+			MaxVersion:  "2.5",
 		},
 	},
 	"Api401CustomError1": {
@@ -929,6 +929,38 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			Description: "A summary of the problem.",
 			Type:        "string",
 			MinVersion:  "2.3",
+			MaxVersion:  "",
+		},
+	},
+	"Api401DefaultErrorA7AFFAF40580C463": {
+		"detail": {
+			Description: "Detailed information on what exactly went wrong.",
+			Type:        "string",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
+		},
+		"ext": {
+			Description: "Additional information about the error.",
+			Type:        "",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
+		},
+		"fields": {
+			Description: "Detailed error messages on all fields failing validation.",
+			Type:        "object",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
+		},
+		"status": {
+			Description: "The HTTP status code.",
+			Type:        "integer",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
+		},
+		"title": {
+			Description: "A summary of the problem.",
+			Type:        "string",
+			MinVersion:  "2.5",
 			MaxVersion:  "",
 		},
 	},
@@ -1097,31 +1129,63 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			Description: "Detailed information on what exactly went wrong.",
 			Type:        "string",
 			MinVersion:  "2.3",
-			MaxVersion:  "2.4",
+			MaxVersion:  "2.5",
 		},
 		"ext": {
 			Description: "Additional information about the error.",
 			Type:        "object",
 			MinVersion:  "2.3",
-			MaxVersion:  "2.4",
+			MaxVersion:  "2.5",
 		},
 		"fields": {
 			Description: "Detailed error messages on all fields failing validation.",
 			Type:        "object",
 			MinVersion:  "2.3",
-			MaxVersion:  "2.4",
+			MaxVersion:  "2.5",
 		},
 		"status": {
 			Description: "The HTTP status code.",
 			Type:        "integer",
 			MinVersion:  "2.3",
-			MaxVersion:  "2.4",
+			MaxVersion:  "2.5",
 		},
 		"title": {
 			Description: "A summary of the problem.",
 			Type:        "string",
 			MinVersion:  "2.3",
-			MaxVersion:  "2.4",
+			MaxVersion:  "2.5",
+		},
+	},
+	"Api403CustomError6": {
+		"detail": {
+			Description: "Detailed information on what exactly went wrong.",
+			Type:        "string",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
+		},
+		"ext": {
+			Description: "Additional information about the error.",
+			Type:        "object",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
+		},
+		"fields": {
+			Description: "Detailed error messages on all fields failing validation.",
+			Type:        "object",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
+		},
+		"status": {
+			Description: "The HTTP status code.",
+			Type:        "integer",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
+		},
+		"title": {
+			Description: "A summary of the problem.",
+			Type:        "string",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
 		},
 	},
 	"Api403DefaultError": {
@@ -1156,7 +1220,7 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "",
 		},
 	},
-	"Api403DefaultError204133A3D11A4DB0": {
+	"Api403DefaultError2031B9AEBD42FE22": {
 		"detail": {
 			Description: "Detailed information on what exactly went wrong.",
 			Type:        "string",
@@ -1186,6 +1250,38 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			Type:        "string",
 			MinVersion:  "2.5",
 			MaxVersion:  "",
+		},
+	},
+	"Api403DefaultError204133A3D11A4DB0": {
+		"detail": {
+			Description: "Detailed information on what exactly went wrong.",
+			Type:        "string",
+			MinVersion:  "2.5",
+			MaxVersion:  "2.5",
+		},
+		"ext": {
+			Description: "Additional information about the error.",
+			Type:        "",
+			MinVersion:  "2.5",
+			MaxVersion:  "2.5",
+		},
+		"fields": {
+			Description: "Detailed error messages on all fields failing validation.",
+			Type:        "object",
+			MinVersion:  "2.5",
+			MaxVersion:  "2.5",
+		},
+		"status": {
+			Description: "The HTTP status code.",
+			Type:        "integer",
+			MinVersion:  "2.5",
+			MaxVersion:  "2.5",
+		},
+		"title": {
+			Description: "A summary of the problem.",
+			Type:        "string",
+			MinVersion:  "2.5",
+			MaxVersion:  "2.5",
 		},
 	},
 	"Api404CustomError": {
@@ -5474,6 +5570,14 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "2.3",
 		},
 	},
+	"ConditionsAttributes": {
+		"event_console_alerts": {
+			Description: "The Event Console can have events create notifications in Checkmk. These notifications are processed by the rule based notification system of Checkmk. This condition lets you distinguish them from host and service notifications and gives you access to special event fields. With this condition dis...",
+			Type:        "",
+			MinVersion:  "2.4",
+			MaxVersion:  "2.4",
+		},
+	},
 	"Configuration": {
 		"force_explicit_parents": {
 			Description: "Force explicit setting for parents even if setting match that of the folder",
@@ -7820,7 +7924,29 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "",
 		},
 	},
+	"EventConsoleAlertAttributes": {
+		"match_type": {
+			Description: "How this rule treats Event Console alerts. `match_only_event_console_alerts`: Event Console alerts match this rule. If at least one filter is set in `values`, the rule matches Event Console alerts exclusively and host and service notifications no longer match it. Without any filter, Event Console...",
+			Type:        "string",
+			MinVersion:  "2.4",
+			MaxVersion:  "2.5",
+		},
+	},
+	"EventConsoleAlertAttributesBase": {
+		"match_type": {
+			Description: "How this rule treats Event Console alerts. `match_only_event_console_alerts`: Event Console alerts match this rule. If at least one filter is set in `values`, the rule matches Event Console alerts exclusively and host and service notifications no longer match it. Without any filter, Event Console...",
+			Type:        "string",
+			MinVersion:  "2.4",
+			MaxVersion:  "2.5",
+		},
+	},
 	"EventConsoleAlertsResponse": {
+		"match_type": {
+			Description: "How this rule treats Event Console alerts. `match_only_event_console_alerts`: Event Console alerts match this rule. If at least one filter is set in `values`, the rule matches Event Console alerts exclusively and host and service notifications no longer match it. Without any filter, Event Console...",
+			Type:        "string",
+			MinVersion:  "2.4",
+			MaxVersion:  "2.5",
+		},
 		"state": {
 			Description: "To enable or disable this field",
 			Type:        "string",
@@ -13200,6 +13326,20 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			MaxVersion:  "",
 		},
 	},
+	"MoveNotificationRuleModel": {
+		"position": {
+			Description: "The type of position to move the notification rule to. Notification rules are evaluated from top to bottom, so the rule with the lowest `rule_index` is evaluated first.",
+			Type:        "string",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
+		},
+		"rule_id": {
+			Description: "The ID of the notification rule to move after/before. Required for the positions `before_specific_rule` and `after_specific_rule`.",
+			Type:        "string",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
+		},
+	},
 	"MoveToFolder": {
 		"folder": {
 			Description: "The path name of the folder. Path delimiters can be either `~`, `/` or `\\`. Please use the one most appropriate for your quoting/escaping needs. A good default choice is `~`.",
@@ -13496,6 +13636,14 @@ var UnionDescriptions = map[string]map[string]UnionField{
 		"value": {
 			Description: "A list of notification parameter objects.",
 			Type:        "array",
+			MinVersion:  "2.5",
+			MaxVersion:  "",
+		},
+	},
+	"NotificationRuleConfig": {
+		"rule_index": {
+			Description: "The position of this rule within the notification rule chain. Notification rules are evaluated from the lowest to the highest index.",
+			Type:        "integer",
 			MinVersion:  "2.5",
 			MaxVersion:  "",
 		},
@@ -13890,6 +14038,12 @@ var UnionDescriptions = map[string]map[string]UnionField{
 			Type:        "string",
 			MinVersion:  "2.2",
 			MaxVersion:  "",
+		},
+		"webhook_url": {
+			Description: "PagerDuty Events API v2 endpoint to post incidents to. Pick the URL matching the PagerDuty region (US or EU) your account belongs to.",
+			Type:        "string",
+			MinVersion:  "2.4",
+			MaxVersion:  "2.5",
 		},
 	},
 	"Params": {
@@ -15187,6 +15341,12 @@ var UnionDescriptions = map[string]map[string]UnionField{
 		},
 	},
 	"RuleConditions": {
+		"event_console_alerts": {
+			Description: "The Event Console can have events create notifications in Checkmk. These notifications are processed by the rule based notification system of Checkmk. This condition lets you distinguish them from host and service notifications and gives you access to special event fields. With this condition dis...",
+			Type:        "",
+			MinVersion:  "2.4",
+			MaxVersion:  "2.4",
+		},
 		"host_labels": {
 			Description: "Further restrict this rule by applying host label conditions.",
 			Type:        "array",
